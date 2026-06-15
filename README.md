@@ -11,15 +11,10 @@ This repository contains my personal software projects built for learning, pract
 The goal of this repository is to demonstrate my ability to:
 
 - Build complete applications
-- Work with different technologies (Java, JavaScript, SQL, etc.)
+- Work with different technologies
 - Structure real-world projects
 - Solve practical software problems
 
-## ⚙️ Technologies
-
-Depending on the project:
-
--
 
 ## 🚀 Notes
 
