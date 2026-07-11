@@ -1,0 +1,194 @@
+{
+    "id": 25,
+    "nick": "Yoruichi",
+    "fullName": "Yoruichi Shihōin",
+    "alias": "Flash Goddess",
+    "anime": "Bleach",
+    "affiliation": "Seireitei",
+    "roles": ["Jungle"],
+    "attackTypes": ["Melee"],
+    "damageTypes": ["Physical", "Magic"],
+    "class": "Slayer",
+    "resource": {
+      "name": "Reiatsu",
+      "type": "UR",
+      "maxValue": 200,
+      "regen": "50"
+    },
+    "difficulty": "Medium",
+    "splashArt": "/splashArts/yoruichi_splashart.jpg",
+    "icon": "/splashArts/yoruichi_icon.png",
+    "render": "/splashArts/yoruichi_render.png",
+  
+    "stats": {
+      "health": "600 + 119 × lvl²",
+      "healthRegen": "9 + 0.9 × lvl²",
+      "armor": "23 + 4.7 × lvl²",
+      "attackDamage": "62 + 3.3 × lvl²",
+      "magicResistance": "37 + 2.05 × lvl²",
+      "criticalDamage": "200%",
+      "movementSpeed": "345",
+      "attackRange": "125",
+      "attackSpeed": {
+        "base": "0.625",
+        "windup": "13.9%",
+        "bonusAS": "3.2%"
+      }
+    },
+  
+    "quotes": {
+      "selection": "Speed is my domain.",
+      "general": [
+        "Even without a Zanpakutō, I can fight on equal ground.",
+        "Once a warrior, always a warrior.",
+        "If you can't keep up, then you'll be left behind.",
+        "Shunko! Thunderclap, echo through me!",
+        "Stealth isn't just hiding — it's striking when least expected.",
+        "You'll never touch me at this speed.",
+        "This cat still has claws."
+      ],
+      "interactions": {
+        "Kisuke ID to be specified": ["ally", "Kisuke, you still haven't changed a bit."]
+      }
+    },
+  
+    "abilities": {
+      "passive": {
+        "name": "Feline Disguise",
+        "description": "After 3 seconds out of combat, Yoruichi transforms into black cat form, becoming untargetable by minions and turrets, gaining +20% movement speed. Breaking disguise by attacking or being attacked returns her to human form.",
+        "icon": "url_por_especificar",
+        "outOfCombatDelay": "3s",
+        "effects": {
+          "catForm": {
+            "untargetable": ["Minions", "Turrets"],
+            "movementSpeed": "+20%"
+          },
+          "breakConditions": ["Attacking", "Being attacked"],
+          "returnForm": "Human form"
+        }
+      },
+  
+      "h1": {
+        "name": "Flash Step",
+        "description": "Yoruichi draws twin anken knives and dashes rapidly between up to 3 enemies in range, striking each once. If only one enemy in range, strikes twice.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Nearby Enemies",
+        "targetRange": "600",
+        "effectRadius": "600",
+        "cooldown": "20 / 19.5 / 19 / 18.5 / 18",
+        "cost": "50 / 55 / 60 / 65 / 70 Reiatsu",
+        "effects": {
+          "dashStrike": {
+            "maxTargets": "3 enemies (1 strike each)",
+            "singleTarget": "2 strikes if only 1 enemy in range"
+          },
+          "damage": {
+            "type": "Physical",
+            "baseValues": "20 / 40 / 60 / 80 / 100",
+            "scaling": "70% AD"
+          },
+          "monsterBonus": {
+            "baseValues": "60 / 85 / 110 / 135 / 160"
+          }
+        }
+      },
+  
+      "h2": {
+        "name": "Raijin Senkei",
+        "description": "Yoruichi summons 7 lightning orbs that converge into circular zone at target location. Zone erupts with spiritual lightning, dealing magic damage per second for 4 seconds and granting sight. Enemies in center take 20% increased damage. After 0.75s delay, activates to slow enemies, refreshing every 0.25s while inside.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Location",
+        "castTime": "0.25",
+        "targetRange": "800",
+        "effectRadius": "340",
+        "duration": "4s",
+        "cooldown": "17 / 16 / 15 / 14 / 13",
+        "cost": "65 Reiatsu",
+        "effects": {
+          "damagePerTick": {
+            "type": "Magic",
+            "baseValues": "35 / 45 / 55 / 65 / 75",
+            "scaling": "35% AP",
+            "frequency": "Per second"
+          },
+          "centerBonus": {
+            "damageIncrease": "+20%"
+          },
+          "visionGrant": true,
+          "slow": {
+            "delay": "0.75s",
+            "percentage": "33 / 36 / 39 / 42 / 45%",
+            "duration": "1s",
+            "refreshRate": "Every 0.25s while inside"
+          }
+        }
+      },
+  
+      "h3": {
+        "name": "Flash War Cry",
+        "description": "Yoruichi envelops body in compressed lightning energy, empowering basic attacks on-hit to deal bonus magic damage to target and nearest visible enemy within 450 units, chaining up to 4 subsequent targets. Gains 15% bonus attack speed while active.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Self",
+        "cooldown": "14",
+        "cost": "40 Reiatsu",
+        "effects": {
+          "empowerment": {
+            "duration": "Active state",
+            "attackSpeedBonus": "+15%"
+          },
+          "onHitDamage": {
+            "type": "Magic",
+            "baseValues": "11 – 60 (based on level)",
+            "scaling": "50% AP",
+            "chainRange": "450 units",
+            "maxChains": "4 subsequent targets",
+            "targets": ["Primary target", "Nearest visible enemy + chain targets"]
+          }
+        }
+      },
+  
+      "h4": {
+        "name": "Shunryū Kokubyō Senki (True Shunko: Flash Goddess Form)",
+        "description": "Yoruichi assumes Divine Thunder Cat form for 10 seconds, merging human and feline traits. Gains bonus movement speed that decays 10% every 0.25s. Duration extends 5 seconds per champion takedown (up to original length). Gains bonus AD, 5% size increase, ghosted, increased self-healing. Q and W cooldowns reduced 30% while transformed.",
+        "icon": "url_por_especificar",
+        "type": "Active (Transformation)",
+        "targetType": "Self",
+        "castTime": "0.25s",
+        "duration": "10s",
+        "cooldown": "120 / 100 / 80",
+        "cost": "100 Reiatsu",
+        "effects": {
+          "transformation": {
+            "form": "Divine Thunder Cat form",
+            "humanFeline": "Hybrid traits"
+          },
+          "movementSpeed": {
+            "bonus": "60 / 80 / 100%",
+            "decay": "10% of current bonus every 0.25s"
+          },
+          "durationExtension": {
+            "trigger": "Champion takedown",
+            "extension": "+5s per takedown",
+            "maxDuration": "Original duration"
+          },
+          "stats": {
+            "attackDamage": "+20 / 30 / 40% AP",
+            "size": "+5% model size",
+            "ghosted": true
+          },
+          "healing": {
+            "selfHealingBonus": "+50 / 75 / 100% (all sources)"
+          },
+          "abilityModification": {
+            "h1_cooldown": "-30%",
+            "h2_cooldown": "-30%"
+          }
+        }
+      }
+    },
+  
+    "lore": "Yoruichi Shihōin is the former captain of the 2nd Division of the Gotei 13 and head of the noble Shihōin clan. Known as the 'Flash Goddess,' she mastered the art of Shunpo to a level beyond any other Soul Reaper. Unlike most nobles, she abandoned her high status to live freely, often disguising herself in the form of a small black cat. Her playful, teasing personality hides a sharp intellect and deadly combat skill. With both her unmatched speed and mastery of hand-to-hand combat, she is respected as one of the most formidable warriors in Soul Society.\n\nBeyond her strength, Yoruichi possesses unique techniques such as the Raijin Senkei and her ultimate transformation, Shunryū Kokubyō Senkei, where she unleashes her hybrid feline form, amplifying her power to devastating levels. She mentors allies like Soi Fon and works closely with Kisuke Urahara, though she often mocks him lightheartedly. Agile, cunning, and fiercely independent, Yoruichi embodies both the elegance of a noble and the wild freedom of a warrior who fights on her own terms."
+  }

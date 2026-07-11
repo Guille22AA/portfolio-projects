@@ -1,0 +1,203 @@
+{
+    "id": 6,
+    "nick": "Chrollo",
+    "fullName": "Chrollo Lucilfer",
+    "alias": "Boss",
+    "anime": "Hunter X Hunter",
+    "affiliation": "Phantom Troupe",
+    "roles": ["Mid", "Jungle"],
+    "attackTypes": ["Melee"],
+    "damageTypes": ["Magic"],
+    "class": ["Slayer", "Sorcerer"],
+    "resource": {
+      "name": "Nen",
+      "type": "Nen",
+      "maxValue": 400,
+      "regen": "8 + 0.8 × lvl²"
+    },
+    "difficulty": "Medium",
+    "splashArt": "/splashArts/chrollo_splashart.png",
+    "icon": "/splashArts/chrollo_icon.png",
+    "render": "/splashArts/chrollo_render.png",
+  
+    "stats": {
+      "health": "600 + 122 × lvl²",
+      "healthRegen": "9 + 0.9 × lvl²",
+      "armor": "29 + 5.2 × lvl²",
+      "attackDamage": "61 + 3 × lvl²",
+      "magicResistance": "32 + 2.55 × lvl²",
+      "criticalDamage": "200%",
+      "movementSpeed": "340",
+      "attackRange": "175",
+      "attackSpeed": {
+        "base": "0.645",
+        "windup": "16.774%",
+        "bonusAS": "3.5%"
+      }
+    },
+  
+    "quotes": {
+      "selection": "The Spider lives as long as the head survives.",
+      "general": [
+        "We're not the ones who decide who lives or dies. That's up to the flow of battle.",
+        "Life is unfair, but it's also beautifully so.",
+        "I don't believe in fate. We create our own.",
+        "A leader isn't someone who rules. A leader is someone who shares the weight of his people.",
+        "When you kill, you accept that one day you'll be killed as well.",
+        "All I ever wanted was to find people I could fight alongside."    
+      ],
+      "interactions": {
+        "10": ["enemy", "You want a fight, Hisoka? Very well. I'll give you one you'll never forget."],
+        "16": ["enemy", "You hate the Spider, don't you? But hate alone won't be enough to kill me."],
+        "Troupe IDs to be specified": ["ally", "Remember, we are the Phantom Troupe. No matter the odds, we act as one."]
+      }
+    },
+  
+    "abilities": {
+      "passive": {
+        "name": "Nen Flow",
+        "description": "Chrollo's basic attacks scale with bonus magical damage. He also gains bonus attack speed and bonus movement speed based on his total AP.",
+        "icon": "url_por_especificar",
+        "effects": [
+          {
+            "type": "Magic Damage on Basics",
+            "value": "35% AP"
+          },
+          {
+            "type": "Bonus Attack Speed",
+            "value": "5% per 100 AP"
+          },
+          {
+            "type": "Bonus Movement Speed",
+            "value": "3% per 100 AP"
+          }
+        ]
+      },
+  
+      "h1": {
+        "name": "Ben's Knife",
+        "description": "Chrollo dashes toward the target enemy, stabbing upon arrival to deal magical damage. If cast within close range, he dashes over the cast time and grants 75 bonus attack range on his next basic attack within 1 second. The attack slows on hit.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Unit",
+        "castTime": "0.25",
+        "targetRange": "575 / 170 (close range)",
+        "speed": "1400",
+        "cooldown": "8 / 7.5 / 7 / 6.5 / 6",
+        "cost": "40 Nen",
+        "effects": {
+          "damage": {
+            "type": "Magic",
+            "baseValues": "65 / 85 / 105 / 125 / 145",
+            "scaling": "50% bonus AD + 50% AP"
+          },
+          "slow": {
+            "duration": "1.25s",
+            "percentage": "45 / 50 / 55 / 60 / 65%"
+          },
+          "bonusRange": {
+            "amount": "75 bonus attack range",
+            "condition": "Next basic attack within 1s"
+          },
+          "basicAttackReset": "Resets basic attack timer"
+        }
+      },
+  
+      "h2": {
+        "name": "Sun and Moon",
+        "description": "Chrollo projects a Sun Seal on a target enemy for 4 seconds, granting sight of surroundings. After 2 seconds, he can recast to apply Moon Seal on the same target. If both seals are present, they detonate immediately, dealing AoE magical damage. If Moon is not cast within 4 seconds, the Sun mark expires.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Unit",
+        "castTime": "0.25 / 2s",
+        "targetRange": "900",
+        "collisionRadius": "140",
+        "effectRadius": "350",
+        "cooldown": "10 / 9.5 / 9 / 8.5 / 8",
+        "cost": "60 / 65 / 70 / 75 / 80 Nen",
+        "effects": {
+          "sunSeal": {
+            "duration": "4s",
+            "effect": "Grants sight of surroundings"
+          },
+          "moonSeal": {
+            "delay": "2s after Sun Seal",
+            "requirement": "Sun Seal must be active"
+          },
+          "detonation": {
+            "trigger": "Both seals present",
+            "damage": "75 / 115 / 165 / 230 / 300 (+ 90% AP)",
+            "type": "AoE Magic Damage"
+          },
+          "expiration": "Sun expires after 4s if Moon not cast"
+        }
+      },
+  
+      "h3": {
+        "name": "Judgment Fishes",
+        "description": "Chrollo seals off a wide box area. Two ethereal untargetable Judgment Fishes swim within the zone, biting enemies they pass through and dealing magical damage. Damage is delayed and only becomes visible when the field ends. If a target dies inside, their death is delayed until the zone ends. Chrollo can manually deactivate early to reveal damage.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Location",
+        "castTime": "0.5",
+        "targetRange": "800",
+        "effectRadius": "500",
+        "width": "500",
+        "cooldown": "20 / 18.5 / 17 / 15.5 / 14",
+        "cost": "70 / 75 / 80 / 85 / 90 Nen",
+        "effects": {
+          "zone": {
+            "type": "Sealed box area",
+            "fish": "2 ethereal untargetable Judgment Fishes"
+          },
+          "damage": {
+            "type": "Magic",
+            "baseValues": "15 - 100 based on level",
+            "scaling": "20% of Chrollo's AP",
+            "delayed": true
+          },
+          "fishAttackSpeed": "0.25 - 0.75 based on level",
+          "fishMovement": "250 speed",
+          "deathDelay": "If target dies inside, death is delayed until zone ends",
+          "manualDeactivation": "Chrollo can manually deactivate early to reveal damage"
+        }
+      },
+  
+      "h4": {
+        "name": "Skill Hunter",
+        "description": "Chrollo steals the ultimate ability of the enemy target, but only if he had vision of the cast within 10 seconds. The original caster cannot use their ultimate for the next 60 seconds. He stores stolen ultimates in his book and can choose which one he wants to use. Stolen ultimates that don't scale with AP have their AD ratios converted to AP ratios at 0.6% AP per 1% total AD and 0.4% AP per 1% bonus AD.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "castTime": "0.25",
+        "targetRange": "950",
+        "cooldown": "120 / 100 / 80",
+        "cost": "100 Nen",
+        "effects": {
+          "steal": {
+            "condition": "Must have vision of target's ultimate cast within 10 seconds",
+            "target": "Enemy champion's ultimate ability"
+          },
+          "casterDisable": {
+            "duration": "100s",
+            "effect": "Original caster cannot use their ultimate"
+          },
+          "storage": {
+            "type": "Book storage",
+            "behavior": "Can store multiple ultimates and choose which to use",
+            "cycling": "Automatically cycles through stolen abilities, hovering each for 0.5s when unlocked"
+          },
+          "casting": {
+            "firstCast": "Select a copied ability from book (requires at least one stolen)",
+            "secondCast": "Cast the chosen ability"
+          },
+          "scaling": {
+            "nonAPUltimates": "AD ratios converted to AP ratios",
+            "totalADConversion": "0.6% AP per 1% total AD",
+            "bonusADConversion": "0.4% AP per 1% bonus AD"
+          }
+        }
+      }
+    },
+  
+    "lore": "Chrollo Lucilfer is the enigmatic leader of the Phantom Troupe, a criminal organization infamous for massacres, heists, and black-market dealings. Born in Meteor City, a lawless wasteland for the discarded and forgotten, Chrollo emerged as a charismatic figure among the outcasts, founding the Troupe and uniting its members under a shared creed of loyalty and brutality.\n\nHe is calm, calculating, and philosophical, often contemplating the nature of life, death, and sin. Despite leading one of the most violent groups in the world, he speaks softly and rarely shows emotion—killing without hatred, remorse, or pleasure. His beliefs are difficult to grasp, and his true motivations remain a mystery even to those closest to him.\n\nChrollo's signature ability, Skill Hunter, allows him to steal and use other Nen users' abilities by meeting a strict set of conditions. He stores these stolen abilities in a conjured book, granting him a wide and unpredictable arsenal. He is also highly skilled in deception, manipulation, and combat strategy—making him one of the most dangerous Nen users alive."
+  }

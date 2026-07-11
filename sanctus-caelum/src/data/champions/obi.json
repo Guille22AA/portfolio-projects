@@ -1,0 +1,156 @@
+{
+  "id": 1,
+  "nick": "Obi",
+  "fullName": "Akitaru Obi",
+  "alias": "Captain Obi",
+  "anime": "Fire Force",
+  "affiliation": "Fire Force",
+  "roles": ["Support"],
+  "attackTypes": ["Melee"],
+  "damageTypes": ["Physical"],
+  "class": "Warden",
+
+  "resource": {
+    "name": "None",
+    "type": "None"
+  },
+
+  "difficulty": "Easy",
+  "splashArt": "/splashArts/obi_splashart.png",
+  "icon": "/splashArts/obi_icon.png",
+  "render": "/splashArts/obi_render.png",
+
+  "stats": {
+    "health": "610 + 112 × lvl²",
+    "healthRegen": "8.5 + 1 × lvl²",
+    "armor": "35 + 5 × lvl²",
+    "attackDamage": "55 + 3.2 × lvl²",
+    "magicResistance": "32 + 2.05 × lvl²",
+    "criticalDamage": "200%",
+    "movementSpeed": "335",
+    "attackRange": "125",
+    "attackSpeed": {
+      "base": "0.644",
+      "windup": "23%",
+      "bonusAS": "3.5%"
+    }
+  },
+
+  "quotes": {
+    "selection": "Power doesn't make a hero. Resolve does.",
+    "general": [
+      "We're Company 8. We fight fire with fire—and save people's lives.",
+      "The title of Captain isn't for myself. It's for the sake of those who fight beside me.",
+      "My job is to protect the lives of my subordinates.",
+      "It's not about what abilities you're born with, but how you use what you've got.",
+      "Fire Soldiers aren't executioners—we save people."
+    ]
+  },
+
+  "abilities": {
+    "passive": {
+      "name": "Fireproof Resolve",
+      "description": "Obi is immune to burn effects (damage over time from fire abilities). He still takes the initial hit of the ability, but never the lingering burn.",
+      "icon": "url_por_especificar",
+      "effects": [
+        {
+          "type": "Immunity",
+          "target": "Burn effects",
+          "note": "Still takes initial damage, never lingering burn"
+        }
+      ]
+    },
+
+    "h1": {
+      "name": "Smoke Screen",
+      "description": "Obi fires a smoke canister at the target location that upon impact deals physical damage to enemies within the area and slows them by 50% for 0.5 seconds. The canister creates a cloud of smoke for 4 seconds that applies nearsight to all enemies within, reducing their sight radius.",
+      "icon": "url_por_especificar",
+      "type": "Active",
+      "targetType": "Location",
+      "targetRange": "950",
+      "castTime": "0.75",
+      "speed": "1200",
+      "cooldown": "22 / 20 / 18 / 16 / 14",
+      "effectRadius": "200 / 300 / 400 / 500 / 600",
+      "effects": {
+        "damage": {
+          "type": "Physical",
+          "values": "40 / 80 / 120 / 160 / 200",
+          "scaling": "0 AD"
+        },
+        "slow": {
+          "duration": "0.5s",
+          "percentage": "50%"
+        },
+        "nearsight": {
+          "duration": "4s",
+          "sightReduction": "250 / 300 / 350 / 400 / 450",
+          "frequency": "0.25s"
+        }
+      }
+    },
+
+    "h2": {
+      "name": "Stand Behind Me",
+      "description": "Obi dashes to put himself between the target ally and the closest visible enemy champion within 1500 units, and grants himself and the ally bonus armor and bonus magic resistance for 3 seconds. Can be self-cast to instantly grant Obi the bonus resistances.",
+      "icon": "url_por_especificar",
+      "type": "Active",
+      "targetType": "Unit",
+      "targetRange": "650",
+      "cooldown": "12 / 11 / 10 / 9 / 8",
+      "duration": "3s",
+      "effects": {
+        "allyBonus": {
+          "armor": "20 / 25 / 30 / 35 / 40 (+ 12% bonus armor)",
+          "magicResistance": "20 / 25 / 30 / 35 / 40 (+ 12% bonus magic resistance)"
+        },
+        "selfBonus": {
+          "armor": "20 / 25 / 30 / 35 / 40 (+ 36% bonus armor)",
+          "magicResistance": "20 / 25 / 30 / 35 / 40 (+ 36% bonus magic resistance)"
+        }
+      }
+    },
+
+    "h3": {
+      "name": "Unbreakable",
+      "description": "Obi sets his shield in the target direction for a duration, creating a barrier that intercepts all incoming hostile projectiles and reduces damage taken through it. The first instance of damage from a champion is reduced by 100%. Grants bonus movement speed and ghosting while shield is raised.",
+      "icon": "url_por_especificar",
+      "type": "Active",
+      "targetType": "Direction",
+      "cooldown": "16 / 14 / 12 / 10 / 8",
+      "duration": "3 / 3.25 / 3.5 / 3.75 / 4",
+      "angle": "180°",
+      "effects": {
+        "damageReduction": "35% / 40% / 45% / 50% / 55%",
+        "firstDamageBlock": "100% (Champion only)",
+        "bonusMovementSpeed": "10%",
+        "ghosting": "Enabled"
+      }
+    },
+
+    "h4": {
+      "name": "Expanding Shield Throw",
+      "description": "Obi throws his expansive shield that travels in a counter-clockwise arc before digging into the ground at the target location. Deals physical damage to enemies hit and knocks them up. Shield size, damage, and knockup duration increase with distance traveled. Grants sight of the area for 0.5 seconds.",
+      "icon": "url_por_especificar",
+      "type": "Active",
+      "targetType": "Location",
+      "castTime": "0.5",
+      "cooldown": "120 / 100 / 80",
+      "maxRange": "1200",
+      "speed": "1500",
+      "effectRadius": "100 - 350 (scaling with distance)",
+      "width": "230",
+      "effects": {
+        "damage": {
+          "type": "Physical",
+          "values": "150 / 300 / 450",
+          "scaling": "60% AD"
+        },
+        "knockUp": "1 / 1.5 / 2 seconds (scales with distance)",
+        "sight": "0.5s duration"
+      }
+    }
+  },
+
+  "lore": "Akitaru Obi is the dependable captain of Special Fire Force Company 8. Unlike his comrades, Obi has no pyrokinetic powers, relying instead on his unmatched physical conditioning, tactical mind, and unwavering determination. Trained as a regular firefighter before joining the Special Fire Force, he adapted his skills to face the supernatural threat of Infernals, equipping himself with heavy gear, tools, and raw strength to stand on equal footing with powered allies and enemies alike.\n\nDespite lacking flames, Obi's greatest strength lies in his leadership and courage. He shields his squad from harm, inspires trust, and always charges into danger first, proving that resolve can rival any ignition ability. His calm demeanor, selflessness, and iron will make him the backbone of Company 8, a captain who saves not only with strength, but with the belief that every life—ally or stranger—is worth protecting."
+}

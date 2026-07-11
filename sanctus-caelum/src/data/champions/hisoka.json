@@ -1,0 +1,197 @@
+{
+    "id": 10,
+    "nick": "Hisoka",
+    "fullName": "Hisoka Morow",
+    "alias": "Grim Reaper",
+    "anime": "Hunter X Hunter",
+    "affiliation": "Hunter",
+    "roles": ["Mid", "Top"],
+    "attackTypes": ["Melee"],
+    "damageTypes": ["Hybrid"],
+    "class": ["Duelist", "Sorcerer"],
+    "resource": {
+      "name": "Nen",
+      "type": "Nen",
+      "maxValue": 339,
+      "regen": "8.15 + 0.75 × lvl²"
+    },
+    "difficulty": "Medium",
+    "splashArt": "/splashArts/hisoka_splashart.jpg",
+    "icon": "/splashArts/hisoka_icon.png",
+    "render": "/splashArts/hisoka_render.png",
+  
+    "stats": {
+      "health": "650 + 99 × lvl²",
+      "healthRegen": "8.5 + 0.8 × lvl²",
+      "armor": "35 + 4.5 × lvl²",
+      "attackDamage": "68 + 3.8 × lvl²",
+      "magicResistance": "32 + 2.05 × lvl²",
+      "criticalDamage": "200%",
+      "movementSpeed": "340",
+      "attackRange": "125",
+      "attackSpeed": {
+        "base": "0.644",
+        "windup": "19.33%",
+        "bonusAS": "2.5%"
+      }
+    },
+  
+    "quotes": {
+      "selection": "The fun has just begun.",
+      "general": [
+        "It's so fun to play with my toys.",
+        "Oh… I can't stop trembling with excitement.",
+        "When I see a strong opponent, my whole body shakes with joy.",
+        "A fight isn't about who's right… it's about who's left.",
+        "The stronger you get, the more delicious our game will be.",
+        "Show me your true colors… before I get bored."
+      ],
+      "interactions": {
+        "Gon ID to be specified": ["enemy", "I'll wait until you bloom… and then I'll pluck you kid."],
+        "Killua ID to be specified": [["ally", "enemy"], "You've got potential too, little one."],
+        "6": ["enemy", "You're worth killing. This will be such a lovely performance."]
+      }
+    },
+  
+    "abilities": {
+      "passive": {
+        "name": "Predator's Instinct",
+        "description": "Hisoka grows stronger when facing more powerful enemies. If his current target can give shutdown, he gains bonus damage, movement speed, and ability haste. These bonuses last as long as he continues fighting that enemy and refresh on hit.",
+        "icon": "url_por_especificar",
+        "effects": [
+          {
+            "type": "Shutdown Target Bonus",
+            "condition": "Target can give shutdown",
+            "bonusDamage": "+15%",
+            "bonusMS": "+10%",
+            "abilityHaste": "+5"
+          },
+          {
+            "type": "Duration",
+            "effect": "Lasts while fighting target, refreshes on hit"
+          }
+        ]
+      },
+  
+      "h1": {
+        "name": "Triple Trick",
+        "description": "Hisoka throws a fan of three cards in a cone in the target direction, each dealing magic damage to enemies hit. Enemies can only be damaged once per pass.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Cone",
+        "castTime": "0.25",
+        "targetRange": "1250",
+        "width": "80",
+        "angle": "56°",
+        "speed": "1200",
+        "cooldown": "6 / 5.75 / 5.5 / 5.25 / 5",
+        "cost": "70 Nen",
+        "effects": {
+          "damage": {
+            "type": "Magic",
+            "baseValues": "60 / 105 / 150 / 195 / 240",
+            "scaling": "50% bonus AD + 85% AP"
+          },
+          "hitOnce": "Enemies damaged only once per pass"
+        }
+      },
+  
+      "h2": {
+        "name": "Feint Step",
+        "description": "Hisoka blinks in the target direction and empowers his next basic attack within 0.25 seconds to deal bonus physical damage, affected by critical strike modifiers.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Direction",
+        "targetRange": "400",
+        "cooldown": "13 / 12.5 / 12 / 11.5 / 11",
+        "cost": "40 Nen",
+        "effects": {
+          "blink": {
+            "effect": "Dashes in target direction"
+          },
+          "empoweredAttack": {
+            "window": "0.25s",
+            "damage": {
+              "type": "Physical",
+              "baseValues": "25 / 35 / 45 / 55 / 65",
+              "scaling": "60% bonus AD"
+            },
+            "critMod": "Affected by critical strike modifiers"
+          }
+        }
+      },
+  
+      "h3": {
+        "name": "Bungee Gum",
+        "description": "Hisoka fires a sticky strand that embeds in terrain and enters preparation for 2.125 seconds. Can then swing around the terrain, firing cards at nearby enemies. Ends by jumping to target location and firing a final shot. Takedowns reset cooldown to 0.5 seconds.",
+        "icon": "url_por_especificar",
+        "type": "Active (3 casts)",
+        "targetType": "Terrain / Direction / Location",
+        "cooldown": "Por especificar",
+        "cost": "Por especificar",
+        "effects": {
+          "firstCast": {
+            "name": "Hook Embed",
+            "effect": "Fires sticky strand at terrain",
+            "preparationDuration": "2.125s",
+            "cancellation": "Cancelled if Hisoka is moved, immobilized, grounded, or polymorphed"
+          },
+          "secondCast": {
+            "name": "Swing",
+            "effect": "Swings around terrain in clockwise or counterclockwise",
+            "stops": "Upon collision with enemy champion or terrain",
+            "cardFire": "Fires cards every 0.231s at nearest visible enemy",
+            "cardDamage": {
+              "type": "Magic",
+              "baseValues": "15 / 30 / 45 / 60 / 75",
+              "scaling": "15% AP + 5% AD",
+              "reduced": "25% effectiveness"
+            },
+            "knockdown": "Immobilizing or polymorphing CC knocks him down during swing"
+          },
+          "thirdCast": {
+            "name": "Jump Finale",
+            "effect": "Ends swing by jumping to target location",
+            "finalShot": "Fires one last card shot at nearby visible enemy"
+          },
+          "lifesteal": "Shots apply lifesteal at 100% effectiveness",
+          "cooldownRefund": "Enemy champion takedown reduces cooldown to 0.5s"
+        }
+      },
+  
+      "h4": {
+        "name": "Bloodlust Finale",
+        "description": "Hisoka dashes 750 units toward target enemy, dealing magic damage to enemies passed through. If hitting an enemy, flips over them to continue dashing up to another 150 units. Can be recast after 2.5 seconds within 10 seconds of first activation, dashing 800 units with damage increased by missing health percentage.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Unit",
+        "cooldown": "Por especificar",
+        "cost": "Por especificar",
+        "effects": {
+          "firstDash": {
+            "range": "750 units",
+            "damage": {
+              "type": "Magic",
+              "baseValues": "110 / 220 / 330",
+              "scaling": "50% bonus AD + 30% AP"
+            },
+            "onHit": "If hits enemy, flips over to continue dash (up to 150 units more)"
+          },
+          "recast": {
+            "staticCooldown": "2.5s",
+            "window": "10s from first activation",
+            "range": "800 units",
+            "damage": {
+              "type": "Magic",
+              "baseValues": "70 / 140 / 210",
+              "scaling": "30% AP",
+              "scaling_missing_health": "Increased by 0% - 200% based on target's missing health"
+            },
+            "minDamage": "70 / 140 / 210"
+          }
+        }
+      }
+    },
+  
+    "lore": "Hisoka is a deadly and unpredictable fighter who thrives on chaos and thrill. Formerly a member of the Phantom Troupe, his true allegiance lies only with himself—constantly seeking worthy opponents to satisfy his lust for combat.\n\nCharismatic, sadistic, and obsessed with strength, Hisoka treats battles as a game, often allowing enemies to grow stronger just to enjoy killing them at their peak. He is both a cunning strategist and a flamboyant showman, making him as terrifying as he is captivating.\n\nHis Nen ability, Bungee Gum, gives his aura the properties of both rubber and gum, allowing him to control the battlefield with deceptive and flexible tactics—binding, pulling, and striking with deadly precision."
+  }

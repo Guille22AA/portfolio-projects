@@ -1,0 +1,192 @@
+{
+    "id": 17,
+    "nick": "Lille",
+    "fullName": "Lille Barro",
+    "alias": "X-Axis / The First Quincy",
+    "anime": "Bleach",
+    "affiliation": "Wandenreich",
+    "roles": ["Bot"],
+    "attackTypes": ["Ranged"],
+    "damageTypes": ["Magic"],
+    "class": "Marksman",
+    "resource": {
+      "name": "Reiatsu",
+      "type": "UR",
+      "maxValue": 315,
+      "regen": "7.4 + 0.7 × lvl²"
+    },
+    "difficulty": "Easy",
+    "splashArt": "/splashArts/lille_splashart.jpg",
+    "icon": "/splashArts/lille_icon.png",
+    "render": "/splashArts/lille_render.png",
+  
+    "stats": {
+      "health": "580 + 107 × lvl²",
+      "healthRegen": "3.5 + 0.55 × lvl²",
+      "armor": "27 + 4.7 × lvl²",
+      "attackDamage": "62 + 3.8 × lvl²",
+      "magicResistance": "30 + 1.3 × lvl²",
+      "criticalDamage": "200%",
+      "movementSpeed": "325",
+      "attackRange": "650",
+      "attackSpeed": {
+        "base": "0.681",
+        "windup": "17.708%",
+        "asRatio": "0.625",
+        "bonusAS": "4%"
+      },
+      "missileSpeed": "2500"
+    },
+  
+    "quotes": {
+      "selection": "I am the first Quincy, chosen by His Majesty.",
+      "general": [
+        "The X-Axis pierces everything. Distance, barriers, none of it matters.",
+        "You thought you were safe behind that defense? Foolish.",
+        "The power I wield is not a weapon. It is divine judgment.",
+        "Your life is over the moment I take aim.",
+        "The Almighty's gift flows through me. I am his gun.",
+        "I am Lille Barro, the eagle that soars above all.",
+        "Your prayers will not reach you. Only my bullets will."
+      ],
+      "interactions": {
+        "Yhwach ID to be specified": ["ally", "Those blessed by Yhwach cannot be defeated."],
+        "Kyoraku ID to be specified": ["enemy", "How could a Shinigami hope to grasp the scope of my ability?"]
+      }
+    },
+  
+    "abilities": {
+      "passive": {
+        "name": "The X-Axis",
+        "description": "All of Lille Barro's basic attacks and abilities deal an additional percentage of Lethal Damage, scaling from 4% at level 1 to 10% at maximum level. This bonus applies on-hit with abilities as well.",
+        "icon": "url_por_especificar",
+        "effects": [
+          {
+            "type": "Lethal Damage Bonus",
+            "scaling": "4% → 10% (based on level)",
+            "applicability": "Basic attacks and abilities",
+            "onHitEffects": true
+          }
+        ]
+      },
+  
+      "h1": {
+        "name": "Holy Arrow",
+        "description": "Barro fires a spiritual piercing shot in the target direction. The shot deals magic damage to the first enemy it passes through, then expands in width but deals only 60% damage to enemies hit thereafter.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Direction",
+        "castTime": "0.625",
+        "range": "1300 / 1240",
+        "width": "120 / 180",
+        "speed": "2200",
+        "cooldown": "10 / 9 / 8 / 7 / 6",
+        "cost": "55 / 60 / 65 / 70 / 75 Reiatsu",
+        "effects": {
+          "firstHit": {
+            "type": "Magic",
+            "baseValues": "50 / 90 / 130 / 170 / 210",
+            "scaling": "125 / 145 / 165 / 185 / 205% AP"
+          },
+          "expansion": {
+            "width": "Expands after first hit",
+            "damageReduction": "60% damage to subsequent hits"
+          }
+        }
+      },
+  
+      "h2": {
+        "name": "Saint's Mark",
+        "description": "Lille marks a target enemy with a glowing crosshair for 3 seconds. While marked, Lille's basic attacks and abilities deal bonus magic damage. If the marked enemy dies while the mark is active, cooldowns of Holy Arrow and God Step reset instantly. Marked minions grant 3 extra gold on death.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Unit (Enemy)",
+        "targetRange": "900",
+        "markDuration": "3s",
+        "cooldown": "12 / 10 / 8 / 6 / 4",
+        "cost": "50 Reiatsu",
+        "effects": {
+          "mark": {
+            "duration": "3s",
+            "visual": "Glowing crosshair"
+          },
+          "bonusDamage": {
+            "type": "Magic",
+            "baseValues": "20 / 35 / 50 / 65 / 80",
+            "scaling": "40% AP",
+            "applicability": "Basic attacks and abilities"
+          },
+          "markedKill": {
+            "condition": "Marked enemy dies",
+            "effect": "Holy Arrow and God Step cooldowns reset instantly"
+          },
+          "minionBonus": {
+            "condition": "Marked minion dies",
+            "effect": "+3 extra gold"
+          }
+        }
+      },
+  
+      "h3": {
+        "name": "God Step",
+        "description": "Lille performs a Quincy dash technique, gaining a burst of speed for 4 seconds with bonuses to movement speed and attack speed.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Self",
+        "duration": "4s",
+        "cooldown": "12",
+        "cost": "45 Reiatsu",
+        "effects": {
+          "movementSpeed": "60 / 70 / 80 / 90 / 100",
+          "attackSpeed": "40 / 55 / 70 / 85 / 100%"
+        }
+      },
+  
+      "h4": {
+        "name": "God's Judgment",
+        "description": "Lille locks onto a target enemy champion and channels for 2.5 seconds, sight-revealing both himself and the target. He gradually stores bullets into his weapon over the duration. At the end of the channel or by recasting after 0.5 seconds, Lille fires all stored bullets. Bullets deal magic damage scaled by missing health and critical strike bonuses. Each bullet executes minions and applies lifesteal at 100% effectiveness.",
+        "icon": "url_por_especificar",
+        "type": "Active (Channeled)",
+        "targetType": "Unit (Enemy Champion)",
+        "channelDuration": "2.5s",
+        "canMoveWhileChanneling": true,
+        "maxBullets": "5 / 6 / 7",
+        "bulletStoringInterval": "0.625 / 0.5208 / 0.4167s",
+        "recastWindow": "After 0.5s channel (or at end)",
+        "cooldown": "5s (if channel cancelled) / standard (if completed)",
+        "effects": {
+          "channeling": {
+            "sightReveal": "Both Lille and target revealed",
+            "movement": "Can move while channeling"
+          },
+          "bulletStorage": {
+            "count": "5 / 6 / 7 bullets maximum",
+            "storageRate": "0.625 / 0.5208 / 0.4167s per bullet"
+          },
+          "bulletsOnRecast": {
+            "count": "All stored bullets fired",
+            "sightGrant": "Brief sight around each trajectory",
+            "damage": {
+              "type": "Magic",
+              "baseValues": "45 / 55 / 65",
+              "scaling": "15% AP",
+              "scalingModifiers": [
+                "50% of critical strike chance bonus",
+                "50% of critical damage bonus",
+                "0% - 200% based on target's missing health"
+              ],
+              "formula": "Minimum damage × (1 + critical scaling) × (1 + missing health scaling)"
+            },
+            "effects": [
+              "First enemy hit takes damage",
+              "100% lifesteal effectiveness",
+              "Executes minions",
+              "Shots can hit structures"
+            ]
+          }
+        }
+      }
+    },
+  
+    "lore": "Lille Barro is the Sternritter 'X,' known as the first and strongest Quincy under Yhwach's command. As the wielder of the X-Axis, his bullets defy all laws of defense, piercing through anything without obstruction — walls, barriers, flesh, or even distance. Lille serves as Yhwach's elite guard, embodying divine precision and unquestionable loyalty, his presence instilling fear across battlefields. His calm demeanor and cold efficiency reflect his role as the 'sniper of God,' eliminating targets with unshakable certainty.\n\nBeyond his deadly accuracy, Lille is revered for his unshaken faith in Yhwach, seeing himself as the executioner of divine will. Though outwardly composed, he bears an unwavering arrogance, convinced of his invincibility and the futility of resistance. His power grants him not only overwhelming range and lethality but also the symbolic role of judgment — a soldier who sees himself not merely as a Quincy, but as an instrument of higher destiny."
+  }

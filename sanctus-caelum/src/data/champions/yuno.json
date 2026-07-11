@@ -1,0 +1,165 @@
+{
+    "id": 26,
+    "nick": "Yuno",
+    "fullName": "Yuno Grinberryall",
+    "alias": "Royal of the Spade Kingdom",
+    "anime": "Black Clover",
+    "affiliation": "Magic Knight",
+    "roles": ["Bot", "Mid"],
+    "attackTypes": ["Ranged"],
+    "damageTypes": ["Magic"],
+    "class": ["Marksman", "Sorcerer"],
+    "resource": {
+      "name": "Mana",
+      "type": "UR",
+      "maxValue": 340,
+      "regen": "8.25 + 0.8 × lvl²"
+    },
+    "difficulty": "Medium",
+    "splashArt": "/splashArts/yuno_splashart.jpg",
+    "icon": "/splashArts/yuno_icon.png",
+    "render": "/splashArts/yuno_render.png",
+  
+    "stats": {
+      "health": "630 + 107 × lvl²",
+      "healthRegen": "3.25 + 0.75 × lvl²",
+      "armor": "25 + 4.2 × lvl²",
+      "attackDamage": "60 + 3.5 × lvl²",
+      "magicResistance": "30 + 1.3 × lvl²",
+      "criticalDamage": "200%",
+      "movementSpeed": "330",
+      "attackRange": "525",
+      "attackSpeed": {
+        "base": "0.658",
+        "windup": "17.687%",
+        "bonusAS": "3.9%"
+      },
+      "missileSpeed": "2500"
+    },
+  
+    "quotes": {
+      "selection": "I'll become the Wizard King.",
+      "general": [
+        "The wind will guide me forward.",
+        "Even royalty must fight for their dreams.",
+        "This four-leaf grimoire chose me for a reason.",
+        "Calm, precise, unshakable… that's my way of fighting.",
+        "Bells toll for victory.",
+        "Spade or Clover, I'll protect what matters.",
+        "My magic isn't just power — it's my resolve."
+      ],
+      "interactions": {
+        "3": [
+            ["enemy", "I won't lose to you, Asta."],
+            ["ally", "Our paths may be different, Asta, but our goal is the same."],
+            ["enemy", "Fate put us here, but effort will decide who wins."]
+        ]
+      }
+    },
+  
+    "abilities": {
+      "passive": {
+        "name": "Mana Flow Control",
+        "description": "Yuno passively drains mana from enemies within 600 units. Drain amount scales based on his missing mana (higher when low). Mana stolen is restored to Yuno up to 10 per second max.",
+        "icon": "url_por_especificar",
+        "effectRadius": "600",
+        "drainAmount": "2 - 8 (based on level) per second per enemy",
+        "bonusRatio": "+0.05% of Yuno's missing mana",
+        "restoreMax": "10 mana per second max",
+        "scaling": "Higher drain when Yuno's mana is low"
+      },
+  
+      "h1": {
+        "name": "White Arch of the Gale",
+        "description": "Yuno fires 6 wind arrows that automatically target nearby visible enemies within range. Each arrow deals magic damage and applies on-hit effects.",
+        "icon": "url_por_especificar",
+        "type": "Active (Auto-Targeting)",
+        "targetType": "Nearby Enemies",
+        "arrowCount": "6",
+        "targetRange": "750",
+        "cooldown": "10 / 9 / 8 / 7 / 6",
+        "cost": "55 Mana",
+        "effects": {
+          "damage": {
+            "type": "Magic",
+            "baseValues": "40 / 55 / 70 / 85 / 100",
+            "scaling": "55% bonus AD + 20% AP",
+            "perArrow": true
+          },
+          "onHitEffects": true
+        }
+      },
+  
+      "h2": {
+        "name": "Sylph's Breathe",
+        "description": "Yuno envelops himself in wind for 2.25 seconds, becoming ghosted, gaining bonus movement speed, reducing all incoming magic damage by 25%, and dodging all non-turret basic attacks.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Self",
+        "duration": "2.25s",
+        "cooldown": "26 / 25 / 24 / 23 / 22",
+        "cost": "60 / 45 / 30 / 15 / 0 Mana",
+        "effects": {
+          "ghosted": true,
+          "movementSpeed": "+15 / 17.5 / 20 / 22.5 / 25%",
+          "magicDamageReduction": "-25% incoming magic damage",
+          "basicAttackDodge": "Dodges all non-turret basic attacks",
+          "collisionRadius": "150"
+        }
+      },
+  
+      "h3": {
+        "name": "Crescent Moon Kamaitachi",
+        "description": "Yuno launches razor-thin crescent blade of wind in straight line, dealing magic damage to all enemies in its path and slowing them.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Direction",
+        "range": "850",
+        "width": "100",
+        "cooldown": "10",
+        "cost": "70 / 75 / 80 / 85 / 90 Mana",
+        "effects": {
+          "damage": {
+            "type": "Magic",
+            "baseValues": "70 / 100 / 130 / 160 / 190",
+            "scaling": "60% AP"
+          },
+          "slow": {
+            "percentage": "30%",
+            "duration": "1.5s"
+          }
+        }
+      },
+  
+      "h4": {
+        "name": "Spirit Dive – Half Crown",
+        "description": "Yuno fuses with Sylph for 30 seconds, gaining enhanced combat abilities: increased movement and attack speed, AP amplification, extended attack range, bonus magic on-hit damage, and flight (ignores body block). Visuals: One glowing wing, half wind crown, wind-formed blade.",
+        "icon": "url_por_especificar",
+        "type": "Active (Transformation)",
+        "targetType": "Self",
+        "duration": "30s",
+        "cooldown": "120 / 100 / 80",
+        "cost": "100 Mana",
+        "effects": {
+          "transformation": {
+            "form": "Sylph fusion",
+            "visuals": ["One glowing wing", "Half wind crown", "Wind-formed blade"]
+          },
+          "stats": {
+            "movementSpeed": "+30 / 40 / 50%",
+            "attackSpeed": "+30 / 40 / 50%",
+            "apAmplification": "+15 / 25 / 35%",
+            "attackRange": "+75"
+          },
+          "onHit": {
+            "magicDamage": "+30% bonus magic on-hit damage"
+          },
+          "flight": {
+            "effect": "Ignores body block"
+          }
+        }
+      }
+    },
+  
+    "lore": "Yuno is a gifted magic knight from the Clover Kingdom and the lifelong rival of Asta. Raised in a remote village, he was chosen by a rare four-leaf grimoire and later discovered to be the lost prince of the Spade Kingdom.\n\nCalm, focused, and fiercely determined, Yuno is driven by a quiet ambition to become the Wizard King. Though reserved, he deeply values his rivalry with Asta and uses it as fuel to push his limits.\n\nMastering wind magic and bonded to the spirit Sylph, Yuno wields precise, high-speed spells and can enter Spirit Dive, a powerful form that amplifies his speed, attack range, and magical strength."
+  }

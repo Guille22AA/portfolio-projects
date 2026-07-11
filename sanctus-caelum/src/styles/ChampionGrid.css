@@ -1,0 +1,280 @@
+/* CHAMPIONS SECTION */
+
+.champions-section {
+  max-width: 1400px;
+  margin: 64px auto 80px;
+  padding: 0 32px;
+}
+
+.champions-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.champions-title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.champions-icon {
+  font-size: 32px;
+}
+
+.champions-title {
+  font-family: 'Cinzel', serif;
+  font-size: 32px;
+  color: #c8aa6e;
+  letter-spacing: 0.12em;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.title-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #c8aa6e, transparent);
+  max-width: 400px;
+}
+
+.title-line.left {
+  background: linear-gradient(to right, transparent, #c8aa6e);
+}
+
+.title-line.right {
+  background: linear-gradient(to left, transparent, #c8aa6e);
+}
+
+.champions-subtitle {
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  color: #856b34;
+  letter-spacing: 0.08em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* CHAMPIONS GRID */
+
+.champions-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+/* CHAMPION CARD */
+
+.champion-card {
+  position: relative;
+  background: transparent;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.champion-card:focus {
+  border: none !important;
+  outline: none !important;
+}
+
+.champion-splash {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.champion-splash {
+  position: relative;
+  height: 335px;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+.champion-splash img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  border: none !important;
+  display: block;
+  outline: none;
+}
+
+.champion-meta {
+  padding: 16px 12px;
+  background: rgba(17, 17, 17, 0.8);
+  border: none;
+  text-align: center;
+}
+
+.champion-name {
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  color: #c8aa6e;
+  margin: 0 0 4px 0;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.champion-anime {
+  font-size: 12px;
+  font-family: 'Cinzel', serif;
+  color: #eed399;
+  letter-spacing: 0.04em;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+}
+
+
+/* CHAMPION CARD HOVER EFFECTS */
+
+.champion-card:hover .champion-splash img {
+  transform: scale(1.08);
+}
+
+.champion-card:hover {
+  transform: translateY(-8px);
+}
+
+.champion-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid #c8aa6e;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.champion-card:hover::before {
+  opacity: 0.7;
+}
+
+/* EMPTY STATE */
+
+.champions-empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  text-align: center;
+}
+
+.champions-empty p {
+  font-size: 18px;
+  color: #9e9e9e;
+  font-family: 'Inter', sans-serif;
+}
+
+.header-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1200px) {
+  .champions-list {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .champions-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .champions-section {
+    margin: 48px auto 60px;
+    padding: 0 24px;
+  }
+
+  .champions-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .champions-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .champions-section {
+    margin: 32px auto 48px;
+    padding: 0 16px;
+  }
+
+  .champions-header {
+    margin-bottom: 32px;
+  }
+
+  .champions-title {
+    font-size: 24px;
+  }
+
+  .champion-splash {
+    height: 280px;
+  }
+
+  .champions-title-wrapper {
+    gap: 12px;
+  }
+
+  .champions-divider {
+    width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .champions-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .champions-section {
+    margin: 24px auto 32px;
+    padding: 0 12px;
+  }
+
+  .champions-title {
+    font-size: 20px;
+  }
+
+  .champions-subtitle {
+    font-size: 12px;
+  }
+
+  .champion-splash {
+    height: 240px;
+  }
+
+  .champion-meta {
+    padding: 12px 8px;
+  }
+
+  .champion-name {
+    font-size: 14px;
+  }
+
+  .champion-title {
+    font-size: 11px;
+  }
+
+  .champions-icon {
+    font-size: 24px;
+  }
+}

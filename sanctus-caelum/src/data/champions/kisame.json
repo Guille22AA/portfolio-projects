@@ -1,0 +1,204 @@
+{
+    "id": 15,
+    "nick": "Kisame",
+    "fullName": "Kisame Hoshigaki",
+    "alias": "Monster of the Hidden Mist",
+    "anime": "Naruto",
+    "affiliation": "Akatsuki",
+    "roles": ["Top", "Mid"],
+    "attackTypes": ["Melee"],
+    "damageTypes": ["Physical", "Magic"],
+    "class": "Fighter",
+    "resource": {
+      "name": "Chakra",
+      "type": "UR",
+      "maxValue": 280,
+      "regen": "7 + 0.8 × lvl²"
+    },
+    "difficulty": "Hard",
+    "splashArt": "/splashArts/kisame_splashart.jpg",
+    "icon": "/splashArts/kisame_icon.png",
+    "render": "/splashArts/kisame_render.png",
+  
+    "stats": {
+      "health": "625 + 106 × lvl²",
+      "healthRegen": "7 + 0.75 × lvl²",
+      "armor": "32 + 5.45 × lvl²",
+      "attackDamage": "66 + 3.7 × lvl²",
+      "magicResistance": "32 + 2.05 × lvl²",
+      "criticalDamage": "200%",
+      "movementSpeed": "345",
+      "attackRange": "175",
+      "attackSpeed": {
+        "base": "0.67",
+        "windup": "25%",
+        "bonusAS": "2.5%"
+      }
+    },
+  
+    "quotes": {
+      "selection": "Samehada thirsts… and so do I.",
+      "general": [
+        "They call me the Monster of the Hidden Mist for a reason.",
+        "Another meal for the sharks.",
+        "Relax, partner. I'll handle the dirty work.",
+        "You won't escape me… not in the water.",
+        "I am a true shinobi… my blade and I are one."
+      ],
+      "interactions": {
+        "12": ["ally", "Itachi-san... it seems that in the end... I'm not so worthless after all."]
+      }
+    },
+  
+    "abilities": {
+      "passive": {
+        "name": "Sharkskin's Hunger",
+        "description": "Periodically, Kisame empowers his next basic attack with Samehada and drains 2-5% (based on level) of the target's resource, restoring the same amount to Kisame. While in the River, Kisame regenerates 1% missing Chakra per second and gains +10% movement speed.",
+        "icon": "url_por_especificar",
+        "effects": [
+          {
+            "type": "Resource Drain",
+            "trigger": "Empowered basic attack (periodic)",
+            "drainAmount": "2% - 5% of target's resource (scales with level)",
+            "restoreAmount": "Same as drained"
+          },
+          {
+            "type": "River Bonus",
+            "condition": "While in River",
+            "chakraRegen": "1% missing Chakra per second",
+            "movementSpeed": "+10%"
+          }
+        ]
+      },
+  
+      "h1": {
+        "name": "Surging Slash",
+        "description": "Kisame dashes forward on a crashing wave, dealing physical damage in a line. Enemies hit by the wave at the end of the dash are knocked up briefly.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Direction",
+        "range": "700",
+        "cooldown": "12 / 11 / 10 / 9 / 8",
+        "cost": "50 Chakra",
+        "effects": {
+          "damage": {
+            "type": "Physical",
+            "baseValues": "60 / 95 / 130 / 165 / 200",
+            "scaling": "40% AP"
+          },
+          "knockup": {
+            "trigger": "Hit by wave at end of dash",
+            "duration": "Brief"
+          }
+        }
+      },
+  
+      "h2": {
+        "name": "Aqua Barrier",
+        "description": "Kisame summons a shield of swirling water, absorbing incoming damage for 3 seconds. When the shield expires or is recast, it bursts outward in a circular wave, knocking up enemies in close range and dealing physical damage.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Self",
+        "effectRadius": "525",
+        "duration": "3s",
+        "cooldown": "14 / 13 / 12 / 11 / 10",
+        "cost": "60 Chakra",
+        "effects": {
+          "shield": {
+            "baseValues": "60 / 90 / 120 / 150 / 180",
+            "scaling": "60% AP"
+          },
+          "burst": {
+            "trigger": "Shield expires or recast",
+            "effect": "Circular wave"
+          },
+          "damage": {
+            "type": "Physical",
+            "baseValues": "50 / 80 / 110 / 140 / 170",
+            "scaling": "50% AP",
+            "range": "Close range only"
+          },
+          "knockup": {
+            "duration": "0.5s"
+          }
+        }
+      },
+  
+      "h3": {
+        "name": "Shark Hunt",
+        "description": "Kisame marks an enemy champion at long range. After 0.5 seconds, a water shark spawns from a random direction and dashes into the target position, dealing magic damage and slowing the target for 1 second.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Unit (Enemy Champion)",
+        "range": "1200",
+        "width": "200",
+        "speed": "2100",
+        "delay": "0.5s",
+        "cooldown": "20 / 18 / 16 / 14 / 12",
+        "cost": "90 Chakra",
+        "effects": {
+          "mark": {
+            "duration": "Until shark spawns"
+          },
+          "sharkSpawn": {
+            "origin": "Random direction",
+            "target": "Target position"
+          },
+          "damage": {
+            "type": "Magic",
+            "baseValues": "70 / 110 / 150 / 190 / 230",
+            "scaling": "70% AP"
+          },
+          "slow": {
+            "duration": "1s",
+            "percentage": "20 / 25 / 30 / 35 / 40%"
+          }
+        }
+      },
+  
+      "h4": {
+        "name": "Water Prison Dome",
+        "description": "Kisame floods a massive area, filling it with water for 15 seconds. Kisame fuses with Samehada, becoming a shark-like form. While transformed, he gains bonus movement speed, life and chakra regeneration, and shark bite basic attacks with bonus damage that steal resources from enemies. Shark Hunt cooldown is reduced by 70%. Enemies inside the dome are nearsighted. If Kisame leaves, Water Prison Dome ends but all cooldowns reset immediately.",
+        "icon": "url_por_especificar",
+        "type": "Active (Zone)",
+        "targetType": "Location",
+        "effectRadius": "1800",
+        "domeDuration": "15s",
+        "cooldown": "140 / 120 / 100",
+        "cost": "120 Chakra",
+        "effects": {
+          "domeCreation": {
+            "effect": "Floods area with water",
+            "duration": "15s"
+          },
+          "transformation": {
+            "effect": "Kisame fuses with Samehada",
+            "form": "Shark-like form"
+          },
+          "bonuses": {
+            "movementSpeed": "20 / 30 / 40%",
+            "lifeRegen": "4 / 6 / 8% per second",
+            "chakraRegen": "4 / 6 / 8% per second"
+          },
+          "basicAttacks": {
+            "type": "Shark bites",
+            "range": "Slightly reduced",
+            "damage": "Base AD + 40% AP per hit",
+            "effect": "Steal resources from enemies"
+          },
+          "sharkHuntReduction": "70% cooldown reduction",
+          "nearsight": {
+            "target": "All enemies inside dome",
+            "effect": "Nearsighted"
+          },
+          "domeBreak": {
+            "trigger": "Kisame leaves dome",
+            "effect1": "Water Prison Dome ends",
+            "effect2": "All cooldowns reset immediately"
+          }
+        }
+      }
+    },
+  
+    "lore": "Kisame Hoshigaki was a shinobi of Kirigakure, feared as the 'Monster of the Hidden Mist' and one of the legendary Seven Ninja Swordsmen. Wielding Samehada, a sentient blade that devours chakra, Kisame became infamous for his immense chakra reserves, monstrous strength, and shark-like appearance. After defecting from his village, he joined the Akatsuki, paired with Itachi Uchiha in one of the organization's most dangerous duos. His fighting style combined Samehada's chakra-draining power with overwhelming Water Release techniques, creating entire oceans and summoning chakra sharks to dominate the battlefield.\n\nIn personality, Kisame was brutal, cold, and bloodthirsty, though also disciplined and unwaveringly loyal to his comrades in Akatsuki. Despite his violent nature, he shared a strange camaraderie with Itachi, respecting his calm and ideals. His true might surfaced when merging with Samehada, gaining even greater shark-like traits and becoming nearly unstoppable in water. Kisame is remembered as one of Akatsuki's most formidable members, a warrior who embodied both ruthless ferocity and absolute devotion to his cause."
+  }

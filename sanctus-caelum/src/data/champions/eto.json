@@ -1,0 +1,228 @@
+{
+    "id": 7,
+    "nick": "Eto",
+    "fullName": "Eto Yoshimura",
+    "alias": "The One-Eyed Owl",
+    "anime": "Tokyo Ghoul",
+    "affiliation": "Aogiri Tree",
+    "roles": ["Jungle"],
+    "attackTypes": ["Melee"],
+    "damageTypes": ["Physical"],
+    "class": ["Slayer", "Warden"],
+    "resource": {
+      "name": "RC Cells",
+      "type": "RC_Ghoul",
+      "maxValue": 375,
+      "regen": "Kills, assists, monster clears",
+      "passiveRegen": "8 + 0.7 × lvl²",
+      "decay": "Faster drain than UR"
+    },
+    "difficulty": "Medium",
+    "splashArt": "/splashArts/eto_splashart.png",
+    "icon": "/splashArts/eto_icon.png",
+    "render": "/splashArts/eto_render.png",
+
+    "stats": {
+      "health": "590 + 115 × lvl²",
+      "healthRegen": "8 + 0.9 × lvl²",
+      "armor": "31 + 4.5 × lvl²",
+      "attackDamage": "64 + 3.1 × lvl²",
+      "magicResistance": "32 + 2.05 × lvl²",
+      "criticalDamage": "200%",
+      "movementSpeed": "335",
+      "attackRange": "150",
+      "attackSpeed": {
+        "base": "0.688",
+        "windup": "15.333%",
+        "asRatio": "0.625",
+        "bonusAS": "2.1%"
+      }
+    },
+  
+    "quotes": {
+      "selection": "Pain is proof that you're alive. Embrace it.",
+      "general": [
+        "A ghoul that plays at being human… or a human that plays at being a ghoul?",
+        "You're neither fully one nor the other. Just like me.",
+        "The One-Eyed King is not a person… it is an ideology.",
+        "I was born in a cage, and now I want to burn all cages down.",
+        "Stories are powerful. They can make people believe… even in monsters.",   
+        "This world is wrong… twisted. That's why I write, to expose its lies.",
+        "Father… you chose peace. I chose war.",
+        "Books are lies that tell the truth."
+      ],
+      "interactions": {
+        "Kaneki ID to be specified": [["ally", "enemy"], "Kaneki… your tragedy is what makes you beautiful."],
+        "Tatara ID to be specified": ["ally", "Our goals align, but never forget—I'm the Owl. I soar alone."]
+      }
+    },
+  
+    "abilities": {
+      "passive": {
+        "name": "Kakuja Evolution",
+        "description": "Every kill grants 5 Kakuja stacks. Assists grant 2 stacks. Clearing jungle camps grants 1 stack. Stacks evolve her ultimate into stronger phases. At Phase 5, reactivating the ultimate triggers Suicidal Mode where Eto explodes in RC energy.",
+        "icon": "url_por_especificar",
+        "effects": [
+          {
+            "type": "Stack Gain - Kill",
+            "value": "5 stacks"
+          },
+          {
+            "type": "Stack Gain - Assist",
+            "value": "2 stacks"
+          },
+          {
+            "type": "Stack Gain - Camp Clear",
+            "value": "1 stack"
+          },
+          {
+            "type": "Ultimate Evolution",
+            "trigger": "Stacks accumulate",
+            "phases": "5 phases"
+          },
+          {
+            "type": "Phase 5 Mechanic",
+            "trigger": "Reactivate at Phase 5",
+            "effect": "Suicidal Mode - RC energy explosion"
+          }
+        ]
+      },
+  
+      "h1": {
+        "name": "Blade of the Owl",
+        "description": "Eto stabs in a line in the target direction dealing physical damage to enemies hit. Against champions and large monsters, she heals for a percentage of her missing health based on number of targets hit. Her next basic attack is empowered, dealing bonus physical damage.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Direction",
+        "castTime": "0.25",
+        "range": "25 - 600",
+        "width": "125",
+        "cooldown": "5 / 4.5 / 4 / 3.5 / 3",
+        "cost": "40 RC",
+        "effects": {
+          "damage": {
+            "type": "Physical",
+            "baseValues": "25 / 40 / 55 / 70 / 85",
+            "scaling": "70% AD"
+          },
+          "healing": {
+            "trigger": "Against champions and large monsters",
+            "amountPercent": "17% - 51% of missing health (based on number of targets hit)"
+          },
+          "empoweredAttack": {
+            "effect": "Next basic attack enhanced",
+            "damage": "20% AD (+ 15% AP) physical damage"
+          }
+        }
+      },
+  
+      "h2": {
+        "name": "Thorned Trap",
+        "description": "From a target wall, Eto sprouts RC branches that form a circular net trap for 4.5 seconds. The trap roots and damages nearby enemy champions and small/medium jungle monsters on hit.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Wall",
+        "targetRange": "1125",
+        "range": "275",
+        "effectRadius": "325",
+        "duration": "4.5s",
+        "cooldown": "16 / 15 / 14 / 13 / 12",
+        "cost": "60 RC",
+        "effects": {
+          "damage": {
+            "type": "Physical",
+            "baseValues": "50 / 80 / 110 / 140 / 170",
+            "scaling": "40% bonus AD"
+          },
+          "root": {
+            "duration": "1.25 / 1.5 / 1.75 / 2 / 2.25s",
+            "targets": "Enemy champions, small/medium jungle monsters"
+          }
+        }
+      },
+  
+      "h3": {
+        "name": "Kagune Sleeve",
+        "description": "Eto fires a branching kagune tentacle forward. On hit, it slows the target champion for 2 seconds and deals physical damage.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Direction",
+        "castTime": "0.5",
+        "range": "1200",
+        "width": "180",
+        "speed": "2500",
+        "cooldown": "14 / 12 / 10 / 8 / 6",
+        "cost": "Por especificar",
+        "effects": {
+          "damage": {
+            "type": "Physical",
+            "baseValues": "90 / 130 / 170 / 210 / 250",
+            "scaling": "70% bonus AD"
+          },
+          "slow": {
+            "duration": "2s",
+            "percentage": "40 / 50 / 60 / 70 / 80%"
+          }
+        }
+      },
+  
+      "h4": {
+        "name": "Kakuja: One-Eyed Owl",
+        "description": "Eto transforms into her Kakuja form, gaining HP, AD, armor, MR, and lifesteal, plus new abilities depending on evolution phase. Lasts until deactivated (except Phase 5) or killed. Phase 5 grants Suicidal Mode upon reactivation—an RC AoE explosion.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Self",
+        "cooldown": "70 / 90 / 110 / 130 / 150",
+        "cost": "80 / 90 / 100 / 110 / 120 RC",
+        "duration": "15 / 18 / 20 / 25 / 30s",
+        "phases": {
+          "phase1": {
+            "name": "Phase 1 - Initial Transformation",
+            "bonuses": "+350% HP, +90% AD, +8% lifesteal",
+            "ability": "Auto-attacks enhanced with blade-arms"
+          },
+          "phase2": {
+            "name": "Phase 2 - Dual Blades",
+            "bonuses": "+600 HP, +120% AD, +15% resistances, +12% lifesteal",
+            "ability": "Gains 4 blade-arms (2 controlled, 2 automatic)",
+            "spikes": "Back spikes reflect 15% of melee damage"
+          },
+          "phase3": {
+            "name": "Phase 3 - Pincers & Projectiles",
+            "bonuses": "+900 HP, +180% AD, +20% resistances, +15% lifesteal",
+            "ability": "Controllable pincers",
+            "pincer_active": {
+              "effect": "Roots target for 1.75s, deals physical damage",
+              "damage": "220 (+ 90% AD)",
+              "cooldown": "4s"
+            },
+            "projectiles": "Back periodically launches RC projectiles automatically",
+            "projectile_damage": "90 per projectile (+ 80% AD based on level)",
+            "projectile_cooldown": "4s",
+            "additional": "4 arms automatically attacking nearby enemies"
+          },
+          "phase4": {
+            "name": "Phase 4 - Full Arsenal",
+            "bonuses": "+1200 HP, +220% AD, +25% resistances, +18% lifesteal",
+            "ability": "Gains tail-tentacles for extra AoE auto-attacks",
+            "projectiles": "RC projectiles increase in amount, damage, and frequency",
+            "projectile_bonus": "50 bonus damage (+ 80% AD based on level)",
+            "projectile_cooldown": "3.5s"
+          },
+          "phase5": {
+            "name": "Phase 5 - Suicidal Mode (PERMANENT)",
+            "bonuses": "+2000 HP, +250% AD, +30% resistances, +20% lifesteal",
+            "ability": "2 functional arms, 6 automatic blades",
+            "permanent": "Cannot revert form",
+            "reactivation": {
+              "effect": "RC AoE Explosion",
+              "damage": "300 (+ 200% AD of Eto's maximum HP)",
+              "type": "Physical Damage"
+            }
+          }
+        }
+      }
+    },
+  
+    "lore": "Eto Yoshimura, known in the human world as the popular novelist Sen Takatsuki, is in truth the feared One-Eyed Owl. Born as a half-human, half-ghoul, she grew up harboring hatred toward both worlds that rejected her, turning her into a manipulative, sadistic figure. Behind her playful and mocking persona lies a calculating mind determined to dismantle human society and elevate ghouls to dominance.\n\nIn battle, Eto wields her Ukaku kagune, allowing her to fight both at range and in close combat with lethal precision. Her true terror, however, emerges in her kakuja transformation into the Owl, a monstrous abomination that grows stronger with every life taken. With evolving forms that grant her immense power and durability, Eto embodies the uncontrollable chaos of ghoul evolution, a force of destruction that few can hope to withstand."
+  }

@@ -1,0 +1,234 @@
+{
+    "id": 23,
+    "nick": "Trunks",
+    "fullName": "Trunks Brief",
+    "alias": "Future Trunks",
+    "anime": "Dragon Ball",
+    "affiliation": "Z Fighter",
+    "roles": ["Top"],
+    "attackTypes": ["Melee"],
+    "damageTypes": ["Physical", "Magic"],
+    "class": "Duelist",
+    "resource": {
+      "name": "Ki",
+      "type": "UR",
+      "maxValue": 300,
+      "regen": "8 + 0.7 × lvl²"
+    },
+    "difficulty": "Medium",
+    "splashArt": "/splashArts/trunks_splashart.jpg",
+    "icon": "/splashArts/trunks_icon.png",
+    "render": "/splashArts/trunks_render.png",
+  
+    "stats": {
+      "health": "620 + 99 × lvl²",
+      "healthRegen": "8.5 + 0.55 × lvl²",
+      "armor": "33 + 4.7 × lvl²",
+      "attackDamage": "66 + 3.3 × lvl²",
+      "magicResistance": "32 + 2.05 × lvl²",
+      "criticalDamage": "200%",
+      "movementSpeed": "345",
+      "attackRange": "150",
+      "attackSpeed": {
+        "base": "0.69",
+        "windup": "13.793%",
+        "bonusAS": "3.2%"
+      }
+    },
+  
+    "quotes": {
+      "selection": "I will protect this timeline… no matter the cost.",
+      "general": [
+        "I came back in time to warn you about the androids.",
+        "I'll never forgive you… for what you've done to my world!",
+        "Hope isn't something you can destroy.",
+        "This sword carries the weight of my world."
+      ],
+      "interactions": {
+        "Goku ID to be specified": ["ally", "Goku, you don't understand how dangerous they are!"],
+        "Vegeta ID to be specified": ["ally", "Father, I'll make you proud."],
+        "Cell ID to be specified": ["enemy", "Cell! I won't let you destroy everything again!"]
+      }
+    },
+  
+    "abilities": {
+      "passive": [
+        {
+          "name": "Saiyan Growth",
+          "description": "Each time Trunks fully enters his Ki Buff state, he transforms into Saiyan form based on game time. Between minutes 0-15: Saiyan 1. Between minutes 15-30: Saiyan 2. After minute 30: Saiyan 3. Ascension lasts 15/25/35 seconds.",
+          "icon": "url_por_especificar",
+          "transformations": {
+            "saiyan1": {
+              "timeframe": "Minutes 0-15",
+              "abilityPower": "+15%",
+              "attackDamage": "+20%",
+              "attackSpeed": "+10%",
+              "movementSpeed": "+8%",
+              "duration": "15s"
+            },
+            "saiyan2": {
+              "timeframe": "Minutes 15-30",
+              "abilityPower": "+30%",
+              "attackDamage": "+30%",
+              "attackSpeed": "+20%",
+              "movementSpeed": "+12%",
+              "duration": "25s"
+            },
+            "saiyan3": {
+              "timeframe": "After minute 30",
+              "abilityPower": "+45%",
+              "attackDamage": "+40%",
+              "attackSpeed": "+30%",
+              "movementSpeed": "+16%",
+              "duration": "35s"
+            }
+          }
+        },
+        {
+          "name": "Hidden Passive: Android Bounty",
+          "description": "Trunks gains a bonus bounty every time he kills an android.",
+          "icon": "url_por_especificar"
+        }
+      ],
+  
+      "h1": {
+        "name": "Blade Thrust",
+        "description": "Trunks dashes in target direction, then stabs nearby enemy. Can hit structures and wards. Stabbing reduces cooldown by 50%. Stab deals physical damage and applies on-hit effects. Can cast any ability during dash. Target does not need visibility unless it's a ward.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Direction + Nearby Enemy",
+        "targetRange": "50 / 400",
+        "range": "420",
+        "cooldown": "13 / 11.25 / 9.5 / 7.75 / 6",
+        "cost": "20 Ki",
+        "effects": {
+          "dash": {
+            "canCastDuringDash": true
+          },
+          "stab": {
+            "damage": {
+              "type": "Physical",
+              "baseValues": "70 / 80 / 90 / 100 / 110",
+              "scaling": "90 / 95 / 100 / 105 / 110% bonus AD"
+            },
+            "onHitEffects": true,
+            "targetTypes": ["Enemies", "Structures", "Wards"]
+          },
+          "cooldownReduction": {
+            "effect": "50% cooldown reduction on stab hit"
+          }
+        }
+      },
+  
+      "h2": {
+        "name": "Fast Slash",
+        "description": "Trunks empowers next 2 basic attacks within 4 seconds to gain 25 bonus range and attack speed. First attack slows target 30% for 1 second. Second attack empowered with AP damage including to structures. Resets basic attack timer. Each attack restores 15 Ki on hit.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Self",
+        "empoweredAttacks": "2 within 4s",
+        "cooldown": "11 / 10 / 9 / 8 / 7",
+        "cost": "40 Ki",
+        "effects": {
+          "firstAttack": {
+            "bonusRange": "+25",
+            "bonusAttackSpeed": "50 / 60 / 70 / 80 / 90%",
+            "slow": {
+              "percentage": "30%",
+              "duration": "1s"
+            }
+          },
+          "secondAttack": {
+            "bonusAttackSpeed": "50 / 60 / 70 / 80 / 90%",
+            "apDamage": {
+              "type": "Magic",
+              "baseMultiplier": "160 / 170 / 180 / 190 / 200%",
+              "appliesTo": ["Enemies", "Structures"]
+            }
+          },
+          "kiRestore": {
+            "amount": "15 Ki per hit",
+            "targets": ["Enemies", "Monsters"]
+          },
+          "basicAttackReset": true
+        }
+      },
+  
+      "h3": {
+        "name": "Warp Shift",
+        "description": "Trunks blinks up to 475 units towards target location, then slashes sword in cone towards nearest enemy, dealing physical damage and revealing for 1 second. Target does not need visibility.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Direction",
+        "castTime": "0.25s",
+        "targetRange": "340",
+        "range": "400",
+        "width": "130",
+        "angle": "100°",
+        "speed": "2600",
+        "effectRadius": "750",
+        "cooldown": "26 / 23 / 20 / 17 / 14",
+        "cost": "70 Ki",
+        "effects": {
+          "blink": {
+            "distance": "Up to 475 units"
+          },
+          "slash": {
+            "targetArea": "Cone towards nearest enemy",
+            "damage": {
+              "type": "Physical",
+              "baseValues": "80 / 130 / 180 / 230 / 280",
+              "scaling": "30% bonus AP + 55% AD"
+            }
+          },
+          "reveal": {
+            "duration": "1s"
+          }
+        }
+      },
+  
+      "h4": {
+        "name": "Ki Skirmish",
+        "description": "Trunks fires powerful circumference of Ki on ground dealing magic damage to enemies hit. Minions and non-epic monsters take 50% reduced damage. Enemies marked for 8 seconds (0.5s delay). While near marked target, Trunks gains bonus movement speed. While marked, attacks/abilities trigger bonus AP damage and heal. Mark disappears on hit.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Location",
+        "targetRange": "1200",
+        "effectRadius": "750",
+        "castTime": "1s",
+        "cooldown": "110 / 90 / 70",
+        "cost": "100 Ki",
+        "effects": {
+          "damage": {
+            "type": "Magic",
+            "baseValues": "100 / 150 / 200",
+            "scaling": "90% AP"
+          },
+          "minionReduction": {
+            "damage": "50% reduced",
+            "targets": ["Minions", "Non-epic monsters"]
+          },
+          "marking": {
+            "duration": "8s",
+            "delay": "0.5s before applied"
+          },
+          "markedEffects": {
+            "movementSpeed": "+10 / 15 / 30% (while near marked target)",
+            "bonusDamage": {
+              "type": "Magic",
+              "baseMultiplier": "120 / 140 / 160% bonus AP",
+              "triggers": "Attacks and abilities hitting marked target"
+            },
+            "heal": {
+              "baseValues": "18.75 / 25 / 31.25",
+              "scaling": "15% bonus AD",
+              "triggers": "When hitting marked target"
+            },
+            "markRemoval": "Disappears on hit"
+          }
+        }
+      }
+    },
+  
+    "lore": "Trunks is the son of Vegeta and Bulma from a devastated future timeline. Unlike his peers in the main timeline, Trunks grew up in a world ravaged by Android 17 and 18, where most of Earth's defenders had been slain. Trained in secret by the last surviving warrior, Gohan, Trunks inherited both his father's Saiyan power and his mother's brilliant intellect. His resolve to protect humanity forged him into a skilled swordsman and fighter, wielding his blade alongside his Super Saiyan strength to carve a path of survival.\n\nDriven by a sense of duty and hope, Trunks travels back in time to warn Goku and the others of the impending Android threat, altering history itself. Though hardened by loss, he carries a strong moral compass, valuing compassion and justice over pride. With his mastery of ki, swordsmanship, and Saiyan transformation, Trunks represents both the tragedy of a ruined world and the enduring will to fight for a better future."
+  }

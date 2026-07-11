@@ -1,0 +1,190 @@
+{
+    "id": 11,
+    "nick": "Ichibē",
+    "fullName": "Ichibē Hyōsube",
+    "alias": "Head Monk",
+    "anime": "Bleach",
+    "affiliation": "Royal Guard",
+    "roles": ["Support"],
+    "attackTypes": ["Melee"],
+    "damageTypes": ["Magic"],
+    "class": ["Oracle", "Sorcerer"],
+    "resource": {
+      "name": "Reiatsu",
+      "type": "UR",
+      "maxValue": 400,
+      "regen": "6 + 0.8 × lvl²"
+    },
+    "difficulty": "Easy",
+    "splashArt": "/splashArts/ichibe_splashart.jpg",
+    "icon": "/splashArts/ichibe_icon.png",
+    "render": "/splashArts/ichibe_render.png",
+  
+    "stats": {
+      "health": "640 + 115 × lvl²",
+      "healthRegen": "5.5 + 0.5 × lvl²",
+      "armor": "38 + 5 × lvl²",
+      "attackDamage": "64 + 3.5 × lvl²",
+      "magicResistance": "32 + 2.05 × lvl²",
+      "criticalDamage": "200%",
+      "movementSpeed": "330",
+      "attackRange": "125",
+      "attackSpeed": {
+        "base": "0.675",
+        "windup": "25%",
+        "asRatio": "0.625",
+        "bonusAS": "2.05%"
+      }
+    },
+  
+    "quotes": {
+      "selection": "Ink is not mere darkness — it is the source of creation.",
+      "general": [
+        "All things have names. When something loses its name, it loses its power.",
+        "I am the Monk Who Calls the Real Name. The one who named everything in Soul Society.",
+        "Black is the color that gives birth to all others.",
+        "This is the end. Your name has been stolen.",
+        "I am the High Priest. The brush in my hand can paint the fate of gods.",
+        "My black will strip away every ounce of your power."
+      ],
+      "interactions": {
+        "Yhwach ID to be specified": ["enemy", "I shall take your power by staining it black."],
+        "Ichigo ID to be specified": ["ally", "Remember Ichigo, your sword carries the weight of the name I gave it."]
+      }
+    },
+  
+    "abilities": {
+      "passive": {
+        "name": "True Black Words",
+        "description": "Ichibē possesses two passive abilities: Monk of Names allows an ally to revive him by channeling for 2 seconds next to his body for 5 seconds after death, restoring 35% HP and 20% Mana. Bearer of Black prevents his abilities from being copied or stolen.",
+        "icon": "url_por_especificar",
+        "effects": [
+          {
+            "type": "Monk of Names",
+            "trigger": "Upon death",
+            "corpse_duration": "5s",
+            "ally_channel": "2s next to body",
+            "revival_hp": "35%",
+            "revival_mana": "20%"
+          },
+          {
+            "type": "Bearer of Black",
+            "effect": "Abilities cannot be copied or stolen"
+          }
+        ]
+      },
+  
+      "h1": {
+        "name": "Ink Surge",
+        "description": "Ichibē unleashes a stream of ink onto the target champion or herself, which bounces to nearby unaffected champions up to twice, alternating between enemies and allies. Heals allies and deals magic damage to enemies, with each bounce modifying effectiveness by -10% (+ 10% per 100 AP).",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Unit (Ally, Enemy, or Self)",
+        "castTime": "0.25",
+        "cooldown": "Por especificar",
+        "cost": "Por especificar",
+        "effects": {
+          "heal": {
+            "target": "Allies",
+            "baseValues": "55 / 80 / 105 / 130 / 155",
+            "scaling": "40% AP"
+          },
+          "damage": {
+            "target": "Enemies",
+            "type": "Magic",
+            "baseValues": "48 / 76 / 104 / 132 / 160",
+            "scaling": "40% AP",
+            "label": "Minimum damage"
+          },
+          "bounce": {
+            "maxBounces": "Up to 2 bounces",
+            "alternation": "Alternates between enemies and allies",
+            "scaling": "Each bounce: -10% effectiveness (+ 10% per 100 AP)"
+          }
+        }
+      },
+  
+      "h2": {
+        "name": "Pool of Blinding Ink",
+        "description": "Ichibē splashes ink in a wide horizontal zone. Enemies hit on cast take magic damage. The zone persists for 4 seconds; enemies walking into it are blinded for 1 second, stay briefly blinded after leaving (0.5s), and are slowed with decay over the zone's duration.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Location",
+        "castTime": "0.25",
+        "targetRange": "700",
+        "effectRadius": "200",
+        "speed": "3000",
+        "duration": "4s",
+        "cooldown": "Por especificar",
+        "cost": "70 / 75 / 80 / 85 / 90 Reiatsu",
+        "effects": {
+          "initialDamage": {
+            "type": "Magic",
+            "baseValues": "50 / 70 / 90 / 110 / 130",
+            "scaling": "10% AP"
+          },
+          "blindEffect": {
+            "duration": "1s (entering), 0.5s (leaving)",
+            "effect": "Blinded status"
+          },
+          "slowEffect": {
+            "percentage": "40 / 50 / 60 / 70 / 80%",
+            "decay": "Decays over zone duration"
+          }
+        }
+      },
+  
+      "h3": {
+        "name": "Hidden Seal",
+        "description": "Ichibē marks an ally or a jungle monster. After 1 second, they become invisible for 5 seconds (+ 0.5s per 100 AP). Invisibility ends after hitting or being hit. They remain targetable to turrets and AoE attacks (invisibility affects only enemy vision).",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Unit (Ally or Jungle Monster)",
+        "castTime": "0.25",
+        "targetRange": "500",
+        "delay": "1s before invisibility",
+        "invisibility_duration": "5s (+ 0.5s per 100 AP)",
+        "cooldown_ally": "22 / 20 / 18 / 16 / 14",
+        "cooldown_monster": "15s (+ 0.5s per 200 base HP)",
+        "cost": "80 / 95 / 100 / 115 / 130 Reiatsu",
+        "effects": {
+          "invisibility": {
+            "effect": "Becomes invisible to enemy vision",
+            "endCondition": "Upon hitting or being hit"
+          },
+          "targetability": {
+            "turrets": "Still targetable",
+            "aoe": "Still targetable",
+            "single_target": "Not targetable"
+          }
+        }
+      },
+  
+      "h4": {
+        "name": "Name Erasure",
+        "description": "Ichibē launches a spell onto the target enemy champion that polymorphs them into a harmless critter for a duration. Their base movement speed is reduced by 60 and they are disarmed. After the polymorph duration ends, the affected enemy receives magic damage instantly.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Unit (Enemy Champion)",
+        "targetRange": "900",
+        "polymorph_duration": "3 / 3.5 / 4",
+        "cooldown": "120 / 100 / 80",
+        "cost": "100 Reiatsu",
+        "effects": {
+          "polymorph": {
+            "effect": "Transform into harmless critter",
+            "ms_reduction": "60",
+            "disarm": "True"
+          },
+          "post_polymorph_damage": {
+            "trigger": "After polymorph duration ends",
+            "type": "Magic",
+            "baseValues": "100 / 200 / 300",
+            "scaling": "40% AP"
+          }
+        }
+      }
+    },
+  
+    "lore": "Ichibē Hyōsube, known as the 'Monk Who Calls the Real Name,' is the leader of the Royal Guard (Zero Division) and one of the most ancient figures in Soul Society. Wielding the massive brush-like weapon Ichimonji, he commands the power of black ink that erases and redefines the names of anything it touches, stripping away their essence and power. Calm but imposing, Ichibē is both a sage and a warrior, revered for his vast knowledge of spiritual arts and feared for the authority he wields over names and identities themselves.\n\nDespite his solemn duty, Ichibē carries a playful and cryptic personality, often mocking enemies while hiding the overwhelming weight of his strength. His mastery of reiatsu and the darkness of his ink makes him a protector of balance in the world, while his unique bond with words and names symbolizes the deep connection between existence and identity. On the battlefield, Ichibē is an enigmatic force—a support who shields and deceives allies, while robbing enemies of their very sense of self."
+  }

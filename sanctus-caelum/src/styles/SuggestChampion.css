@@ -1,0 +1,92 @@
+.suggest-champion-container {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 0 32px;
+  }
+  
+  .suggest-form-box {
+    background: rgba(26, 26, 26, 0.8);
+    border: 2px solid #c8aa6e;
+    border-radius: 8px;
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .suggest-form-box h2 {
+    color: #c8aa6e;
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 24px;
+  }
+  
+  .suggest-form-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .suggest-form-box input,
+  .suggest-form-box textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #c8aa6e;
+    color: #c8aa6e;
+    padding: 12px;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+  }
+  
+  .suggest-form-box input::placeholder,
+  .suggest-form-box textarea::placeholder {
+    color: #c8aa6e;
+    opacity: 0.6;
+  }
+  
+  .suggest-form-box button {
+    background: linear-gradient(135deg, #c8aa6e 0%, #8b7d3e 100%);
+    color: #000;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Cinzel', serif;
+  }
+  
+  .suggest-form-box button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(200, 170, 110, 0.3);
+  }
+  
+  .suggest-form-box button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  .message {
+    text-align: center;
+    margin-top: 16px;
+    padding: 12px;
+    border-radius: 4px;
+    background: rgba(200, 170, 110, 0.1);
+    color: #c8aa6e;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .back-btn {
+    background: rgba(200, 170, 110, 0.2);
+    border: 1px solid #c8aa6e;
+    color: #c8aa6e;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Cinzel', serif;
+  }
+  
+  .back-btn:hover {
+    background: rgba(200, 170, 110, 0.3);
+  }

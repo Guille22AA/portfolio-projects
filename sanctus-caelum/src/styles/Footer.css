@@ -1,0 +1,286 @@
+/* FOOTER STYLES */
+
+.main-footer {
+  background: #0a0a0a;
+  color: #f0f0f0;
+  padding-top: 0;
+}
+
+/* SIMULATION BAR */
+
+.footer-simulation-bar {
+  background: #1a1a1a;
+  border-top: none;
+  border-bottom: none;
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  padding: 20px 32px;
+  flex-wrap: wrap;
+}
+
+
+/* MAIN FOOTER CONTENT */
+
+.footer-content {
+  padding: 48px 32px;
+  text-align: center;
+}
+
+.footer-logo-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;  /* ← Reduce esto para acercar más */
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.footer-logo-name {
+  font-size: 24px;
+  color: #c8aa6e;
+  margin: 0;
+  letter-spacing: 0.08em;
+  font-family: 'Cinzel', serif;
+}
+
+.footer-logo-G2A2 {
+  width: 150px;
+  height: 125px;
+
+}
+
+.footer-copyright {
+  font-size: 11px;
+  color: #9e9e9ebd;
+  margin: 0 0 32px 0;
+  line-height: 0.8;
+  font-family: 'Inter', sans-serif;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* FOOTER LINKS */
+
+.footer-links {
+  margin-bottom: 48px;
+}
+
+.footer-links ul {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: #f0f0f0;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  transition: color 0.2s ease;
+  text-transform: uppercase;
+}
+
+.footer-links a:hover {
+  color: #c8aa6e;
+}
+
+/* RATING SECTION */
+
+.rating-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  border-top: none;
+  padding-top: 32px;
+}
+
+.rating-box {
+  display: inline-flex;
+  gap: 12px;
+  padding: 16px 12px;
+  background: rgba(26, 26, 26, 0.3);
+  border: none;
+  border-radius: 8px;
+  align-items: center;
+  max-width: 500px;
+}
+
+.rating-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 50px;
+}
+
+.ESRB-logo {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+}
+
+
+.rating-description {
+  text-align: left;
+}
+
+.rating-title {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  color: #c8aa6e;
+  margin: 0 0 8px 0;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.rating-descriptors {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rating-descriptors li {
+  font-size: 11px;
+  color: #9e9e9e;
+  padding: 2px 0;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.4;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1024px) {
+  .footer-content {
+    padding: 36px 24px;
+  }
+
+  .footer-simulation-bar {
+    gap: 24px;
+    padding: 16px 24px;
+  }
+
+  .footer-logo {
+    font-size: 20px;
+  }
+
+  .rating-box {
+    gap: 16px;
+    padding: 16px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    padding: 24px 16px;
+  }
+
+  .footer-simulation-bar {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .footer-simulation-bar a {
+    font-size: 12px;
+  }
+
+  .footer-links ul {
+    gap: 16px;
+    flex-direction: column;
+  }
+
+  .footer-links a {
+    font-size: 11px;
+  }
+
+  .rating-box {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .rating-description {
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-size: 18px;
+  }
+
+  .footer-copyright {
+    font-size: 12px;
+  }
+
+  .rating-section {
+    padding-top: 24px;
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+    padding: 16px 12px;
+  }
+
+  .footer-simulation-bar {
+    gap: 8px;
+    padding: 12px;
+    font-size: 11px;
+  }
+
+  .footer-logo {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  .footer-copyright {
+    font-size: 11px;
+    margin-bottom: 16px;
+  }
+
+  .footer-links ul {
+    gap: 12px;
+  }
+
+  .footer-links a {
+    font-size: 10px;
+  }
+
+  .rating-box {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .pegi-age {
+    font-size: 24px;
+  }
+
+  .rating-title {
+    font-size: 11px;
+  }
+
+  .rating-descriptors li {
+    font-size: 10px;
+  }
+}
+
+.footer-simulation-bar button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-simulation-bar button:hover {
+  color: #c8aa6e;
+}

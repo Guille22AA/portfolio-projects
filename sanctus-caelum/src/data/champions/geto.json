@@ -1,0 +1,235 @@
+{
+    "id": 21,
+    "nick": "Geto",
+    "fullName": "Suguru Geto",
+    "alias": "The Worst Curse User",
+    "anime": "Jujutsu Kaisen",
+    "affiliation": "Cursed User",
+    "roles": ["Mid"],
+    "attackTypes": ["Melee"],
+    "damageTypes": ["Magic"],
+    "class": "Sorcerer",
+    "resource": {
+      "name": "Curse Energy",
+      "type": "UR",
+      "maxValue": 280,
+      "regen": "7 + 0.8 × lvl²"
+    },
+    "difficulty": "Easy",
+    "splashArt": "/splashArts/geto_splashart.jpg",
+    "icon": "/splashArts/geto_icon.png",
+    "render": "/splashArts/geto_render.png",
+  
+    "mechanicDescription": "Curse Summoner. Geto summons different cursed spirits for various effects. Only one spirit active at a time. Passive stacking from jungle monsters empowers his ultimate.",
+  
+    "stats": {
+      "health": "655 + 109 × lvl²",
+      "healthRegen": "9 + 0.9 × lvl²",
+      "armor": "32 + 4.2 × lvl²",
+      "attackDamage": "58 + 3 × lvl²",
+      "magicResistance": "32 + 2.05 × lvl²",
+      "criticalDamage": "200%",
+      "movementSpeed": "340",
+      "attackRange": "125",
+      "attackSpeed": {
+        "base": "0.688",
+        "windup": "30%",
+        "asRatio": "0.625",
+        "bonusAS": "3.3%"
+      }
+    },
+  
+    "quotes": {
+      "selection": "Only jujutsu sorcerers are worth existing in this world.",
+      "general": [
+        "Monkeys should know their place.",
+        "Weak humans without cursed energy… they are nothing but monkeys.",
+        "Even curses can be beautiful, if you know how to use them.",
+        "Humanity without cursed energy is a disease. I will be its cure.",
+        "Suguru Geto… the worst curse user. If that's the name they give me, so be it.",
+        "I'll cleanse this world, one monkey at a time."
+      ],
+      "interactions": {
+        "20": [
+          [["ally", "enemy"], "We are the chosen ones, Gojo. They'll never understand us."],
+          [["ally", "enemy"], "Even in death, our paths remain tied together, Satoru."]
+        ]
+      }
+    },
+  
+    "abilities": {
+      "passive": [
+        {
+          "name": "Curse Manipulation Technique",
+          "description": "When Geto kills a jungle monster, he may perform an exorcism ritual for up to 3 seconds to absorb its curse into a black orb. Captured curses stack and empower Cursed Spirit Manipulation (ultimate), increasing damage, size, and range. Stacks reset after ultimate use.",
+          "icon": "url_por_especificar",
+          "stackMechanics": {
+            "smallMonsters": "1 stack",
+            "mediumMonsters": "3 stacks",
+            "largeMonsters": "5 stacks"
+          },
+          "stackBonuses": {
+            "damage": "+5% per stack",
+            "size": "+3% per stack",
+            "range": "+50 per stack"
+          },
+          "resetCondition": "After Cursed Spirit Manipulation ultimate use"
+        },
+        {
+          "name": "Body Possession",
+          "description": "For 10 seconds after killing an enemy champion, Geto(Kenjaku) assumes their dead body and gains their basic attacks, basic abilities, items, and base stats (scaled to Geto's level). Gains +10% movement speed facing enemy champions within 2500 units. Cannot use item actives, consumables, or shop. Preserves current health percentage between transformations.",
+          "icon": "url_por_especificar",
+          "duration": "10s",
+          "effects": {
+            "gainedStats": ["Basic attacks", "Basic abilities", "Items base effects", "Base stats (Geto's level)"],
+            "movementBonus": "+10% MS (vs enemy champions within 2500 units)",
+            "restrictions": ["No item actives", "No consumables", "No shop access"],
+            "healthPreservation": "Maintains current health percentage"
+          }
+        }
+      ],
+  
+      "h1": {
+        "name": "Kuchisake-Onna",
+        "description": "Geto summons Kuchisake-Onna, the Slit-Mouthed Woman, who slashes enemies with cursed scissors dealing magic damage and applying Grievous Wounds for 6 seconds. Can be recast anytime while alive to redirect her. Can be used while affected by cast-inhibiting CC. Only one cursed spirit active at a time.",
+        "icon": "url_por_especificar",
+        "type": "Active (Summoned Unit, Recastable)",
+        "targetType": "Unit or Location",
+        "castTime": "0.25 (initial) / none (recast)",
+        "targetRange": "400",
+        "cooldown": "11 / 10 / 9 / 8 / 7",
+        "cost": "50 / 55 / 60 / 65 / 70 Curse Energy",
+        "effects": {
+          "summon": {
+            "unit": "Kuchisake-Onna cursed spirit",
+            "behavior": "Autonomous slash attacks"
+          },
+          "damage": {
+            "type": "Magic",
+            "baseValues": "Por especificar",
+            "scaling": "Por especificar"
+          },
+          "grievousWounds": {
+            "effect": "Applied on hit",
+            "healingReduction": "40% (standard)",
+            "duration": "6s"
+          },
+          "recast": {
+            "effect": "Direct Kuchisake-Onna to new location",
+            "usableUnderCC": true
+          },
+          "spiritLimitation": "Only one cursed spirit active at a time. Summoning new replaces previous."
+        }
+      },
+  
+      "h2": {
+        "name": "Rainbow Dragon",
+        "description": "Geto summons the Rainbow Dragon, a massive slow-moving cursed beast hovering around him for 5 seconds. Periodically breathes cursed flames at nearby enemies, taunts one enemy champion every few seconds, and absorbs a portion of incoming damage directed at Geto. Only one cursed spirit active at a time.",
+        "icon": "url_por_especificar",
+        "type": "Active (Summoned Unit)",
+        "targetType": "Self",
+        "duration": "5s",
+        "targetRange": "500",
+        "effectRadius": "200",
+        "cooldown": "18 / 17 / 16 / 15 / 14",
+        "cost": "60 / 65 / 70 / 75 / 80 Curse Energy",
+        "effects": {
+          "summon": {
+            "unit": "Rainbow Dragon cursed spirit",
+            "position": "Hovers around Geto",
+            "behavior": "Slow-moving"
+          },
+          "flameBreath": {
+            "trigger": "Periodically",
+            "targetArea": "Nearby enemies",
+            "damage": {
+              "type": "Magic",
+              "baseValues": "Por especificar",
+              "scaling": "Por especificar"
+            }
+          },
+          "taunt": {
+            "frequency": "Every few seconds",
+            "targets": "One enemy champion per taunt"
+          },
+          "damageAbsorption": {
+            "effect": "Absorbs portion of incoming damage to Geto",
+            "percentage": "Por especificar"
+          },
+          "spiritLimitation": "Only one cursed spirit active. Summoning new replaces previous."
+        }
+      },
+  
+      "h3": {
+        "name": "Plague Deity",
+        "description": "Geto summons the Plague Deity, which infects enemies it touches with poison. Afflicted enemies suffer magic damage over time and spread the disease to nearby enemies if they die. Only one cursed spirit active at a time.",
+        "icon": "url_por_especificar",
+        "type": "Active (Summoned Unit)",
+        "targetType": "Location",
+        "castTime": "0.25",
+        "targetRange": "650",
+        "effectRadius": "300",
+        "cooldown": "16 / 15 / 14 / 13 / 12",
+        "cost": "60 / 70 / 80 / 90 / 100 Curse Energy",
+        "effects": {
+          "summon": {
+            "unit": "Plague Deity cursed spirit",
+            "behavior": "Autonomous infection attacks"
+          },
+          "infection": {
+            "trigger": "On contact with enemies",
+            "effect": "Inflict poison status"
+          },
+          "poisonDamage": {
+            "type": "Magic",
+            "damageOverTime": true,
+            "baseValues": "Por especificar",
+            "scaling": "Por especificar",
+            "duration": "Por especificar"
+          },
+          "spreadMechanic": {
+            "trigger": "Infected enemy dies",
+            "effect": "Disease spreads to nearby enemies",
+            "radius": "Nearby area"
+          },
+          "spiritLimitation": "Only one cursed spirit active. Summoning new replaces previous."
+        }
+      },
+  
+      "h4": {
+        "name": "Cursed Spirit Manipulation – Tornado",
+        "description": "Geto combines all captured curses into a single massive cursed entity materializing as a rotating horizontal black tornado charged with dense cursed energy. The tornado flies in a straight line, dealing massive magic damage, knocking up the first champion hit for 1.25 seconds, and damaging enemies it passes through. Damage and range scale with curse stacks from passive.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Direction",
+        "castTime": "1",
+        "baseRange": "2000 / 3500",
+        "baseWidth": "300 / 700",
+        "cooldown": "110 / 95 / 80",
+        "cost": "100 Curse Energy",
+        "stackScaling": "Damage, size, and range increase based on Curse Manipulation stacks",
+        "effects": {
+          "baseDamage": {
+            "type": "Magic",
+            "baseValues": "180 / 280 / 380",
+            "scaling": "120% AP"
+          },
+          "knockup": {
+            "targets": "First champion hit",
+            "duration": "1.25s"
+          },
+          "passthrough": {
+            "effect": "Damages all enemies it passes through"
+          },
+          "stackAmplification": {
+            "mechanic": "Damage, size, and range increase per curse stack from Curse Manipulation passive"
+          },
+          "stackReset": {
+            "effect": "Stacks reset after ultimate use"
+          }
+        }
+      }
+    },
+  
+    "lore": "Suguru Geto was once a prodigy of Jujutsu High School, known for his calm charisma and strong bond with Satoru Gojo. His innate technique, Cursed Spirit Manipulation, allowed him to absorb and command countless exorcised curses, giving him overwhelming versatility in battle. Outwardly composed and analytical, Geto's true personality was marked by deep disdain toward non-sorcerers, whom he viewed as burdens holding back the world of jujutsu. His ideology pushed him to abandon his role as a sorcerer, leading massacres and gathering followers to establish a new order where only jujutsu users would reign.\n\nAfter his downfall and death, his body became the vessel of Kenjaku, an ancient and cunning curse manipulator who extends his life by implanting his brain into others. Through Geto's face and voice, Kenjaku orchestrated grand schemes such as the Culling Game, manipulating curses and sorcerers alike with ruthless intelligence. This fusion left Geto's image as both a tragic fallen idealist and a mask for one of the most dangerous masterminds in the world of jujutsu."
+  }
