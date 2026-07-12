@@ -49,18 +49,21 @@ This application serves as the primary interface for exploring Sanctus Caelum ch
 5. **SuggestChampion** & **ContactForm** handle user submissions
 6. **Footer** contains secondary navigation and legal info
 
-### Backend Structure
+## Backend Structure
 
-backend/
-├── routes/
-│ ├── champions.js (champion endpoints)
-│ └── newsletter.js (contact/feedback endpoints)
-├── models/
-│ ├── ChampionSuggestion.js (Sequelize model)
-│ └── Newsletter.js (Sequelize model)
-├── config/
-│ └── database.js (SQLite connection)
-└── server.js (Express setup)
+- **routes/** - API endpoints
+  - champions.js - Champion suggestion endpoints
+  - newsletter.js - Contact/feedback/newsletter endpoints
+
+- **models/** - Sequelize database models
+  - ChampionSuggestion.js - Champion suggestion schema
+  - Newsletter.js - Newsletter/contact schema
+
+- **config/** - Configuration files
+  - database.js - SQLite connection setup
+
+- **server.js** - Express server setup
+- **package.json** - Dependencies
 
 ### Backend Flow
 
