@@ -1,70 +1,185 @@
-# Getting Started with Create React App
+# Sanctus Caelum - Official Game Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Sanctus Caelum** is a MOBA (Multiplayer Online Battle Arena) concept game featuring iconic anime characters reimagined as playable champions. This repository contains the official website built with React, Node.js, and SQLite—a full-stack web application showcasing game mechanics, champions, and community features.
 
-## Available Scripts
+## 🎮 Game Concept
 
-In the project directory, you can run:
+Sanctus Caelum merges competitive MOBA gameplay with beloved anime universes. Champions draw from:
 
-### `npm start`
+- **Naruto** - Chakra-fueled ninjas
+- **Bleach** - Soul Reapers and Reiatsu masters
+- **Jujutsu Kaisen** - Cursed Energy users
+- **Hunter x Hunter** - Nen practitioners
+- **Dragon Ball** - Ki warriors
+- **Tokyo Ghoul** - Ghouls and Humans
+- **Fire Force**, **Black Clover**, and more
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Each champion has unique abilities, resource systems (Mana, Ki, Reiatsu, Chakra, etc.), roles (Top, Jungle, Mid, Bot, Support), and playstyles.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## 🛠 Technology Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Frontend**
+- React (Create React App)
+- CSS3 (Grid, Flexbox, CSS Variables)
+- Fetch API for backend integration
+- Responsive design
 
-### `npm run build`
+**Backend**
+- Node.js + Express
+- SQLite + Sequelize ORM
+- RESTful API endpoints
+- CORS enabled for production
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Database**
+- SQLite (local development, scalable to PostgreSQL)
+- Tables: `championSuggestions`, `newsletters`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📦 Project Structure
+sanctus-caelum/
+├── champions-web/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── data/
+│   │   ├── styles/
+│   │   └── App.js
+│   ├── public/
+│   │   ├── splashArts/
+│   │   └── iconos/
+│   └── package.json
+│
+├── backend/
+│   ├── routes/
+│   │   ├── champions.js
+│   │   └── newsletter.js
+│   ├── models/
+│   │   ├── ChampionSuggestion.js
+│   │   └── Newsletter.js
+│   ├── config/
+│   │   └── database.js
+│   ├── server.js
+│   └── package.json
+│
+└── README.md
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚀 Getting Started
 
-### `npm run eject`
+### Prerequisites
+- Node.js (v14+)
+- npm
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Frontend Setup
+```bash
+cd champions-web
+npm install
+npm start
+```
+Runs on `http://localhost:3000`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Backend Setup
+```bash
+cd backend
+npm install
+node server.js
+```
+Runs on `http://localhost:5000`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🔌 API Endpoints
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Champions
+- `POST /api/champions/suggest` - Submit champion suggestion
+- `GET /api/champions/suggestions` - Get all suggestions (admin)
+- `GET /api/champions/suggestions/count` - Get suggestion count
 
-## Learn More
+### Contact & Newsletter
+- `POST /api/newsletter/feedback` - Submit feedback/bug/support
+- `GET /api/newsletter/feedbacks` - Get all feedbacks (admin)
+- `POST /api/newsletter/subscribe` - Newsletter subscription
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🎯 Current Development Phase
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Phase 1: Champions Showcase (In Progress)**
+- ✅ Champion grid with 26+ characters
+- ✅ Advanced filtering system (anime, role, class, difficulty)
+- ✅ Champion suggestion form (backend integrated)
+- ✅ Contact/bug reporting system
+- 🔄 Individual champion detail pages
+- 📋 Real splash art renders
 
-### Code Splitting
+**Phase 2: Game Hub**
+- Home page with game overview
+- Maps, game modes, and monsters encyclopedia
+- Ranked system explanation
+- Matchmaking mechanics
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**Phase 3: Ranked System**
+- Tier system implementation
+- Competitive ranking display
+- Leaderboard integration
 
-### Analyzing the Bundle Size
+**Future Features**
+- User authentication & profiles
+- Admin dashboard for managing submissions
+- Email notifications
+- Community forums
+- Interactive ability tooltips
+- Champion tier lists
+- Team statistics
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🤝 Contributing
 
-### Making a Progressive Web App
+We welcome contributions in the following areas:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**Technical Features**
+- Bug fixes and performance improvements
+- API enhancements
+- Database optimization
+- Frontend UI/UX improvements
+- Mobile responsiveness
 
-### Advanced Configuration
+**How to Contribute**
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/YourFeature`)
+3. Commit changes (`git commit -m 'Add YourFeature'`)
+4. Push to branch (`git push origin feature/YourFeature`)
+5. Open a Pull Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📊 Champions Database
 
-### Deployment
+26+ champions implemented with:
+- Unique abilities (Q, W, E, R)
+- Resource systems
+- Base stats with scaling
+- Role assignments
+- Anime origin tracking
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🎨 Design System
 
-### `npm run build` fails to minify
+- **Color Scheme**: Dark theme (#0a0a0a) with gold accents (#c8aa6e)
+- **Typography**: Cinzel (headers), Inter (body)
+- **Layout**: 5-column responsive grid (desktop), mobile-optimized
+- **Component Architecture**: Modular React components
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🔐 Environment Variables
+
+Create `.env` files in both `backend/` and `champions-web/`:
+
+**Backend (.env)**
+PORT=5000
+
+**Frontend (.env)**
+REACT_APP_API_URL=http://localhost:5000
+
+## 📝 License
+
+This is a fan-made project created for educational and portfolio purposes. All anime characters and properties belong to their respective creators.
+
+## 👨‍💻 Author
+
+**Guille22AA** - Full-stack developer
+
+---
+
+**Status**: Under active development
+
+**Last Updated**: July 2026
