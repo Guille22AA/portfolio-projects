@@ -15,23 +15,31 @@ This application serves as the primary interface for exploring Sanctus Caelum ch
 
 ## 🏗 Architecture
 
+````markdown
 ### Frontend Structure
 
-src/
-├── components/
-│ ├── Header.js
-│ ├── SearchBar.js
-│ ├── ChampionCard.js
-│ ├── ChampionGrid.js
-│ ├── SuggestChampion.js
-│ ├── ContactForm.js
-│ └── Footer.js
-├── data/
-│ ├── champions/ (26 JSON files)
-│ └── championsData.js (data aggregator)
-├── styles/ (CSS modules per component)
-├── App.js (main routing logic)
-└── index.js
+```text
+champions-web/
+├── src/
+│   ├── components/
+```
+
+Agrega `text` después de las tres backticks.
+
+O más simple: **elimina el árbol** y usa una lista:
+
+```markdown
+### Frontend Structure
+
+- `src/` - Source code
+  - `components/` - React components (Header, SearchBar, ChampionGrid, etc)
+  - `data/` - Champion JSON files and aggregator
+  - `styles/` - CSS modules per component
+  - `App.js` - Main routing logic
+- `public/` - Static assets
+  - `splashArts/` - Champion images
+  - `iconos/` - UI icons
+```
 
 ### Frontend Flow
 
