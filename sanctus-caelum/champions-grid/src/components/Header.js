@@ -23,7 +23,7 @@ const Header = () => {
           <nav className="header-nav">
             <ul>
               <li><a href="#champions" className="nav-link">CHAMPIONS</a></li>
-              <li><a href="#maps" className="nav-link">MAPS</a></li>
+              <li><a href="#maps" className="nav-link">WORLD BUILDING</a></li>
               <li><a href="#ranked" className="nav-link">RANKED SYSTEM</a></li>
             </ul>
           </nav>
