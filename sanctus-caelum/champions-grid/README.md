@@ -265,4 +265,4 @@ Fan-made project for educational and portfolio purposes. All anime characters be
 
 **Development Status**: Phase 1 Active
 **Last Updated**: July 2026
-**Developer**: Guille22AA 
+**Developer**: Guille22AA
