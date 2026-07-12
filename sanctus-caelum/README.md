@@ -39,15 +39,14 @@ Competitive ranking, tier system, and matchmaking mechanics.
 - Location: `ranked-system/`
 - Features: Tier explanations, ranking algorithm, leaderboard system
 
-## 📁 Repository Structure
+## Repository Structure
 
-sanctus-caelum/
-├── champions-web/ (Phase 1 - Active)
-├── game-home/ (Phase 2 - Planned)
-├── game-worldbuilding/ (Phase 3 - Planned)
-├── ranked-system/ (Phase 4 - Planned)
-├── backend/ (Shared API)
-└── README.md
+- **champions-web/** - Phase 1: Champions Showcase (Active)
+- **game-home/** - Phase 2: Game Home (Planned)
+- **game-worldbuilding/** - Phase 3: Maps, Modes & Monsters (Planned)
+- **ranked-system/** - Phase 4: Ranked System (Planned)
+- **backend/** - Shared Express API
+- **README.md** - Project documentation
 
 ## 🚀 Current Status
 
