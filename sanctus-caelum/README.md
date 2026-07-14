@@ -61,6 +61,16 @@ Each project phase may have its own README with specific implementation details:
 - `game-worldbuilding/README.md` - World Building documentation
 - `ranked-system/README.md` - Ranked System documentation
 
+## 🎮 Live Demo
+
+Try the Champions Showcase right now (no installation required):
+
+**[→ Champions Showcase (Live)](https://portfolio-projects-67v2kiz8y-g2-a2.vercel.app/)**
+
+Browse 26+ champions, use filters, suggest new characters, and send feedback directly!
+
+**Backend API**: https://portfolio-projects-rcqt.onrender.com
+
 ## 🔗 Quick Links
 
 - **Champions Showcase**: [champions-web/](./champions-web)
