@@ -69,7 +69,10 @@ Try the Champions Showcase right now (no installation required):
 
 Browse 26+ champions, use filters, suggest new characters, and send feedback directly!
 
-**Backend API**: https://portfolio-projects-rcqt.onrender.com
+**API Endpoints** (for testing):
+- [Suggestions Count](https://portfolio-projects-rcqt.onrender.com/api/champions/suggestions/count)
+- [All Suggestions](https://portfolio-projects-rcqt.onrender.com/api/champions/suggestions)
+- [All Feedback](https://portfolio-projects-rcqt.onrender.com/api/newsletter/feedbacks)
 
 ## 🔗 Quick Links
 
