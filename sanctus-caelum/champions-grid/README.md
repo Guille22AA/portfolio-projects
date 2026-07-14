@@ -15,23 +15,30 @@ This application serves as the primary interface for exploring Sanctus Caelum ch
 
 ## 🏗 Architecture
 
-### Frontend Structure
+## Frontend Structure
 
-src/
-├── components/
-│ ├── Header.js
-│ ├── SearchBar.js
-│ ├── ChampionCard.js
-│ ├── ChampionGrid.js
-│ ├── SuggestChampion.js
-│ ├── ContactForm.js
-│ └── Footer.js
-├── data/
-│ ├── champions/ (26 JSON files)
-│ └── championsData.js (data aggregator)
-├── styles/ (CSS modules per component)
-├── App.js (main routing logic)
-└── index.js
+- **components/** - React components
+  - Header.js - Navigation and branding
+  - SearchBar.js - Filter controls and search
+  - ChampionCard.js - Individual champion card
+  - ChampionGrid.js - Main display with filtering
+  - SuggestChampion.js - Champion suggestion form
+  - ContactForm.js - Contact/bug/newsletter form
+  - Footer.js - Secondary links and legal info
+
+- **data/** - Champion data
+  - champions/ - 26 JSON files (one per champion)
+  - championsData.js - Data aggregator
+
+- **styles/** - CSS modules per component
+  - Header.css, SearchBar.css, ChampionGrid.css, etc.
+
+- **public/** - Static assets
+  - splashArts/ - Champion card images
+  - iconos/ - UI icons (logo, search, etc)
+
+- **App.js** - Main routing logic
+- **index.js** - React entry point
 
 ### Frontend Flow
 
@@ -42,18 +49,21 @@ src/
 5. **SuggestChampion** & **ContactForm** handle user submissions
 6. **Footer** contains secondary navigation and legal info
 
-### Backend Structure
+## Backend Structure
 
-backend/
-├── routes/
-│ ├── champions.js (champion endpoints)
-│ └── newsletter.js (contact/feedback endpoints)
-├── models/
-│ ├── ChampionSuggestion.js (Sequelize model)
-│ └── Newsletter.js (Sequelize model)
-├── config/
-│ └── database.js (SQLite connection)
-└── server.js (Express setup)
+- **routes/** - API endpoints
+  - champions.js - Champion suggestion endpoints
+  - newsletter.js - Contact/feedback/newsletter endpoints
+
+- **models/** - Sequelize database models
+  - ChampionSuggestion.js - Champion suggestion schema
+  - Newsletter.js - Newsletter/contact schema
+
+- **config/** - Configuration files
+  - database.js - SQLite connection setup
+
+- **server.js** - Express server setup
+- **package.json** - Dependencies
 
 ### Backend Flow
 
