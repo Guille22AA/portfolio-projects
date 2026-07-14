@@ -27,7 +27,7 @@ const ContactForm = ({ setPage }) => {
     setMessage('');
 
     try {
-      const res = await fetch('http://localhost:5000/api/newsletter/feedback', {
+      const res = await fetch('https://portfolio-projects-rcqt.onrender.com/api/newsletter/feedback', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
