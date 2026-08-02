@@ -1,0 +1,217 @@
+{
+    "id": 16,
+    "nick": "Kurapika",
+    "fullName": "Kurapika",
+    "alias": "Chain User",
+    "anime": "Hunter x Hunter",
+    "affiliation": "Zodiacs",
+    "roles": ["Support", "Mid"],
+    "attackTypes": ["Ranged"],
+    "damageTypes": ["Magic"],
+    "class": ["Oracle", "Sorcerer"],
+    "resource": {
+      "name": "Nen",
+      "type": "Nen",
+      "maxValue": 350,
+      "regen": "11.5 + 0.5 × lvl²"
+    },
+    "difficulty": "Medium",
+    "splashArt": "/splashArts/kurapika_splashart.jpg",
+    "icon": "/splashArts/kurapika_icon.png",
+    "render": "/splashArts/kurapika_render.png",
+  
+    "stats": {
+      "health": "545 + 94 × lvl²",
+      "healthRegen": "5.5 + 0.55 × lvl²",
+      "armor": "27 + 4.7 × lvl²",
+      "attackDamage": "49 + 3 × lvl²",
+      "magicResistance": "30 + 1.3 × lvl²",
+      "criticalDamage": "200%",
+      "movementSpeed": "330",
+      "attackRange": "550",
+      "attackSpeed": {
+        "base": "0.625",
+        "windup": "18.8%",
+        "bonusAS": "2.11%"
+      },
+      "missileSpeed": "1800"
+    },
+  
+    "quotes": {
+      "selection": "I am the last of the Kurta clan. I will have my revenge.",
+      "general": [
+        "The Scarlet Eyes are not a possession. They are proof of our pride.",
+        "I'll use these chains to bind your crimes forever.",
+        "Calm yourself, Kurapika… hatred only clouds judgment.",
+        "For every Kurta eye stolen, a life of the Genei Ryodan must be taken.",
+        "Scarlet Eyes… my curse, my resolve.",
+        "A chain forged by oath and restriction is unbreakable.",
+        "Even if my heart stops, these chains won't let go.",
+        "The spiders crawl in the shadows… but I will hunt them to extinction."
+      ],
+      "interactions": {
+        "6": ["enemy", "The spiders crawl in the shadows… but I will hunt them to extinction."]
+      }
+    },
+  
+    "abilities": {
+      "passive": {
+        "name": "Scarlet Eyes",
+        "description": "When Kurapika falls below 25% HP or a nearby ally dies, he activates his Scarlet Eyes for 8 seconds. While active, Kurapika gains significant bonuses and his basic attacks deal bonus magic damage.",
+        "icon": "url_por_especificar",
+        "cooldown": "30",
+        "effects": [
+          {
+            "type": "Activation",
+            "triggers": ["Falls below 25% HP", "Nearby ally dies"],
+            "duration": "8s"
+          },
+          {
+            "type": "Stat Bonuses",
+            "abilityPower": "+20%",
+            "movementSpeed": "+10%",
+            "abilityHaste": "+15%",
+            "nenRegen": "+10%"
+          },
+          {
+            "type": "Basic Attack Enhancement",
+            "bonusMagicDamage": "+10% AP per hit"
+          }
+        ]
+      },
+  
+      "h1": {
+        "name": "Dowsing Chain",
+        "description": "Kurapika launches a chain to an enemy or ally location. To enemies it deals magic damage and slows. To allies, it empowers their next 3 basic attacks or abilities to deal bonus magic damage.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Unit (Enemy/Ally)",
+        "targetRange": "725",
+        "effectRadius": "800",
+        "speed": "2000",
+        "cooldown": "10",
+        "cost": "70 / 75 / 80 / 85 / 90 Nen",
+        "effects": {
+          "toEnemy": {
+            "damage": {
+              "type": "Magic",
+              "baseValues": "60 / 95 / 130 / 165 / 200",
+              "scaling": "50% AP"
+            },
+            "slow": {
+              "duration": "1s",
+              "percentage": "15 / 20 / 25 / 30 / 35% (+ 5% per 100 AP)"
+            },
+            "vision": "2s vision of target"
+          },
+          "toAlly": {
+            "empowerment": "Next 3 basic attacks or abilities",
+            "bonusDamage": {
+              "type": "Magic",
+              "baseValues": "20 / 30 / 40 / 50 / 60",
+              "scaling": "20% AP",
+              "enemySlow": "1s"
+            }
+          }
+        }
+      },
+  
+      "h2": {
+        "name": "Holy Chain",
+        "description": "Kurapika sends a chain to himself or an ally, healing them instantly and granting bonus tenacity and movement speed for 2 seconds.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Unit (Self/Ally)",
+        "targetRange": "800",
+        "cooldown": "11",
+        "cost": "55 / 60 / 65 / 70 / 75 Nen",
+        "effects": {
+          "heal": {
+            "baseValues": "55 / 80 / 105 / 130 / 155",
+            "scaling": "40% AP"
+          },
+          "buff": {
+            "duration": "2s",
+            "tenacity": "+10%",
+            "movementSpeed": "+10%"
+          }
+        }
+      },
+  
+      "h3": {
+        "name": "Chain Jail",
+        "description": "Kurapika fires a fast-moving chain. If it hits an enemy champion, they are rooted for 1 second and sight-revealed. Kurapika forms a tether to the target, reducing his movement speed by 30%. Can be recast to break the tether and knockback the target, stunning secondary targets hit for 0.5 seconds.",
+        "icon": "url_por_especificar",
+        "type": "Active (Recastable)",
+        "targetType": "Direction",
+        "range": "900 / 275 (recast)",
+        "width": "120",
+        "tetherRadius": "1200",
+        "speed": "1450",
+        "castTime": "0.25",
+        "cooldown": "16",
+        "cost": "80 Nen",
+        "effects": {
+          "initial": {
+            "root": {
+              "duration": "1s",
+              "sightRevealed": true
+            },
+            "tether": {
+              "duration": "1s (same as root)",
+              "kurapikaPenalty": "-30% movement speed, unable to attack"
+            }
+          },
+          "recast": {
+            "breakTether": true,
+            "knockback": {
+              "direction": "Target direction (no terrain)",
+              "damage": {
+                "type": "Magic",
+                "baseValues": "80 / 125 / 170 / 215 / 260",
+                "scaling": "80% AP"
+              }
+            },
+            "secondaryTargets": {
+              "effect": "Stunned for 0.5s (champion targets only)"
+            }
+          },
+          "passive": {
+            "effect": "Roots all Troupe-tagged enemies 0.5s longer"
+          }
+        }
+      },
+  
+      "h4": {
+        "name": "Judgment Chain",
+        "description": "Kurapika targets an enemy below 25% HP, embedding a dagger-tipped chain in their heart. After 2 seconds, if the target is still below the HP threshold, they are executed instantly. If they leave combat for 2.5 seconds before execution, they survive but suffer 40% healing reduction and -20% damage for 6 seconds.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Unit (Enemy Champion)",
+        "range": "850",
+        "cooldown": "90 / 80 / 70",
+        "cost": "100 Nen",
+        "effects": {
+          "targeting": {
+            "requirement": "Target below 25% HP",
+            "markDuration": "10s (can only target marked enemies)"
+          },
+          "execution": {
+            "delay": "2s",
+            "condition": "Target still below 25% HP",
+            "effect": "Instant execution"
+          },
+          "escape": {
+            "leaveCombatDuration": "2.5s",
+            "survival": "Target survives execution",
+            "penalty": {
+              "healingReduction": "-40% (6s)",
+              "damageReduction": "-20% (6s)"
+            }
+          }
+        }
+      }
+    },
+  
+    "lore": "Kurapika is the sole survivor of the Kurta Clan, a peaceful people known for their Scarlet Eyes, which glow bright red in moments of strong emotion. After his clan was slaughtered by the Phantom Troupe for their eyes, Kurapika swore to avenge them and recover what was stolen.\n\nCalm, intelligent, and driven by justice, Kurapika hides deep pain beneath his composed exterior. His Nen chains give him powerful abilities to track, restrain, heal, and execute. When his Scarlet Eyes activate, he gains abilities beyond his natural type—at the cost of risking his own life."
+  }

@@ -1,0 +1,171 @@
+{
+  "id": 2,
+  "nick": "Android 18",
+  "fullName": "Android 18",
+  "alias": "18",
+  "anime": "Dragon Ball",
+  "affiliation": "Z Fighter",
+  "roles": ["Top", "Jungle"],
+  "attackTypes": ["Melee"],
+  "damageTypes": ["Physical", "Magic"],
+  "class": "Fighter",
+  "resource": {
+    "name": "Mana",
+    "type": "UR",
+    "maxValue": 295,
+    "regen": "8 + 0.65 × lvl²"
+  },
+  "difficulty": "Easy",
+  "splashArt": "/splashArts/android18_splashart.jpg",
+  "icon": "/splashArts/android18_icon.jpg",
+  "render": "/splashArts/android18_render.png",
+
+  "stats": {
+    "health": "655 + 105 × lvl²",
+    "healthRegen": "10 + 1 × lvl²",
+    "armor": "30 + 4.7 × lvl²",
+    "attackDamage": "63 + 3.5 × lvl²",
+    "magicResistance": "32 + 2.05 × lvl²",
+    "criticalDamage": "200%",
+    "movementSpeed": "340",
+    "attackRange": "125",
+    "attackSpeed": {
+      "base": "0.644",
+      "windup": "22.5%",
+      "bonusAS": "2%"
+    }
+  },
+
+  "quotes": {
+    "selection": "I fight on my own terms.",
+    "general": [
+      "You're too weak.",
+      "Don't underestimate me.",
+      "You're nothing special.",
+      "It's over for you.",
+      "You'll regret facing me."
+    ],
+    "interactions": {
+      "Vegeta ID to be specified": ["enemy", "Your punches are too slow Vegeta."],
+      "Krillin ID to be specified": ["ally", "Don't touch Krillin."],
+      "Android17 ID to be specified": ["enemy", "Seventeen, don't get in my way."]
+    }
+  },
+
+  "abilities": {
+    "passive": {
+      "name": "Cyborg Pulse",
+      "description": "Android 18's third basic attack gains 125% bonus attack speed with an uncancellable windup and deals magic damage to the primary target and nearby enemies. Deals 150% damage to monsters and executes minions below 25 health. Hidden Passive: Whenever Krillin as an ally gets injured, 18 gains +5% Attack Damage, +5% Attack Speed, and +5% Movement Speed for 4.5 seconds. Also gains extra bounty for killing Dr. Gero.",
+      "icon": "url_por_especificar",
+      "effects": [
+        {
+          "type": "Enhanced Auto Attack",
+          "trigger": "Third basic attack",
+          "bonusAttackSpeed": "125%",
+          "damage": "130% AD (+ 30% AP)",
+          "aoeMultiplier": "40% AD (+ 20% AP) to nearby enemies"
+        },
+        {
+          "type": "Hidden Passive",
+          "trigger": "When Krillin gets injured",
+          "duration": "4.5s",
+          "bonuses": "+5% AD, +5% AS, +5% MS"
+        }
+      ]
+    },
+
+    "h1": {
+      "name": "Energy Strike",
+      "description": "Android 18 blasts an energy bolt in the target direction that deals magic damage to the first two enemies hit.",
+      "icon": "url_por_especificar",
+      "type": "Active",
+      "targetType": "Direction",
+      "targetRange": "900",
+      "castTime": "0.25",
+      "speed": "2200",
+      "width": "140",
+      "cooldown": "6.5 / 6 / 5.5 / 5 / 4.5",
+      "effects": {
+        "damage": {
+          "type": "Magic",
+          "values": "80 / 120 / 160 / 200 / 240",
+          "scaling": "50 / 55 / 60 / 65 / 70% AP"
+        },
+        "note": "Hits first two enemies in the direction"
+      }
+    },
+
+    "h2": {
+      "name": "Energy Shield",
+      "description": "Android 18 grants herself a shield for up to 5 seconds and creates three spheres that orbit her counterclockwise, detonating upon contact with enemies. If all three spheres detonate, Energy Shield is reapplied, stacking and refreshing the duration.",
+      "icon": "url_por_especificar",
+      "type": "Active",
+      "targetType": "Self",
+      "cooldown": "Por especificar",
+      "duration": "5s",
+      "effects": {
+        "shield": {
+          "baseValues": "45 / 60 / 75 / 90 / 105",
+          "scaling": "(+ 30% AP) (+ 9% bonus health)"
+        },
+        "orbDamage": {
+          "baseValues": "20 / 32 / 44 / 56 / 68",
+          "scaling": "(+ 18% AP)",
+          "count": "3 orbs"
+        },
+        "maximumShield": {
+          "baseValues": "90 / 120 / 150 / 180 / 210",
+          "scaling": "(+ 60% AP) (+ 18% bonus health)"
+        },
+        "note": "Detonation of all 3 orbs reapplies and stacks shield"
+      }
+    },
+
+    "h3": {
+      "name": "Cyborg Dash",
+      "description": "Android 18 dashes in the target direction, dealing physical damage to enemies near landing location and granting ghosting to non-champions for 4 seconds. Stops prematurely on champion collision, knocking back all nearby champions and stunning them for 0.75 seconds, while gaining bonus attack speed.",
+      "icon": "url_por_especificar",
+      "type": "Active",
+      "targetType": "Direction",
+      "cooldown": "Por especificar",
+      "effects": {
+        "damage": {
+          "type": "Physical",
+          "values": "60 / 90 / 120 / 150 / 180",
+          "scaling": "(+ 75% bonus AD)"
+        },
+        "ghosting": {
+          "target": "Non-champions",
+          "duration": "4s"
+        },
+        "onChampionCollision": {
+          "effect": "Knockback all nearby champions",
+          "stun": "0.75s",
+          "bonusAttackSpeed": "40 / 45 / 50 / 55 / 60%",
+          "duration": "5s"
+        }
+      }
+    },
+
+    "h4": {
+      "name": "Master Martial",
+      "description": "Android 18 overclocks her cybernetic core, entering an empowered state and becoming ghosted. She can refresh the duration whenever she scores a takedown against an enemy champion within 3 seconds of damaging them.",
+      "icon": "url_por_especificar",
+      "type": "Active",
+      "targetType": "Self",
+      "castTime": "0.25",
+      "cooldown": "120 / 100 / 80",
+      "buffDuration": "8 / 10 / 12",
+      "effects": {
+        "ghosting": "Enabled",
+        "bonusAttackSpeed": "25 / 35 / 45%",
+        "bonusMovementSpeed": "20%",
+        "bonusResistances": "+20 / 30 / 40 Armor and Magic Resist",
+        "bonusDamage": "+20% AD and +15% AP",
+        "refreshOnKill": "Refreshes duration on takedown within 3 seconds of damaging enemy champion"
+      }
+    }
+  },
+
+  "lore": "Android 18, originally a human named Lazuli, was transformed into a powerful cyborg by Dr. Gero of the Red Ribbon Army. Alongside her twin brother, Android 17, she was created to eliminate Goku, though both siblings retained free will and defied their creator. Calm, confident, and sharp-tongued, 18 possesses immense strength, durability, and speed that rival the strongest fighters in the universe. Despite her cold exterior, she shows a protective and caring side, especially toward Krillin, whom she eventually marries.\n\nHer combat style blends precision and relentless power, enhanced by her ability to channel energy blasts and withstand damage far beyond normal limits. 18's pragmatic nature makes her an efficient and strategic fighter, unshaken even in the face of overwhelming opponents. She is defined by her independence and loyalty to those she chooses to protect, standing as both a fearsome warrior and a devoted ally."
+}

@@ -1,0 +1,221 @@
+{
+    "id": 8,
+    "nick": "Giorno",
+    "fullName": "Giorno Giovanna",
+    "alias": "GioGio",
+    "anime": "JoJo's Bizarre Adventure",
+    "affiliation": "Passione",
+    "roles": ["Support"],
+    "attackTypes": ["Melee"],
+    "damageTypes": ["Magic"],
+    "class": ["Oracle", "Sorcerer"],
+    "resource": {
+      "name": "Vital Energy",
+      "type": "UR",
+      "maxValue": 315,
+      "regen": "8.75 + 0.5 × lvl²"
+    },
+    "difficulty": "Medium",
+    "splashArt": "/splashArts/giorno_splashart.jpg",
+    "icon": "/splashArts/giorno_icon.png",
+    "render": "/splashArts/giorno_render.png",
+  
+    "stats": {
+      "health": "610 + 99 × lvl²",
+      "healthRegen": "5 + 0.5 × lvl²",
+      "armor": "30 + 4.9 × lvl²",
+      "attackDamage": "62 + 3.5 × lvl²",
+      "magicResistance": "32 + 2.05 × lvl²",
+      "criticalDamage": "200%",
+      "movementSpeed": "335",
+      "attackRange": "300",
+      "attackSpeed": {
+        "base": "0.635",
+        "windup": "17.143%",
+        "bonusAS": "3%"
+      }
+    },
+  
+    "quotes": {
+      "selection": "I will protect those who believe in me.",
+      "general": [
+        "Everything that happens repeats itself, over and over… endlessly.",
+        "This is the power of Gold Experience!",
+        "My resolve will never waver, no matter the obstacles.",
+        "I, Giorno Giovanna, have a dream, I will become a Gang-Star."  
+      ],
+      "interactions": {
+        "5": ["ally", "I will follow you, Bucciarati."],
+        "Diavolo ID to be specified": ["enemy", "You will never reach the truth."]
+      }
+    },
+  
+    "abilities": {
+      "passive": {
+        "name": "Light Enhance",
+        "description": "Giorno can transform enemy wards into glowing fireflies, granting allied vision for 8 seconds. If an enemy attacks the firefly, they instead receive the damage themselves.",
+        "icon": "url_por_especificar",
+        "effects": [
+          {
+            "type": "Ward Transformation",
+            "target": "Enemy wards",
+            "effect": "Becomes glowing firefly"
+          },
+          {
+            "type": "Vision Grant",
+            "duration": "8s",
+            "beneficiary": "Allied team"
+          },
+          {
+            "type": "Damage Reflection",
+            "trigger": "Enemy attacks the firefly",
+            "effect": "Attacker receives the damage instead"
+          }
+        ]
+      },
+  
+      "passive2": {
+        "name": "Requiem",
+        "description": "At Level 16, Gold Experience evolves into Gold Experience Requiem, enhancing all of Giorno's abilities with stronger effects.",
+        "icon": "url_por_especificar",
+        "effects": [
+          {
+            "type": "Stand Evolution",
+            "trigger": "Level 16",
+            "oldStand": "Gold Experience",
+            "newStand": "Gold Experience Requiem"
+          },
+          {
+            "type": "Ability Enhancement",
+            "effect": "All abilities gain Requiem upgrades"
+          }
+        ]
+      },
+  
+      "h1": {
+        "name": "Life Shot Creation",
+        "description": "Giorno fires vital energy at terrain. The effect depends on where it lands: Stone/Wall summons Scorpions (moderate damage, durable), River summons Piranhas (fragile, fast, burst damage), Grass/Plants summons Vines (stationary, range, crowd control). Requiem upgrade adds DoTs and debuffs to each summon type.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Terrain",
+        "castTime": "0.25",
+        "targetRange": "650",
+        "width": "90",
+        "speed": "1050",
+        "cooldown": "14 / 12 / 10 / 8 / 6",
+        "cost": "60 / 70 / 80 / 90 / 100 Vital Energy",
+        "effects": {
+          "baseEffects": {
+            "stone_wall": {
+              "summon": "Scorpions",
+              "stats": "Moderate damage, fairly durable",
+              "movement": "Slow"
+            },
+            "river": {
+              "summon": "Piranhas",
+              "stats": "Fragile but fast, burst damage on hit",
+              "movement": "Fast"
+            },
+            "grass_plants": {
+              "summon": "Vines",
+              "stats": "Stationary but with range",
+              "effect": "Ensnare enemies with crowd control"
+            }
+          },
+          "requiemUpgrades": {
+            "scorpions": "Apply Poison on hit (DoT)",
+            "piranhas": "Apply Bleed (DoT on movement)",
+            "vines": "Apply Slow after ensnare ends"
+          }
+        }
+      },
+  
+      "h2": {
+        "name": "Healing Touch",
+        "description": "Giorno infuses an ally or himself with vital energy, restoring health. Requiem upgrade grants a small Vital Shield in addition to the heal.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Unit (Ally or Self)",
+        "castTime": "0.25",
+        "targetRange": "725",
+        "effectRadius": "800",
+        "speed": "1500 - 2500 (based on level)",
+        "cooldown": "10",
+        "cost": "70 / 75 / 80 / 85 / 90 Vital Energy",
+        "effects": {
+          "healing": {
+            "baseValues": "55 / 80 / 105 / 130 / 155",
+            "scaling": "40% AP"
+          },
+          "requiemShield": {
+            "baseValues": "40 / 65 / 90 / 115 / 140",
+            "scaling": "30% AP",
+            "condition": "Only at Requiem (Level 16+)"
+          }
+        }
+      },
+  
+      "h3": {
+        "name": "Borrowed Life",
+        "description": "Giorno revives an allied corpse at its location for several seconds, allowing them to re-enter the fight with full stats but degrading health over time. Requiem upgrade increases revival duration and grants bonus Movement Speed and Attack Speed.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Corpse",
+        "targetRange": "850",
+        "effectRadius": "1300",
+        "corpse_duration": "3.5s",
+        "cooldown": "28 / 27 / 26 / 25 / 24",
+        "cost": "80 Vital Energy",
+        "effects": {
+          "revival": {
+            "revivalDuration": "5 / 7 / 10 / 12 / 15s",
+            "stats": "Full stats upon revival",
+            "healthDegradation": "Decreases over time"
+          },
+          "requiemBuff": {
+            "condition": "Level 16+",
+            "bonusMS": "+20% Movement Speed",
+            "bonusAS": "+25% Attack Speed (+ 1% per 100 AP)",
+            "increasedDuration": "Longer revival duration"
+          }
+        }
+      },
+  
+      "h4": {
+        "name": "Life Dispenser",
+        "description": "Giorno channels Gold Experience for 0.5 seconds, then blinks to the target enemy, inflicting magic damage and applying Paranoia. Requiem upgrade transforms this into Nullification of Cause and Effect, sending Gold Experience Requiem to stun the target instead.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Unit",
+        "castTime": "0.5",
+        "targetRange": "800",
+        "effectRadius": "600",
+        "cooldown": "140 / 110 / 80",
+        "cost": "Por especificar",
+        "effects": {
+          "baseAbility": {
+            "effect": "Blink to target",
+            "damage": {
+              "type": "Magic",
+              "baseValues": "90 / 180 / 360% AP"
+            },
+            "paranoia": {
+              "duration": "2.5 / 3 / 3.5s",
+              "effect": "Target suffers paranoia debuff"
+            }
+          },
+          "requiemUpgrade": {
+            "name": "Nullification of Cause and Effect",
+            "ability": "Gold Experience Requiem travels to target location",
+            "travel": "Grants sight of area during travel",
+            "effect": "Puts target into stasis for 2.5 seconds",
+            "visibility": "Enemies hit are revealed for duration",
+            "epicMonsters": "Can affect epic monsters and turrets",
+            "bonusDamage": "Gain + 180% AP bonus magic damage"
+          }
+        }
+      }
+    },
+  
+    "lore": "Giorno Giovanna is the son of DIO, conceived while DIO inhabited Jonathan Joestar's body, which gave Giorno the Joestar bloodline despite his unusual heritage. Growing up in Naples under harsh circumstances, he endured neglect and abuse until he developed a strong resolve and ambition. Unlike most gang members, Giorno was deeply idealistic—he dreamed not of ruling with cruelty, but of becoming a 'Gang-Star,' someone who would reform Passione, the mafia organization that ruled over Italy, and use its power to protect the weak.\n\nHe wields the Stand Gold Experience, which grants him the ability to imbue objects with life—transforming inanimate matter into plants, animals, and living creatures. Later, his Stand evolves into Gold Experience Requiem, one of the most powerful abilities in the JoJo universe, able to nullify actions and return threats to 'zero.' Giorno's calm, intelligent, and determined personality hides a ruthless side when facing enemies. He is both compassionate toward allies and merciless toward those who exploit others, embodying the paradox of kindness and brutality that defines his path to leadership."
+  }

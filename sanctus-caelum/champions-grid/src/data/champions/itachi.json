@@ -1,0 +1,209 @@
+{
+    "id": 12,
+    "nick": "Itachi",
+    "fullName": "Itachi Uchiha",
+    "alias": "Clan Killer",
+    "anime": "Naruto",
+    "affiliation": "Akatsuki",
+    "roles": ["Jungle", "Mid"],
+    "attackTypes": ["Melee"],
+    "damageTypes": ["Hybrid"],
+    "class": ["Sorcerer", "Slayer"],
+    "resource": {
+      "name": "Chakra",
+      "type": "UR",
+      "maxValue": 297,
+      "regen": "6 + 0.35 × lvl²"
+    },
+    "difficulty": "Hard",
+    "splashArt": "/splashArts/itachi_splashart.jpg",
+    "icon": "/splashArts/itachi_icon.png",
+    "render": "/splashArts/itachi_render.png",
+  
+    "stats": {
+      "health": "630 + 99 × lvl²",
+      "healthRegen": "8.5 + 0.55 × lvl²",
+      "armor": "30 + 4 × lvl²",
+      "attackDamage": "63 + 3 × lvl²",
+      "magicResistance": "32 + 2.05 × lvl²",
+      "criticalDamage": "200%",
+      "movementSpeed": "345",
+      "attackRange": "125",
+      "attackSpeed": {
+        "base": "0.694",
+        "windup": "22.15%",
+        "bonusAS": "3%"
+      }
+    },
+  
+    "quotes": {
+      "selection": "Those who cannot acknowledge themselves will eventually fail.",
+      "general": [
+        "People live their lives bound by what they accept as correct and true. That is how they define reality.",
+        "No matter what darkness or contradictions lie within the village, I am still Itachi Uchiha of Konoha.",
+        "Growth occurs when one goes beyond their limits. Realizing that is also part of training.",
+        "Even the strongest of opponents always has a weakness.",
+        "Illusions can deceive the mind, but not the heart."        
+      ],
+      "interactions": {
+        "Sasuke ID to be specified": [
+          ["enemy", "Foolish little brother… you still don't hate me enough."],
+          ["ally", "As long as you exist, Sasuke, I will never die."]
+        ]
+          ,
+        "Naruto ID to be specified": ["enemy", "The village does not protect you… you protect the village."]
+      }
+    },
+  
+    "abilities": {
+      "passive": {
+        "name": "Shadow Clone",
+        "description": "Periodically, when Itachi is damaged to 30% maximum health, he creates a clone of himself. Both instantly become invisible for 1 second. The clone can cast basic attacks with no effect and lasts 8 seconds. Upon spawning, it moves up to 1900 units toward a random direction in front of Itachi's movement.",
+        "icon": "url_por_especificar",
+        "cooldown": "60",
+        "effects": [
+          {
+            "type": "Clone Creation",
+            "trigger": "Damaged to 30% max HP",
+            "cloneStats": "Copy of Itachi",
+            "cloneDuration": "8s"
+          },
+          {
+            "type": "Invisibility",
+            "duration": "1s",
+            "targets": "Both Itachi and clone"
+          },
+          {
+            "type": "Clone Behavior",
+            "basicAttacks": "Can cast but no effect",
+            "movement": "1900 units toward random direction in front of Itachi"
+          }
+        ]
+      },
+  
+      "h1": {
+        "name": "Tsukuyomi",
+        "description": "Itachi blinks a short distance in the target direction and stabs the target with his kunai, dealing physical damage. If the target is facing Itachi, they are stunned by Tsukuyomi.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Direction",
+        "targetRange": "250 - 450",
+        "collisionRadius": "50",
+        "cooldown": "14 / 13 / 12 / 11 / 10",
+        "cost": "35 Chakra",
+        "effects": {
+          "blink": {
+            "effect": "Short distance blink"
+          },
+          "damage": {
+            "type": "Physical",
+            "baseValues": "60 / 85 / 110 / 135 / 160",
+            "scaling": "80% AP"
+          },
+          "stun": {
+            "condition": "Target facing Itachi",
+            "duration": "1.25 / 1.5 / 1.75 / 2 / 2.25s"
+          }
+        }
+      },
+  
+      "h2": {
+        "name": "Crow Clone",
+        "description": "Itachi channels for 0.5 seconds and  creating a controllable clone. The clone lasts up to 10 seconds and can be recast to move it. Upon dying or expiring, the clone explodes deploying five crows that fear nearby enemies, reduced movement speed, and deal magic damage. Can be used while affected by cast-inhibiting CC.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Direction",
+        "castTime": "0.5",
+        "cloneDuration": "10s",
+        "cooldown": "Por especificar",
+        "cost": "Por especificar",
+        "effects": {
+          "blink": {
+            "effect": "Itachi blinks in target direction"
+          },
+          "clone": {
+            "creation": "Opposite direction from Itachi",
+            "control": "Fully controllable",
+            "recast": "Can move to new location while active"
+          },
+          "explosion": {
+            "trigger": "Clone dies or expires",
+            "effect": "Deploys 5 crows"
+          },
+          "crowEffect": {
+            "damage": {
+              "type": "Magic",
+              "baseValues": "10 / 15 / 20 / 25 / 30",
+              "scaling": "12% AP"
+            },
+            "bonusMonsterDamage": "20 / 35 / 50 / 65 / 80",
+            "fear": {
+              "champions": "1s",
+              "nonChampions": "2.2s (+ 10% AP)"
+            }
+          },
+          "msReduction": {
+            "delay": "0.15s after crow activation",
+            "champions": "Static 100 movement speed",
+            "nonChampions": "Static 60 movement speed",
+            "duration": "0.6s"
+          },
+          "castDuringCC": "Can be used while affected by cast-inhibiting crowd control"
+        }
+      },
+  
+      "h3": {
+        "name": "Crowshot",
+        "description": "Itachi sends a crow to a location, granting sight of the area along its path (repeatedly for 0.5 seconds after every 100 units traveled) and at its destination for 5 seconds. Itachi periodically stocks Crowshot charges, up to a maximum of 2.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Location",
+        "maxCharges": "2",
+        "visionPath": "Every 100 units (0.5s duration)",
+        "visionDestination": "5s at target location",
+        "cooldown": "Por especificar",
+        "cost": "Por especificar",
+        "effects": [
+          {
+            "type": "Vision Grant",
+            "pathVision": "Along crow travel path",
+            "destinationVision": "At final location"
+          }
+        ]
+      },
+  
+      "h4": {
+        "name": "Amaterasu",
+        "description": "Itachi conjures inextinguishable black flames and unleashes them on a target enemy. The flames lock onto the target, dealing magic damage over 4 seconds. Once marked, the flames spread to the nearest enemy, prioritizing champions, up to 4 times total. The flames persist on each target for the full duration, ignoring shields and burning until finished. Targets are slowed.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Unit (Enemy)",
+        "castTime": "0.25",
+        "targetRange": "750",
+        "effectRadius": "600",
+        "speed": "750 - 3000",
+        "duration": "4s",
+        "cooldown": "100 / 90 / 80",
+        "cost": "100 Chakra",
+        "effects": {
+          "damage": {
+            "type": "Magic",
+            "baseValues": "150 / 200 / 250",
+            "scaling": "70% AP + 20 Lethal Damage",
+            "duration": "4s"
+          },
+          "spread": {
+            "maxSpreads": "4 times total",
+            "priority": "Champions > Other champions > Any valid target",
+            "ignoreShields": true
+          },
+          "slow": {
+            "duration": "0.25s",
+            "percentage": "30 / 45 / 60%"
+          }
+        }
+      }
+    },
+  
+    "lore": "Itachi Uchiha was a prodigy of the Uchiha clan, feared as a genius from a young age. Calm, intelligent, and highly skilled, he mastered the Sharingan and powerful jutsu such as Tsukuyomi and Amaterasu, while also excelling in genjutsu and shuriken techniques. Outwardly known as the traitor who massacred his own clan, Itachi carried the burden of secrecy—his actions were meant to protect his younger brother Sasuke and prevent a civil war that threatened the entire Hidden Leaf Village.\n\nBehind his stoic demeanor, Itachi was compassionate, wise beyond his years, and driven by sacrifice. He endured hatred from his brother and the world to preserve peace from the shadows. As a fighter, he combined deadly precision with mastery of illusion and flame, striking with both genjutsu and ninjutsu. Even after death, his spirit remained a guiding force, embodying both tragedy and love—the shinobi who gave everything for his brother and his village."
+  }

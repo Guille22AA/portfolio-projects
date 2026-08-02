@@ -1,0 +1,220 @@
+{
+    "id": 18,
+    "nick": "Ghirga",
+    "fullName": "Narancia Ghirga",
+    "alias": "Bullet Brat",
+    "anime": "JoJo's Bizarre Adventure",
+    "affiliation": "Passione",
+    "roles": ["ADC"],
+    "attackTypes": ["Ranged"],
+    "damageTypes": ["Physical"],
+    "class": "Marksman",
+    "resource": {
+      "name": "Heat",
+      "type": "UR",
+      "maxValue": 300,
+      "regen": "8 + 0.8 × lvl²",
+      "mechanic": "Rises when Aerosmith casts abilities. At maximum, overheats temporarily, disabling basic abilities but empowering basic attacks."
+    },
+    "difficulty": "Medium",
+    "splashArt": "/splashArts/ghirga_splashart.jpg",
+    "icon": "/splashArts/ghirga_icon.png",
+    "render": "/splashArts/ghirga_render.png",
+    "stats": {
+      "health": "625 + 100 × lvl²",
+      "healthRegen": "3.75 + 0.65 × lvl²",
+      "armor": "25 + 4 × lvl²",
+      "attackDamage": "55 + 2.4 × lvl²",
+      "magicResistance": "30 + 1.3 × lvl²",
+      "criticalDamage": "200%",
+      "movementSpeed": "325",
+      "attackRange": "550",
+      "attackSpeed": {
+        "base": "0.656",
+        "windup": "14.801%",
+        "bonusAS": "3%"
+      },
+      "missileSpeed": "2000"
+    },
+  
+    "quotes": {
+      "selection": "If I shoot you, you'll be nothing but Swiss cheese!",
+      "general": [
+        "Don't underestimate Aerosmith!",
+        "I'll blow you away!",
+        "Aerosmith, fire!",
+        "I'm gonna turn you into a sieve!",
+        "Once I decide to kill you, you're already dead!",
+        "I'll keep shooting until there's nothing left!",
+        "I'll find you no matter where you hide! I can smell your CO2!"
+      ],
+      "interactions": {
+        "8": ["enemy", "Don't order me around! I'm not your underling!"],
+        "5": ["ally", "I'll follow you to the end, Bucciarati!"]
+      }
+    },
+  
+    "abilities": {
+      "passive": [
+        {
+          "name": "Overheat System",
+          "description": "Narancia's Heat bar rises every time Aerosmith casts an ability. Upon reaching maximum Heat, he overheats, temporarily disabling his basic abilities (0-4 seconds) but empowering his basic attacks with bonus critical strike chance and health-scaling damage. He also gains significant bonus attack speed.",
+          "icon": "url_por_especificar",
+          "effects": [
+            {
+              "type": "Heat Generation",
+              "trigger": "Aerosmith ability cast",
+              "overheating": {
+                "duration": "0-4s",
+                "basicAbilitiesDisabled": true
+              }
+            },
+            {
+              "type": "Overheat Empowerment",
+              "criticalStrike": "+25%",
+              "healthScaling": "+4% of target's maximum health",
+              "attackSpeed": "+50% – 130% (based on level)"
+            }
+          ]
+        },
+        {
+          "name": "Carbon Dioxide Radar",
+          "description": "Aerosmith continuously detects nearby enemies by sensing their carbon dioxide emissions. Reveals all enemies within a set radius, including those in stealth or invisibility. Does not reveal wards or traps.",
+          "icon": "url_por_especificar",
+          "effects": [
+            {
+              "type": "Enemy Detection",
+              "applicability": "All nearby enemies",
+              "stealthReveal": true,
+              "invisible": true,
+              "doesNotReveal": ["Wards", "Traps"]
+            }
+          ]
+        }
+      ],
+  
+      "h1": {
+        "name": "Suppressive Fire",
+        "description": "Aerosmith switches to burst fire, shooting volleys of bullets. Number of volleys increases per rank. Each bullet's damage is increased based on critical strike chance. Volley size scales with Attack Speed.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Self",
+        "duration": "3.5 / 4 / 5 / 5.5 / 6",
+        "cooldown": "12 / 11 / 10 / 9 / 8",
+        "cost": "20 Heat",
+        "effects": {
+          "burstFire": {
+            "mode": "Volleys of bullets",
+            "volleyCount": "Increases per rank"
+          },
+          "bulletDamage": {
+            "type": "Physical",
+            "baseValues": "25 / 35 / 45 / 55 / 60",
+            "scaling": "45% AD",
+            "criticalBonus": "0% – 30% (based on critical strike chance)"
+          },
+          "scaling": {
+            "volleySize": "Increases with Attack Speed"
+          }
+        }
+      },
+  
+      "h2": {
+        "name": "Aerial Bombing",
+        "description": "Narancia marks a target location. Aerosmith flies to that location and drops a bomb dealing physical damage in an area, slowing enemies for 1.25 seconds.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Location",
+        "targetRange": "850",
+        "bombRange": "500",
+        "cooldown": "18 / 17 / 16 / 15 / 14",
+        "cost": "50 Heat",
+        "effects": {
+          "marking": {
+            "targeting": "Mark target location"
+          },
+          "flight": {
+            "effect": "Aerosmith flies to marked location"
+          },
+          "bombing": {
+            "damage": {
+              "type": "Physical",
+              "baseValues": "60 / 95 / 130 / 165 / 200",
+              "scaling": "70% AD"
+            }
+          },
+          "slow": {
+            "duration": "1.25s",
+            "percentage": "30%"
+          }
+        }
+      },
+  
+      "h3": {
+        "name": "Wide-Area Barrage",
+        "description": "Aerosmith switches to explosive rounds for a few seconds. Projectiles travel slower but gain +150 range. Each shot explodes in a small AoE dealing physical damage based on critical strike chance.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Self",
+        "duration": "4 / 4.5 / 5 / 5.5 / 6",
+        "cooldown": "16 / 14 / 12 / 10 / 8",
+        "cost": "30 Heat",
+        "effects": {
+          "explosiveRounds": {
+            "effect": "Switch to explosive rounds mode",
+            "projectileSpeed": "Slower",
+            "rangeBonus": "+150 range"
+          },
+          "explosion": {
+            "areaEffect": "Small AoE per shot"
+          },
+          "damage": {
+            "type": "Physical",
+            "baseValues": "50 / 70 / 90 / 110 / 130",
+            "scaling": "40% AD + 20% critical strike chance bonus"
+          }
+        }
+      },
+  
+      "h4": {
+        "name": "Aerial Burn Run",
+        "description": "Narancia paints a long rectangular line. As bombs land, enemies struck take impact damage. The ground then burns for 5 seconds, dealing persistent physical damage per second to enemies in the zone and slowing them. Slow lingers 1 second after leaving.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Direction",
+        "burnDuration": "5s",
+        "lingerDuration": "1s (after leaving zone)",
+        "cooldown": "120 / 100 / 80",
+        "cost": "70 Heat",
+        "effects": {
+          "marking": {
+            "effect": "Paint long rectangular line"
+          },
+          "bombing": {
+            "landing": "Bombs land along the line"
+          },
+          "impactDamage": {
+            "type": "Physical",
+            "baseValues": "30 / 60 / 90",
+            "scaling": "20% bonus AD + 0% - 50% (based on critical strike chance)",
+            "limitation": "Each enemy hit at most once per cast"
+          },
+          "burn": {
+            "duration": "5s",
+            "damage": {
+              "type": "Physical",
+              "baseValues": "20 / 40 / 60",
+              "scaling": "30% bonus AD",
+              "frequency": "Per second"
+            },
+            "slow": {
+              "percentage": "35%",
+              "linger": "1s after leaving zone"
+            }
+          }
+        }
+      }
+    },
+  
+    "lore": "Narancia Ghirga is a member of Passione and one of the core members of Bruno Bucciarati's squad. He is energetic, impulsive, and often childish in his behavior, but beneath his rough attitude lies a deeply loyal and caring person who values his friends as family. Abandoned and betrayed at a young age, Narancia grew up with a strong sense of insecurity and anger, but joining Bucciarati's team gave him a place where he finally felt accepted and protected.\n\nHis Stand, Aerosmith, takes the form of a small fighter plane equipped with machine guns and missiles. It allows Narancia to track enemies by detecting their carbon dioxide emissions, making it highly effective for reconnaissance and surprise attacks. Despite its simple appearance, Aerosmith becomes a dangerous combat tool thanks to Narancia's instincts, determination, and willingness to throw himself into battle for his teammates.\n\nAlthough he can appear immature and reckless, Narancia is extremely brave and emotionally sensitive. He develops a strong bond with the members of Bucciarati's group, especially seeing them as the family he never had. His loyalty to his friends and his desire to protect those who gave him a home become the driving forces behind his actions, making him one of the most heartfelt and tragic members of Giorno Giovanna's team."
+  }

@@ -1,0 +1,96 @@
+.contact-form-container {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 0 32px;
+  }
+  
+  .contact-form-box {
+    background: rgba(26, 26, 26, 0.8);
+    border: 2px solid #c8aa6e;
+    border-radius: 8px;
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .contact-form-box h2 {
+    color: #c8aa6e;
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 24px;
+  }
+  
+  .contact-form-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .contact-form-box input,
+  .contact-form-box textarea,
+  .contact-form-box select {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #c8aa6e;
+    color: #c8aa6e;
+    padding: 12px;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+  }
+  
+  .contact-form-box input::placeholder,
+  .contact-form-box textarea::placeholder {
+    color: #c8aa6e;
+    opacity: 0.6;
+  }
+  
+  .contact-form-box select {
+    cursor: pointer;
+  }
+  
+  .contact-form-box select option {
+    background: #1a1a1a;
+    color: #c8aa6e;
+  }
+  
+  .contact-form-box button {
+    background: linear-gradient(135deg, #c8aa6e 0%, #8b7d3e 100%);
+    color: #000;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Cinzel', serif;
+  }
+  
+  .contact-form-box button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(200, 170, 110, 0.3);
+  }
+  
+  .contact-form-box button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  .back-btn {
+    background: rgba(200, 170, 110, 0.2);
+    border: 1px solid #c8aa6e;
+    color: #c8aa6e;
+  }
+  
+  .back-btn:hover {
+    background: rgba(200, 170, 110, 0.3);
+  }
+  
+  .message {
+    text-align: center;
+    margin-top: 16px;
+    padding: 12px;
+    border-radius: 4px;
+    background: rgba(200, 170, 110, 0.1);
+    color: #c8aa6e;
+    font-family: 'Inter', sans-serif;
+  }

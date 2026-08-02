@@ -1,0 +1,203 @@
+{
+  "id": 5,
+  "nick": "Bucciarati",
+  "fullName": "Bruno Bucciarati",
+  "alias": "The Zipper Man",
+  "anime": "JoJo's Bizarre Adventure",
+  "affiliation": "Passione",
+  "roles": ["Jungle", "Top"],
+  "attackTypes": ["Melee"],
+  "damageTypes": ["Physical"],
+  "class": "Fighter",
+  "resource": {
+    "name": "Resolve",
+    "type": "Fury",
+    "maxValue": 200,
+    "generation": "5 on-hit",
+    "decay": "1 every 0.25s after 12s without generation"
+  },
+  "difficulty": "Hard",
+  "splashArt": "/splashArts/bucciarati_splashart.png",
+  "icon": "/splashArts/bucciarati_icon.png",
+  "render": "/splashArts/bucciarati_render.png",
+
+  "stats": {
+    "health": "645 + 108 × lvl²",
+    "healthRegen": "7.5 + 0.7 × lvl²",
+    "armor": "36 + 4.5 × lvl²",
+    "attackDamage": "66 + 3.4 × lvl²",
+    "magicResistance": "32 + 2.05 × lvl²",
+    "criticalDamage": "200%",
+    "movementSpeed": "345",
+    "attackRange": "125",
+    "attackSpeed": {
+      "base": "0.651",
+      "windup": "19.531%",
+      "bonusAS": "3%"
+    }
+  },
+
+  "quotes": {
+    "selection": "Are you ready for this? I know I am.",
+    "general": [
+      "Arrivederci.",      
+      "Even in this rotten world, I still want to walk down a path I can believe in!",
+      "It's enigmatic… I've accepted this as my fate.",
+      "Passione… the fact we made it here… is a complete victory"
+    ],
+    "interactions": {
+      "Giorno ID to be specified": ["enemy", "This taste… is the taste of a liar! Giorno Giovanna!"]
+    }
+  },
+
+  "abilities": {
+    "passive": {
+      "name": "Stand Burst",
+      "description": "Bruno's basic attacks against any enemy except structures generate 5 Resolve on-hit. After 12 seconds of not generating any Resolve, he loses 1 Resolve every 0.25 seconds. While Resolve is at maximum, his Stand Sticky Fingers is casted and releases an automatic combo attack against the target. Bruno generates 30% bonus Resolve while below 50% of his maximum health.",
+      "icon": "url_por_especificar",
+      "effects": [
+        {
+          "type": "Resource Generation",
+          "trigger": "Basic attacks (except on structures)",
+          "resolveGain": "5 per hit"
+        },
+        {
+          "type": "Resource Decay",
+          "condition": "12s without generating Resolve",
+          "lossPer0_25s": "1 Resolve"
+        },
+        {
+          "type": "Automatic Combo",
+          "trigger": "Resolve at maximum (200)",
+          "effect": "Stand Sticky Fingers performs automatic attack combo"
+        },
+        {
+          "type": "Low Health Bonus",
+          "condition": "Below 50% max health",
+          "resolveBonusGeneration": "30% bonus"
+        }
+      ]
+    },
+
+    "h1": {
+      "name": "Zipper Blow",
+      "description": "Bruno casts his Stand and creates a zipper on the ground or on a wall. If on the ground, a zipper-arm punch erupts upward in a straight line. If on a wall/surface, the punch extends from that direction. The arm strikes enemies in its path, dealing physical damage. As it retracts, it deals a secondary hit. After retracting, the zipper closes and disappears.",
+      "icon": "url_por_especificar",
+      "type": "Active",
+      "targetType": "Direction",
+      "castTime": "0.25",
+      "speed": "2100",
+      "range": "150 / 1100",
+      "width": "100",
+      "angle": "90°",
+      "cooldown": "7",
+      "cost": "50 Resolve",
+      "effects": {
+        "primaryDamage": {
+          "type": "Physical",
+          "baseValues": "80 / 120 / 160 / 200 / 240",
+          "scaling": "25% Lethal Damage"
+        },
+        "secondaryDamage": {
+          "type": "Physical",
+          "baseValues": "30 / 50 / 70 / 90 / 110",
+          "scaling": "20% Lethal Damage",
+          "trigger": "On arm retraction"
+        }
+      }
+    },
+
+    "h2": {
+      "name": "Zipper Guard",
+      "description": "Bruno opens a zipper across his own torso, reducing incoming damage for 4.5 seconds. Upon reactivation or at duration's end, he closes the zipper and heals for a percentage of the prevented damage.",
+      "icon": "url_por_especificar",
+      "type": "Active",
+      "targetType": "Self",
+      "castTime": "0.25",
+      "duration": "4.5s",
+      "cooldown": "14 / 13 / 12 / 11 / 10",
+      "cost": "40 Resolve",
+      "effects": {
+        "damageReduction": "45 / 50 / 55 / 60 / 65%",
+        "healing": {
+          "trigger": "Reactivate or at duration's end",
+          "healAmount": "12 / 16 / 20 / 24 / 28% of prevented damage"
+        }
+      }
+    },
+
+    "h3": {
+      "name": "Zipper Passage",
+      "description": "Sticky Fingers creates a zipper portal through a piece of terrain in the target direction for 10 seconds. Champions can pass through by selecting it while within proximity, becoming revealed during travel. Bruno and allies travel through at 33% increased speed and heal while traveling. Can be recast to close the zipper. If an ally is inside, they are expelled safely. If an enemy is inside, they are expelled violently, taking damage.",
+      "icon": "url_por_especificar",
+      "type": "Active",
+      "targetType": "Direction",
+      "castTime": "0.25",
+      "targetRange": "900",
+      "speed": "900",
+      "portalDuration": "10s",
+      "cooldown": "22 / 20.5 / 19 / 17.5 / 16",
+      "cost": "60 Resolve",
+      "effects": {
+        "portal": {
+          "traversalBonus": "33% increased speed for Bruno and allies",
+          "allyHealing": "40 / 60 / 80 / 100 / 120% of maximum health per second",
+          "allyStatus": "Revealed during travel",
+          "requirement": "Valid terrain within target range required to cast"
+        },
+        "allyExpulsion": {
+          "trigger": "Recast with ally inside",
+          "effect": "Expelled safely"
+        },
+        "enemyExpulsion": {
+          "trigger": "Recast with enemy inside",
+          "effect": "Expelled violently, taking damage",
+          "damage": "120 / 160 / 200 / 240 / 280 + 60% Lethal Damage"
+        },
+        "restriction": "Cannot be taken while immobilized or grounded"
+      }
+    },
+
+    "h4": {
+      "name": "Sticky Rush",
+      "description": "Bruno marks an enemy champion and singles them out inside a grown zipper. He becomes displacement immune and unable to act, vanishing into the ground and revealing the target for 2 seconds. After 0.9 seconds, he creates a zipper near the target and blinks toward them, becoming targetable again. He emerges to slash at the target with Sticky Fingers, dealing physical damage, a slight knockup, and dashing 125 units through them. Sticky Fingers remains at the target location, fighting independently for the duration.",
+      "icon": "url_por_especificar",
+      "type": "Active",
+      "targetType": "Unit",
+      "castTime": "0.25",
+      "targetRange": "1500",
+      "speed": "1400",
+      "cooldown": "130 / 110 / 90",
+      "cost": "100 Resolve",
+      "effects": {
+        "initial": {
+          "effect": "Marks target, becomes displacement immune and unable to act",
+          "visibility": "Reveals target for 2s"
+        },
+        "blink": {
+          "delay": "0.9s",
+          "effect": "Blinks toward target and emerges from ground"
+        },
+        "slashDamage": {
+          "type": "Physical",
+          "baseValues": "150 / 250 / 350",
+          "scaling": "100% bonus AD + 15 / 20 / 25% of target's maximum health"
+        },
+        "knockup": {
+          "duration": "1.25s"
+        },
+        "dashThrough": {
+          "distance": "125 units through target"
+        },
+        "stickyFingersStay": {
+          "duration": "4 / 6 / 8s",
+          "behavior": "Fights independently, prioritizes Bruno's target",
+          "damage": "50 / 70 / 90 + 40% AD Lethal Damage per punch",
+          "punchFrequency": "Every 1.25s"
+        }
+      }
+    }
+  },
+
+  "lore": "Bruno Bucciarati is a capo of Passione and the leader of his own squad within the gang. Outwardly calm, composed, and collected, he is fiercely protective of his subordinates and has a strong moral compass despite working for the mafia. His Stand, Sticky Fingers, grants him the unique ability to create and manipulate zippers on any surface, allowing him to open portals, separate objects, conceal himself or others, and deliver devastating attacks through unpredictable angles. This ability makes him a versatile and highly strategic fighter, as well as an invaluable leader in battle.\n\nDespite his criminal affiliations, Bruno despises the drug trade and its destruction of innocent lives, which leads him to rebel against Passione after realizing the true nature of its boss. Compassionate, brave, and unwaveringly loyal, he becomes the pillar of Giorno Giovanna's team, guiding them in their mission to reform the organization from within. Even after suffering mortal wounds, Bruno continues to act through sheer willpower and Giorno's healing, symbolizing his resolve to live by his ideals until the very end."
+}

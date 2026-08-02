@@ -1,0 +1,190 @@
+{
+  "id": 3,
+  "nick": "Asta",
+  "fullName": "Asta",
+  "alias": "Shrimp",
+  "anime": "Black Clover",
+  "affiliation": "Magic Knight",
+  "roles": ["Top", "Support"],
+  "attackTypes": ["Melee"],
+  "damageTypes": ["Physical"],
+  "class": ["Fighter", "Duelist"],
+  "resource": {
+    "name": "Mana",
+    "type": "UR",
+    "maxValue": 263,
+    "regen": "6.6 + 0.35 × lvl²"
+  },
+  "difficulty": "Medium",
+  "splashArt": "/splashArts/asta_splashart.png",
+  "icon": "/splashArts/asta_icon.png",
+  "render": "/splashArts/asta_render.png",
+
+  "stats": {
+    "health": "652 + 114 × lvl²",
+    "healthRegen": "10 + 0.95 × lvl²",
+    "armor": "37 + 5.2 × lvl²",
+    "attackDamage": "64 + 5 × lvl²",
+    "magicResistance": "32 + 2.05 × lvl²",
+    "criticalDamage": "200%",
+    "movementSpeed": "340",
+    "attackRange": "175",
+    "attackSpeed": {
+      "base": "0.625",
+      "windup": "20%",
+      "bonusAS": "1%"
+    }
+  },
+
+  "quotes": {
+    "selection": "I may not have magic, but I will become the Wizard King!",
+    "general": [
+      "I'll surpass my limits! Right here, right now!",
+      "My magic is never giving up!",
+      "The path to the Wizard King isn't an easy one—but I'll walk it!",
+      "I'll never give up, no matter what!",
+      "Even if you take away my arms, I'll fight with my legs! If you take away my legs, I'll fight with my teeth!",
+      "Hard work beats talent when talent doesn't work hard!"
+    ],
+    "interactions": {
+      "Yuno ID to be specified": [["ally", "enemy"], "We promised we'd fight for the title of Wizard King—don't fall behind, Yuno!"],
+      "Noelle ID to be specified": ["ally", "I'll protect you, Noelle! Count on me!"],
+      "Magna ID to be specified": "I'll never lose to you, Magna-senpai! Not in guts, not in spirit!"
+    }
+  },
+
+  "abilities": {
+    "passive": {
+      "name": "Anti-Magic",
+      "description": "Asta's basic attacks and abilities empowered by anti-magic deal bonus Lethal Damage equal to 10% of the target's maximum AP. Additionally, he can sense Ki, revealing nearby invisible or camouflaged enemies within 200 units.",
+      "icon": "url_por_especificar",
+      "effects": [
+        {
+          "type": "Lethal Damage",
+          "value": "10% of target's maximum AP"
+        },
+        {
+          "type": "Vision",
+          "target": "Invisible and camouflaged enemies",
+          "radius": "200"
+        }
+      ]
+    },
+
+    "h1": {
+      "name": "Bull's Thrust",
+      "description": "Asta can activate Bull's Thrust three times before the ability goes on cooldown, with a 0.3125s static cooldown between casts. If Asta does not recast within 4 seconds of the previous cast, it goes on cooldown. Each slash deals physical damage, resets basic attack timer, and orders a basic attack on the target. The third cast covers a larger area and knocks back enemies 75 units over 0.5 seconds. The third cast can cross terrain.",
+      "icon": "url_por_especificar",
+      "type": "Active",
+      "targetType": "Area",
+      "cooldown": "13",
+      "duration": "4s (recast window)",
+      "charges": "3",
+      "chargesCooldown": "0.3125s",
+      "effects": {
+        "damage": {
+          "type": "Physical",
+          "values": "45 / 75 / 105 / 135 / 165",
+          "scaling": "65 / 70 / 75 / 80 / 85% bonus AD"
+        },
+        "firstCast": {
+          "dash": "225 units",
+          "effectRadius": "100"
+        },
+        "secondCast": {
+          "dash": "225 units",
+          "effectRadius": "100"
+        },
+        "thirdCast": {
+          "dash": "225 units",
+          "effectRadius": "300",
+          "knockback": "75 units over 0.5s",
+          "canCrossTerrain": true
+        }
+      }
+    },
+
+    "h2": {
+      "name": "Grimoire Shift",
+      "description": "Asta opens his grimoire and cycles through three anti-magic swords, each hovering for 0.5 seconds. Can be recast to select the current sword. Each sword changes the effect of Anti-Magic Technique. Swapping swords resets the cooldown of Anti-Magic Technique. After choosing a sword, Asta gains bonus attack speed for 3 seconds.",
+      "icon": "url_por_especificar",
+      "type": "Active",
+      "targetType": "Self",
+      "cooldown": "6",
+      "duration": "0.5s per sword",
+      "duration_buff": "3s",
+      "effects": {
+        "swordSelection": "Danma Sword, Shukuma Sword, Metsuma Sword",
+        "bonusAttackSpeed": "15 / 25 / 35 / 45 / 55%",
+        "cooldownReset": "Resets Anti-Magic Technique cooldown on swap"
+      }
+    },
+
+    "h3": {
+      "name": "Anti-Magic Technique",
+      "description": "Asta's anti-magic technique changes based on the sword selected via Grimoire Shift. Three different modes available: Danma Sword (defensive block), Shukuma Sword (offensive absorption), and Metsuma Sword (utility cleanse/damage).",
+      "icon": "url_por_especificar",
+      "type": "Active",
+      "cooldown": "15 / 14 / 13 / 12 / 11",
+      "modes": {
+        "danmaSword": {
+          "name": "Danma Sword - Defensive Block",
+          "description": "Asta holds his blade defensively, blocking incoming spells from the front for 2.5 seconds. Grants 15/20/25/30/35% damage reduction for 2s after blocking.",
+          "type": "Block",
+          "duration": "2.5s",
+          "angle": "100°",
+          "damageReduction": "15 / 20 / 25 / 30 / 35%",
+          "damageReductionDuration": "2s"
+        },
+        "shukumaSword": {
+          "name": "Shukuma Sword - Absorption",
+          "description": "Asta absorbs magic in an area for 1.5s, then can reactivate before 4s to release a ranged slash dealing damage based on magic absorbed.",
+          "type": "Absorption",
+          "castTime": "1s",
+          "absorbDuration": "1.5s",
+          "reactivateWindow": "4s",
+          "effectRadius": "650",
+          "range": "850",
+          "damage": {
+            "baseValues": "70 / 100 / 130 / 160 / 190",
+            "scaling": "50% AP absorbed + 10% Lethal Damage"
+          }
+        },
+        "metsumaSword": {
+          "name": "Metsuma Sword - Purge",
+          "description": "Asta targets himself or an ally to purge all secondary effects. If cast on an enemy, it removes their buffs and deals damage.",
+          "type": "Utility",
+          "range": "200",
+          "targetType": "Unit",
+          "allyEffect": {
+            "cleanse": "Removes slows, roots, silences, shields, burns, DoTs, etc.",
+            "healing": "100 / 130 / 160 / 190 / 220 HP restored (+ 50% of target's maximum HP)"
+          },
+          "enemyEffect": {
+            "debuff": "Removes all active buffs",
+            "damage": "80 / 110 / 140 / 170 / 200 (+ 55% AD + 5% Lethal Damage)"
+          }
+        }
+      }
+    },
+
+    "h4": {
+      "name": "Black Form",
+      "description": "Asta channels the power of anti-magic, entering Black Form and becoming ghosted. His right arm, sword and wing become cloaked in anti-magic, vastly amplifying his physical prowess. While active, basic attacks reduce ability cooldowns by 0.5 seconds each.",
+      "icon": "url_por_especificar",
+      "type": "Active",
+      "targetType": "Self",
+      "cooldown": "110 / 100 / 90",
+      "buffDuration": "12 / 14 / 16",
+      "effects": {
+        "ghosting": "Enabled",
+        "bonusMovementSpeed": "15 / 25 / 35%",
+        "bonusAttackSpeed": "20 / 30 / 40%",
+        "bonusLethalDamage": "20",
+        "cooldownReduction": "Basic attacks reduce ability cooldowns by 0.5s each"
+      }
+    }
+  },
+
+  "lore": "Asta is a determined orphan raised in the village of Hage, in a world where nearly everyone can use magic—except him. Despite being born without a single drop of magical power, he trains his body relentlessly and dreams of becoming the Wizard King, the strongest mage in the Clover Kingdom.\n\nAsta is loud, passionate, and impossibly persistent. His unwavering resolve and refusal to give up inspire those around him, even when the odds are stacked against him. Though often underestimated, he proves his worth time and time again with sheer will and unshakable loyalty to his friends.\n\nHis power comes from a mysterious five-leaf grimoire that grants him access to anti-magic—energy that nullifies magic completely. Using massive swords imbued with this force, Asta cuts through spells, deflects curses, and enters his Black Form, a state where anti-magic coats his body and pushes his strength to supernatural levels."
+}

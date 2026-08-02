@@ -1,0 +1,225 @@
+{
+    "id": 22,
+    "nick": "Hinawa",
+    "fullName": "Takehisa Hinawa",
+    "alias": "Lieutenant Hinawa",
+    "anime": "Fire Force",
+    "affiliation": "Fire Force",
+    "roles": ["Bot"],
+    "attackTypes": ["Ranged"],
+    "damageTypes": ["Physical"],
+    "class": "Marksman",
+    "resource": {
+      "name": "Ignition",
+      "type": "UR",
+      "maxValue": 375,
+      "regen": "8.5 + 1 × lvl²"
+    },
+    "difficulty": "Hard",
+    "splashArt": "/splashArts/hinawa_splashart.jpg",
+    "icon": "/splashArts/hinawa_icon.png",
+    "render": "/splashArts/hinawa_render.png",
+  
+    "stats": {
+      "health": "600 + 102 × lvl²",
+      "healthRegen": "4 + 0.65 × lvl²",
+      "armor": "24 + 4.2 × lvl²",
+      "attackDamage": "56 + 3.75 × lvl²",
+      "magicResistance": "30 + 1.3 × lvl²",
+      "criticalDamage": "200%",
+      "movementSpeed": "325",
+      "attackRange": "550",
+      "attackSpeed": {
+        "base": "0.625",
+        "windup": "18.839%",
+        "bonusAS": "2.5%"
+      },
+      "missileSpeed": "2000"
+    },
+  
+    "quotes": {
+      "selection": "I'll show you what discipline really means.",
+      "general": [
+        "My bullets never miss. They can't.",
+        "I don't waste ammo, or words.",
+        "Bravery doesn't mean recklessness. Keep your heads cool.",
+        "I'll turn your flames into bullets.",
+        "I don't laugh. I don't smile. That's not my job.",
+        "The battlefield doesn't forgive hesitation.",
+        "I was a soldier before a firefighter. I won't let anyone forget that.",
+        "One bullet, one target. That's my creed."
+      ],
+      "interactions": {
+        "1": ["ally", "Captain Obi, I'll cover the front. Leave the rest to me."],
+        "Shinra ID to be specified": ["ally", "Shinra, control your flames, or I'll put them to better use myself."],
+        "Maki ID to be specified": ["ally", "Maki, stay focused. I'll provide the firepower."]
+      }
+    },
+  
+    "abilities": {
+      "passive": {
+        "name": "Ignition Rounds",
+        "description": "Hinawa's basic attacks fire his shotgun to consume ammunition within 4 shells. He reloads over a few seconds after expending all shells or withholding leftover shells for a while. Reload time is reduced by Hinawa's level and bonus attack speed. Reload can be interrupted by declaring an attack or casting an ability.",
+        "icon": "url_por_especificar",
+        "mechanics": {
+          "ammoSystem": "4 shells per magazine",
+          "reloadTrigger": ["All shells expended", "Leftover shells after duration"],
+          "reloadScaling": "Reduced by level and bonus attack speed",
+          "reloadInterrupt": "Can be cancelled by attack or ability use"
+        }
+      },
+  
+      "h1": {
+        "name": "Controlled Bounce",
+        "description": "Hinawa fires a bullet in target direction. If hitting a champion, wall, large or epic monster, the bullet ricochets at a 90° angle, dealing physical damage on first hit and 120% damage on ricochet.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Direction",
+        "castTime": "0.25",
+        "range": "1100 / 850 (ricochet)",
+        "width": "50",
+        "speed": "1300 / 2100 (ricochet)",
+        "cooldown": "7",
+        "cost": "40 Ignition",
+        "effects": {
+          "initialHit": {
+            "type": "Physical",
+            "baseValues": "80 / 120 / 160 / 200 / 240",
+            "scaling": "90% AD"
+          },
+          "ricochet": {
+            "angle": "90° direction change",
+            "damageMultiplier": "120% of initial damage",
+            "triggerTargets": ["Champions", "Walls", "Large monsters", "Epic monsters"]
+          }
+        }
+      },
+  
+      "h2": {
+        "name": "Ballistic Transfer",
+        "description": "Hinawa empowers shotgun for 2.5 seconds, gaining bonus attack speed and causing basic attacks to bounce to additional surrounding enemies. If triggering attack crits, bounces crit for 175% damage. Ricochet deals 65% damage to minions and executes if below 15 health.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Self",
+        "duration": "2.5s",
+        "effectRadius": "500",
+        "cooldown": "12",
+        "cost": "60 Ignition",
+        "effects": {
+          "empowerment": {
+            "bonusAttackSpeed": "20 / 25 / 30 / 35 / 40%"
+          },
+          "bounceEffect": {
+            "trigger": "Basic attacks during buff",
+            "bounceCount": "Up to 8 bounces",
+            "targeting": "Each enemy can be hit up to one additional time per attack",
+            "priority": ["Nearest new target", "Nearest target if no new targets"]
+          },
+          "bounceBaseDamage": {
+            "type": "Physical",
+            "baseValues": "40 / 42.5 / 45 / 47.5 / 50",
+            "scaling": "% AD"
+          },
+          "criticalStrike": {
+            "condition": "If triggering attack crits",
+            "bounceMultiplier": "175% damage"
+          },
+          "minionBounce": {
+            "damage": {
+              "type": "Physical",
+              "baseValues": "26 / 27.625 / 29.25 / 30.875 / 32.5",
+              "scaling": "% AD"
+            },
+            "execution": "Kills minions below 15 health"
+          },
+          "basicAttackReset": "Gaining buff resets basic attack timer",
+          "targetVisibility": "Does not require targets to be visible"
+        }
+      },
+  
+      "h3": {
+        "name": "Ricochet Control",
+        "description": "Hinawa switches to submachine rifle and fires burst of bullets upward in an arc, landing in circular area after 0.8 seconds and dealing physical damage. Area becomes desecrated for 4 seconds, slowing enemies and inflicting Grievous Wounds.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Location",
+        "castTime": "0.2419",
+        "targetRange": "925",
+        "effectRadius": "300",
+        "cooldown": "18 / 16 / 14 / 12 / 10",
+        "cost": "90 Ignition",
+        "effects": {
+          "arcShot": {
+            "trajectory": "Upward arc",
+            "landing": "0.8s delay before impact"
+          },
+          "damage": {
+            "type": "Physical",
+            "baseValues": "60 / 90 / 120 / 150 / 180",
+            "scaling": "90% bonus AD"
+          },
+          "desecration": {
+            "duration": "4s",
+            "area": "Circular impact zone",
+            "effects": ["Slowing", "Grievous Wounds"]
+          },
+          "slow": {
+            "percentage": "30 / 35 / 40 / 45 / 50%",
+            "duration": "4s"
+          },
+          "grievousWounds": {
+            "healingReduction": "40% (standard)",
+            "duration": "4s"
+          }
+        }
+      },
+  
+      "h4": {
+        "name": "Final Shot",
+        "description": "Hinawa channels for up to 10 seconds drawing his long rifle, entering sniper stance. Becomes immobilized and unable to use other abilities; moving cancels stance. Camera shifts to first-person scoped view. Can fire up to 4 powerful shots within duration. Damage increases based on target's missing health (0%-300%). Shots can critically strike.",
+        "icon": "url_por_especificar",
+        "type": "Active (Channeled)",
+        "targetType": "Direction",
+        "channelDuration": "10s (maximum)",
+        "castTime": "1 / 0.25 (after channel)",
+        "range": "2700",
+        "width": "160",
+        "speed": "3509",
+        "maxShots": "4",
+        "shotCooldown": "1s per shot",
+        "cooldown": "120 / 105 / 90",
+        "cost": "100 Ignition",
+        "effects": {
+          "stance": {
+            "effect": "Enter first-person sniper scope view",
+            "immobilization": true,
+            "abilitiesDisabled": true,
+            "cancelCondition": "Moving cancels stance"
+          },
+          "basicDamage": {
+            "type": "Physical",
+            "baseValues": "80 / 160 / 240",
+            "scaling": "30% AD"
+          },
+          "missingHealthScaling": {
+            "multiplier": "0% – 300% (based on target's missing health)",
+            "mechanics": "Damage increases the lower enemy health"
+          },
+          "visionGrant": {
+            "effect": "Grants sight around bullet trajectory",
+            "duration": "0.5s per shot"
+          },
+          "championHit": {
+            "effect": "Bullet stops upon hitting champion",
+            "slow": "80% for 0.5s",
+            "reveal": "2s sight reveal"
+          },
+          "criticalStrike": {
+            "canCrit": true
+          }
+        }
+      }
+    },
+  
+    "lore": "Takehisa Hinawa is the stoic Second Company Lieutenant of Special Fire Force Company 8. A former military man, he carries his strict discipline and precision into battle, treating every shot as absolute and every decision as calculated. Though he wields no flashy flames of his own, Hinawa's mastery of Second Generation pyrokinetic abilities allows him to control and amplify bullets, turning ordinary firearms into devastating weapons that can pierce through infernos and strike with lethal accuracy.\n\nBehind his cold, expressionless demeanor lies a man devoted to order and the safety of his comrades. Hinawa values efficiency over emotion, often acting as the steady anchor of Company 8 in the chaos of combat. His presence is both feared and respected—whether delivering calm commands or a merciless trigger pull, Hinawa ensures that the flames of destruction are met with unwavering precision and justice."
+  }

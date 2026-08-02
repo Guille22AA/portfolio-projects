@@ -1,0 +1,182 @@
+{
+    "id": 24,
+    "nick": "Yami",
+    "fullName": "Yami Sukehiro",
+    "alias": "Foreign Barbarian",
+    "anime": "Black Clover",
+    "affiliation": "Magic Knight",
+    "roles": ["Top"],
+    "attackTypes": ["Melee"],
+    "damageTypes": ["Physical", "Magic"],
+    "class": ["Duelist", "Fighter"],
+    "resource": {
+      "name": "Mana",
+      "type": "UR",
+      "maxValue": 350,
+      "regen": "8.15 + 0.75 × lvl²"
+    },
+    "difficulty": "Medium",
+    "splashArt": "/splashArts/yami_splashart.jpg",
+    "icon": "/splashArts/yami_icon.png",
+    "render": "/splashArts/yami_render.png",
+  
+    "stats": {
+      "health": "640 + 114 × lvl²",
+      "healthRegen": "7.5 + 0.8 × lvl²",
+      "armor": "36 + 5 × lvl²",
+      "attackDamage": "63 + 4 × lvl²",
+      "magicResistance": "32 + 2.05 × lvl²",
+      "criticalDamage": "200%",
+      "movementSpeed": "345",
+      "attackRange": "175",
+      "attackSpeed": {
+        "base": "0.625",
+        "windup": "15.625%",
+        "bonusAS": "2.5%"
+      }
+    },
+  
+    "quotes": {
+      "selection": "Surpass your limits. Right here, right now!",
+      "general": [
+        "I'll cut my way through with Dark Magic!",
+        "Life's short. Take it easy… until it's time to fight.",
+        "Don't bother me with details. Just fight.",
+        "My katana answers everything I need.",
+        "If you hesitate, you're already dead.",
+        "I don't care about ranks or nobles. Power's all that matters.",
+        "Captain Yami doesn't babysit. Stand on your own feet.",
+        "Heh, looks like I'll have to get serious after all."
+      ],
+      "interactions": {
+        "3": ["ally", "Oi, Asta! Don't die on me, brat."],
+        "Finral ID to be specified": ["ally", "Finral, you're the taxi. No excuses."]
+      }
+    },
+  
+    "abilities": {
+      "passive": {
+        "name": "Ki Instinct",
+        "description": "Yami senses Ki of nearby enemies, revealing invisible or camouflaged units within 600 units if moving, attacking, or casting. His first basic attack or ability against unseen/stealthed enemies deals 10% bonus lethal damage and reveals them for 2 seconds.",
+        "icon": "url_por_especificar",
+        "senseRadius": "600",
+        "triggerConditions": ["Moving", "Attacking", "Casting"],
+        "firstHitBonus": {
+          "lethalDamage": "+10%",
+          "reveal": "2s"
+        }
+      },
+  
+      "h1": {
+        "name": "Dark Cloak Slash",
+        "description": "Yami cloaks sword in dark magic and slams it forward into ground in wide arc. Skillshot that damages all enemies in semicircular area. Slightly displaces minions and interrupts channeling.",
+        "icon": "url_por_especificar",
+        "type": "Active (Skillshot)",
+        "targetType": "Direction (Arc)",
+        "range": "500",
+        "width": "120°",
+        "cooldown": "9 / 8 / 7.5 / 7 / 6.5",
+        "cost": "60 / 65 / 70 / 75 / 80 Mana",
+        "effects": {
+          "damage": {
+            "type": ["Physical", "Magic"],
+            "baseValues": "70 / 105 / 140 / 175 / 210",
+            "scaling": "60% AD + 30% AP"
+          },
+          "effects": [
+            "Minion displacement",
+            "Channel interruption"
+          ]
+        }
+      },
+  
+      "h2": {
+        "name": "Black Cocoon",
+        "description": "Yami surrounds himself in protective orb of darkness magic, gaining magic resistance shield for 3 seconds. After 1.5 seconds, can recast to detonate dealing AP damage to nearby enemies. If not recast, explosion triggers automatically after full duration.",
+        "icon": "url_por_especificar",
+        "type": "Active (Recastable)",
+        "targetType": "Self",
+        "duration": "3s",
+        "recastDelay": "1.5s",
+        "cooldown": "14 / 13 / 12 / 11 / 10",
+        "cost": "70 / 75 / 80 / 85 / 90 Mana",
+        "effects": {
+          "shield": {
+            "baseValues": "70 / 120 / 170 / 220 / 270",
+            "scaling": "50% bonus MR",
+            "shieldType": "Magic Resistance"
+          },
+          "explosion": {
+            "trigger": "Manual recast after 1.5s or automatic at 3s",
+            "damage": {
+              "type": "Magic",
+              "baseValues": "80 / 110 / 140 / 170 / 200",
+              "scaling": "55% AP"
+            },
+            "explosionRadius": "325"
+          }
+        }
+      },
+  
+      "h3": {
+        "name": "Avidya's Sword Slash",
+        "description": "Yami channels darkness into blade and releases thin, fast wave of energy forward. Damages all enemies hit and absorbs first enemy spell, nullifying it. Cancels projectile spells but not AoE zones.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Direction",
+        "range": "850",
+        "width": "80",
+        "cooldown": "13 / 12 / 11 / 10 / 9",
+        "cost": "70 / 75 / 80 / 85 / 90 Mana",
+        "effects": {
+          "damage": {
+            "type": ["Physical", "Magic"],
+            "baseValues": "90 / 130 / 170 / 210 / 250",
+            "scaling": "65% AD + 40% AP"
+          },
+          "spellAbsorption": {
+            "effect": "Absorbs and nullifies first enemy spell",
+            "affectedSpells": "Projectile spells",
+            "unaffectedSpells": ["AoE zones"]
+          }
+        }
+      },
+  
+      "h4": {
+        "name": "Avidya's Reverse Sword Slash",
+        "description": "Yami locks onto target champion and blinks behind them, striking back of neck with blunt side of sword. If hit, triggers knockup and follow-up combo of 3 rapid anti-magic slashes mid-air. Only triggers full combo if knockup lands successfully.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Unit (Enemy Champion)",
+        "range": "700",
+        "cooldown": "100 / 85 / 70",
+        "cost": "100 Mana",
+        "effects": {
+          "blink": {
+            "effect": "Blink behind target"
+          },
+          "initialStrike": {
+            "damage": {
+              "type": "Physical",
+              "baseValues": "100 / 150 / 200",
+              "scaling": "60% AD"
+            }
+          },
+          "knockup": {
+            "duration": "0.75s",
+            "triggerCombo": true
+          },
+          "comboSlashes": {
+            "count": "3 rapid slashes",
+            "damagePerSlash": {
+              "type": ["Physical", "Magic"],
+              "baseValues": "60 / 90 / 120",
+              "scaling": "30% AD + 20% AP"
+            }
+          }
+        }
+      }
+    },
+  
+    "lore": "Yami Sukehiro is the fearsome captain of the Black Bulls, a squad known for its rowdiness and unorthodox members. Originally a foreigner shipwrecked in the Clover Kingdom, Yami was ostracized for his strange mana and appearance — until he was accepted into the Magic Knights, where he rose through the ranks by sheer strength and instinct.\n\nYami is blunt, intimidating, and battle-hungry, often telling his subordinates to push past their limits. Despite his rough exterior, he deeply values his team and will risk everything to protect them. His laid-back attitude hides an incredibly sharp combat sense.\n\nWielding Darkness Magic, Yami uses his katana to slash through space itself, absorbing magic and striking with unpredictable, devastating precision. His mastery of Ki allows him to sense invisible enemies, making him one of the most dangerous close-quarters mages in the kingdom."
+  }

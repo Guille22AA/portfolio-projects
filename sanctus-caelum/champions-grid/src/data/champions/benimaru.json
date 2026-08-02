@@ -1,0 +1,202 @@
+{
+  "id": 4,
+  "nick": "Benimaru",
+  "fullName": "Benimaru Shinmon",
+  "alias": "The Mightiest Fire Soldier",
+  "anime": "Fire Force",
+  "affiliation": "Fire Force",
+  "roles": ["Jungle"],
+  "attackTypes": ["Melee"],
+  "damageTypes": ["Magic"],
+  "class": ["Fighter", "Duelist"],
+  "resource": {
+    "name": "Ignition",
+    "type": "UR",
+    "maxValue": 100,
+    "regen": "Passive regen + ability cast"
+  },
+  "difficulty": "Easy",
+  "splashArt": "/splashArts/benimaru_splashart.png",
+  "icon": "/splashArts/benimaru_icon.png",
+  "render": "/splashArts/benimaru_render.png",
+
+
+  "stats": {
+    "health": "590 + 104 × lvl²",
+    "healthRegen": "6 + 0.5 × lvl²",
+    "armor": "34 + 4.2 × lvl²",
+    "attackDamage": "68 + 3 × lvl²",
+    "magicResistance": "32 + 2.05 × lvl²",
+    "criticalDamage": "200%",
+    "movementSpeed": "345",
+    "attackRange": "125",
+    "attackSpeed": {
+      "base": "0.667",
+      "windup": "20%",
+      "bonusAS": "3%"
+    }
+  },
+
+  "quotes": {
+    "selection": "When you live in Asakusa, you fight with your life on the line.",
+    "general": [
+      "I don't care about the church or the empire. I protect Asakusa, that's all.",
+      "I'm not anyone's pawn. I fight for my people, not for orders.",
+      "If you think you can take me on, come at me!",
+      "Power isn't something you're given—it's something you take.",
+      "Asakusa is my town. Anyone who threatens it… dies.",  
+      "Strength without resolve is meaningless."
+    ],
+    "interactions": {
+      "Konro ID to be specified": ["ally", "Don't push yourself, Konro. I'll burn them down myself."],
+      "Shinra ID to be specified": ["enemy", "You've got guts, kid. But guts alone won't win against me."],
+      "Joker ID to be specified": ["ally", "You… I don't trust a word you say."]
+    }
+  },
+
+  "abilities": {
+    "passive": {
+      "name": "Crimson Monarch",
+      "description": "Benimaru takes 50% less damage from poison effects. Fire abilities from enemies with less AP than him deal 20% reduced damage. All of Benimaru's abilities burn enemies and deal magic damage equal to 2% of their maximum health over 4 seconds.",
+      "icon": "url_por_especificar",
+      "effects": [
+        {
+          "type": "Poison Resistance",
+          "damageReduction": "50%"
+        },
+        {
+          "type": "AP-based Damage Reduction",
+          "condition": "Enemy AP < Benimaru's AP",
+          "damageReduction": "20%"
+        },
+        {
+          "type": "Burn Effect",
+          "triggerSource": "All abilities",
+          "damage": "2% max health per second",
+          "duration": "4s"
+        }
+      ]
+    },
+
+    "h1": {
+      "name": "Fists of Asakusa",
+      "description": "Benimaru empowers his next two basic attacks with explosive flames within 5 seconds to gain 50 bonus range and deal bonus magical damage in a small cone area, capped at 400 total damage per attack against monsters. For 1.5 seconds, he gains 30% bonus movement speed while facing visible enemy champions within 2000 units. The empowered attacks are guaranteed to be a Left Punch followed by a Right Punch.",
+      "icon": "url_por_especificar",
+      "type": "Active",
+      "targetType": "Self",
+      "cooldown": "10 / 9 / 8 / 7 / 6",
+      "cost": "40 Ignition",
+      "duration": "5s (recast window)",
+      "charges": "2",
+      "effects": {
+        "bonusRange": "50",
+        "damage": {
+          "type": "Magic",
+          "baseValues": "10 / 20 / 30 / 40 / 50",
+          "scaling": "(+ 1% (+ 1 / 1.5 / 2 / 2.5 / 3% per 100 AD) of target's maximum health)",
+          "capAgainstMonsters": "400 per attack"
+        },
+        "coneArea": "45° angle, 225 effect radius",
+        "movementSpeed": {
+          "value": "30%",
+          "duration": "1.5s",
+          "condition": "Facing visible enemy champions within 2000 units"
+        },
+        "basicAttackReset": "Resets basic attack timer"
+      }
+    },
+
+    "h2": {
+      "name": "Blazing Naginata",
+      "description": "Benimaru charges while being slowed by 10% for up to 4 seconds, increasing range as he charges. Can be recast within the duration. If recast, he hurls his spear in the target direction dealing physical damage, increased against low-HP enemies but reduced against secondary targets. If released within 0.35 seconds, he thrusts instead, dealing damage and refunding 60% cooldown with full damage to all targets.",
+      "icon": "url_por_especificar",
+      "type": "Active",
+      "targetType": "Direction",
+      "castTime": "0.2s",
+      "channelDuration": "4s",
+      "chargeSlowPercent": "10%",
+      "range": "40 - 560 / 1200 (scales with charge)",
+      "width": "120",
+      "speed": "2700",
+      "cooldown": "11 / 10.25 / 9.5 / 8.75 / 8",
+      "cost": "25 Ignition",
+      "effects": {
+        "hurl": {
+          "condition": "Recast after 0.35s charge",
+          "damage": {
+            "type": "Physical",
+            "baseValues": "70 / 100 / 130 / 160 / 190",
+            "scaling": "115% bonus AD + 50% AD"
+          },
+          "secondaryDamage": {
+            "baseValues": "35 / 50 / 65 / 80 / 95",
+            "scaling": "57.5% bonus AD + 25% AP"
+          },
+          "damageMultipliers": {
+            "lowHpTarget": "Increased vs enemies below 20% max health",
+            "secondaryTargets": "50% reduced damage",
+            "monsters": "90% total damage",
+            "minions": "70% total damage"
+          }
+        },
+        "thrust": {
+          "condition": "Released within 0.35s",
+          "damage": {
+            "type": "Physical",
+            "baseValues": "70 / 100 / 130 / 160 / 190",
+            "scaling": "115% bonus AD"
+          },
+          "lowHpTarget": "Increased vs enemies below 20% max health",
+          "cooldownRefund": "60%",
+          "fullDamage": "Not reduced against additional targets"
+        },
+        "cancellation": "If interrupted or not reactivated, ability is cancelled, full cooldown applied, but 50% mana cost refunded"
+      }
+    },
+
+    "h3": {
+      "name": "Blast Step",
+      "description": "Benimaru detonates flames beneath his feet to dash a short distance in the target direction. He passes through enemies dealing physical damage. Blast Step resets Benimaru's basic attack timer.",
+      "icon": "url_por_especificar",
+      "type": "Active",
+      "targetType": "Direction",
+      "range": "400",
+      "cooldown": "12 / 10 / 8 / 6",
+      "cost": "35 Ignition",
+      "effects": {
+        "damage": {
+          "type": "Physical",
+          "baseValues": "30 / 40 / 50 / 60 / 70",
+          "scaling": "40% AP"
+        },
+        "passThrough": "Passes through enemies",
+        "basicAttackReset": "Resets basic attack timer"
+      }
+    },
+
+    "h4": {
+      "name": "Crescent Moon Flash",
+      "description": "Benimaru lunges at a target enemy with a massive fiery crescent slash that travels past the target, dealing magical damage and knocking them back up to 700 units. Nearby enemies take 40% reduced damage and experience reduced knockup duration.",
+      "icon": "url_por_especificar",
+      "type": "Active",
+      "targetType": "Unit",
+      "cooldown": "120 / 110 / 100",
+      "cost": "100 Ignition",
+      "effects": {
+        "damage": {
+          "type": "Magic",
+          "baseValues": "150 / 250 / 350",
+          "scaling": "80% AP + 40% AD",
+          "capAgainstMinionMonsters": "600"
+        },
+        "knockback": "700 units",
+        "coneArea": "60° angle, 350 effect radius",
+        "aoeReduction": {
+          "nearbyEnemies": "40% reduced damage and knockup duration"
+        }
+      }
+    }
+  },
+
+  "lore": "Benimaru Shinmon is the captain of Special Fire Force Company 7 and is known throughout the Empire as both its strongest Fire Soldier and its most unpredictable. Born in Asakusa and revered as a protector of his community, Benimaru is a Second and Third Generation pyrokinetic hybrid, able to both generate and manipulate flames with overwhelming destructive power. His unique techniques, such as 'Crescent Moon Flash' and his explosive mobility, make him nearly untouchable on the battlefield. Despite his rough, blunt attitude, his loyalty to Asakusa and its people defines every action he takes.\n\nA man driven by instinct more than authority, Benimaru often disregards orders from the higher Fire Force command, choosing instead to rely on his own judgment. While he can appear detached or irreverent, he carries deep respect for those who prove their strength and conviction. In combat, his mastery of fire borders on artistry, blending raw force with precise control. Both feared and admired, Benimaru stands as a symbol of unmatched power—an unshakable wall between his people and the chaos of spontaneous human combustion."
+}

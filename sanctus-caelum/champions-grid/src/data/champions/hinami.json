@@ -1,0 +1,226 @@
+{
+  "id": 9,
+  "nick": "Hinami",
+  "fullName": "Hinami Fueguchi",
+  "alias": "Chimera's Bloom",
+  "anime": "Tokyo Ghoul",
+  "affiliation": "United Front",
+  "roles": ["Support"],
+  "attackTypes": ["Ranged"],
+  "damageTypes": ["Physical"],
+  "class": "Warden",
+  "resource": {
+    "name": "RC Cells",
+    "type": "RC_Ghoul",
+    "maxValue": 350,
+    "regen": "Kills, assists, monster clears",
+    "passiveRegen": "11 + 0.6 × lvl²",
+    "decay": "Faster drain than UR",
+    "note": "Chimera variant - dual kagune system"
+  },
+  "difficulty": "Medium",
+  "splashArt": "/splashArts/hinami_splashart.jpg",
+  "icon": "/splashArts/hinami_icon.png",
+  "render": "/splashArts/hinami_render.png",
+
+  "stats": {
+    "health": "565 + 92 × lvl²",
+    "healthRegen": "6 + 0.6 × lvl²",
+    "armor": "26 + 4.6 × lvl²",
+    "attackDamage": "47 + 2.6 × lvl²",
+    "magicResistance": "30 + 1.3 × lvl²",
+    "criticalDamage": "200%",
+    "movementSpeed": "330",
+    "attackRange": "550",
+    "attackSpeed": {
+      "base": "0.625",
+      "windup": "18.75%",
+      "bonusAS": "2.25%"
+    },
+    "missileSpeed": "1450"
+  },
+
+  "quotes": {
+    "selection": "I'll be strong, so no one has to cry because of me.",
+    "general": [
+      "I don't want to lose anyone anymore…",
+      "Even if I'm weak, I want to protect the people I care about.",
+      "The smell of blood… it's so sad.",
+      "When I read, I feel like I'm somewhere else… somewhere safe.",
+      "Family isn't about blood. It's about who stays with you.",   
+      "Books are my friends… they never betray me.",
+      "Mom… I'll never forget your warmth",
+      "Sometimes, kindness hurts more than cruelty."
+    ],
+    "interactions": {
+      "Kaneki ID to be specified": ["ally", "Kaneki, thank you… for being like a big brother to me."],
+      "Touka ID to be specified": ["ally", "Touka-chan, you're the kind of person I want to be… strong and kind."]
+    }
+  },
+
+  "abilities": {
+    "passive": {
+      "name": "Keen Senses",
+      "description": "Hinami's enhanced hearing and smell allow her to sense enemies hidden in invisibility or fog of war within 800 units. When she detects an unseen enemy, their silhouette is faintly revealed for 0.5 seconds, occurring every 2 seconds.",
+      "icon": "url_por_especificar",
+      "effects": [
+        {
+          "type": "Hidden Enemy Detection",
+          "range": "800 units",
+          "targets": "Invisible or fog of war enemies"
+        },
+        {
+          "type": "Silhouette Reveal",
+          "duration": "0.5s",
+          "frequency": "Every 2s"
+        }
+      ]
+    },
+
+    "passive2": {
+      "name": "Chimera Evolution",
+      "description": "Hinami's dual kagune system (Rinkaku and Koukaku) evolve through the use of her abilities. Both gain stacks independently, unlocking new phases with enhanced effects.",
+      "icon": "url_por_especificar",
+      "effects": [
+        {
+          "type": "Rinkaku Evolution",
+          "trigger": "Twin Rinkaku Lash usage",
+          "phases": "3 phases (0→15→30 stacks)"
+        },
+        {
+          "type": "Koukaku Evolution",
+          "trigger": "Koukaku Shield usage",
+          "phases": "2 phases (0→8 stacks)"
+        }
+      ]
+    },
+
+    "h1": {
+      "name": "Twin Rinkaku Lash",
+      "description": "Hinami stretches her left rinkaku in the target direction, catching the first enemy hit with physical damage, slow, and forming a tether for 2 seconds (revealing the target). Next basic attack becomes a second empowered Rinkaku Lash. If both lashes hit different targets, they root and are displaced toward each other. If near each other, they collide, knocking up and stunning all nearby enemies.",
+      "icon": "url_por_especificar",
+      "type": "Active",
+      "targetType": "Direction",
+      "castTime": "0.33",
+      "targetRange": "80 - 800",
+      "width": "160",
+      "tetherRadius": "900",
+      "speed": "2800",
+      "cooldown": "14 / 12.5 / 11 / 9.5 / 8",
+      "cost": "60 RC",
+      "effects": {
+        "primaryDamage": {
+          "type": "Physical",
+          "baseValues": "40 / 55 / 70 / 85 / 100",
+          "scaling": "30% AD + 3% of target's maximum health"
+        },
+        "slow": {
+          "duration": "0.5s",
+          "percentage": "40%"
+        },
+        "tether": {
+          "duration": "2s",
+          "effect": "Reveals target",
+          "nextAttack": "Replaced by empowered Rinkaku Lash (0.25s cast time, +25 range)"
+        },
+        "dualTargetCollision": {
+          "effect": "Root both targets for 0.5s",
+          "displacement": "Toward each other over 300 units after 0.4s delay",
+          "impact": "Knockup, stun (0.25s), and damage to all nearby enemies"
+        },
+        "basicAttackReset": "Both rinkaku casts reset basic attack timer",
+        "restriction": "Unable to move or attack while left arm is in flight"
+      },
+      "rinkakuEvolution": {
+        "stackGain": "1 stack per enemy hit, 3 stacks on successful collision",
+        "phase2Threshold": "15 stacks",
+        "phase3Threshold": "30 stacks",
+        "phase1": "2 smooth tentacles",
+        "phase2": "Tentacles gain spikes (+90% AD)",
+        "phase3": "4 spiked tentacles (+180% AD)"
+      }
+    },
+
+    "h2": {
+      "name": "Koukaku Shield",
+      "description": "Hinami raises her koukaku wings as a barrier, shielding herself and allies behind her for 2.25 seconds. Blocks all non-turret basic attacks and reduces movement to 70%.",
+      "icon": "url_por_especificar",
+      "type": "Active",
+      "targetType": "Self",
+      "effectRadius": "350",
+      "duration": "2.25s",
+      "cooldown": "16 / 14.5 / 13 / 11.5 / 10",
+      "cost": "40 RC",
+      "effects": {
+        "shield": {
+          "effect": "Blocks non-turret basic attacks",
+          "targets": "Self and allies behind"
+        },
+        "movementReduction": "Reduced to 70%"
+      },
+      "koukakuEvolution": {
+        "stackGain": "1 stack per 120 damage absorbed",
+        "phase2Threshold": "8 stacks",
+        "phase1": "2 small wings - blocks autos and single-target abilities only",
+        "phase2": "4 large wings - reduces all incoming damage by 20%, grants 20% CC reduction during shield"
+      }
+    },
+
+    "h3": {
+      "name": "Rinkaku Whirl",
+      "description": "Hinami spins her rinkaku tentacles around her, knocking back all nearby enemies and dealing physical damage. Evolves in power with the Phase of her Rinkaku from Twin Rinkaku Lash.",
+      "icon": "url_por_especificar",
+      "type": "Active",
+      "targetType": "Self",
+      "minimumRadius": "150",
+      "cooldown": "15 / 14 / 13 / 12 / 11",
+      "cost": "50 RC",
+      "effects": {
+        "damage": {
+          "type": "Physical",
+          "baseValues": "60 / 95 / 130 / 165 / 200",
+          "scaling": "30% bonus AD"
+        },
+        "knockback": {
+          "baseRange": "75 units"
+        }
+      },
+      "phaseScaling": {
+        "phase1": "Base stats (2 tentacles)",
+        "phase2": "Rinkaku Phase 2: +50 radius, +25 knockup range, +20% damage",
+        "phase3": "Rinkaku Phase 3: +100 radius, +35 knockup range, +35% damage"
+      }
+    },
+
+    "h4": {
+      "name": "Chimera's Embrace",
+      "description": "Hinami launches her rinkaku forward as a skillshot, impaling the first enemy champion hit for 2.5 seconds and rooting them. While the enemy is impaled, Hinami braces behind her koukaku wings, becoming untargetable to CC but unable to move. Effects enhanced based on evolution phases.",
+      "icon": "url_por_especificar",
+      "type": "Active",
+      "targetType": "Direction",
+      "cooldown": "110 / 90 / 70",
+      "cost": "Por especificar",
+      "effects": {
+        "impale": {
+          "duration": "2.5s",
+          "effect": "Roots target",
+          "damage": {
+            "type": "Physical",
+            "baseValues": "150 / 250 / 350",
+            "scaling": "70% bonus AD"
+          }
+        },
+        "hinamilockdown": {
+          "effect": "Becomes untargetable to CC",
+          "restriction": "Unable to move"
+        }
+      },
+      "chimersScaling": {
+        "rinkakuPhase3": "With 4 tentacles: 2 impale the target, 2 lash it",
+        "koukakuPhase2": "With 4 wings: Shield effect from Koukaku Shield activates during channel"
+      }
+    }
+  },
+
+  "lore": "Hinami Fueguchi is a young ghoul born to two loving parents who were both killed by ghoul investigators. Orphaned at an early age, she was taken in by Yoshimura and the Anteiku family, where she found comfort and support. Despite her tragic past, Hinami retained her kindness and empathy, growing attached to Kaneki and Touka as older sibling figures. Her struggles embody the conflict between humans and ghouls, constantly questioning why the two must fight.\n\nHinami is a rare chimera ghoul, possessing both a Koukaku kagune (defensive, wing-like shields) and a Rinkaku kagune (offensive, whip-like tentacles). This makes her a versatile fighter, able to protect herself and her allies while delivering powerful strikes. Although gentle and reluctant to kill, she matures into a strong and determined individual, willing to fight for those she loves and the fragile hope of coexistence."
+}

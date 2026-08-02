@@ -1,0 +1,183 @@
+{
+    "id": 14,
+    "nick": "Suzuya",
+    "fullName": "Juuzou Suzuya",
+    "alias": "XIII / Reaper",
+    "anime": "Tokyo Ghoul",
+    "affiliation": "CCG",
+    "roles": ["Top", "Mid"],
+    "attackTypes": ["Melee"],
+    "damageTypes": ["Physical"],
+    "class": ["Slayer", "Fighter"],
+    "resource": {
+      "name": "RC Cells",
+      "type": "RC_Human",
+      "maxValue": 327,
+      "regen": "Kills, assists, monster clears",
+      "passiveRegen": "7.59 + 0.5 × lvl²",
+      "decay": "Faster drain than UR, slower than RC_Ghoul"
+    },
+    "difficulty": "Hard",
+    "splashArt": "/splashArts/suzuya_splashart.jpg",
+    "icon": "/splashArts/suzuya_icon.png",
+    "render": "/splashArts/suzuya_render.png",
+  
+    "stats": {
+      "health": "643 + 99 × lvl²",
+      "healthRegen": "7.5 + 0.75 × lvl²",
+      "armor": "32 + 4.2 × lvl²",
+      "attackDamage": "60 + 3.1 × lvl²",
+      "magicResistance": "32 + 2.05 × lvl²",
+      "criticalDamage": "200%",
+      "movementSpeed": "345",
+      "attackRange": "125",
+      "attackSpeed": {
+        "base": "0.668",
+        "windup": "20.053%",
+        "bonusAS": "2.7%"
+      }
+    },
+  
+    "quotes": {
+      "selection": "Life is just like a game, isn't it?",
+      "general": [
+        "My body's been through a lot. Pain doesn't bother me anymore.",
+        "Oh! You broke? Don't worry, I'll fix you with my stitches.",
+        "Ghouls or humans, everyone bleeds the same red.",
+        "Big Sis, are you watching me?",
+        "Orders are orders. I don't think about right or wrong.",
+        "If an angelic being fell from the sky and tried to live in this world, I think even they would commit many wrongs.",
+        "The CCG gave me these toys. I'll use them however I like."
+      ],
+      "interactions": {
+        "Kaneki ID to be specified": ["enemy", "Why should I apologize for being a monster? Has anyone ever apologized for turning me into one?"]
+      }
+    },
+  
+    "abilities": {
+      "passive": {
+        "name": "Frenzied Thrill",
+        "description": "Juuzou gains bonus Tenacity scaling with nearby enemy champions within 1400 units, up to 3 enemies. Tenacity increases from 5% to 12% based on number of nearby enemies.",
+        "icon": "url_por_especificar",
+        "effectRadius": "1400",
+        "effects": [
+          {
+            "type": "Tenacity Bonus",
+            "scaling": "5% - 12% per nearby enemy",
+            "maxEnemies": "3",
+            "effect": "Reduces crowd control duration"
+          }
+        ]
+      },
+  
+      "h1": {
+        "name": "Jason 13 Slash",
+        "description": "Juuzou dashes in the target direction, dealing physical damage to enemies he passes through. He then swings his scythe, dealing the same damage to nearby enemies.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Direction",
+        "targetRange": "350",
+        "cooldown": "7 / 6.5 / 6 / 5.5 / 5",
+        "cost": "40 RC",
+        "effects": {
+          "dash": {
+            "effect": "Dashes in target direction",
+            "damageOnPass": true
+          },
+          "damage": {
+            "type": "Physical",
+            "baseValues": "75 / 100 / 125 / 150 / 175",
+            "scaling": "85% bonus AD + 12% of target's maximum health"
+          },
+          "scytheSwing": {
+            "effect": "Swings scythe at nearby enemies",
+            "damageMultiplier": "Same as dash"
+          }
+        }
+      },
+  
+      "h2": {
+        "name": "Jason 13 Gimmick",
+        "description": "Juuzou slashes forward with Jason-13, sending jagged, whip-like blades outward in a line, dealing physical damage to enemies and slowing them. The slow decays over 1.5 seconds.",
+        "icon": "url_por_especificar",
+        "type": "Active",
+        "targetType": "Direction",
+        "targetRange": "700",
+        "cooldown": "13 / 12 / 11 / 10 / 9",
+        "cost": "40 / 45 / 50 / 55 / 60 RC",
+        "effects": {
+          "damage": {
+            "type": "Physical",
+            "baseValues": "85 / 130 / 175 / 220 / 265",
+            "scaling": "110% bonus AD"
+          },
+          "slow": {
+            "percentage": "90%",
+            "duration": "1.5s (decaying)"
+          }
+        }
+      },
+  
+      "h3": {
+        "name": "Weapon Switch",
+        "description": "Juuzou swaps between his two quinques. Scorpion grants ranged basic attacks (425 range, fast AS, lower damage). Jason-13 grants melee scythe strikes (175 range, slower AS, higher damage).",
+        "icon": "url_por_especificar",
+        "type": "Active (Toggle)",
+        "targetType": "Self",
+        "cooldown": "3",
+        "cost": "Free",
+        "effects": {
+          "scorpion_mode": {
+            "attackType": "Ranged throws",
+            "range": "425",
+            "attackSpeed": "Fast",
+            "baseDamage": "Lower"
+          },
+          "jason13_mode": {
+            "attackType": "Melee scythe strikes",
+            "range": "175",
+            "attackSpeed": "Slower",
+            "baseDamage": "Higher"
+          }
+        }
+      },
+  
+      "h4": {
+        "name": "Atara Joker",
+        "description": "Juuzou envelops himself in stitched armor, sprouting long bladed arms. Abilities are disabled but basic attacks extend to 520 range with rapid slashes. Can recast up to 3 times, each consuming HP and increasing buffs. Automatically ends if HP drops below 10%.",
+        "icon": "url_por_especificar",
+        "type": "Active (Stance)",
+        "targetType": "Self",
+        "castTime": "0.2",
+        "cooldown": "120 / 100 / 80",
+        "cost": "100 RC",
+        "effects": {
+          "armorForm": {
+            "effect": "Stitched armor with bladed arms"
+          },
+          "bonuses": {
+            "resistance": "40 / 55 / 70",
+            "attackSpeed": "25 / 35 / 45%",
+            "movementSpeed": "15 / 18 / 25% (+ 10% tenacity)"
+          },
+          "basicAttacks": {
+            "range": "520",
+            "type": "Rapid slashes",
+            "damage": "60 / 90 / 130 (+ 40% AD)",
+            "abilitiesDisabled": true
+          },
+          "recast": {
+            "maxRecasts": "3 times",
+            "hpCost": "8 / 16 / 32% of current HP per recast",
+            "buffIncrease": "+4% to all buffs per recast"
+          },
+          "autoEnd": {
+            "condition": "HP drops below 10%",
+            "effect": "Atara Joker automatically ends"
+          }
+        }
+      }
+    },
+  
+    "lore": "Juuzou Suzuya is a Special Class Ghoul Investigator of the CCG, infamous for his eccentric behavior, stitched-up body, and ruthless efficiency on the battlefield. Once known as Rei Suzuya, his childhood was marked by abuse and conditioning under the ghoul Big Madam, shaping his detached personality and twisted sense of 'fun.' Despite his strange demeanor, Juuzou quickly proved himself as a prodigy, wielding quinques with unmatched creativity and brutality, earning both fear and admiration within the organization.\n\nBehind his childlike voice and unsettling smile lies a cold, calculating killer who thrives in the chaos of battle. Juuzou wields his signature quinques, Scorpion and Jason-13, switching seamlessly between ranged precision and devastating melee strikes. When pushed to his limits, he dons Atara Joker, a stitched armor form that amplifies his bloodlust and turns him into a relentless slayer. Though he appears playful and detached, Juuzou's strength, unpredictability, and thirst for combat make him one of the deadliest humans in the war between investigators and ghouls."
+  }
