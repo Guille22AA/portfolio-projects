@@ -161,7 +161,6 @@ yarn-error.log*
 
 # Java
 *.class
-*.jar
 *.war
 target/
 
