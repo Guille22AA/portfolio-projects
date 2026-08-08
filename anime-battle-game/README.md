@@ -65,7 +65,7 @@ anime-battle-game/
 
 ## 📖 Documentation
 
-[**View Full Javadoc Documentation →**](https://cdn.jsdelivr.net/gh/Guille22AA/portfolio-projects@main/anime-battle-game/doc/index.html)
+Full API documentation generated with Javadoc. See `doc/` folder.
 
 Full API documentation including all classes, packages, and methods.
 
