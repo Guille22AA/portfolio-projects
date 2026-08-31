@@ -5,6 +5,7 @@ This repository contains my personal software projects built for learning, pract
 ## 📁 Projects Included
 
 - Sanctus Caelum - Ofificial Game Website
+- Anime Battle Gme - Playable Game with Java
 
 ## 🎯 Goal
 
