@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/SuggestChampion.css';
 
-const SuggestChampion = ({ setPage }) => {
-  // basic form state, just keeping the two inputs in one place
+const SuggestChampion = () => {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     name: '',
     anime: ''
   });
-  // show the button is doing something while the request is running
   const [loading, setLoading] = useState(false);
-  // feedback text for success or fail after the request
   const [message, setMessage] = useState('');
 
-  // whenever the user types, we update the matching field in the form state
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -21,7 +20,6 @@ const SuggestChampion = ({ setPage }) => {
     }));
   };
 
-  // send the form, wait for the backend, then update the UI
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -39,8 +37,7 @@ const SuggestChampion = ({ setPage }) => {
       if (res.ok) {
         setMessage('✅ Sugerencia enviada exitosamente');
         setFormData({ name: '', anime: '' });
-        // small pause so the user can actually see the success message before going back
-        setTimeout(() => setPage('champions'), 2000);
+        setTimeout(() => navigate('/'), 2000);
       } else {
         setMessage(`❌ Error: ${data.error}`);
       }
@@ -72,12 +69,10 @@ const SuggestChampion = ({ setPage }) => {
             onChange={handleChange}
             required
           />
-          {/* main action button, it changes text while the request is in progress */}
           <button type="submit" disabled={loading}>
             {loading ? 'Sending...' : 'Send Suggestion'}
           </button>
-          {/* quick exit back to the main champion view */}
-          <button type="button" onClick={() => setPage('champions')} className="back-btn">
+          <button type="button" onClick={() => navigate('/')} className="back-btn">
             Return
           </button>
         </form>

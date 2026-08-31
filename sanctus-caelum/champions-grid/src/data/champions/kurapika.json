@@ -213,5 +213,7 @@
       }
     },
   
-    "lore": "Kurapika is the sole survivor of the Kurta Clan, a peaceful people known for their Scarlet Eyes, which glow bright red in moments of strong emotion. After his clan was slaughtered by the Phantom Troupe for their eyes, Kurapika swore to avenge them and recover what was stolen.\n\nCalm, intelligent, and driven by justice, Kurapika hides deep pain beneath his composed exterior. His Nen chains give him powerful abilities to track, restrain, heal, and execute. When his Scarlet Eyes activate, he gains abilities beyond his natural type—at the cost of risking his own life."
+    "lore": "Kurapika is the sole survivor of the Kurta Clan, a peaceful people known for their Scarlet Eyes, which glow bright red in moments of strong emotion. After his clan was slaughtered by the Phantom Troupe for their eyes, Kurapika swore to avenge them and recover what was stolen.\n\nCalm, intelligent, and driven by justice, Kurapika hides deep pain beneath his composed exterior. His Nen chains give him powerful abilities to track, restrain, heal, and execute. When his Scarlet Eyes activate, he gains abilities beyond his natural type—at the cost of risking his own life.", 
+
+    "tags": ["CrowdControl", "Utility", "Execution"]
   }

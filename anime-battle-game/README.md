@@ -65,7 +65,7 @@ anime-battle-game/
 
 ## 📖 Documentation
 
-[**View Full Javadoc Documentation →**](https://htmlpreview.github.io/?https://raw.githubusercontent.com/Guille22AA/portfolio-projects/main/anime-battle-game/doc/index.html)
+Full API documentation available in `doc/index.html`
 
 ## 🎯 Objective
 

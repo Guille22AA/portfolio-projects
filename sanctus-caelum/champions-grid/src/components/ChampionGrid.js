@@ -39,7 +39,7 @@ const ChampionGrid = ({ champions, searchTerm, filters }) => {
       <div className="champions-header">
       <div className="champions-title-wrapper">
         <div className="title-line left"></div>
-          <img src="/iconos/sc_logo.png" alt="Sanctus Caelum" className="header-logo" />
+          <img src="/iconos/SC_logo.png" alt="Sanctus Caelum" className="header-logo" />
           <h1 className="champions-title">CHAMPIONS</h1>
         <div className="title-line right"></div>
       </div>

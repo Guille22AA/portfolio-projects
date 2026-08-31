@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/ContactForm.css';
 
-const ContactForm = ({ setPage }) => {
-  // basic form state so the component can keep track of what the user types
+const ContactForm = () => {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     email: '',
     type: 'support',
@@ -11,7 +13,6 @@ const ContactForm = ({ setPage }) => {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
 
-  // when an input changes, it updates the matching field in state
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -20,7 +21,6 @@ const ContactForm = ({ setPage }) => {
     }));
   };
 
-  // the main submit flow: send the form, wait for the response, and show a message
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -38,8 +38,7 @@ const ContactForm = ({ setPage }) => {
       if (res.ok) {
         setMessage('✅ Mensaje enviado exitosamente');
         setFormData({ email: '', type: 'support', message: '' });
-        // if everything goes well, it goes back to the main page after a bit
-        setTimeout(() => setPage('champions'), 2000);
+        setTimeout(() => navigate('/'), 2000);
       } else {
         setMessage(`❌ Error: ${data.error}`);
       }
@@ -51,7 +50,6 @@ const ContactForm = ({ setPage }) => {
   };
 
   return (
-    // UI shell for the contact card and its form
     <div className="contact-form-container">
       <div className="contact-form-box">
         <h2>Contacta con nosotros</h2>
@@ -84,7 +82,7 @@ const ContactForm = ({ setPage }) => {
           <button type="submit" disabled={loading}>
             {loading ? 'Enviando...' : 'Enviar'}
           </button>
-          <button type="button" onClick={() => setPage('champions')} className="back-btn">
+          <button type="button" onClick={() => navigate('/')} className="back-btn">
             Volver
           </button>
         </form>

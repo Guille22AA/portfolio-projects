@@ -1,30 +1,28 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/Footer.css";
 
-const Footer = ({ setPage }) => {
+const Footer = () => {
+  const navigate = useNavigate();
+
   return (
     <footer className="main-footer">
-      {/* quick top buttons to jump around the app */}
       <div className="footer-simulation-bar">
-        <button onClick={() => setPage('champions')}>About Sanctus Caelum</button>
-        <button onClick={() => setPage('suggest')}>Help Us Improve</button>
-        <button onClick={() => setPage('champions')}>Server Status</button>
-        <button onClick={() => setPage('contact')}>Support</button>
+        <button onClick={() => navigate('/')}>About Sanctus Caelum</button>
+        <button onClick={() => navigate('/suggest')}>Help Us Improve</button>
+        <button onClick={() => navigate('/')}>Server Status</button>
+        <button onClick={() => navigate('/contact')}>Support</button>
       </div>
 
-      {/* main footer block, this is the big info part */}
       <div className="footer-content">
         <div className="footer-logo-section">
-          {/* brand logo on the left side */}
           <img src="/iconos/G2A2_logo.png" alt="Sanctus Caelum" className="footer-logo-G2A2" />
         </div>
 
-        {/* short copyright type text*/}
         <p className="footer-copyright">
           © 2024 Sanctus Caelum. All rights reserved. Anime Champions is a fan-made project created with passion by dedicated fans.
         </p>
 
-        {/* small standard legal links at the bottom*/}
         <div className="footer-links">
           <ul>
             <li><a href="#privacy">PRIVACY POLICY</a></li>
@@ -33,11 +31,9 @@ const Footer = ({ setPage }) => {
           </ul>
         </div>
 
-        {/* age rating and the little descriptors */}
         <div className="rating-section">
           <div className="rating-box">
             <div className="rating-content">
-              {/* rating badge, just visual info */}
               <img src="/iconos/ESRB_Teen.png" alt="ESBR Teen" className="ESRB-logo"/>
             </div>
             <div className="rating-description">

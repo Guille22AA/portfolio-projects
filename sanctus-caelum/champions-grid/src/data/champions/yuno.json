@@ -161,5 +161,7 @@
       }
     },
   
-    "lore": "Yuno is a gifted magic knight from the Clover Kingdom and the lifelong rival of Asta. Raised in a remote village, he was chosen by a rare four-leaf grimoire and later discovered to be the lost prince of the Spade Kingdom.\n\nCalm, focused, and fiercely determined, Yuno is driven by a quiet ambition to become the Wizard King. Though reserved, he deeply values his rivalry with Asta and uses it as fuel to push his limits.\n\nMastering wind magic and bonded to the spirit Sylph, Yuno wields precise, high-speed spells and can enter Spirit Dive, a powerful form that amplifies his speed, attack range, and magical strength."
+    "lore": "Yuno is a gifted magic knight from the Clover Kingdom and the lifelong rival of Asta. Raised in a remote village, he was chosen by a rare four-leaf grimoire and later discovered to be the lost prince of the Spade Kingdom.\n\nCalm, focused, and fiercely determined, Yuno is driven by a quiet ambition to become the Wizard King. Though reserved, he deeply values his rivalry with Asta and uses it as fuel to push his limits.\n\nMastering wind magic and bonded to the spirit Sylph, Yuno wields precise, high-speed spells and can enter Spirit Dive, a powerful form that amplifies his speed, attack range, and magical strength.",
+
+    "tags": ["Poke", "Mobility", "DPS"]
   }
