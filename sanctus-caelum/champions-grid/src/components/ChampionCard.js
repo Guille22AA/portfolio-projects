@@ -5,14 +5,14 @@ const ChampionCard = ({ champion }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/champion/${champion.id}`);
+    navigate(`/champion/${champion.slug}`);
   };
 
   return (
     <div className="champion-card" onClick={handleClick}>
       <div className="champion-splash">
-        <img 
-          src={champion.render} 
+        <img
+          src={champion.render}
           alt={champion.fullName}
           style={{ border: 'none' }}
         />

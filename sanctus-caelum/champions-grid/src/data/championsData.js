@@ -6,7 +6,8 @@ const championContext = require.context('./../data/champions', false, /\.json$/)
 const championFiles = championContext.keys();
 
 export const championsData = championFiles
-  .map(file => championContext(file))
+  // the file name doubles as the URL slug and as the key for the cutout and gallery of each champion
+  .map(file => ({ ...championContext(file), slug: file.split('/').pop().replace('.json', '') }))
   // load each one and sort by id so the list stays in a clean order
   .sort((a, b) => a.id - b.id);
 
