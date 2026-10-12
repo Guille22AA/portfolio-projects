@@ -17,8 +17,11 @@
     "decay": "1 every 0.25s after 12s without generation"
   },
   "difficulty": "Hard",
-  "splashArt": "/splashArts/bucciarati_splashart.png",
-  "icon": "/splashArts/bucciarati_icon.png",
+  "price": { "coins": 4800, "premium": 880 },
+  "ratings": { "damage": 2, "toughness": 3, "control": 2, "mobility": 3, "utility": 2 },
+  "style": 55,
+  "releaseDate": "2026-10-12",
+  "lastChanged": "V1.0",
   "render": "/splashArts/bucciarati_render.png",
 
   "stats": {
@@ -54,7 +57,6 @@
     "passive": {
       "name": "Stand Burst",
       "description": "Bruno's basic attacks against any enemy except structures generate 5 Resolve on-hit. After 12 seconds of not generating any Resolve, he loses 1 Resolve every 0.25 seconds. While Resolve is at maximum, his Stand Sticky Fingers is casted and releases an automatic combo attack against the target. Bruno generates 30% bonus Resolve while below 50% of his maximum health.",
-      "icon": "url_por_especificar",
       "effects": [
         {
           "type": "Resource Generation",
@@ -82,7 +84,6 @@
     "h1": {
       "name": "Zipper Blow",
       "description": "Bruno casts his Stand and creates a zipper on the ground or on a wall. If on the ground, a zipper-arm punch erupts upward in a straight line. If on a wall/surface, the punch extends from that direction. The arm strikes enemies in its path, dealing physical damage. As it retracts, it deals a secondary hit. After retracting, the zipper closes and disappears.",
-      "icon": "url_por_especificar",
       "type": "Active",
       "targetType": "Direction",
       "castTime": "0.25",
@@ -110,7 +111,6 @@
     "h2": {
       "name": "Zipper Guard",
       "description": "Bruno opens a zipper across his own torso, reducing incoming damage for 4.5 seconds. Upon reactivation or at duration's end, he closes the zipper and heals for a percentage of the prevented damage.",
-      "icon": "url_por_especificar",
       "type": "Active",
       "targetType": "Self",
       "castTime": "0.25",
@@ -129,7 +129,6 @@
     "h3": {
       "name": "Zipper Passage",
       "description": "Sticky Fingers creates a zipper portal through a piece of terrain in the target direction for 10 seconds. Champions can pass through by selecting it while within proximity, becoming revealed during travel. Bruno and allies travel through at 33% increased speed and heal while traveling. Can be recast to close the zipper. If an ally is inside, they are expelled safely. If an enemy is inside, they are expelled violently, taking damage.",
-      "icon": "url_por_especificar",
       "type": "Active",
       "targetType": "Direction",
       "castTime": "0.25",
@@ -161,7 +160,6 @@
     "h4": {
       "name": "Sticky Rush",
       "description": "Bruno marks an enemy champion and singles them out inside a grown zipper. He becomes displacement immune and unable to act, vanishing into the ground and revealing the target for 2 seconds. After 0.9 seconds, he creates a zipper near the target and blinks toward them, becoming targetable again. He emerges to slash at the target with Sticky Fingers, dealing physical damage, a slight knockup, and dashing 125 units through them. Sticky Fingers remains at the target location, fighting independently for the duration.",
-      "icon": "url_por_especificar",
       "type": "Active",
       "targetType": "Unit",
       "castTime": "0.25",

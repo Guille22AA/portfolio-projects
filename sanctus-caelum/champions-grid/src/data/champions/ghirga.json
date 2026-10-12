@@ -5,7 +5,7 @@
     "alias": "Bullet Brat",
     "anime": "JoJo's Bizarre Adventure",
     "affiliation": "Passione",
-    "roles": ["ADC"],
+    "roles": ["Bot"],
     "attackTypes": ["Ranged"],
     "damageTypes": ["Physical"],
     "class": "Marksman",
@@ -13,12 +13,16 @@
       "name": "Heat",
       "type": "UR",
       "maxValue": 300,
+      "maxValueGrowth": 40,
       "regen": "8 + 0.8 × lvl²",
       "mechanic": "Rises when Aerosmith casts abilities. At maximum, overheats temporarily, disabling basic abilities but empowering basic attacks."
     },
     "difficulty": "Medium",
-    "splashArt": "/splashArts/ghirga_splashart.jpg",
-    "icon": "/splashArts/ghirga_icon.png",
+    "price": { "coins": 3150, "premium": 790 },
+    "ratings": { "damage": 3, "toughness": 0, "control": 1, "mobility": 0, "utility": 1 },
+    "style": 30,
+    "releaseDate": "2026-10-12",
+    "lastChanged": "V1.0",
     "render": "/splashArts/ghirga_render.png",
     "stats": {
       "health": "625 + 100 × lvl²",
@@ -59,7 +63,6 @@
         {
           "name": "Overheat System",
           "description": "Narancia's Heat bar rises every time Aerosmith casts an ability. Upon reaching maximum Heat, he overheats, temporarily disabling his basic abilities (0-4 seconds) but empowering his basic attacks with bonus critical strike chance and health-scaling damage. He also gains significant bonus attack speed.",
-          "icon": "url_por_especificar",
           "effects": [
             {
               "type": "Heat Generation",
@@ -80,7 +83,6 @@
         {
           "name": "Carbon Dioxide Radar",
           "description": "Aerosmith continuously detects nearby enemies by sensing their carbon dioxide emissions. Reveals all enemies within a set radius, including those in stealth or invisibility. Does not reveal wards or traps.",
-          "icon": "url_por_especificar",
           "effects": [
             {
               "type": "Enemy Detection",
@@ -96,7 +98,6 @@
       "h1": {
         "name": "Suppressive Fire",
         "description": "Aerosmith switches to burst fire, shooting volleys of bullets. Number of volleys increases per rank. Each bullet's damage is increased based on critical strike chance. Volley size scales with Attack Speed.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Self",
         "duration": "3.5 / 4 / 5 / 5.5 / 6",
@@ -122,7 +123,6 @@
       "h2": {
         "name": "Aerial Bombing",
         "description": "Narancia marks a target location. Aerosmith flies to that location and drops a bomb dealing physical damage in an area, slowing enemies for 1.25 seconds.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Location",
         "targetRange": "850",
@@ -153,7 +153,6 @@
       "h3": {
         "name": "Wide-Area Barrage",
         "description": "Aerosmith switches to explosive rounds for a few seconds. Projectiles travel slower but gain +150 range. Each shot explodes in a small AoE dealing physical damage based on critical strike chance.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Self",
         "duration": "4 / 4.5 / 5 / 5.5 / 6",
@@ -179,7 +178,6 @@
       "h4": {
         "name": "Aerial Burn Run",
         "description": "Narancia paints a long rectangular line. As bombs land, enemies struck take impact damage. The ground then burns for 5 seconds, dealing persistent physical damage per second to enemies in the zone and slowing them. Slow lingers 1 second after leaving.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Direction",
         "burnDuration": "5s",

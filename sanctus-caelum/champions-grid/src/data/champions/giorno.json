@@ -13,11 +13,15 @@
       "name": "Vital Energy",
       "type": "UR",
       "maxValue": 315,
+      "maxValueGrowth": 45,
       "regen": "8.75 + 0.5 × lvl²"
     },
     "difficulty": "Medium",
-    "splashArt": "/splashArts/giorno_splashart.jpg",
-    "icon": "/splashArts/giorno_icon.png",
+    "price": { "coins": 3150, "premium": 790 },
+    "ratings": { "damage": 1, "toughness": 1, "control": 1, "mobility": 1, "utility": 3 },
+    "style": 90,
+    "releaseDate": "2026-10-12",
+    "lastChanged": "V1.0",
     "render": "/splashArts/giorno_render.png",
   
     "stats": {
@@ -54,7 +58,6 @@
       "passive": {
         "name": "Light Enhance",
         "description": "Giorno can transform enemy wards into glowing fireflies, granting allied vision for 8 seconds. If an enemy attacks the firefly, they instead receive the damage themselves.",
-        "icon": "url_por_especificar",
         "effects": [
           {
             "type": "Ward Transformation",
@@ -77,7 +80,6 @@
       "passive2": {
         "name": "Requiem",
         "description": "At Level 16, Gold Experience evolves into Gold Experience Requiem, enhancing all of Giorno's abilities with stronger effects.",
-        "icon": "url_por_especificar",
         "effects": [
           {
             "type": "Stand Evolution",
@@ -95,7 +97,6 @@
       "h1": {
         "name": "Life Shot Creation",
         "description": "Giorno fires vital energy at terrain. The effect depends on where it lands: Stone/Wall summons Scorpions (moderate damage, durable), River summons Piranhas (fragile, fast, burst damage), Grass/Plants summons Vines (stationary, range, crowd control). Requiem upgrade adds DoTs and debuffs to each summon type.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Terrain",
         "castTime": "0.25",
@@ -133,7 +134,6 @@
       "h2": {
         "name": "Healing Touch",
         "description": "Giorno infuses an ally or himself with vital energy, restoring health. Requiem upgrade grants a small Vital Shield in addition to the heal.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Unit (Ally or Self)",
         "castTime": "0.25",
@@ -158,7 +158,6 @@
       "h3": {
         "name": "Borrowed Life",
         "description": "Giorno revives an allied corpse at its location for several seconds, allowing them to re-enter the fight with full stats but degrading health over time. Requiem upgrade increases revival duration and grants bonus Movement Speed and Attack Speed.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Corpse",
         "targetRange": "850",
@@ -184,7 +183,6 @@
       "h4": {
         "name": "Life Dispenser",
         "description": "Giorno channels Gold Experience for 0.5 seconds, then blinks to the target enemy, inflicting magic damage and applying Paranoia. Requiem upgrade transforms this into Nullification of Cause and Effect, sending Gold Experience Requiem to stun the target instead.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Unit",
         "castTime": "0.5",

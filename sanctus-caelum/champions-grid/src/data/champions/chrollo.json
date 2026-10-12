@@ -3,7 +3,7 @@
     "nick": "Chrollo",
     "fullName": "Chrollo Lucilfer",
     "alias": "Boss",
-    "anime": "Hunter X Hunter",
+    "anime": "Hunter x Hunter",
     "affiliation": "Phantom Troupe",
     "roles": ["Mid", "Jungle"],
     "attackTypes": ["Melee"],
@@ -13,11 +13,15 @@
       "name": "Nen",
       "type": "Nen",
       "maxValue": 400,
+      "maxValueGrowth": 30,
       "regen": "8 + 0.8 × lvl²"
     },
     "difficulty": "Medium",
-    "splashArt": "/splashArts/chrollo_splashart.png",
-    "icon": "/splashArts/chrollo_icon.png",
+    "price": { "coins": 3150, "premium": 790 },
+    "ratings": { "damage": 3, "toughness": 1, "control": 2, "mobility": 2, "utility": 1 },
+    "style": 65,
+    "releaseDate": "2026-10-12",
+    "lastChanged": "V1.0",
     "render": "/splashArts/chrollo_render.png",
   
     "stats": {
@@ -57,7 +61,6 @@
       "passive": {
         "name": "Nen Flow",
         "description": "Chrollo's basic attacks scale with bonus magical damage. He also gains bonus attack speed and bonus movement speed based on his total AP.",
-        "icon": "url_por_especificar",
         "effects": [
           {
             "type": "Magic Damage on Basics",
@@ -77,7 +80,6 @@
       "h1": {
         "name": "Ben's Knife",
         "description": "Chrollo dashes toward the target enemy, stabbing upon arrival to deal magical damage. If cast within close range, he dashes over the cast time and grants 75 bonus attack range on his next basic attack within 1 second. The attack slows on hit.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Unit",
         "castTime": "0.25",
@@ -106,7 +108,6 @@
       "h2": {
         "name": "Sun and Moon",
         "description": "Chrollo projects a Sun Seal on a target enemy for 4 seconds, granting sight of surroundings. After 2 seconds, he can recast to apply Moon Seal on the same target. If both seals are present, they detonate immediately, dealing AoE magical damage. If Moon is not cast within 4 seconds, the Sun mark expires.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Unit",
         "castTime": "0.25 / 2s",
@@ -136,7 +137,6 @@
       "h3": {
         "name": "Judgment Fishes",
         "description": "Chrollo seals off a wide box area. Two ethereal untargetable Judgment Fishes swim within the zone, biting enemies they pass through and dealing magical damage. Damage is delayed and only becomes visible when the field ends. If a target dies inside, their death is delayed until the zone ends. Chrollo can manually deactivate early to reveal damage.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Location",
         "castTime": "0.5",
@@ -166,7 +166,6 @@
       "h4": {
         "name": "Skill Hunter",
         "description": "Chrollo steals the ultimate ability of the enemy target, but only if he had vision of the cast within 10 seconds. The original caster cannot use their ultimate for the next 60 seconds. He stores stolen ultimates in his book and can choose which one he wants to use. Stolen ultimates that don't scale with AP have their AD ratios converted to AP ratios at 0.6% AP per 1% total AD and 0.4% AP per 1% bonus AD.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "castTime": "0.25",
         "targetRange": "950",

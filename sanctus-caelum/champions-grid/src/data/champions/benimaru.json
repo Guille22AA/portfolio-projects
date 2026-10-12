@@ -16,8 +16,11 @@
     "regen": "Passive regen + ability cast"
   },
   "difficulty": "Easy",
-  "splashArt": "/splashArts/benimaru_splashart.png",
-  "icon": "/splashArts/benimaru_icon.png",
+  "price": { "coins": 1350, "premium": 585 },
+  "ratings": { "damage": 3, "toughness": 1, "control": 1, "mobility": 3, "utility": 0 },
+  "style": 60,
+  "releaseDate": "2026-10-12",
+  "lastChanged": "V1.0",
   "render": "/splashArts/benimaru_render.png",
 
 
@@ -58,7 +61,6 @@
     "passive": {
       "name": "Crimson Monarch",
       "description": "Benimaru takes 50% less damage from poison effects. Fire abilities from enemies with less AP than him deal 20% reduced damage. All of Benimaru's abilities burn enemies and deal magic damage equal to 2% of their maximum health over 4 seconds.",
-      "icon": "url_por_especificar",
       "effects": [
         {
           "type": "Poison Resistance",
@@ -81,7 +83,6 @@
     "h1": {
       "name": "Fists of Asakusa",
       "description": "Benimaru empowers his next two basic attacks with explosive flames within 5 seconds to gain 50 bonus range and deal bonus magical damage in a small cone area, capped at 400 total damage per attack against monsters. For 1.5 seconds, he gains 30% bonus movement speed while facing visible enemy champions within 2000 units. The empowered attacks are guaranteed to be a Left Punch followed by a Right Punch.",
-      "icon": "url_por_especificar",
       "type": "Active",
       "targetType": "Self",
       "cooldown": "10 / 9 / 8 / 7 / 6",
@@ -109,7 +110,6 @@
     "h2": {
       "name": "Blazing Naginata",
       "description": "Benimaru charges while being slowed by 10% for up to 4 seconds, increasing range as he charges. Can be recast within the duration. If recast, he hurls his spear in the target direction dealing physical damage, increased against low-HP enemies but reduced against secondary targets. If released within 0.35 seconds, he thrusts instead, dealing damage and refunding 60% cooldown with full damage to all targets.",
-      "icon": "url_por_especificar",
       "type": "Active",
       "targetType": "Direction",
       "castTime": "0.2s",
@@ -157,7 +157,6 @@
     "h3": {
       "name": "Blast Step",
       "description": "Benimaru detonates flames beneath his feet to dash a short distance in the target direction. He passes through enemies dealing physical damage. Blast Step resets Benimaru's basic attack timer.",
-      "icon": "url_por_especificar",
       "type": "Active",
       "targetType": "Direction",
       "range": "400",
@@ -177,7 +176,6 @@
     "h4": {
       "name": "Crescent Moon Flash",
       "description": "Benimaru lunges at a target enemy with a massive fiery crescent slash that travels past the target, dealing magical damage and knocking them back up to 700 units. Nearby enemies take 40% reduced damage and experience reduced knockup duration.",
-      "icon": "url_por_especificar",
       "type": "Active",
       "targetType": "Unit",
       "cooldown": "120 / 110 / 100",

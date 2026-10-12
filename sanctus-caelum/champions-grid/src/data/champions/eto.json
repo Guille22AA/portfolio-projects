@@ -13,13 +13,17 @@
       "name": "RC Cells",
       "type": "RC_Ghoul",
       "maxValue": 375,
+      "maxValueGrowth": 40,
       "regen": "Kills, assists, monster clears",
       "passiveRegen": "8 + 0.7 × lvl²",
       "decay": "Faster drain than UR"
     },
     "difficulty": "Medium",
-    "splashArt": "/splashArts/eto_splashart.png",
-    "icon": "/splashArts/eto_icon.png",
+    "price": { "coins": 3150, "premium": 790 },
+    "ratings": { "damage": 2, "toughness": 3, "control": 2, "mobility": 1, "utility": 0 },
+    "style": 55,
+    "releaseDate": "2026-10-12",
+    "lastChanged": "V1.0",
     "render": "/splashArts/eto_render.png",
 
     "stats": {
@@ -61,7 +65,6 @@
       "passive": {
         "name": "Kakuja Evolution",
         "description": "Every kill grants 5 Kakuja stacks. Assists grant 2 stacks. Clearing jungle camps grants 1 stack. Stacks evolve her ultimate into stronger phases. At Phase 5, reactivating the ultimate triggers Suicidal Mode where Eto explodes in RC energy.",
-        "icon": "url_por_especificar",
         "effects": [
           {
             "type": "Stack Gain - Kill",
@@ -91,7 +94,6 @@
       "h1": {
         "name": "Blade of the Owl",
         "description": "Eto stabs in a line in the target direction dealing physical damage to enemies hit. Against champions and large monsters, she heals for a percentage of her missing health based on number of targets hit. Her next basic attack is empowered, dealing bonus physical damage.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Direction",
         "castTime": "0.25",
@@ -119,7 +121,6 @@
       "h2": {
         "name": "Thorned Trap",
         "description": "From a target wall, Eto sprouts RC branches that form a circular net trap for 4.5 seconds. The trap roots and damages nearby enemy champions and small/medium jungle monsters on hit.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Wall",
         "targetRange": "1125",
@@ -144,7 +145,6 @@
       "h3": {
         "name": "Kagune Sleeve",
         "description": "Eto fires a branching kagune tentacle forward. On hit, it slows the target champion for 2 seconds and deals physical damage.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Direction",
         "castTime": "0.5",
@@ -169,7 +169,6 @@
       "h4": {
         "name": "Kakuja: One-Eyed Owl",
         "description": "Eto transforms into her Kakuja form, gaining HP, AD, armor, MR, and lifesteal, plus new abilities depending on evolution phase. Lasts until deactivated (except Phase 5) or killed. Phase 5 grants Suicidal Mode upon reactivation—an RC AoE explosion.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Self",
         "cooldown": "70 / 90 / 110 / 130 / 150",

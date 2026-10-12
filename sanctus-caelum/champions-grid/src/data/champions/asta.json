@@ -13,11 +13,15 @@
     "name": "Mana",
     "type": "UR",
     "maxValue": 263,
+    "maxValueGrowth": 45,
     "regen": "6.6 + 0.35 × lvl²"
   },
   "difficulty": "Medium",
-  "splashArt": "/splashArts/asta_splashart.png",
-  "icon": "/splashArts/asta_icon.png",
+  "price": { "coins": 3150, "premium": 790 },
+  "ratings": { "damage": 2, "toughness": 3, "control": 2, "mobility": 2, "utility": 1 },
+  "style": 50,
+  "releaseDate": "2026-10-12",
+  "lastChanged": "V1.0",
   "render": "/splashArts/asta_render.png",
 
   "stats": {
@@ -57,7 +61,6 @@
     "passive": {
       "name": "Anti-Magic",
       "description": "Asta's basic attacks and abilities empowered by anti-magic deal bonus Lethal Damage equal to 10% of the target's maximum AP. Additionally, he can sense Ki, revealing nearby invisible or camouflaged enemies within 200 units.",
-      "icon": "url_por_especificar",
       "effects": [
         {
           "type": "Lethal Damage",
@@ -74,7 +77,6 @@
     "h1": {
       "name": "Bull's Thrust",
       "description": "Asta can activate Bull's Thrust three times before the ability goes on cooldown, with a 0.3125s static cooldown between casts. If Asta does not recast within 4 seconds of the previous cast, it goes on cooldown. Each slash deals physical damage, resets basic attack timer, and orders a basic attack on the target. The third cast covers a larger area and knocks back enemies 75 units over 0.5 seconds. The third cast can cross terrain.",
-      "icon": "url_por_especificar",
       "type": "Active",
       "targetType": "Area",
       "cooldown": "13",
@@ -107,7 +109,6 @@
     "h2": {
       "name": "Grimoire Shift",
       "description": "Asta opens his grimoire and cycles through three anti-magic swords, each hovering for 0.5 seconds. Can be recast to select the current sword. Each sword changes the effect of Anti-Magic Technique. Swapping swords resets the cooldown of Anti-Magic Technique. After choosing a sword, Asta gains bonus attack speed for 3 seconds.",
-      "icon": "url_por_especificar",
       "type": "Active",
       "targetType": "Self",
       "cooldown": "6",
@@ -123,7 +124,6 @@
     "h3": {
       "name": "Anti-Magic Technique",
       "description": "Asta's anti-magic technique changes based on the sword selected via Grimoire Shift. Three different modes available: Danma Sword (defensive block), Shukuma Sword (offensive absorption), and Metsuma Sword (utility cleanse/damage).",
-      "icon": "url_por_especificar",
       "type": "Active",
       "cooldown": "15 / 14 / 13 / 12 / 11",
       "modes": {
@@ -171,7 +171,6 @@
     "h4": {
       "name": "Black Form",
       "description": "Asta channels the power of anti-magic, entering Black Form and becoming ghosted. His right arm, sword and wing become cloaked in anti-magic, vastly amplifying his physical prowess. While active, basic attacks reduce ability cooldowns by 0.5 seconds each.",
-      "icon": "url_por_especificar",
       "type": "Active",
       "targetType": "Self",
       "cooldown": "110 / 100 / 90",
@@ -188,5 +187,5 @@
 
   "lore": "Asta is a determined orphan raised in the village of Hage, in a world where nearly everyone can use magic—except him. Despite being born without a single drop of magical power, he trains his body relentlessly and dreams of becoming the Wizard King, the strongest mage in the Clover Kingdom.\n\nAsta is loud, passionate, and impossibly persistent. His unwavering resolve and refusal to give up inspire those around him, even when the odds are stacked against him. Though often underestimated, he proves his worth time and time again with sheer will and unshakable loyalty to his friends.\n\nHis power comes from a mysterious five-leaf grimoire that grants him access to anti-magic—energy that nullifies magic completely. Using massive swords imbued with this force, Asta cuts through spells, deflects curses, and enters his Black Form, a state where anti-magic coats his body and pushes his strength to supernatural levels.",
 
-  "tags": ["Anti-Magic", "Duelist", "Adaptable"]
+  "tags": ["AntiMagic", "Duelist", "Adaptable"]
 }

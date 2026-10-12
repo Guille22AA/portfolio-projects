@@ -13,11 +13,15 @@
       "name": "Reiatsu",
       "type": "UR",
       "maxValue": 315,
+      "maxValueGrowth": 40,
       "regen": "7.4 + 0.7 × lvl²"
     },
     "difficulty": "Easy",
-    "splashArt": "/splashArts/lille_splashart.jpg",
-    "icon": "/splashArts/lille_icon.png",
+    "price": { "coins": 1350, "premium": 585 },
+    "ratings": { "damage": 3, "toughness": 0, "control": 0, "mobility": 2, "utility": 0 },
+    "style": 40,
+    "releaseDate": "2026-10-12",
+    "lastChanged": "V1.0",
     "render": "/splashArts/lille_render.png",
   
     "stats": {
@@ -59,7 +63,6 @@
       "passive": {
         "name": "The X-Axis",
         "description": "All of Lille Barro's basic attacks and abilities deal an additional percentage of Lethal Damage, scaling from 4% at level 1 to 10% at maximum level. This bonus applies on-hit with abilities as well.",
-        "icon": "url_por_especificar",
         "effects": [
           {
             "type": "Lethal Damage Bonus",
@@ -73,7 +76,6 @@
       "h1": {
         "name": "Holy Arrow",
         "description": "Barro fires a spiritual piercing shot in the target direction. The shot deals magic damage to the first enemy it passes through, then expands in width but deals only 60% damage to enemies hit thereafter.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Direction",
         "castTime": "0.625",
@@ -98,7 +100,6 @@
       "h2": {
         "name": "Saint's Mark",
         "description": "Lille marks a target enemy with a glowing crosshair for 3 seconds. While marked, Lille's basic attacks and abilities deal bonus magic damage. If the marked enemy dies while the mark is active, cooldowns of Holy Arrow and God Step reset instantly. Marked minions grant 3 extra gold on death.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Unit (Enemy)",
         "targetRange": "900",
@@ -130,7 +131,6 @@
       "h3": {
         "name": "God Step",
         "description": "Lille performs a Quincy dash technique, gaining a burst of speed for 4 seconds with bonuses to movement speed and attack speed.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Self",
         "duration": "4s",
@@ -145,7 +145,6 @@
       "h4": {
         "name": "God's Judgment",
         "description": "Lille locks onto a target enemy champion and channels for 2.5 seconds, sight-revealing both himself and the target. He gradually stores bullets into his weapon over the duration. At the end of the channel or by recasting after 0.5 seconds, Lille fires all stored bullets. Bullets deal magic damage scaled by missing health and critical strike bonuses. Each bullet executes minions and applies lifesteal at 100% effectiveness.",
-        "icon": "url_por_especificar",
         "type": "Active (Channeled)",
         "targetType": "Unit (Enemy Champion)",
         "channelDuration": "2.5s",

@@ -13,13 +13,17 @@
       "name": "RC Cells",
       "type": "RC_Human",
       "maxValue": 327,
+      "maxValueGrowth": 45,
       "regen": "Kills, assists, monster clears",
       "passiveRegen": "7.59 + 0.5 × lvl²",
       "decay": "Faster drain than UR, slower than RC_Ghoul"
     },
     "difficulty": "Hard",
-    "splashArt": "/splashArts/suzuya_splashart.jpg",
-    "icon": "/splashArts/suzuya_icon.png",
+    "price": { "coins": 4800, "premium": 880 },
+    "ratings": { "damage": 3, "toughness": 2, "control": 1, "mobility": 2, "utility": 0 },
+    "style": 20,
+    "releaseDate": "2026-10-12",
+    "lastChanged": "V1.0",
     "render": "/splashArts/suzuya_render.png",
   
     "stats": {
@@ -58,7 +62,6 @@
       "passive": {
         "name": "Frenzied Thrill",
         "description": "Juuzou gains bonus Tenacity scaling with nearby enemy champions within 1400 units, up to 3 enemies. Tenacity increases from 5% to 12% based on number of nearby enemies.",
-        "icon": "url_por_especificar",
         "effectRadius": "1400",
         "effects": [
           {
@@ -73,7 +76,6 @@
       "h1": {
         "name": "Jason 13 Slash",
         "description": "Juuzou dashes in the target direction, dealing physical damage to enemies he passes through. He then swings his scythe, dealing the same damage to nearby enemies.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Direction",
         "targetRange": "350",
@@ -99,7 +101,6 @@
       "h2": {
         "name": "Jason 13 Gimmick",
         "description": "Juuzou slashes forward with Jason-13, sending jagged, whip-like blades outward in a line, dealing physical damage to enemies and slowing them. The slow decays over 1.5 seconds.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Direction",
         "targetRange": "700",
@@ -121,7 +122,6 @@
       "h3": {
         "name": "Weapon Switch",
         "description": "Juuzou swaps between his two quinques. Scorpion grants ranged basic attacks (425 range, fast AS, lower damage). Jason-13 grants melee scythe strikes (175 range, slower AS, higher damage).",
-        "icon": "url_por_especificar",
         "type": "Active (Toggle)",
         "targetType": "Self",
         "cooldown": "3",
@@ -145,7 +145,6 @@
       "h4": {
         "name": "Atara Joker",
         "description": "Juuzou envelops himself in stitched armor, sprouting long bladed arms. Abilities are disabled but basic attacks extend to 520 range with rapid slashes. Can recast up to 3 times, each consuming HP and increasing buffs. Automatically ends if HP drops below 10%.",
-        "icon": "url_por_especificar",
         "type": "Active (Stance)",
         "targetType": "Self",
         "castTime": "0.2",

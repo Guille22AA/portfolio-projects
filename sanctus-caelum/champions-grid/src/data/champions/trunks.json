@@ -13,11 +13,15 @@
       "name": "Ki",
       "type": "UR",
       "maxValue": 300,
+      "maxValueGrowth": 50,
       "regen": "8 + 0.7 × lvl²"
     },
     "difficulty": "Medium",
-    "splashArt": "/splashArts/trunks_splashart.jpg",
-    "icon": "/splashArts/trunks_icon.png",
+    "price": { "coins": 3150, "premium": 790 },
+    "ratings": { "damage": 3, "toughness": 1, "control": 1, "mobility": 3, "utility": 0 },
+    "style": 45,
+    "releaseDate": "2026-10-12",
+    "lastChanged": "V1.0",
     "render": "/splashArts/trunks_render.png",
   
     "stats": {
@@ -56,7 +60,6 @@
         {
           "name": "Saiyan Growth",
           "description": "Each time Trunks fully enters his Ki Buff state, he transforms into Saiyan form based on game time. Between minutes 0-15: Saiyan 1. Between minutes 15-30: Saiyan 2. After minute 30: Saiyan 3. Ascension lasts 15/25/35 seconds.",
-          "icon": "url_por_especificar",
           "transformations": {
             "saiyan1": {
               "timeframe": "Minutes 0-15",
@@ -86,15 +89,13 @@
         },
         {
           "name": "Hidden Passive: Android Bounty",
-          "description": "Trunks gains a bonus bounty every time he kills an android.",
-          "icon": "url_por_especificar"
+          "description": "Trunks gains a bonus bounty every time he kills an android."
         }
       ],
   
       "h1": {
         "name": "Blade Thrust",
         "description": "Trunks dashes in target direction, then stabs nearby enemy. Can hit structures and wards. Stabbing reduces cooldown by 50%. Stab deals physical damage and applies on-hit effects. Can cast any ability during dash. Target does not need visibility unless it's a ward.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Direction + Nearby Enemy",
         "targetRange": "50 / 400",
@@ -123,7 +124,6 @@
       "h2": {
         "name": "Fast Slash",
         "description": "Trunks empowers next 2 basic attacks within 4 seconds to gain 25 bonus range and attack speed. First attack slows target 30% for 1 second. Second attack empowered with AP damage including to structures. Resets basic attack timer. Each attack restores 15 Ki on hit.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Self",
         "empoweredAttacks": "2 within 4s",
@@ -157,7 +157,6 @@
       "h3": {
         "name": "Warp Shift",
         "description": "Trunks blinks up to 475 units towards target location, then slashes sword in cone towards nearest enemy, dealing physical damage and revealing for 1 second. Target does not need visibility.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Direction",
         "castTime": "0.25s",
@@ -190,7 +189,6 @@
       "h4": {
         "name": "Ki Skirmish",
         "description": "Trunks fires powerful circumference of Ki on ground dealing magic damage to enemies hit. Minions and non-epic monsters take 50% reduced damage. Enemies marked for 8 seconds (0.5s delay). While near marked target, Trunks gains bonus movement speed. While marked, attacks/abilities trigger bonus AP damage and heal. Mark disappears on hit.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Location",
         "targetRange": "1200",

@@ -13,11 +13,15 @@
       "name": "Curse Energy",
       "type": "UR",
       "maxValue": 280,
+      "maxValueGrowth": 45,
       "regen": "7 + 0.8 × lvl²"
     },
     "difficulty": "Easy",
-    "splashArt": "/splashArts/geto_splashart.jpg",
-    "icon": "/splashArts/geto_icon.png",
+    "price": { "coins": 1350, "premium": 585 },
+    "ratings": { "damage": 3, "toughness": 1, "control": 2, "mobility": 1, "utility": 1 },
+    "style": 90,
+    "releaseDate": "2026-10-12",
+    "lastChanged": "V1.0",
     "render": "/splashArts/geto_render.png",
   
     "mechanicDescription": "Curse Summoner. Geto summons different cursed spirits for various effects. Only one spirit active at a time. Passive stacking from jungle monsters empowers his ultimate.",
@@ -62,7 +66,6 @@
         {
           "name": "Curse Manipulation Technique",
           "description": "When Geto kills a jungle monster, he may perform an exorcism ritual for up to 3 seconds to absorb its curse into a black orb. Captured curses stack and empower Cursed Spirit Manipulation (ultimate), increasing damage, size, and range. Stacks reset after ultimate use.",
-          "icon": "url_por_especificar",
           "stackMechanics": {
             "smallMonsters": "1 stack",
             "mediumMonsters": "3 stacks",
@@ -78,7 +81,6 @@
         {
           "name": "Body Possession",
           "description": "For 10 seconds after killing an enemy champion, Geto(Kenjaku) assumes their dead body and gains their basic attacks, basic abilities, items, and base stats (scaled to Geto's level). Gains +10% movement speed facing enemy champions within 2500 units. Cannot use item actives, consumables, or shop. Preserves current health percentage between transformations.",
-          "icon": "url_por_especificar",
           "duration": "10s",
           "effects": {
             "gainedStats": ["Basic attacks", "Basic abilities", "Items base effects", "Base stats (Geto's level)"],
@@ -92,7 +94,6 @@
       "h1": {
         "name": "Kuchisake-Onna",
         "description": "Geto summons Kuchisake-Onna, the Slit-Mouthed Woman, who slashes enemies with cursed scissors dealing magic damage and applying Grievous Wounds for 6 seconds. Can be recast anytime while alive to redirect her. Can be used while affected by cast-inhibiting CC. Only one cursed spirit active at a time.",
-        "icon": "url_por_especificar",
         "type": "Active (Summoned Unit, Recastable)",
         "targetType": "Unit or Location",
         "castTime": "0.25 (initial) / none (recast)",
@@ -125,7 +126,6 @@
       "h2": {
         "name": "Rainbow Dragon",
         "description": "Geto summons the Rainbow Dragon, a massive slow-moving cursed beast hovering around him for 5 seconds. Periodically breathes cursed flames at nearby enemies, taunts one enemy champion every few seconds, and absorbs a portion of incoming damage directed at Geto. Only one cursed spirit active at a time.",
-        "icon": "url_por_especificar",
         "type": "Active (Summoned Unit)",
         "targetType": "Self",
         "duration": "5s",
@@ -163,7 +163,6 @@
       "h3": {
         "name": "Plague Deity",
         "description": "Geto summons the Plague Deity, which infects enemies it touches with poison. Afflicted enemies suffer magic damage over time and spread the disease to nearby enemies if they die. Only one cursed spirit active at a time.",
-        "icon": "url_por_especificar",
         "type": "Active (Summoned Unit)",
         "targetType": "Location",
         "castTime": "0.25",
@@ -199,7 +198,6 @@
       "h4": {
         "name": "Cursed Spirit Manipulation – Tornado",
         "description": "Geto combines all captured curses into a single massive cursed entity materializing as a rotating horizontal black tornado charged with dense cursed energy. The tornado flies in a straight line, dealing massive magic damage, knocking up the first champion hit for 1.25 seconds, and damaging enemies it passes through. Damage and range scale with curse stacks from passive.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Direction",
         "castTime": "1",

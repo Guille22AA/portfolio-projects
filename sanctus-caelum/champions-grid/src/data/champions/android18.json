@@ -13,11 +13,15 @@
     "name": "Mana",
     "type": "UR",
     "maxValue": 295,
+    "maxValueGrowth": 45,
     "regen": "8 + 0.65 × lvl²"
   },
   "difficulty": "Easy",
-  "splashArt": "/splashArts/android18_splashart.jpg",
-  "icon": "/splashArts/android18_icon.jpg",
+  "price": { "coins": 1350, "premium": 585 },
+  "ratings": { "damage": 3, "toughness": 2, "control": 1, "mobility": 2, "utility": 0 },
+  "style": 40,
+  "releaseDate": "2026-10-12",
+  "lastChanged": "V1.0",
   "render": "/splashArts/android18_render.png",
 
   "stats": {
@@ -56,7 +60,6 @@
     "passive": {
       "name": "Cyborg Pulse",
       "description": "Android 18's third basic attack gains 125% bonus attack speed with an uncancellable windup and deals magic damage to the primary target and nearby enemies. Deals 150% damage to monsters and executes minions below 25 health. Hidden Passive: Whenever Krillin as an ally gets injured, 18 gains +5% Attack Damage, +5% Attack Speed, and +5% Movement Speed for 4.5 seconds. Also gains extra bounty for killing Dr. Gero.",
-      "icon": "url_por_especificar",
       "effects": [
         {
           "type": "Enhanced Auto Attack",
@@ -77,7 +80,6 @@
     "h1": {
       "name": "Energy Strike",
       "description": "Android 18 blasts an energy bolt in the target direction that deals magic damage to the first two enemies hit.",
-      "icon": "url_por_especificar",
       "type": "Active",
       "targetType": "Direction",
       "targetRange": "900",
@@ -98,7 +100,6 @@
     "h2": {
       "name": "Energy Shield",
       "description": "Android 18 grants herself a shield for up to 5 seconds and creates three spheres that orbit her counterclockwise, detonating upon contact with enemies. If all three spheres detonate, Energy Shield is reapplied, stacking and refreshing the duration.",
-      "icon": "url_por_especificar",
       "type": "Active",
       "targetType": "Self",
       "cooldown": "Por especificar",
@@ -124,7 +125,6 @@
     "h3": {
       "name": "Cyborg Dash",
       "description": "Android 18 dashes in the target direction, dealing physical damage to enemies near landing location and granting ghosting to non-champions for 4 seconds. Stops prematurely on champion collision, knocking back all nearby champions and stunning them for 0.75 seconds, while gaining bonus attack speed.",
-      "icon": "url_por_especificar",
       "type": "Active",
       "targetType": "Direction",
       "cooldown": "Por especificar",
@@ -150,7 +150,6 @@
     "h4": {
       "name": "Master Martial",
       "description": "Android 18 overclocks her cybernetic core, entering an empowered state and becoming ghosted. She can refresh the duration whenever she scores a takedown against an enemy champion within 3 seconds of damaging them.",
-      "icon": "url_por_especificar",
       "type": "Active",
       "targetType": "Self",
       "castTime": "0.25",

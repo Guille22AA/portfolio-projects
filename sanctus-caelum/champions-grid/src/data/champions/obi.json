@@ -16,8 +16,12 @@
   },
 
   "difficulty": "Easy",
-  "splashArt": "/splashArts/obi_splashart.png",
-  "icon": "/splashArts/obi_icon.png",
+
+  "price": { "coins": 1350, "premium": 585 },
+  "ratings": { "damage": 1, "toughness": 3, "control": 2, "mobility": 1, "utility": 3 },
+  "style": 85,
+  "releaseDate": "2026-10-12",
+  "lastChanged": "V1.0",
   "render": "/splashArts/obi_render.png",
 
   "stats": {
@@ -41,17 +45,20 @@
     "general": [
       "We're Company 8. We fight fire with fire—and save people's lives.",
       "The title of Captain isn't for myself. It's for the sake of those who fight beside me.",
-      "My job is to protect the lives of my subordinates.",
+      "It doesn't matter if I don't have powers. I'll protect everyone with my own strength!",
+      "No matter how strong the flames are, our spirit won't be extinguished.",
       "It's not about what abilities you're born with, but how you use what you've got.",
       "Fire Soldiers aren't executioners—we save people."
-    ]
+    ],
+    "interactions": {
+      "Shinra ID to be specified": ["ally", "My job is to protect the lives of my subordinates."]
+    }
   },
 
   "abilities": {
     "passive": {
       "name": "Fireproof Resolve",
       "description": "Obi is immune to burn effects (damage over time from fire abilities). He still takes the initial hit of the ability, but never the lingering burn.",
-      "icon": "url_por_especificar",
       "effects": [
         {
           "type": "Immunity",
@@ -64,7 +71,6 @@
     "h1": {
       "name": "Smoke Screen",
       "description": "Obi fires a smoke canister at the target location that upon impact deals physical damage to enemies within the area and slows them by 50% for 0.5 seconds. The canister creates a cloud of smoke for 4 seconds that applies nearsight to all enemies within, reducing their sight radius.",
-      "icon": "url_por_especificar",
       "type": "Active",
       "targetType": "Location",
       "targetRange": "950",
@@ -93,7 +99,6 @@
     "h2": {
       "name": "Stand Behind Me",
       "description": "Obi dashes to put himself between the target ally and the closest visible enemy champion within 1500 units, and grants himself and the ally bonus armor and bonus magic resistance for 3 seconds. Can be self-cast to instantly grant Obi the bonus resistances.",
-      "icon": "url_por_especificar",
       "type": "Active",
       "targetType": "Unit",
       "targetRange": "650",
@@ -114,7 +119,6 @@
     "h3": {
       "name": "Unbreakable",
       "description": "Obi sets his shield in the target direction for a duration, creating a barrier that intercepts all incoming hostile projectiles and reduces damage taken through it. The first instance of damage from a champion is reduced by 100%. Grants bonus movement speed and ghosting while shield is raised.",
-      "icon": "url_por_especificar",
       "type": "Active",
       "targetType": "Direction",
       "cooldown": "16 / 14 / 12 / 10 / 8",
@@ -131,7 +135,6 @@
     "h4": {
       "name": "Expanding Shield Throw",
       "description": "Obi throws his expansive shield that travels in a counter-clockwise arc before digging into the ground at the target location. Deals physical damage to enemies hit and knocks them up. Shield size, damage, and knockup duration increase with distance traveled. Grants sight of the area for 0.5 seconds.",
-      "icon": "url_por_especificar",
       "type": "Active",
       "targetType": "Location",
       "castTime": "0.5",

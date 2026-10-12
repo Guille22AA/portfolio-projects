@@ -13,11 +13,15 @@
       "name": "Cursed Energy",
       "type": "UR",
       "maxValue": 469,
+      "maxValueGrowth": 25,
       "regen": "11 + 0.6 × lvl²"
     },
     "difficulty": "Easy",
-    "splashArt": "/splashArts/jogo_splashart.jpg",
-    "icon": "/splashArts/jogo_icon.png",
+    "price": { "coins": 1350, "premium": 585 },
+    "ratings": { "damage": 3, "toughness": 0, "control": 2, "mobility": 0, "utility": 1 },
+    "style": 90,
+    "releaseDate": "2026-10-12",
+    "lastChanged": "V1.0",
     "render": "/splashArts/jogo_render.png",
   
     "stats": {
@@ -60,7 +64,6 @@
       "passive": {
         "name": "Scorching Malice",
         "description": "Jogo's basic attacks and damaging abilities apply Burn for 3 seconds, dealing magic damage equal to 2% of target's maximum health over 4 seconds. If Burn is reapplied, the duration refreshes up to 3 times.",
-        "icon": "url_por_especificar",
         "effects": [
           {
             "type": "Burn Effect",
@@ -76,7 +79,6 @@
       "h1": {
         "name": "Fire Rocks Insects",
         "description": "Jogo summons 7 fiery insect-like projectiles from his volcano-head that fly in a straight line, ignoring minions and small monsters. Upon detecting an enemy champion, each insect accelerates and explodes on contact for magic damage. Insects self-detonate if they don't hit anything after 3 seconds and can be destroyed individually.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Direction",
         "castTime": "0.25",
@@ -111,7 +113,6 @@
       "h2": {
         "name": "Maximum Meteor",
         "description": "After a 0.627 second delay, Jogo erupts a flaming meteor at the target location that deals magic damage to enemies hit.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Location",
         "castTime": "0.5",
@@ -132,7 +133,6 @@
       "h3": {
         "name": "Volcanic Curse Technique",
         "description": "Jogo attaches a visible Mini Volcano to any wall or vertical surface within range. The volcano grants sight of the area for 1 second after placement. When an enemy champion or large monster enters range, the volcano erupts, launching a thick lava blast that deals magic damage every second. Each volcano can be destroyed with 3 basic attacks. While inside his Domain (R), volcanoes can be placed without cooldown.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Wall/Surface",
         "castTime": "0.25",
@@ -171,7 +171,6 @@
       "h4": {
         "name": "Domain Expansion: Iron Coffin Mountain",
         "description": "Jogo targets an enemy champion, pulling both into a sealed molten Domain resembling the inside of a volcano. Inside, time slows, terrain is closed off by walls, and Jogo gains unrestricted volcanic control. The target cannot leave for 8 seconds unless Jogo dies.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Unit (Enemy Champion)",
         "castRange": "650",

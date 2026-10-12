@@ -13,14 +13,18 @@
     "name": "RC Cells",
     "type": "RC_Ghoul",
     "maxValue": 350,
+    "maxValueGrowth": 40,
     "regen": "Kills, assists, monster clears",
     "passiveRegen": "11 + 0.6 × lvl²",
     "decay": "Faster drain than UR",
     "note": "Chimera variant - dual kagune system"
   },
   "difficulty": "Medium",
-  "splashArt": "/splashArts/hinami_splashart.jpg",
-  "icon": "/splashArts/hinami_icon.png",
+  "price": { "coins": 3150, "premium": 790 },
+  "ratings": { "damage": 1, "toughness": 2, "control": 3, "mobility": 0, "utility": 3 },
+  "style": 80,
+  "releaseDate": "2026-10-12",
+  "lastChanged": "V1.0",
   "render": "/splashArts/hinami_render.png",
 
   "stats": {
@@ -62,7 +66,6 @@
     "passive": {
       "name": "Keen Senses",
       "description": "Hinami's enhanced hearing and smell allow her to sense enemies hidden in invisibility or fog of war within 800 units. When she detects an unseen enemy, their silhouette is faintly revealed for 0.5 seconds, occurring every 2 seconds.",
-      "icon": "url_por_especificar",
       "effects": [
         {
           "type": "Hidden Enemy Detection",
@@ -80,7 +83,6 @@
     "passive2": {
       "name": "Chimera Evolution",
       "description": "Hinami's dual kagune system (Rinkaku and Koukaku) evolve through the use of her abilities. Both gain stacks independently, unlocking new phases with enhanced effects.",
-      "icon": "url_por_especificar",
       "effects": [
         {
           "type": "Rinkaku Evolution",
@@ -98,7 +100,6 @@
     "h1": {
       "name": "Twin Rinkaku Lash",
       "description": "Hinami stretches her left rinkaku in the target direction, catching the first enemy hit with physical damage, slow, and forming a tether for 2 seconds (revealing the target). Next basic attack becomes a second empowered Rinkaku Lash. If both lashes hit different targets, they root and are displaced toward each other. If near each other, they collide, knocking up and stunning all nearby enemies.",
-      "icon": "url_por_especificar",
       "type": "Active",
       "targetType": "Direction",
       "castTime": "0.33",
@@ -144,7 +145,6 @@
     "h2": {
       "name": "Koukaku Shield",
       "description": "Hinami raises her koukaku wings as a barrier, shielding herself and allies behind her for 2.25 seconds. Blocks all non-turret basic attacks and reduces movement to 70%.",
-      "icon": "url_por_especificar",
       "type": "Active",
       "targetType": "Self",
       "effectRadius": "350",
@@ -169,7 +169,6 @@
     "h3": {
       "name": "Rinkaku Whirl",
       "description": "Hinami spins her rinkaku tentacles around her, knocking back all nearby enemies and dealing physical damage. Evolves in power with the Phase of her Rinkaku from Twin Rinkaku Lash.",
-      "icon": "url_por_especificar",
       "type": "Active",
       "targetType": "Self",
       "minimumRadius": "150",
@@ -195,7 +194,6 @@
     "h4": {
       "name": "Chimera's Embrace",
       "description": "Hinami launches her rinkaku forward as a skillshot, impaling the first enemy champion hit for 2.5 seconds and rooting them. While the enemy is impaled, Hinami braces behind her koukaku wings, becoming untargetable to CC but unable to move. Effects enhanced based on evolution phases.",
-      "icon": "url_por_especificar",
       "type": "Active",
       "targetType": "Direction",
       "cooldown": "110 / 90 / 70",

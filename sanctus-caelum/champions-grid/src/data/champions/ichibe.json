@@ -13,11 +13,15 @@
       "name": "Reiatsu",
       "type": "UR",
       "maxValue": 400,
+      "maxValueGrowth": 35,
       "regen": "6 + 0.8 × lvl²"
     },
     "difficulty": "Easy",
-    "splashArt": "/splashArts/ichibe_splashart.jpg",
-    "icon": "/splashArts/ichibe_icon.png",
+    "price": { "coins": 1350, "premium": 585 },
+    "ratings": { "damage": 1, "toughness": 2, "control": 3, "mobility": 0, "utility": 3 },
+    "style": 100,
+    "releaseDate": "2026-10-12",
+    "lastChanged": "V1.0",
     "render": "/splashArts/ichibe_render.png",
   
     "stats": {
@@ -57,7 +61,6 @@
       "passive": {
         "name": "True Black Words",
         "description": "Ichibē possesses two passive abilities: Monk of Names allows an ally to revive him by channeling for 2 seconds next to his body for 5 seconds after death, restoring 35% HP and 20% Mana. Bearer of Black prevents his abilities from being copied or stolen.",
-        "icon": "url_por_especificar",
         "effects": [
           {
             "type": "Monk of Names",
@@ -77,7 +80,6 @@
       "h1": {
         "name": "Ink Surge",
         "description": "Ichibē unleashes a stream of ink onto the target champion or herself, which bounces to nearby unaffected champions up to twice, alternating between enemies and allies. Heals allies and deals magic damage to enemies, with each bounce modifying effectiveness by -10% (+ 10% per 100 AP).",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Unit (Ally, Enemy, or Self)",
         "castTime": "0.25",
@@ -107,7 +109,6 @@
       "h2": {
         "name": "Pool of Blinding Ink",
         "description": "Ichibē splashes ink in a wide horizontal zone. Enemies hit on cast take magic damage. The zone persists for 4 seconds; enemies walking into it are blinded for 1 second, stay briefly blinded after leaving (0.5s), and are slowed with decay over the zone's duration.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Location",
         "castTime": "0.25",
@@ -137,7 +138,6 @@
       "h3": {
         "name": "Hidden Seal",
         "description": "Ichibē marks an ally or a jungle monster. After 1 second, they become invisible for 5 seconds (+ 0.5s per 100 AP). Invisibility ends after hitting or being hit. They remain targetable to turrets and AoE attacks (invisibility affects only enemy vision).",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Unit (Ally or Jungle Monster)",
         "castTime": "0.25",
@@ -163,7 +163,6 @@
       "h4": {
         "name": "Name Erasure",
         "description": "Ichibē launches a spell onto the target enemy champion that polymorphs them into a harmless critter for a duration. Their base movement speed is reduced by 60 and they are disarmed. After the polymorph duration ends, the affected enemy receives magic damage instantly.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Unit (Enemy Champion)",
         "targetRange": "900",

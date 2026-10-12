@@ -13,11 +13,15 @@
       "name": "Mana",
       "type": "UR",
       "maxValue": 350,
+      "maxValueGrowth": 50,
       "regen": "8.15 + 0.75 × lvl²"
     },
     "difficulty": "Medium",
-    "splashArt": "/splashArts/yami_splashart.jpg",
-    "icon": "/splashArts/yami_icon.png",
+    "price": { "coins": 3150, "premium": 790 },
+    "ratings": { "damage": 3, "toughness": 2, "control": 2, "mobility": 2, "utility": 1 },
+    "style": 65,
+    "releaseDate": "2026-10-12",
+    "lastChanged": "V1.0",
     "render": "/splashArts/yami_render.png",
   
     "stats": {
@@ -58,7 +62,6 @@
       "passive": {
         "name": "Ki Instinct",
         "description": "Yami senses Ki of nearby enemies, revealing invisible or camouflaged units within 600 units if moving, attacking, or casting. His first basic attack or ability against unseen/stealthed enemies deals 10% bonus lethal damage and reveals them for 2 seconds.",
-        "icon": "url_por_especificar",
         "senseRadius": "600",
         "triggerConditions": ["Moving", "Attacking", "Casting"],
         "firstHitBonus": {
@@ -70,7 +73,6 @@
       "h1": {
         "name": "Dark Cloak Slash",
         "description": "Yami cloaks sword in dark magic and slams it forward into ground in wide arc. Skillshot that damages all enemies in semicircular area. Slightly displaces minions and interrupts channeling.",
-        "icon": "url_por_especificar",
         "type": "Active (Skillshot)",
         "targetType": "Direction (Arc)",
         "range": "500",
@@ -93,7 +95,6 @@
       "h2": {
         "name": "Black Cocoon",
         "description": "Yami surrounds himself in protective orb of darkness magic, gaining magic resistance shield for 3 seconds. After 1.5 seconds, can recast to detonate dealing AP damage to nearby enemies. If not recast, explosion triggers automatically after full duration.",
-        "icon": "url_por_especificar",
         "type": "Active (Recastable)",
         "targetType": "Self",
         "duration": "3s",
@@ -121,7 +122,6 @@
       "h3": {
         "name": "Avidya's Sword Slash",
         "description": "Yami channels darkness into blade and releases thin, fast wave of energy forward. Damages all enemies hit and absorbs first enemy spell, nullifying it. Cancels projectile spells but not AoE zones.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Direction",
         "range": "850",
@@ -145,7 +145,6 @@
       "h4": {
         "name": "Avidya's Reverse Sword Slash",
         "description": "Yami locks onto target champion and blinks behind them, striking back of neck with blunt side of sword. If hit, triggers knockup and follow-up combo of 3 rapid anti-magic slashes mid-air. Only triggers full combo if knockup lands successfully.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Unit (Enemy Champion)",
         "range": "700",

@@ -14,12 +14,17 @@
       "name": "Chakra",
       "type": "UR",
       "maxValue": 320,
+      "maxValueGrowth": 45,
       "regen": "8 + 0.8 × lvl²"
     },
 
     "difficulty": "Easy",
-    "splashArt": "/splashArts/sasori_splashart.png",
-    "icon": "/splashArts/sasori_icon.png",
+
+    "price": { "coins": 1350, "premium": 585 },
+    "ratings": { "damage": 2, "toughness": 2, "control": 2, "mobility": 0, "utility": 1 },
+    "style": 75,
+    "releaseDate": "2026-10-12",
+    "lastChanged": "V1.0",
     "render": "/splashArts/sasori_render.png",
   
     "quotes": {
@@ -63,14 +68,12 @@
         "abilities": {
           "passive": {
             "name": "Puppet Armor: Hiruko",
-            "description": "Sasori begins inside Hiruko puppet form granting enhanced defenses. When Hiruko's health is depleted, Sasori emerges in Sasori form. Hiruko cannot be restored until Sasori dies and respawns.",
-            "icon": "url_por_especificar"
+            "description": "Sasori begins inside Hiruko puppet form granting enhanced defenses. When Hiruko's health is depleted, Sasori emerges in Sasori form. Hiruko cannot be restored until Sasori dies and respawns."
           },
   
           "h1": {
             "name": "Poison Shrapnel",
             "description": "Hiruko fires a burst of poisoned needles from its left arm in a cone.",
-            "icon": "url_por_especificar",
             "type": "Active",
             "targetType": "Cone",
             "castTime": "0.25",
@@ -96,7 +99,6 @@
           "h2": {
             "name": "Iron Carapace",
             "description": "Passive magic shield that regenerates after 12/10/8 seconds without damage. Active: Charge up to 2 seconds for damage reduction, radius, and taunt duration scaling. Recast to refresh reduction and taunt nearby enemies with static slow.",
-            "icon": "url_por_especificar",
             "type": "Active (Chargeable)",
             "targetType": "Self",
             "chargeTime": "2s",
@@ -136,7 +138,6 @@
           "h3": {
             "name": "Tail Strike",
             "description": "Hiruko launches its scorpion-like tail in a long line. First enemy hit takes damage and is inflicted with Grievous Wounds.",
-            "icon": "url_por_especificar",
             "type": "Active",
             "targetType": "Direction",
             "castTime": "0.25",
@@ -184,7 +185,6 @@
           "h1": {
             "name": "Puppet Rush",
             "description": "Sasori commands up to 2 closest puppets to dash toward target location, damaging all enemies passed through and those in front on arrival, applying slow.",
-            "icon": "url_por_especificar",
             "type": "Active",
             "targetType": "Location",
             "castTime": "0.25",
@@ -209,7 +209,6 @@
           "h2": {
             "name": "Puppet Deployment",
             "description": "Sasori summons puppet at target location (untargetable, 10s duration, grants vision). Puppet expiry doubles near enemy turrets, instant if Sasori too far. When Sasori attacks, puppet attacks instead with spear thrust applying on-hit effects.",
-            "icon": "url_por_especificar",
             "type": "Active",
             "targetType": "Location",
             "castTime": "0.25",
@@ -245,7 +244,6 @@
           "h3": {
             "name": "Defensive Recall",
             "description": "Sasori commands up to 2 closest puppets to dash back to his position, intercepting attacks, dealing damage and shielding him.",
-            "icon": "url_por_especificar",
             "type": "Active",
             "targetType": "Self",
             "targetRange": "1100",
@@ -276,7 +274,6 @@
       "h4": {
         "name": "Third Kazekage",
         "description": "Sasori summons the puppet of the Third Kazekage, ultimate weapon remaining until it or Sasori dies. Acts semi-autonomously, prioritizing Sasori's targets. Can recast after 10s to set free pushing nearest lane.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Self (summons puppet)",
         "castTime": "0.5",
@@ -314,5 +311,5 @@
   
     "lore": "Sasori of the Red Sand was a prodigious puppet master from Sunagakure, feared for turning his victims into lifeless weapons. From a young age, he displayed genius in creating and controlling puppets, surpassing all his predecessors by inventing human puppets infused with the abilities of their original owners. His most infamous creation was the puppet of the Third Kazekage, which he wielded as his ultimate weapon. To eliminate his own fragility, Sasori transformed his body into a puppet shell, granting himself near-immortality while housing his true core within a container.\n\nCold, calculating, and detached from human emotion, Sasori sought eternal art in the perfection of puppetry, rejecting fleeting forms of beauty. Though a member of Akatsuki, he acted more as a craftsman obsessed with control and permanence than a traditional shinobi. His abilities made him a terrifying fighter: commanding swarms of puppets at once, wielding deadly poisons, and fighting with an eerie calm. Sasori's tragedy lay in his humanity buried beneath layers of wood and steel, a boy who lost his parents and chose eternal stillness over the pain of impermanence.",
 
-    "tags": ["Poke", "ZoneControl", "PetControll"]
+    "tags": ["Poke", "ZoneControl", "PetController"]
   }

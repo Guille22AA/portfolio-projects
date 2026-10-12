@@ -16,8 +16,11 @@
       "regen": "50"
     },
     "difficulty": "Medium",
-    "splashArt": "/splashArts/yoruichi_splashart.jpg",
-    "icon": "/splashArts/yoruichi_icon.png",
+    "price": { "coins": 3150, "premium": 790 },
+    "ratings": { "damage": 3, "toughness": 0, "control": 1, "mobility": 3, "utility": 0 },
+    "style": 55,
+    "releaseDate": "2026-10-12",
+    "lastChanged": "V1.0",
     "render": "/splashArts/yoruichi_render.png",
   
     "stats": {
@@ -56,7 +59,6 @@
       "passive": {
         "name": "Feline Disguise",
         "description": "After 3 seconds out of combat, Yoruichi transforms into black cat form, becoming untargetable by minions and turrets, gaining +20% movement speed. Breaking disguise by attacking or being attacked returns her to human form.",
-        "icon": "url_por_especificar",
         "outOfCombatDelay": "3s",
         "effects": {
           "catForm": {
@@ -71,7 +73,6 @@
       "h1": {
         "name": "Flash Step",
         "description": "Yoruichi draws twin anken knives and dashes rapidly between up to 3 enemies in range, striking each once. If only one enemy in range, strikes twice.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Nearby Enemies",
         "targetRange": "600",
@@ -97,7 +98,6 @@
       "h2": {
         "name": "Raijin Senkei",
         "description": "Yoruichi summons 7 lightning orbs that converge into circular zone at target location. Zone erupts with spiritual lightning, dealing magic damage per second for 4 seconds and granting sight. Enemies in center take 20% increased damage. After 0.75s delay, activates to slow enemies, refreshing every 0.25s while inside.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Location",
         "castTime": "0.25",
@@ -129,7 +129,6 @@
       "h3": {
         "name": "Flash War Cry",
         "description": "Yoruichi envelops body in compressed lightning energy, empowering basic attacks on-hit to deal bonus magic damage to target and nearest visible enemy within 450 units, chaining up to 4 subsequent targets. Gains 15% bonus attack speed while active.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Self",
         "cooldown": "14",
@@ -153,7 +152,6 @@
       "h4": {
         "name": "Shunryū Kokubyō Senki (True Shunko: Flash Goddess Form)",
         "description": "Yoruichi assumes Divine Thunder Cat form for 10 seconds, merging human and feline traits. Gains bonus movement speed that decays 10% every 0.25s. Duration extends 5 seconds per champion takedown (up to original length). Gains bonus AD, 5% size increase, ghosted, increased self-healing. Q and W cooldowns reduced 30% while transformed.",
-        "icon": "url_por_especificar",
         "type": "Active (Transformation)",
         "targetType": "Self",
         "castTime": "0.25s",

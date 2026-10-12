@@ -3,7 +3,7 @@
     "nick": "Hisoka",
     "fullName": "Hisoka Morow",
     "alias": "Grim Reaper",
-    "anime": "Hunter X Hunter",
+    "anime": "Hunter x Hunter",
     "affiliation": "Hunter",
     "roles": ["Mid", "Top"],
     "attackTypes": ["Melee"],
@@ -13,11 +13,15 @@
       "name": "Nen",
       "type": "Nen",
       "maxValue": 339,
+      "maxValueGrowth": 45,
       "regen": "8.15 + 0.75 × lvl²"
     },
     "difficulty": "Medium",
-    "splashArt": "/splashArts/hisoka_splashart.jpg",
-    "icon": "/splashArts/hisoka_icon.png",
+    "price": { "coins": 3150, "premium": 790 },
+    "ratings": { "damage": 3, "toughness": 1, "control": 0, "mobility": 3, "utility": 0 },
+    "style": 60,
+    "releaseDate": "2026-10-12",
+    "lastChanged": "V1.0",
     "render": "/splashArts/hisoka_render.png",
   
     "stats": {
@@ -57,7 +61,6 @@
       "passive": {
         "name": "Predator's Instinct",
         "description": "Hisoka grows stronger when facing more powerful enemies. If his current target can give shutdown, he gains bonus damage, movement speed, and ability haste. These bonuses last as long as he continues fighting that enemy and refresh on hit.",
-        "icon": "url_por_especificar",
         "effects": [
           {
             "type": "Shutdown Target Bonus",
@@ -76,7 +79,6 @@
       "h1": {
         "name": "Triple Trick",
         "description": "Hisoka throws a fan of three cards in a cone in the target direction, each dealing magic damage to enemies hit. Enemies can only be damaged once per pass.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Cone",
         "castTime": "0.25",
@@ -99,7 +101,6 @@
       "h2": {
         "name": "Feint Step",
         "description": "Hisoka blinks in the target direction and empowers his next basic attack within 0.25 seconds to deal bonus physical damage, affected by critical strike modifiers.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Direction",
         "targetRange": "400",
@@ -124,7 +125,6 @@
       "h3": {
         "name": "Bungee Gum",
         "description": "Hisoka fires a sticky strand that embeds in terrain and enters preparation for 2.125 seconds. Can then swing around the terrain, firing cards at nearby enemies. Ends by jumping to target location and firing a final shot. Takedowns reset cooldown to 0.5 seconds.",
-        "icon": "url_por_especificar",
         "type": "Active (3 casts)",
         "targetType": "Terrain / Direction / Location",
         "cooldown": "Por especificar",
@@ -162,7 +162,6 @@
       "h4": {
         "name": "Bloodlust Finale",
         "description": "Hisoka dashes 750 units toward target enemy, dealing magic damage to enemies passed through. If hitting an enemy, flips over them to continue dashing up to another 150 units. Can be recast after 2.5 seconds within 10 seconds of first activation, dashing 800 units with damage increased by missing health percentage.",
-        "icon": "url_por_especificar",
         "type": "Active",
         "targetType": "Unit",
         "cooldown": "Por especificar",

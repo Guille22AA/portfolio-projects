@@ -18,8 +18,10 @@ const ChampionGrid = ({ champions, searchTerm, filters }) => {
       if (filters.anime.length > 0 && !filters.anime.includes(champion.anime)) {
         return false;
       }
-      if (filters.class.length > 0 && !filters.class.includes(champion.class)) {
-        return false;
+      if (filters.class.length > 0) {
+        // class can be a single string or an array (dual-class champions)
+        const hasMatchingClass = [].concat(champion.class).some(cls => filters.class.includes(cls));
+        if (!hasMatchingClass) return false;
       }
       if (filters.role.length > 0) {
         // roles are stored as an array, so we just need one match to keep it in the list
