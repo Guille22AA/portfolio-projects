@@ -14,8 +14,8 @@ Each champion has unique abilities, resource systems, roles, and playstyles insp
 
 Official platform to browse, filter, and explore all game champions.
 
-- Location: `champions-web/`
-- Features: Champion grid, filtering, suggestions, contact forms
+- Location: `champions-grid/`
+- Features: Champion grid, filtering, individual champion pages, suggestions, contact forms
 - Status: Core functionality complete
 
 ### Phase 2: Game Home (📋 Planned)
@@ -41,7 +41,7 @@ Competitive ranking, tier system, and matchmaking mechanics.
 
 ## Repository Structure
 
-- **champions-web/** - Phase 1: Champions Showcase (Active)
+- **champions-grid/** - Phase 1: Champions Showcase (Active)
 - **game-home/** - Phase 2: Game Home (Planned)
 - **game-worldbuilding/** - Phase 3: Maps, Modes & Monsters (Planned)
 - **ranked-system/** - Phase 4: Ranked System (Planned)
@@ -50,13 +50,13 @@ Competitive ranking, tier system, and matchmaking mechanics.
 
 ## 🚀 Current Status
 
-**Phase 1** is currently under development. See `champions-web/` for detailed technical documentation.
+**Phase 1** is currently under development. See `champions-grid/` for detailed technical documentation.
 
 ## 📖 Documentation
 
 Each project phase may have its own README with specific implementation details:
 
-- `champions-web/README.md` - Champions Showcase technical guide
+- `champions-grid/README.md` - Champions Showcase technical guide
 - `game-home/README.md` - Game Home documentation
 - `game-worldbuilding/README.md` - World Building documentation
 - `ranked-system/README.md` - Ranked System documentation
@@ -67,7 +67,7 @@ Try the Champions Showcase right now (no installation required):
 
 **[→ Champions Showcase (Live)](https://portfolio-projects-67v2kiz8y-g2-a2.vercel.app/)**
 
-Browse 26+ champions, use filters, suggest new characters, and send feedback directly!
+Browse 26 champions, open their individual pages, use filters, suggest new characters, and send feedback directly!
 
 **API Endpoints** (for testing):
 - [Suggestions Count](https://portfolio-projects-rcqt.onrender.com/api/champions/suggestions/count)
@@ -76,7 +76,7 @@ Browse 26+ champions, use filters, suggest new characters, and send feedback dir
 
 ## 🔗 Quick Links
 
-- **Champions Showcase**: [champions-web/](./champions-web)
+- **Champions Showcase**: [champions-grid/](./champions-grid)
 - **Backend API**: [backend/](./backend)
 
 ## 📝 License
@@ -85,4 +85,4 @@ Fan-made project for educational and portfolio purposes.
 
 ---
 
-**Development Status**: Phase 1 Active | Last Updated: July 2026
+**Development Status**: Phase 1 Active | Last Updated: October 2026
