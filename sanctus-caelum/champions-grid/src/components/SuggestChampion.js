@@ -35,14 +35,14 @@ const SuggestChampion = () => {
       const data = await res.json();
 
       if (res.ok) {
-        setMessage('✅ Sugerencia enviada exitosamente');
+        setMessage('Sugerencia enviada exitosamente');
         setFormData({ name: '', anime: '' });
         setTimeout(() => navigate('/'), 2000);
       } else {
-        setMessage(`❌ Error: ${data.error}`);
+        setMessage(`Error: ${data.error}`);
       }
     } catch (error) {
-      setMessage(`❌ Error de conexión: ${error.message}`);
+      setMessage(`Error de conexión: ${error.message}`);
     } finally {
       setLoading(false);
     }

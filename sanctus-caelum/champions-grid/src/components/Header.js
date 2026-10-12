@@ -9,20 +9,26 @@ const Header = () => {
     setLanguageMenu(!languageMenu);
   };
 
+  // Enlaces a secciones que aún no existen: se mantiene el hover pero no navegan
+  const disableLink = (e) => e.preventDefault();
+
+  // El grid está en "/": si ya estamos ahí el Link no hace nada visible, así que subimos arriba
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
   return (
     <header className="main-header">
       <div className="header-container">
         <div className="header-left">
           <div className="header-logo">
-            <Link to="/">
+            <Link to="/" onClick={scrollToTop}>
               <img src="/iconos/SC_logo.png" alt="Sanctus Caelum" className="header-logo" />
             </Link>
           </div>
           <nav className="header-nav">
             <ul>
-              <li><Link to="/" className="nav-link">CHAMPIONS</Link></li>
-              <li><a href="#maps" className="nav-link">WORLD BUILDING</a></li>
-              <li><a href="#ranked" className="nav-link">RANKED SYSTEM</a></li>
+              <li><Link to="/" className="nav-link" onClick={scrollToTop}>CHAMPIONS</Link></li>
+              <li><a href="#maps" className="nav-link" onClick={disableLink}>WORLD BUILDING</a></li>
+              <li><a href="#ranked" className="nav-link" onClick={disableLink}>RANKED SYSTEM</a></li>
             </ul>
           </nav>
         </div>
@@ -34,10 +40,10 @@ const Header = () => {
             </button>
             {languageMenu && (
               <div className="language-menu">
-                <a href="#es">Español</a>
-                <a href="#en">English</a>
-                <a href="#fr">Français</a>
-                <a href="#de">Deutsch</a>
+                <a href="#es" onClick={disableLink}>Español</a>
+                <a href="#en" onClick={disableLink}>English</a>
+                <a href="#fr" onClick={disableLink}>Français</a>
+                <a href="#de" onClick={disableLink}>Deutsch</a>
               </div>
             )}
           </div>

@@ -5,12 +5,15 @@ import "../styles/Footer.css";
 const Footer = () => {
   const navigate = useNavigate();
 
+  // Enlaces a secciones que aún no existen: se mantiene el hover pero no navegan
+  const disableLink = (e) => e.preventDefault();
+
   return (
     <footer className="main-footer">
       <div className="footer-simulation-bar">
-        <button onClick={() => navigate('/')}>About Sanctus Caelum</button>
+        <button>About Sanctus Caelum</button>
         <button onClick={() => navigate('/suggest')}>Help Us Improve</button>
-        <button onClick={() => navigate('/')}>Server Status</button>
+        <button>Server Status</button>
         <button onClick={() => navigate('/contact')}>Support</button>
       </div>
 
@@ -25,9 +28,9 @@ const Footer = () => {
 
         <div className="footer-links">
           <ul>
-            <li><a href="#privacy">PRIVACY POLICY</a></li>
-            <li><a href="#terms">TERMS OF USE</a></li>
-            <li><a href="#cookies">COOKIE PREFERENCES</a></li>
+            <li><a href="#privacy" onClick={disableLink}>PRIVACY POLICY</a></li>
+            <li><a href="#terms" onClick={disableLink}>TERMS OF USE</a></li>
+            <li><a href="#cookies" onClick={disableLink}>COOKIE PREFERENCES</a></li>
           </ul>
         </div>
 

@@ -36,14 +36,14 @@ const ContactForm = () => {
       const data = await res.json();
 
       if (res.ok) {
-        setMessage('✅ Mensaje enviado exitosamente');
+        setMessage('Mensaje enviado exitosamente');
         setFormData({ email: '', type: 'support', message: '' });
         setTimeout(() => navigate('/'), 2000);
       } else {
-        setMessage(`❌ Error: ${data.error}`);
+        setMessage(`Error: ${data.error}`);
       }
     } catch (error) {
-      setMessage(`❌ Error de conexión: ${error.message}`);
+      setMessage(`Error de conexión: ${error.message}`);
     } finally {
       setLoading(false);
     }
