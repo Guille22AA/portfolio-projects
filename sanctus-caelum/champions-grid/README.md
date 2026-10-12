@@ -109,29 +109,6 @@ This application serves as the primary interface for exploring Sanctus Caelum ch
 - SQLite (development)
 - Tables: `championSuggestions`, `newsletters`
 
-## 🚀 Installation & Setup
-
-### Frontend
-
-```bash
-cd champions-grid
-npm install
-npm start
-```
-
-Runs on `http://localhost:3000`
-
-### Backend
-
-```bash
-cd backend
-npm install
-node server.js
-```
-
-Runs on `http://localhost:5000`
-
-Both must be running simultaneously for full functionality.
 
 ## ✨ Features Implemented
 
