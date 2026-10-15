@@ -17,6 +17,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "validate": "node tools/validate-champions.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -24,6 +25,11 @@
       "react-app",
       "react-app/jest"
     ]
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^react-router/dom$": "react-router/dist/development/dom-export.js"
+    }
   },
   "browserslist": {
     "production": [
