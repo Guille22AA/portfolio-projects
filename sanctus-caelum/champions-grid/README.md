@@ -45,10 +45,12 @@ This application serves as the primary interface for exploring Sanctus Caelum ch
   - Header.css, SearchBar.css, ChampionGrid.css, etc.
 
 - **public/** - Static assets
-  - splashArts/ - Champion renders (grid cards)
-  - cutouts/ - Champion figures with transparent background (detail pages)
+  - renders/ - Champion renders (grid cards), WebP
+  - cutouts/ - Champion figures with transparent background (detail pages), WebP
   - maps/ - Main mode minimap (SVG)
   - iconos/ - UI icons (logo, search, etc)
+
+- **tools/** - Scripts to add champions (image preparation, data validation) and to generate the minimap. See `tools/README.md`.
 
 - **App.js** - Main routing logic
 - **index.js** - React entry point
@@ -170,7 +172,7 @@ Each champion has:
 - Resource system (Mana, Ki, Reiatsu, etc.) with its growth and regeneration
 - Lore, quotes and interactions with other champions
 
-Adding a champion only requires a new JSON file in `src/data/champions/`. Its file name is used as URL slug and as the name of its cutout (`public/cutouts/<name>.png`) and gallery folder (`src/assets/gallery/<name>/`).
+Adding a champion only requires a new JSON file in `src/data/champions/` plus its images; `tools/README.md` has the step-by-step guide and `npm run validate` checks the result. Its file name is used as URL slug and as the name of its cutout (`public/cutouts/<name>.png`) and gallery folder (`src/assets/gallery/<name>/`).
 
 ### Database Tables
 
@@ -242,7 +244,7 @@ Key files:
 - ✋ World Building page using the main mode minimap (`public/maps/minimap.svg`, already drawn)
 - ✋ Unique artwork per ability (icons are currently assigned by ability type)
 - ✋ Mobile optimization refinements
-- ✋ Performance optimization (lazy loading, code splitting)
+- ✋ Code splitting of the champion pages
 
 **Known Limitations**
 
