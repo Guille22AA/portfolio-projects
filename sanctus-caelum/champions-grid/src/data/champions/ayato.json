@@ -1,0 +1,190 @@
+{
+  "id": 27,
+  "nick": "Ayato",
+  "fullName": "Ayato Kirishima",
+  "alias": "The Black Rabbit",
+  "anime": "Tokyo Ghoul",
+  "affiliation": "United Front",
+  "roles": ["Mid"],
+  "attackTypes": ["Melee"],
+  "damageTypes": ["Physical"],
+  "class": "Slayer",
+  "resource": {
+    "name": "RC Cells",
+    "type": "RC_Ghoul",
+    "maxValue": 340,
+    "maxValueGrowth": 40,
+    "regen": "Kills, assists, monster clears",
+    "passiveRegen": "8 + 0.7 × lvl²",
+    "decay": "Faster drain than UR"
+  },
+  "difficulty": "Medium",
+  "price": { "coins": 3150, "premium": 790 },
+  "render": "/renders/ayato_render.webp",
+  "ratings": { "damage": 3, "toughness": 1, "control": 1, "mobility": 3, "utility": 0 },
+  "style": 70,
+  "releaseDate": "2026-10-15",
+  "lastChanged": "V1.0",
+  "tags": ["Assassin", "Snowball", "Transform"],
+
+  "stats": {
+    "health": "615 + 102 × lvl²",
+    "healthRegen": "7.5 + 0.7 × lvl²",
+    "armor": "32 + 4.4 × lvl²",
+    "attackDamage": "66 + 3.2 × lvl²",
+    "magicResistance": "30 + 1.85 × lvl²",
+    "criticalDamage": "200%",
+    "movementSpeed": "345",
+    "attackRange": "125",
+    "attackSpeed": {
+      "base": "0.645",
+      "windup": "20%",
+      "bonusAS": "2.9%"
+    }
+  },
+
+  "quotes": {
+    "selection": "The world is power. Everything is decided by power.",
+    "general": [
+      "The weak can't protect anything.",
+      "I'm going to make them all see that ghouls are above them.",
+      "Deep down, they must think they have no value.",
+      "The weak perish, and the strong survive."
+    ],
+    "interactions": {
+      "touka": ["enemy", "Do you forget you're a monster when you're around those humans?"],
+      "kaneki": ["ally", "You half-assed idiot! There are still things only you can do!"],
+      "tatara": ["enemy", "Is everyone in Aogiri just replaceable pieces to you?"]
+    }
+  },
+
+  "abilities": {
+    "passive": {
+      "name": "Black Rabbit Awakening",
+      "description": "Ayato fills an awakening bar up to 10 points: 1 point per champion kill, 0.5 per assist, and a small amount whenever his abilities damage enemy champions. Once the bar is full, he can awaken his kakuja at any moment: his ukaku grows from two to three crystallized wings, granting bonus resistances, bonus attack damage, armor penetration and omnivamp, and empowering all of his abilities.",
+      "effects": {
+        "awakeningBar": {
+          "maximum": "10 points",
+          "championKill": "1 point",
+          "assist": "0.5 points",
+          "abilityDamage": "0.1 points per 250 damage dealt to champions with abilities"
+        },
+        "transformation": {
+          "trigger": "Activated at will once the bar is full",
+          "wings": "Two wings become three crystallized wings",
+          "duration": "Permanent"
+        },
+        "awakenedBonuses": {
+          "armorAndMagicResist": "+15",
+          "bonusAttackDamage": "+10%",
+          "armorPenetration": "10%",
+          "omnivamp": "8%"
+        }
+      }
+    },
+    "h1": {
+      "name": "Ukaku Rend",
+      "description": "Ayato strikes the target enemy with both wings. If the target is beyond melee range, he leaps to it first. Champion takedowns reset the cooldown. Awakened: also applies Grievous Wounds.",
+      "type": "Active",
+      "targetType": "Unit",
+      "castTime": "None",
+      "targetRange": "550",
+      "cooldown": "8 / 7.5 / 7 / 6.5 / 6",
+      "cost": "40 / 45 / 50 / 55 / 60 RC",
+      "effects": {
+        "damage": {
+          "type": "Physical",
+          "baseValues": "65 / 90 / 115 / 140 / 165",
+          "scaling": "110% bonus AD"
+        },
+        "leap": {
+          "condition": "Target beyond melee range",
+          "effect": "Leaps to the target before striking"
+        },
+        "reset": {
+          "trigger": "Champion kill or assist within 3 seconds of damaging it",
+          "effect": "Cooldown fully refreshed"
+        },
+        "awakened": {
+          "grievousWounds": "40% for 3s"
+        }
+      }
+    },
+    "h2": {
+      "name": "Wing Guard",
+      "description": "Ayato wraps himself in his wings like a shield for 1.5 seconds, greatly reducing damage from basic attacks and partially reducing damage from abilities. Awakened: basic attacks deal no damage and ability damage is reduced further.",
+      "type": "Active",
+      "targetType": "Self",
+      "castTime": "None",
+      "duration": "1.5s",
+      "cooldown": "18 / 16.5 / 15 / 13.5 / 12",
+      "cost": "50 RC",
+      "effects": {
+        "basicAttackReduction": {
+          "value": "60 / 65 / 70 / 75 / 80%"
+        },
+        "abilityDamageReduction": {
+          "value": "15 / 17.5 / 20 / 22.5 / 25%"
+        },
+        "awakened": {
+          "basicAttackReduction": "100%",
+          "abilityDamageReduction": "30 / 32.5 / 35 / 37.5 / 40%"
+        }
+      }
+    },
+    "h3": {
+      "name": "Crystal Shard Rain",
+      "description": "Ayato fires a short burst of crystal shards from his wings in the direction he is facing, damaging and slightly slowing enemies in a rectangular area. Can be cast while moving. Awakened: larger area, more damage and a stronger slow.",
+      "type": "Active",
+      "targetType": "Direction",
+      "castTime": "None (can move)",
+      "range": "600",
+      "width": "200",
+      "duration": "0.75s",
+      "cooldown": "10 / 9.5 / 9 / 8.5 / 8",
+      "cost": "60 / 65 / 70 / 75 / 80 RC",
+      "effects": {
+        "damage": {
+          "type": "Physical",
+          "baseValues": "70 / 105 / 140 / 175 / 210",
+          "scaling": "70% bonus AD"
+        },
+        "slow": {
+          "value": "15%",
+          "duration": "1s"
+        },
+        "awakened": {
+          "area": "700 × 260",
+          "bonusDamage": "+20%",
+          "slow": "30%"
+        }
+      }
+    },
+    "h4": {
+      "name": "Black Rabbit Maelstrom",
+      "description": "Ayato stretches his wings horizontally in front of him and spins them into a whirlwind, dealing damage and briefly knocking up enemies in the area, tossing them aside. Awakened: deals more damage.",
+      "type": "Active",
+      "targetType": "Direction",
+      "castTime": "0.25",
+      "range": "500",
+      "width": "350",
+      "cooldown": "90 / 75 / 60",
+      "cost": "100 RC",
+      "effects": {
+        "damage": {
+          "type": "Physical",
+          "baseValues": "200 / 325 / 450",
+          "scaling": "90% bonus AD"
+        },
+        "knockup": {
+          "duration": "0.5s",
+          "displacement": "Enemies are tossed aside from the center of the whirlwind"
+        },
+        "awakened": {
+          "damage": "250 / 400 / 550 (+ 110% bonus AD)"
+        }
+      }
+    }
+  },
+  "lore": "Ayato Kirishima is a ghoul of the 20th Ward and the younger brother of Touka. Raised by a father who taught them to live quietly among humans, he lost that life when the CCG took his father away, and with it any wish to hide. Bitter and convinced that only strength keeps ghouls alive, he joined Aogiri Tree and earned the name Black Rabbit, becoming one of its most feared enforcers. Yet behind his arrogance he never stopped protecting the few he cared about, Touka and Hinami above all. When Tokyo fell into chaos, he set his grudges aside and joined the United Front, fighting beside ghouls and humans alike.\n\nAyato's Ukaku kagune erupts from his shoulders as a pair of dark wings. Like every Ukaku user he relies on sheer speed, firing volleys of hardened RC shards and striking at close range before his opponents can react, though the kagune drains his stamina quickly in long fights. When he pushes it further, his wings crystallize into denser, razor-sharp forms at the cost of burning through his RC cells far faster. Hot-headed and proud, he hides genuine loyalty behind harsh words, and has grown from a reckless enforcer into someone who fights to keep his people alive."
+}
