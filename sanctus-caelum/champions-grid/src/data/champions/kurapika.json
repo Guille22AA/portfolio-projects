@@ -22,7 +22,7 @@
     "style": 85,
     "releaseDate": "2026-10-12",
     "lastChanged": "V1.0",
-    "render": "/splashArts/kurapika_render.png",
+    "render": "/renders/kurapika_render.webp",
   
     "stats": {
       "health": "545 + 94 × lvl²",
@@ -54,7 +54,7 @@
         "The spiders crawl in the shadows… but I will hunt them to extinction."
       ],
       "interactions": {
-        "6": ["enemy", "The spiders crawl in the shadows… but I will hunt them to extinction."]
+        "chrollo": ["enemy", "The spiders crawl in the shadows… but I will hunt them to extinction."]
       }
     },
   

@@ -21,7 +21,7 @@
     "style": 55,
     "releaseDate": "2026-10-12",
     "lastChanged": "V1.0",
-    "render": "/splashArts/yoruichi_render.png",
+    "render": "/renders/yoruichi_render.webp",
   
     "stats": {
       "health": "600 + 119 × lvl²",
@@ -51,7 +51,7 @@
         "This cat still has claws."
       ],
       "interactions": {
-        "Kisuke ID to be specified": ["ally", "Kisuke, you still haven't changed a bit."]
+        "kisuke": ["ally", "Kisuke, you still haven't changed a bit."]
       }
     },
   

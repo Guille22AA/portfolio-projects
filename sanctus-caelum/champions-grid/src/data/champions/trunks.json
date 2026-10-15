@@ -22,7 +22,7 @@
     "style": 45,
     "releaseDate": "2026-10-12",
     "lastChanged": "V1.0",
-    "render": "/splashArts/trunks_render.png",
+    "render": "/renders/trunks_render.webp",
   
     "stats": {
       "health": "620 + 99 × lvl²",
@@ -49,9 +49,9 @@
         "This sword carries the weight of my world."
       ],
       "interactions": {
-        "Goku ID to be specified": ["ally", "Goku, you don't understand how dangerous they are!"],
-        "Vegeta ID to be specified": ["ally", "Father, I'll make you proud."],
-        "Cell ID to be specified": ["enemy", "Cell! I won't let you destroy everything again!"]
+        "goku": ["ally", "Goku, you don't understand how dangerous they are!"],
+        "vegeta": ["ally", "Father, I'll make you proud."],
+        "cell": ["enemy", "Cell! I won't let you destroy everything again!"]
       }
     },
   

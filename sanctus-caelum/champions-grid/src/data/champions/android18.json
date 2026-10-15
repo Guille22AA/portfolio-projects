@@ -10,11 +10,8 @@
   "damageTypes": ["Physical", "Magic"],
   "class": "Fighter",
   "resource": {
-    "name": "Mana",
-    "type": "UR",
-    "maxValue": 295,
-    "maxValueGrowth": 45,
-    "regen": "8 + 0.65 × lvl²"
+    "name": "None",
+    "type": "None"
   },
   "difficulty": "Easy",
   "price": { "coins": 1350, "premium": 585 },
@@ -22,7 +19,7 @@
   "style": 40,
   "releaseDate": "2026-10-12",
   "lastChanged": "V1.0",
-  "render": "/splashArts/android18_render.png",
+  "render": "/renders/android18_render.webp",
 
   "stats": {
     "health": "655 + 105 × lvl²",
@@ -50,29 +47,32 @@
       "You'll regret facing me."
     ],
     "interactions": {
-      "Vegeta ID to be specified": ["enemy", "Your punches are too slow Vegeta."],
-      "Krillin ID to be specified": ["ally", "Don't touch Krillin."],
-      "Android17 ID to be specified": ["enemy", "Seventeen, don't get in my way."]
+      "vegeta": ["enemy", "Your punches are too slow Vegeta."],
+      "krillin": ["ally", "Don't touch Krillin."],
+      "android17": ["enemy", "Seventeen, don't get in my way."]
     }
   },
 
   "abilities": {
     "passive": {
       "name": "Cyborg Pulse",
-      "description": "Android 18's third basic attack gains 125% bonus attack speed with an uncancellable windup and deals magic damage to the primary target and nearby enemies. Deals 150% damage to monsters and executes minions below 25 health. Hidden Passive: Whenever Krillin as an ally gets injured, 18 gains +5% Attack Damage, +5% Attack Speed, and +5% Movement Speed for 4.5 seconds. Also gains extra bounty for killing Dr. Gero.",
+      "description": "Android 18's third basic attack gains 125% bonus attack speed, which has an uncancellable windup, and deals 130% AD (+ 30% AP) magic damage to the primary target and 40% AD (+ 20% AP) magic damage to nearby enemies. It deals 150% damage to monsters, and executes minions that are secondary targets and would be left below 25 health. Hidden Passive: for 4.5 seconds she gains +5% Attack Damage, +5% Attack Speed and +5% Movement Speed every time Krillin, as an ally, gets injured. She also gains an extra bounty for killing Dr. Gero.",
       "effects": [
         {
           "type": "Enhanced Auto Attack",
           "trigger": "Third basic attack",
           "bonusAttackSpeed": "125%",
           "damage": "130% AD (+ 30% AP)",
-          "aoeMultiplier": "40% AD (+ 20% AP) to nearby enemies"
+          "aoeMultiplier": "40% AD (+ 20% AP) to nearby enemies",
+          "monsterDamage": "150%",
+          "minionExecute": "Secondary targets that would be left below 25 health"
         },
         {
           "type": "Hidden Passive",
           "trigger": "When Krillin gets injured",
           "duration": "4.5s",
-          "bonuses": "+5% AD, +5% AS, +5% MS"
+          "bonuses": "+5% AD, +5% AS, +5% MS",
+          "bounty": "Extra bounty for killing Dr. Gero"
         }
       ]
     },
@@ -99,24 +99,24 @@
 
     "h2": {
       "name": "Energy Shield",
-      "description": "Android 18 grants herself a shield for up to 5 seconds and creates three spheres that orbit her counterclockwise, detonating upon contact with enemies. If all three spheres detonate, Energy Shield is reapplied, stacking and refreshing the duration.",
+      "description": "Android 18 grants herself a shield for up to 5 seconds and creates three spheres that orbit her counterclockwise for the same duration, detonating upon contact with an enemy to deal magic damage to nearby enemies. If all three spheres detonate, Energy Shield is reapplied, stacking with its original shield and refreshing the duration.",
       "type": "Active",
       "targetType": "Self",
-      "cooldown": "Por especificar",
+      "cooldown": "16 / 15 / 14 / 13 / 12",
       "duration": "5s",
       "effects": {
         "shield": {
           "baseValues": "45 / 60 / 75 / 90 / 105",
-          "scaling": "(+ 30% AP) (+ 9% bonus health)"
+          "scaling": "30% AP + 9% bonus health"
         },
         "orbDamage": {
           "baseValues": "20 / 32 / 44 / 56 / 68",
-          "scaling": "(+ 18% AP)",
+          "scaling": "18% AP",
           "count": "3 orbs"
         },
         "maximumShield": {
           "baseValues": "90 / 120 / 150 / 180 / 210",
-          "scaling": "(+ 60% AP) (+ 18% bonus health)"
+          "scaling": "60% AP + 18% bonus health"
         },
         "note": "Detonation of all 3 orbs reapplies and stacks shield"
       }
@@ -124,15 +124,15 @@
 
     "h3": {
       "name": "Cyborg Dash",
-      "description": "Android 18 dashes in the target direction, dealing physical damage to enemies near landing location and granting ghosting to non-champions for 4 seconds. Stops prematurely on champion collision, knocking back all nearby champions and stunning them for 0.75 seconds, while gaining bonus attack speed.",
+      "description": "Android 18 dashes in the target direction, dealing physical damage to enemies near the landing location. She grants ghosting to non-champions she passes through for 4 seconds. She stops prematurely upon colliding with an enemy champion, knocking back all nearby enemy champions, though not through terrain, as well as stunning them for 0.75 seconds, while also gaining bonus attack speed for 5 seconds.",
       "type": "Active",
       "targetType": "Direction",
-      "cooldown": "Por especificar",
+      "cooldown": "14 / 13 / 12 / 11 / 10",
       "effects": {
         "damage": {
           "type": "Physical",
           "values": "60 / 90 / 120 / 150 / 180",
-          "scaling": "(+ 75% bonus AD)"
+          "scaling": "75% bonus AD"
         },
         "ghosting": {
           "target": "Non-champions",
@@ -149,7 +149,7 @@
 
     "h4": {
       "name": "Master Martial",
-      "description": "Android 18 overclocks her cybernetic core, entering an empowered state and becoming ghosted. She can refresh the duration whenever she scores a takedown against an enemy champion within 3 seconds of damaging them.",
+      "description": "Android 18 overclocks her cybernetic core for a duration, entering an empowered state and becoming ghosted. She can refresh the duration of her Master Martial buff whenever she scores a takedown against an enemy champion within 3 seconds of damaging them.",
       "type": "Active",
       "targetType": "Self",
       "castTime": "0.25",

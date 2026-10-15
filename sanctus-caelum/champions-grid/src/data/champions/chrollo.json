@@ -22,7 +22,7 @@
     "style": 65,
     "releaseDate": "2026-10-12",
     "lastChanged": "V1.0",
-    "render": "/splashArts/chrollo_render.png",
+    "render": "/renders/chrollo_render.webp",
   
     "stats": {
       "health": "600 + 122 × lvl²",
@@ -51,9 +51,9 @@
         "All I ever wanted was to find people I could fight alongside."    
       ],
       "interactions": {
-        "10": ["enemy", "You want a fight, Hisoka? Very well. I'll give you one you'll never forget."],
-        "16": ["enemy", "You hate the Spider, don't you? But hate alone won't be enough to kill me."],
-        "Troupe IDs to be specified": ["ally", "Remember, we are the Phantom Troupe. No matter the odds, we act as one."]
+        "hisoka": ["enemy", "You want a fight, Hisoka? Very well. I'll give you one you'll never forget."],
+        "kurapika": ["enemy", "You hate the Spider, don't you? But hate alone won't be enough to kill me."],
+        "phantom-troupe": ["ally", "Remember, we are the Phantom Troupe. No matter the odds, we act as one."]
       }
     },
   

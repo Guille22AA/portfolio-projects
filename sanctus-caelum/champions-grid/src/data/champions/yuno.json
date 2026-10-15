@@ -22,7 +22,7 @@
     "style": 50,
     "releaseDate": "2026-10-12",
     "lastChanged": "V1.0",
-    "render": "/splashArts/yuno_render.png",
+    "render": "/renders/yuno_render.webp",
   
     "stats": {
       "health": "630 + 107 × lvl²",
@@ -53,7 +53,7 @@
         "My magic isn't just power — it's my resolve."
       ],
       "interactions": {
-        "3": [
+        "asta": [
             ["enemy", "I won't lose to you, Asta."],
             ["ally", "Our paths may be different, Asta, but our goal is the same."],
             ["enemy", "Fate put us here, but effort will decide who wins."]

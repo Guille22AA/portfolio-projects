@@ -25,7 +25,7 @@
   "style": 80,
   "releaseDate": "2026-10-12",
   "lastChanged": "V1.0",
-  "render": "/splashArts/hinami_render.png",
+  "render": "/renders/hinami_render.webp",
 
   "stats": {
     "health": "565 + 92 × lvl²",
@@ -57,8 +57,8 @@
       "Sometimes, kindness hurts more than cruelty."
     ],
     "interactions": {
-      "Kaneki ID to be specified": ["ally", "Kaneki, thank you… for being like a big brother to me."],
-      "Touka ID to be specified": ["ally", "Touka-chan, you're the kind of person I want to be… strong and kind."]
+      "kaneki": ["ally", "Kaneki, thank you… for being like a big brother to me."],
+      "touka": ["ally", "Touka-chan, you're the kind of person I want to be… strong and kind."]
     }
   },
 
@@ -197,7 +197,7 @@
       "type": "Active",
       "targetType": "Direction",
       "cooldown": "110 / 90 / 70",
-      "cost": "Por especificar",
+      "cost": "100 RC",
       "effects": {
         "impale": {
           "duration": "2.5s",

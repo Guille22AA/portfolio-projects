@@ -10,11 +10,8 @@
   "damageTypes": ["Physical"],
   "class": ["Fighter", "Duelist"],
   "resource": {
-    "name": "Mana",
-    "type": "UR",
-    "maxValue": 263,
-    "maxValueGrowth": 45,
-    "regen": "6.6 + 0.35 × lvl²"
+    "name": "None",
+    "type": "None"
   },
   "difficulty": "Medium",
   "price": { "coins": 3150, "premium": 790 },
@@ -22,7 +19,7 @@
   "style": 50,
   "releaseDate": "2026-10-12",
   "lastChanged": "V1.0",
-  "render": "/splashArts/asta_render.png",
+  "render": "/renders/asta_render.webp",
 
   "stats": {
     "health": "652 + 114 × lvl²",
@@ -51,9 +48,9 @@
       "Hard work beats talent when talent doesn't work hard!"
     ],
     "interactions": {
-      "Yuno ID to be specified": [["ally", "enemy"], "We promised we'd fight for the title of Wizard King—don't fall behind, Yuno!"],
-      "Noelle ID to be specified": ["ally", "I'll protect you, Noelle! Count on me!"],
-      "Magna ID to be specified": "I'll never lose to you, Magna-senpai! Not in guts, not in spirit!"
+      "yuno": [["ally", "enemy"], "We promised we'd fight for the title of Wizard King—don't fall behind, Yuno!"],
+      "noelle": ["ally", "I'll protect you, Noelle! Count on me!"],
+      "magna": ["enemy", "I'll never lose to you, Magna-senpai! Not in guts, not in spirit!"]
     }
   },
 
@@ -187,5 +184,5 @@
 
   "lore": "Asta is a determined orphan raised in the village of Hage, in a world where nearly everyone can use magic—except him. Despite being born without a single drop of magical power, he trains his body relentlessly and dreams of becoming the Wizard King, the strongest mage in the Clover Kingdom.\n\nAsta is loud, passionate, and impossibly persistent. His unwavering resolve and refusal to give up inspire those around him, even when the odds are stacked against him. Though often underestimated, he proves his worth time and time again with sheer will and unshakable loyalty to his friends.\n\nHis power comes from a mysterious five-leaf grimoire that grants him access to anti-magic—energy that nullifies magic completely. Using massive swords imbued with this force, Asta cuts through spells, deflects curses, and enters his Black Form, a state where anti-magic coats his body and pushes his strength to supernatural levels.",
 
-  "tags": ["AntiMagic", "Duelist", "Adaptable"]
+  "tags": ["AntiMagic", "Skirmisher", "Adaptable"]
 }

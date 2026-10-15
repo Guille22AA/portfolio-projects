@@ -535,6 +535,11 @@
   color: #c8aa6e;
 }
 
+/* shown once above the passive and ability sections of a champion with forms */
+.cd-form-banner {
+  margin: 40px 0 -24px;
+}
+
 /* ABILITIES */
 
 .ability-list {

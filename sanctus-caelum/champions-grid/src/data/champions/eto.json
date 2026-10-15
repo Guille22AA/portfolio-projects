@@ -24,7 +24,7 @@
     "style": 55,
     "releaseDate": "2026-10-12",
     "lastChanged": "V1.0",
-    "render": "/splashArts/eto_render.png",
+    "render": "/renders/eto_render.webp",
 
     "stats": {
       "health": "590 + 115 × lvl²",
@@ -56,8 +56,8 @@
         "Books are lies that tell the truth."
       ],
       "interactions": {
-        "Kaneki ID to be specified": [["ally", "enemy"], "Kaneki… your tragedy is what makes you beautiful."],
-        "Tatara ID to be specified": ["ally", "Our goals align, but never forget—I'm the Owl. I soar alone."]
+        "kaneki": [["ally", "enemy"], "Kaneki… your tragedy is what makes you beautiful."],
+        "tatara": ["ally", "Our goals align, but never forget—I'm the Owl. I soar alone."]
       }
     },
   
@@ -152,7 +152,7 @@
         "width": "180",
         "speed": "2500",
         "cooldown": "14 / 12 / 10 / 8 / 6",
-        "cost": "Por especificar",
+        "cost": "50 RC",
         "effects": {
           "damage": {
             "type": "Physical",

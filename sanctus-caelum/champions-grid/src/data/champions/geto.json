@@ -22,7 +22,7 @@
     "style": 90,
     "releaseDate": "2026-10-12",
     "lastChanged": "V1.0",
-    "render": "/splashArts/geto_render.png",
+    "render": "/renders/geto_render.webp",
   
     "mechanicDescription": "Curse Summoner. Geto summons different cursed spirits for various effects. Only one spirit active at a time. Passive stacking from jungle monsters empowers his ultimate.",
   
@@ -54,7 +54,7 @@
         "I'll cleanse this world, one monkey at a time."
       ],
       "interactions": {
-        "20": [
+        "gojo": [
           [["ally", "enemy"], "We are the chosen ones, Gojo. They'll never understand us."],
           [["ally", "enemy"], "Even in death, our paths remain tied together, Satoru."]
         ]
@@ -107,8 +107,8 @@
           },
           "damage": {
             "type": "Magic",
-            "baseValues": "Por especificar",
-            "scaling": "Por especificar"
+            "baseValues": "60 / 90 / 120 / 150 / 180",
+            "scaling": "55% AP"
           },
           "grievousWounds": {
             "effect": "Applied on hit",
@@ -144,8 +144,8 @@
             "targetArea": "Nearby enemies",
             "damage": {
               "type": "Magic",
-              "baseValues": "Por especificar",
-              "scaling": "Por especificar"
+              "baseValues": "25 / 40 / 55 / 70 / 85",
+              "scaling": "20% AP per breath"
             }
           },
           "taunt": {
@@ -154,7 +154,7 @@
           },
           "damageAbsorption": {
             "effect": "Absorbs portion of incoming damage to Geto",
-            "percentage": "Por especificar"
+            "percentage": "20 / 22.5 / 25 / 27.5 / 30%"
           },
           "spiritLimitation": "Only one cursed spirit active. Summoning new replaces previous."
         }
@@ -182,9 +182,9 @@
           "poisonDamage": {
             "type": "Magic",
             "damageOverTime": true,
-            "baseValues": "Por especificar",
-            "scaling": "Por especificar",
-            "duration": "Por especificar"
+            "baseValues": "15 / 22.5 / 30 / 37.5 / 45",
+            "scaling": "10% AP per second",
+            "duration": "4s"
           },
           "spreadMechanic": {
             "trigger": "Infected enemy dies",
@@ -231,5 +231,5 @@
   
     "lore": "Suguru Geto was once a prodigy of Jujutsu High School, known for his calm charisma and strong bond with Satoru Gojo. His innate technique, Cursed Spirit Manipulation, allowed him to absorb and command countless exorcised curses, giving him overwhelming versatility in battle. Outwardly composed and analytical, Geto's true personality was marked by deep disdain toward non-sorcerers, whom he viewed as burdens holding back the world of jujutsu. His ideology pushed him to abandon his role as a sorcerer, leading massacres and gathering followers to establish a new order where only jujutsu users would reign.\n\nAfter his downfall and death, his body became the vessel of Kenjaku, an ancient and cunning curse manipulator who extends his life by implanting his brain into others. Through Geto's face and voice, Kenjaku orchestrated grand schemes such as the Culling Game, manipulating curses and sorcerers alike with ruthless intelligence. This fusion left Geto's image as both a tragic fallen idealist and a mask for one of the most dangerous masterminds in the world of jujutsu.",
 
-    "tags": ["PetController", "Adaptable", "Burst"]
+    "tags": ["Summoner", "Adaptable", "Burst"]
   }

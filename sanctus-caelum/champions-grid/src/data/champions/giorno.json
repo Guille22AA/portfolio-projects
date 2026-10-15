@@ -22,7 +22,7 @@
     "style": 90,
     "releaseDate": "2026-10-12",
     "lastChanged": "V1.0",
-    "render": "/splashArts/giorno_render.png",
+    "render": "/renders/giorno_render.webp",
   
     "stats": {
       "health": "610 + 99 × lvl²",
@@ -49,8 +49,8 @@
         "I, Giorno Giovanna, have a dream, I will become a Gang-Star."  
       ],
       "interactions": {
-        "5": ["ally", "I will follow you, Bucciarati."],
-        "Diavolo ID to be specified": ["enemy", "You will never reach the truth."]
+        "bucciarati": ["ally", "I will follow you, Bucciarati."],
+        "diavolo": ["enemy", "You will never reach the truth."]
       }
     },
   
@@ -189,7 +189,7 @@
         "targetRange": "800",
         "effectRadius": "600",
         "cooldown": "140 / 110 / 80",
-        "cost": "Por especificar",
+        "cost": "100 Vital Energy",
         "effects": {
           "baseAbility": {
             "effect": "Blink to target",

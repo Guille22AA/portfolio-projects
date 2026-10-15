@@ -22,7 +22,7 @@
     "style": 90,
     "releaseDate": "2026-10-12",
     "lastChanged": "V1.0",
-    "render": "/splashArts/jogo_render.png",
+    "render": "/renders/jogo_render.webp",
   
     "stats": {
       "health": "570 + 105 × lvl²",
@@ -54,9 +54,9 @@
         "Even if I die, curses will rise again and again."
       ],
       "interactions": {
-        "20": ["enemy", "Your arrogance blinds you, Gojo Satoru."],
-        "Mahio ID to be specified": ["ally", "Mahito, we are the next stage of evolution. Together, we'll create a new world."],
-        "21": ["ally", "Geto, you're the only human who understands us."]
+        "gojo": ["enemy", "Your arrogance blinds you, Gojo Satoru."],
+        "mahito": ["ally", "Mahito, we are the next stage of evolution. Together, we'll create a new world."],
+        "geto": ["ally", "Geto, you're the only human who understands us."]
       }
     },
   

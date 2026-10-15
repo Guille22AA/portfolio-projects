@@ -22,7 +22,7 @@
     "style": 60,
     "releaseDate": "2026-10-12",
     "lastChanged": "V1.0",
-    "render": "/splashArts/hisoka_render.png",
+    "render": "/renders/hisoka_render.webp",
   
     "stats": {
       "health": "650 + 99 × lvl²",
@@ -51,9 +51,9 @@
         "Show me your true colors… before I get bored."
       ],
       "interactions": {
-        "Gon ID to be specified": ["enemy", "I'll wait until you bloom… and then I'll pluck you kid."],
-        "Killua ID to be specified": [["ally", "enemy"], "You've got potential too, little one."],
-        "6": ["enemy", "You're worth killing. This will be such a lovely performance."]
+        "gon": ["enemy", "I'll wait until you bloom… and then I'll pluck you kid."],
+        "killua": [["ally", "enemy"], "You've got potential too, little one."],
+        "chrollo": ["enemy", "You're worth killing. This will be such a lovely performance."]
       }
     },
   
@@ -127,8 +127,8 @@
         "description": "Hisoka fires a sticky strand that embeds in terrain and enters preparation for 2.125 seconds. Can then swing around the terrain, firing cards at nearby enemies. Ends by jumping to target location and firing a final shot. Takedowns reset cooldown to 0.5 seconds.",
         "type": "Active (3 casts)",
         "targetType": "Terrain / Direction / Location",
-        "cooldown": "Por especificar",
-        "cost": "Por especificar",
+        "cooldown": "20 / 18.5 / 17 / 15.5 / 14",
+        "cost": "60 Nen",
         "effects": {
           "firstCast": {
             "name": "Hook Embed",
@@ -164,8 +164,8 @@
         "description": "Hisoka dashes 750 units toward target enemy, dealing magic damage to enemies passed through. If hitting an enemy, flips over them to continue dashing up to another 150 units. Can be recast after 2.5 seconds within 10 seconds of first activation, dashing 800 units with damage increased by missing health percentage.",
         "type": "Active",
         "targetType": "Unit",
-        "cooldown": "Por especificar",
-        "cost": "Por especificar",
+        "cooldown": "100 / 80 / 60",
+        "cost": "100 Nen",
         "effects": {
           "firstDash": {
             "range": "750 units",
@@ -194,5 +194,5 @@
   
     "lore": "Hisoka is a deadly and unpredictable fighter who thrives on chaos and thrill. Formerly a member of the Phantom Troupe, his true allegiance lies only with himself—constantly seeking worthy opponents to satisfy his lust for combat.\n\nCharismatic, sadistic, and obsessed with strength, Hisoka treats battles as a game, often allowing enemies to grow stronger just to enjoy killing them at their peak. He is both a cunning strategist and a flamboyant showman, making him as terrifying as he is captivating.\n\nHis Nen ability, Bungee Gum, gives his aura the properties of both rubber and gum, allowing him to control the battlefield with deceptive and flexible tactics—binding, pulling, and striking with deadly precision.",
 
-    "tags": ["Duelist", "Mobility", "Execute"]
+    "tags": ["Skirmisher", "Mobility", "Execute"]
   }

@@ -4,7 +4,7 @@
   "fullName": "Benimaru Shinmon",
   "alias": "The Mightiest Fire Soldier",
   "anime": "Fire Force",
-  "affiliation": "Fire Force",
+  "affiliation": "Company 7",
   "roles": ["Jungle"],
   "attackTypes": ["Melee"],
   "damageTypes": ["Magic"],
@@ -21,7 +21,7 @@
   "style": 60,
   "releaseDate": "2026-10-12",
   "lastChanged": "V1.0",
-  "render": "/splashArts/benimaru_render.png",
+  "render": "/renders/benimaru_render.webp",
 
 
   "stats": {
@@ -51,9 +51,9 @@
       "Strength without resolve is meaningless."
     ],
     "interactions": {
-      "Konro ID to be specified": ["ally", "Don't push yourself, Konro. I'll burn them down myself."],
-      "Shinra ID to be specified": ["enemy", "You've got guts, kid. But guts alone won't win against me."],
-      "Joker ID to be specified": ["ally", "You… I don't trust a word you say."]
+      "konro": ["ally", "Don't push yourself, Konro. I'll burn them down myself."],
+      "shinra": ["enemy", "You've got guts, kid. But guts alone won't win against me."],
+      "joker": ["ally", "You… I don't trust a word you say."]
     }
   },
 
@@ -198,5 +198,5 @@
 
   "lore": "Benimaru Shinmon is the captain of Special Fire Force Company 7 and is known throughout the Empire as both its strongest Fire Soldier and its most unpredictable. Born in Asakusa and revered as a protector of his community, Benimaru is a Second and Third Generation pyrokinetic hybrid, able to both generate and manipulate flames with overwhelming destructive power. His unique techniques, such as 'Crescent Moon Flash' and his explosive mobility, make him nearly untouchable on the battlefield. Despite his rough, blunt attitude, his loyalty to Asakusa and its people defines every action he takes.\n\nA man driven by instinct more than authority, Benimaru often disregards orders from the higher Fire Force command, choosing instead to rely on his own judgment. While he can appear detached or irreverent, he carries deep respect for those who prove their strength and conviction. In combat, his mastery of fire borders on artistry, blending raw force with precise control. Both feared and admired, Benimaru stands as a symbol of unmatched power—an unshakable wall between his people and the chaos of spontaneous human combustion.",
 
-  "tags": ["Duelist", "Burst", "Mobility"]
+  "tags": ["Skirmisher", "Burst", "Mobility"]
 }

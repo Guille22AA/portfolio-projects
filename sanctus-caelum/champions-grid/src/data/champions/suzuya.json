@@ -24,7 +24,7 @@
     "style": 20,
     "releaseDate": "2026-10-12",
     "lastChanged": "V1.0",
-    "render": "/splashArts/suzuya_render.png",
+    "render": "/renders/suzuya_render.webp",
   
     "stats": {
       "health": "643 + 99 × lvl²",
@@ -54,7 +54,7 @@
         "The CCG gave me these toys. I'll use them however I like."
       ],
       "interactions": {
-        "Kaneki ID to be specified": ["enemy", "Why should I apologize for being a monster? Has anyone ever apologized for turning me into one?"]
+        "kaneki": ["enemy", "Why should I apologize for being a monster? Has anyone ever apologized for turning me into one?"]
       }
     },
   
@@ -180,5 +180,5 @@
   
     "lore": "Juuzou Suzuya is a Special Class Ghoul Investigator of the CCG, infamous for his eccentric behavior, stitched-up body, and ruthless efficiency on the battlefield. Once known as Rei Suzuya, his childhood was marked by abuse and conditioning under the ghoul Big Madam, shaping his detached personality and twisted sense of 'fun.' Despite his strange demeanor, Juuzou quickly proved himself as a prodigy, wielding quinques with unmatched creativity and brutality, earning both fear and admiration within the organization.\n\nBehind his childlike voice and unsettling smile lies a cold, calculating killer who thrives in the chaos of battle. Juuzou wields his signature quinques, Scorpion and Jason-13, switching seamlessly between ranged precision and devastating melee strikes. When pushed to his limits, he dons Atara Joker, a stitched armor form that amplifies his bloodlust and turns him into a relentless slayer. Though he appears playful and detached, Juuzou's strength, unpredictability, and thirst for combat make him one of the deadliest humans in the war between investigators and ghouls.",
 
-    "tags": ["WeaponSwitching", "AutoAttack", "AllIn"]
+    "tags": ["WeaponSwitching", "DPS", "Diver"]
   }

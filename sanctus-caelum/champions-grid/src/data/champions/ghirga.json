@@ -23,7 +23,7 @@
     "style": 30,
     "releaseDate": "2026-10-12",
     "lastChanged": "V1.0",
-    "render": "/splashArts/ghirga_render.png",
+    "render": "/renders/ghirga_render.webp",
     "stats": {
       "health": "625 + 100 × lvl²",
       "healthRegen": "3.75 + 0.65 × lvl²",
@@ -53,8 +53,8 @@
         "I'll find you no matter where you hide! I can smell your CO2!"
       ],
       "interactions": {
-        "8": ["enemy", "Don't order me around! I'm not your underling!"],
-        "5": ["ally", "I'll follow you to the end, Bucciarati!"]
+        "giorno": ["enemy", "Don't order me around! I'm not your underling!"],
+        "bucciarati": ["ally", "I'll follow you to the end, Bucciarati!"]
       }
     },
   
@@ -216,5 +216,5 @@
   
     "lore": "Narancia Ghirga is a member of Passione and one of the core members of Bruno Bucciarati's squad. He is energetic, impulsive, and often childish in his behavior, but beneath his rough attitude lies a deeply loyal and caring person who values his friends as family. Abandoned and betrayed at a young age, Narancia grew up with a strong sense of insecurity and anger, but joining Bucciarati's team gave him a place where he finally felt accepted and protected.\n\nHis Stand, Aerosmith, takes the form of a small fighter plane equipped with machine guns and missiles. It allows Narancia to track enemies by detecting their carbon dioxide emissions, making it highly effective for reconnaissance and surprise attacks. Despite its simple appearance, Aerosmith becomes a dangerous combat tool thanks to Narancia's instincts, determination, and willingness to throw himself into battle for his teammates.\n\nAlthough he can appear immature and reckless, Narancia is extremely brave and emotionally sensitive. He develops a strong bond with the members of Bucciarati's group, especially seeing them as the family he never had. His loyalty to his friends and his desire to protect those who gave him a home become the driving forces behind his actions, making him one of the most heartfelt and tragic members of Giorno Giovanna's team.",
 
-    "tags": ["SustainedDamage", "AreaDamage", "Overheat"]
+    "tags": ["DPS", "AreaDamage", "Overheat"]
   }

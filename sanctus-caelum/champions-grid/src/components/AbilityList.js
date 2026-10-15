@@ -178,20 +178,25 @@ const Ability = ({ ability, passive = false }) => {
   );
 };
 
-const AbilityList = ({ abilities }) => {
-  // the passive can be a single object, an array, or come split as "passive" + "passive2"
-  const passives = [abilities.passive, abilities.passive2].flat().filter(Boolean);
+// the passive can be a single object, an array, or come split as "passive" + "passive2"
+export const getPassives = (abilities) =>
+  [abilities.passive, abilities.passive2].flat().filter(Boolean);
 
-  return (
-    <div className="ability-list">
-      {passives.map((passive) => (
-        <Ability key={passive.name} ability={passive} passive />
-      ))}
-      {SLOTS.filter((key) => abilities[key]).map((key) => (
-        <Ability key={key} ability={abilities[key]} />
-      ))}
-    </div>
-  );
-};
+// passives and active abilities are shown in separate sections of the page
+export const PassiveList = ({ abilities }) => (
+  <div className="ability-list">
+    {getPassives(abilities).map((passive) => (
+      <Ability key={passive.name} ability={passive} passive />
+    ))}
+  </div>
+);
+
+const AbilityList = ({ abilities }) => (
+  <div className="ability-list">
+    {SLOTS.filter((key) => abilities[key]).map((key) => (
+      <Ability key={key} ability={abilities[key]} />
+    ))}
+  </div>
+);
 
 export default AbilityList;

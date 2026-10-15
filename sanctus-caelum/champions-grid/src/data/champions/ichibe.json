@@ -22,7 +22,7 @@
     "style": 100,
     "releaseDate": "2026-10-12",
     "lastChanged": "V1.0",
-    "render": "/splashArts/ichibe_render.png",
+    "render": "/renders/ichibe_render.webp",
   
     "stats": {
       "health": "640 + 115 × lvl²",
@@ -52,8 +52,8 @@
         "My black will strip away every ounce of your power."
       ],
       "interactions": {
-        "Yhwach ID to be specified": ["enemy", "I shall take your power by staining it black."],
-        "Ichigo ID to be specified": ["ally", "Remember Ichigo, your sword carries the weight of the name I gave it."]
+        "yhwach": ["enemy", "I shall take your power by staining it black."],
+        "ichigo": ["ally", "Remember Ichigo, your sword carries the weight of the name I gave it."]
       }
     },
   
@@ -83,8 +83,8 @@
         "type": "Active",
         "targetType": "Unit (Ally, Enemy, or Self)",
         "castTime": "0.25",
-        "cooldown": "Por especificar",
-        "cost": "Por especificar",
+        "cooldown": "10",
+        "cost": "70 / 80 / 90 / 100 / 110 Reiatsu",
         "effects": {
           "heal": {
             "target": "Allies",
@@ -116,7 +116,7 @@
         "effectRadius": "200",
         "speed": "3000",
         "duration": "4s",
-        "cooldown": "Por especificar",
+        "cooldown": "14 / 13 / 12 / 11 / 10",
         "cost": "70 / 75 / 80 / 85 / 90 Reiatsu",
         "effects": {
           "initialDamage": {
@@ -140,6 +140,7 @@
         "description": "Ichibē marks an ally or a jungle monster. After 1 second, they become invisible for 5 seconds (+ 0.5s per 100 AP). Invisibility ends after hitting or being hit. They remain targetable to turrets and AoE attacks (invisibility affects only enemy vision).",
         "type": "Active",
         "targetType": "Unit (Ally or Jungle Monster)",
+        "cooldown": "20 / 19 / 18 / 17 / 16",
         "castTime": "0.25",
         "targetRange": "500",
         "delay": "1s before invisibility",
@@ -187,5 +188,5 @@
   
     "lore": "Ichibē Hyōsube, known as the 'Monk Who Calls the Real Name,' is the leader of the Royal Guard (Zero Division) and one of the most ancient figures in Soul Society. Wielding the massive brush-like weapon Ichimonji, he commands the power of black ink that erases and redefines the names of anything it touches, stripping away their essence and power. Calm but imposing, Ichibē is both a sage and a warrior, revered for his vast knowledge of spiritual arts and feared for the authority he wields over names and identities themselves.\n\nDespite his solemn duty, Ichibē carries a playful and cryptic personality, often mocking enemies while hiding the overwhelming weight of his strength. His mastery of reiatsu and the darkness of his ink makes him a protector of balance in the world, while his unique bond with words and names symbolizes the deep connection between existence and identity. On the battlefield, Ichibē is an enigmatic force—a support who shields and deceives allies, while robbing enemies of their very sense of self.",
 
-    "tags": ["Disruptor", "Stealth", "Utility"]
+    "tags": ["CrowdControl", "Stealth", "Utility"]
   }

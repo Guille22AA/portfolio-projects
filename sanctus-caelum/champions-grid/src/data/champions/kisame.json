@@ -22,7 +22,7 @@
     "style": 60,
     "releaseDate": "2026-10-12",
     "lastChanged": "V1.0",
-    "render": "/splashArts/kisame_render.png",
+    "render": "/renders/kisame_render.webp",
   
     "stats": {
       "health": "625 + 106 × lvl²",
@@ -50,7 +50,7 @@
         "I am a true shinobi… my blade and I are one."
       ],
       "interactions": {
-        "12": ["ally", "Itachi-san... it seems that in the end... I'm not so worthless after all."]
+        "itachi": ["ally", "Itachi-san... it seems that in the end... I'm not so worthless after all."]
       }
     },
   

@@ -70,18 +70,24 @@
 
 .champion-card {
   position: relative;
+  display: block;
   background: transparent;
   overflow: hidden;
   cursor: pointer;
+  text-decoration: none;
   transition: all 0.3s ease;
   border: none !important;
-  outline: none !important;
   box-shadow: none !important;
 }
 
+/* no outline for mouse clicks, but a visible one when moving with the keyboard */
 .champion-card:focus {
-  border: none !important;
-  outline: none !important;
+  outline: none;
+}
+
+.champion-card:focus-visible {
+  outline: 2px solid #c8aa6e;
+  outline-offset: 4px;
 }
 
 .champion-splash {

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { championsData } from "../data/championsData";
 import { galleryBySlug } from "../data/galleryData";
+import vocabulary from "../data/vocabulary.json";
 import {
   MAX_LEVEL,
   formatBonusAttackSpeed,
@@ -11,7 +12,7 @@ import {
 } from "../utils/championStats";
 import Icon from "./Icons";
 import RatingWheel from "./RatingWheel";
-import AbilityList from "./AbilityList";
+import AbilityList, { PassiveList, getPassives } from "./AbilityList";
 import "../styles/ChampionDetail.css";
 
 // currency names live here so they can be renamed without touching the champion files
@@ -33,14 +34,21 @@ const readInteraction = (value) => {
   return asList(value).flatMap(readInteraction);
 };
 
+// "android17" -> "Android 17", "phantom-troupe" -> "Phantom Troupe"
+const nameFromSlug = (slug) =>
+  slug
+    .split("-")
+    .map((word) => word.replace(/([a-z])(\d)/i, "$1 $2").replace(/^./, (c) => c.toUpperCase()))
+    .join(" ");
+
+// interactions are keyed by the target's file name: once that champion exists, the link appears by itself
 const getInteractions = (champion) =>
   Object.entries(champion.quotes?.interactions || {}).map(([key, value]) => {
-    // numeric keys point to a champion of the roster, the rest only carry the character name
-    const target = championsData.find((other) => String(other.id) === key);
+    const target = championsData.find((other) => other.slug === key);
     return {
       key,
       target,
-      name: target ? target.nick : key.replace(/\s*IDs? to be specified/i, ""),
+      name: target ? target.nick : nameFromSlug(key),
       quotes: readInteraction(value)
     };
   });
@@ -184,6 +192,7 @@ const ChampionView = ({ champion }) => {
   const stats = form ? form.stats : champion.stats;
   const abilities = form ? { ...form.abilities, ...champion.sharedAbilities } : champion.abilities;
 
+  const passives = abilities ? getPassives(abilities) : [];
   const interactions = getInteractions(champion);
   const gallery = galleryBySlug[champion.slug] || [];
   const sameAnime = championsData.filter(
@@ -220,7 +229,7 @@ const ChampionView = ({ champion }) => {
                   <span className="cd-field-label">Tag(s):</span>
                   <div className="cd-tags">
                     {asList(champion.tags).map((tag) => (
-                      <span className="cd-tag" key={tag}>{humanize(tag)}</span>
+                      <span className="cd-tag" key={tag}>{vocabulary.tags[tag] || humanize(tag)}</span>
                     ))}
                   </div>
                 </div>
@@ -286,7 +295,7 @@ const ChampionView = ({ champion }) => {
           </div>
 
           <div className="cd-hero-figure">
-            <img src={`/cutouts/${champion.slug}.png`} alt={champion.fullName} />
+            <img src={`/cutouts/${champion.slug}.webp`} alt={champion.fullName} />
           </div>
         </section>
 
@@ -360,10 +369,20 @@ const ChampionView = ({ champion }) => {
         </section>
       )}
 
+      {form && (
+        <p className="cd-form-note cd-form-banner">{form.displayName}: {form.description}</p>
+      )}
+
+      {passives.length > 0 && (
+        <section className="cd-section">
+          <SectionTitle icon="aura">{passives.length > 1 ? "Passives" : "Passive"}</SectionTitle>
+          <PassiveList abilities={abilities} />
+        </section>
+      )}
+
       {abilities && (
         <section className="cd-section">
           <SectionTitle icon="utility">Abilities</SectionTitle>
-          {form && <p className="cd-form-note">{form.displayName}: {form.description}</p>}
           <AbilityList abilities={abilities} />
         </section>
       )}
@@ -400,6 +419,16 @@ const ChampionDetail = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [slug]);
+
+  // the browser tab shows which champion is open
+  useEffect(() => {
+    if (!champion) return undefined;
+    const previous = document.title;
+    document.title = `${champion.fullName} | Sanctus Caelum`;
+    return () => {
+      document.title = previous;
+    };
+  }, [champion]);
 
   if (!champion) {
     return (

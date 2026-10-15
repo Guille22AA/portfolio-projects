@@ -22,7 +22,7 @@
     "style": 100,
     "releaseDate": "2026-10-12",
     "lastChanged": "V1.0",
-    "render": "/splashArts/gojo_render.png",
+    "render": "/renders/gojo_render.webp",
   
     "stats": {
       "health": "604 + 108 × lvl²",
@@ -54,9 +54,9 @@
         "This is the power of Limitless and the Six Eyes."
       ],
       "interactions": {
-        "Yuji ID to be specified": ["ally", "Don't worry, I'm the strongest."],
-        "Geto ID to be specified": ["enemy", "Suguru… we were supposed to walk this path together."],
-        "Megumi ID to be specified": ["ally", "Megumi, don't hold back. You've inherited much more than you realize."]
+        "yuji": ["ally", "Don't worry, I'm the strongest."],
+        "geto": ["enemy", "Suguru… we were supposed to walk this path together."],
+        "megumi": ["ally", "Megumi, don't hold back. You've inherited much more than you realize."]
       }
     },
   

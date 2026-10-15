@@ -22,7 +22,7 @@
     "style": 80,
     "releaseDate": "2026-10-12",
     "lastChanged": "V1.0",
-    "render": "/splashArts/itachi_render.png",
+    "render": "/renders/itachi_render.webp",
   
     "stats": {
       "health": "630 + 99 × lvl²",
@@ -50,12 +50,12 @@
         "Illusions can deceive the mind, but not the heart."        
       ],
       "interactions": {
-        "Sasuke ID to be specified": [
+        "sasuke": [
           ["enemy", "Foolish little brother… you still don't hate me enough."],
           ["ally", "As long as you exist, Sasuke, I will never die."]
         ]
           ,
-        "Naruto ID to be specified": ["enemy", "The village does not protect you… you protect the village."]
+        "naruto": ["enemy", "The village does not protect you… you protect the village."]
       }
     },
   
@@ -116,8 +116,8 @@
         "targetType": "Direction",
         "castTime": "0.5",
         "cloneDuration": "10s",
-        "cooldown": "Por especificar",
-        "cost": "Por especificar",
+        "cooldown": "18 / 17 / 16 / 15 / 14",
+        "cost": "60 Chakra",
         "effects": {
           "blink": {
             "effect": "Itachi blinks in target direction"
@@ -161,8 +161,9 @@
         "maxCharges": "2",
         "visionPath": "Every 100 units (0.5s duration)",
         "visionDestination": "5s at target location",
-        "cooldown": "Por especificar",
-        "cost": "Por especificar",
+        "cooldown": "5",
+        "recharge": "60 / 55 / 50 / 45 / 40",
+        "cost": "30 Chakra",
         "effects": [
           {
             "type": "Vision Grant",

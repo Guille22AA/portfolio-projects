@@ -22,7 +22,7 @@
     "style": 40,
     "releaseDate": "2026-10-12",
     "lastChanged": "V1.0",
-    "render": "/splashArts/lille_render.png",
+    "render": "/renders/lille_render.webp",
   
     "stats": {
       "health": "580 + 107 × lvl²",
@@ -54,8 +54,8 @@
         "Your prayers will not reach you. Only my bullets will."
       ],
       "interactions": {
-        "Yhwach ID to be specified": ["ally", "Those blessed by Yhwach cannot be defeated."],
-        "Kyoraku ID to be specified": ["enemy", "How could a Shinigami hope to grasp the scope of my ability?"]
+        "yhwach": ["ally", "Those blessed by Yhwach cannot be defeated."],
+        "kyoraku": ["enemy", "How could a Shinigami hope to grasp the scope of my ability?"]
       }
     },
   

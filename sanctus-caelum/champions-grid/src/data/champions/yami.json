@@ -22,7 +22,7 @@
     "style": 65,
     "releaseDate": "2026-10-12",
     "lastChanged": "V1.0",
-    "render": "/splashArts/yami_render.png",
+    "render": "/renders/yami_render.webp",
   
     "stats": {
       "health": "640 + 114 × lvl²",
@@ -53,8 +53,8 @@
         "Heh, looks like I'll have to get serious after all."
       ],
       "interactions": {
-        "3": ["ally", "Oi, Asta! Don't die on me, brat."],
-        "Finral ID to be specified": ["ally", "Finral, you're the taxi. No excuses."]
+        "asta": ["ally", "Oi, Asta! Don't die on me, brat."],
+        "finral": ["ally", "Finral, you're the taxi. No excuses."]
       }
     },
   

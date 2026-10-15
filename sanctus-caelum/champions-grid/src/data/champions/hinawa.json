@@ -4,7 +4,7 @@
     "fullName": "Takehisa Hinawa",
     "alias": "Lieutenant Hinawa",
     "anime": "Fire Force",
-    "affiliation": "Fire Force",
+    "affiliation": "Company 8",
     "roles": ["Bot"],
     "attackTypes": ["Ranged"],
     "damageTypes": ["Physical"],
@@ -22,7 +22,7 @@
     "style": 20,
     "releaseDate": "2026-10-12",
     "lastChanged": "V1.0",
-    "render": "/splashArts/hinawa_render.png",
+    "render": "/renders/hinawa_render.webp",
   
     "stats": {
       "health": "600 + 102 × lvl²",
@@ -54,9 +54,9 @@
         "One bullet, one target. That's my creed."
       ],
       "interactions": {
-        "1": ["ally", "Captain Obi, I'll cover the front. Leave the rest to me."],
-        "Shinra ID to be specified": ["ally", "Shinra, control your flames, or I'll put them to better use myself."],
-        "Maki ID to be specified": ["ally", "Maki, stay focused. I'll provide the firepower."]
+        "obi": ["ally", "Captain Obi, I'll cover the front. Leave the rest to me."],
+        "shinra": ["ally", "Shinra, control your flames, or I'll put them to better use myself."],
+        "maki": ["ally", "Maki, stay focused. I'll provide the firepower."]
       }
     },
   
@@ -222,5 +222,5 @@
   
     "lore": "Takehisa Hinawa is the stoic Second Company Lieutenant of Special Fire Force Company 8. A former military man, he carries his strict discipline and precision into battle, treating every shot as absolute and every decision as calculated. Though he wields no flashy flames of his own, Hinawa's mastery of Second Generation pyrokinetic abilities allows him to control and amplify bullets, turning ordinary firearms into devastating weapons that can pierce through infernos and strike with lethal accuracy.\n\nBehind his cold, expressionless demeanor lies a man devoted to order and the safety of his comrades. Hinawa values efficiency over emotion, often acting as the steady anchor of Company 8 in the chaos of combat. His presence is both feared and respected—whether delivering calm commands or a merciless trigger pull, Hinawa ensures that the flames of destruction are met with unwavering precision and justice.",
 
-    "tags": ["Marksman", "Poke", "ZoneControl"]
+    "tags": ["DPS", "Poke", "ZoneControl"]
   }

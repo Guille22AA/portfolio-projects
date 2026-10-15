@@ -22,7 +22,7 @@
   "style": 55,
   "releaseDate": "2026-10-12",
   "lastChanged": "V1.0",
-  "render": "/splashArts/bucciarati_render.png",
+  "render": "/renders/bucciarati_render.webp",
 
   "stats": {
     "health": "645 + 108 × lvl²",
@@ -49,7 +49,7 @@
       "Passione… the fact we made it here… is a complete victory"
     ],
     "interactions": {
-      "Giorno ID to be specified": ["enemy", "This taste… is the taste of a liar! Giorno Giovanna!"]
+      "giorno": ["enemy", "This taste… is the taste of a liar! Giorno Giovanna!"]
     }
   },
 

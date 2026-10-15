@@ -4,7 +4,7 @@
   "fullName": "Akitaru Obi",
   "alias": "Captain Obi",
   "anime": "Fire Force",
-  "affiliation": "Fire Force",
+  "affiliation": "Company 8",
   "roles": ["Support"],
   "attackTypes": ["Melee"],
   "damageTypes": ["Physical"],
@@ -22,7 +22,7 @@
   "style": 85,
   "releaseDate": "2026-10-12",
   "lastChanged": "V1.0",
-  "render": "/splashArts/obi_render.png",
+  "render": "/renders/obi_render.webp",
 
   "stats": {
     "health": "610 + 112 × lvl²",
@@ -51,7 +51,7 @@
       "Fire Soldiers aren't executioners—we save people."
     ],
     "interactions": {
-      "Shinra ID to be specified": ["ally", "My job is to protect the lives of my subordinates."]
+      "shinra": ["ally", "My job is to protect the lives of my subordinates."]
     }
   },
 
@@ -157,5 +157,5 @@
 
   "lore": "Akitaru Obi is the dependable captain of Special Fire Force Company 8. Unlike his comrades, Obi has no pyrokinetic powers, relying instead on his unmatched physical conditioning, tactical mind, and unwavering determination. Trained as a regular firefighter before joining the Special Fire Force, he adapted his skills to face the supernatural threat of Infernals, equipping himself with heavy gear, tools, and raw strength to stand on equal footing with powered allies and enemies alike.\n\nDespite lacking flames, Obi's greatest strength lies in his leadership and courage. He shields his squad from harm, inspires trust, and always charges into danger first, proving that resolve can rival any ignition ability. His calm demeanor, selflessness, and iron will make him the backbone of Company 8, a captain who saves not only with strength, but with the belief that every life—ally or stranger—is worth protecting.",
 
-  "tags": ["Peel", "Protection", "CrowdControl"]
+  "tags": ["Peel", "Utility", "CrowdControl"]
 }
