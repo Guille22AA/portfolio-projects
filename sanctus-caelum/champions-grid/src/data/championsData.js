@@ -10,8 +10,8 @@ const championFiles = championContext.keys();
 export const championsData = championFiles
   // the file name doubles as the URL slug and as the key for the cutout and gallery of each champion
   .map(file => ({ ...championContext(file), slug: file.split('/').pop().replace('.json', '') }))
-  // load each one and sort by id so the list stays in a clean order
-  .sort((a, b) => a.id - b.id);
+  // alphabetical by the name shown on the cards, so new champions slot into place instead of going last
+  .sort((a, b) => a.fullName.localeCompare(b.fullName));
 
   // filter options come from the champions themselves, so a new anime or class shows up on its own.
   // Known values keep the order of vocabulary.json; anything else is appended alphabetically.
