@@ -28,6 +28,64 @@
   color: #c8aa6e;
 }
 
+/* PREVIOUS / NEXT CHAMPION
+   Placed where the page opens (half a screen down) and scrolling with it, centred in the gap between
+   the window edge and the page content (1400px wide, 32px padding). On narrow screens they hug the edges. */
+
+.cd-pager-arrow {
+  position: absolute;
+  top: 50vh;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 110px;
+  color: rgba(200, 170, 110, 0.55);
+  text-decoration: none;
+  transform: translate(-50%, -50%);
+  transition: color 0.25s ease;
+}
+
+.cd-pager-arrow.prev {
+  left: max(22px, calc((100vw - 1336px) / 4));
+}
+
+.cd-pager-arrow.next {
+  left: auto;
+  right: max(22px, calc((100vw - 1336px) / 4));
+  transform: translate(50%, -50%);
+}
+
+.cd-pager-arrow svg {
+  width: 26px;
+  height: 90px;
+  overflow: visible;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.9));
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.cd-pager-arrow:hover {
+  color: #eed399;
+}
+
+.cd-pager-arrow:hover svg {
+  filter: drop-shadow(0 0 8px rgba(200, 170, 110, 0.45));
+}
+
+.cd-pager-arrow.prev:hover svg {
+  transform: translateX(-4px);
+}
+
+.cd-pager-arrow.next:hover svg {
+  transform: translateX(4px);
+}
+
+.cd-pager-arrow:focus-visible {
+  outline: 1px solid #c8aa6e;
+  outline-offset: 2px;
+}
+
 /* TOP: HERO + SIDE COLUMN */
 
 .cd-top {
@@ -825,6 +883,24 @@
 }
 
 @media (max-width: 768px) {
+  .cd-pager-arrow {
+    width: 36px;
+    height: 64px;
+  }
+
+  .cd-pager-arrow .icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .cd-pager-arrow.prev {
+    left: 0;
+  }
+
+  .cd-pager-arrow.next {
+    right: 0;
+  }
+
   .champion-detail {
     padding: 0 16px;
   }

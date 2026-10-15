@@ -53,6 +53,24 @@ const getInteractions = (champion) =>
     };
   });
 
+// a tall, thin chevron drawn as two strokes, with a small diamond at its tip
+const PagerChevron = ({ direction }) => {
+  const prev = direction === "prev";
+  return (
+    <svg viewBox="0 0 26 90" aria-hidden="true">
+      <path
+        d={prev ? "M22 2 L5 45 L22 88" : "M4 2 L21 45 L4 88"}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path d={prev ? "M5 39.5 L-0.5 45 L5 50.5 L10.5 45 Z" : "M21 39.5 L26.5 45 L21 50.5 L15.5 45 Z"} fill="currentColor" />
+    </svg>
+  );
+};
+
 const SectionTitle = ({ icon, children }) => (
   <div className="cd-section-title">
     <span className="cd-section-line left"></span>
@@ -195,6 +213,10 @@ const ChampionView = ({ champion }) => {
   const passives = abilities ? getPassives(abilities) : [];
   const interactions = getInteractions(champion);
   const gallery = galleryBySlug[champion.slug] || [];
+  // previous / next follow the grid order and wrap around at both ends
+  const position = championsData.findIndex((other) => other.slug === champion.slug);
+  const previous = championsData[(position - 1 + championsData.length) % championsData.length];
+  const next = championsData[(position + 1) % championsData.length];
   const sameAnime = championsData.filter(
     (other) => other.anime === champion.anime && other.slug !== champion.slug
   );
@@ -213,6 +235,26 @@ const ChampionView = ({ champion }) => {
 
   return (
     <main className="champion-detail">
+      {/* big arrows on both sides of the page, at the height where the page opens */}
+      <nav aria-label="Browse champions">
+        <Link
+          className="cd-pager-arrow prev"
+          to={`/champion/${previous.slug}`}
+          aria-label={`Previous champion: ${previous.fullName}`}
+          title={previous.fullName}
+        >
+          <PagerChevron direction="prev" />
+        </Link>
+        <Link
+          className="cd-pager-arrow next"
+          to={`/champion/${next.slug}`}
+          aria-label={`Next champion: ${next.fullName}`}
+          title={next.fullName}
+        >
+          <PagerChevron direction="next" />
+        </Link>
+      </nav>
+
       <div className="cd-top">
         <section className="cd-hero">
           <div className="cd-hero-backdrop" style={{ backgroundImage: `url(${champion.render})` }}></div>

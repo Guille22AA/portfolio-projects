@@ -45,6 +45,10 @@ test("a champion page shows its profile, sections and linked interactions", asyn
   expect(screen.getByRole("heading", { name: /^abilities$/i })).toBeInTheDocument();
   expect(document.title).toBe("Gojo Satoru | Sanctus Caelum");
 
+  // previous / next follow the grid order and wrap around (only two champions in this test)
+  expect(screen.getByRole("link", { name: /next champion: suguru geto/i })).toHaveAttribute("href", "/champion/geto");
+  expect(screen.getByRole("link", { name: /previous champion: suguru geto/i })).toHaveAttribute("href", "/champion/geto");
+
   // Geto is in the roster, so his interaction links to his page; Yuji is not, so it is plain text
   const interactions = screen.getByRole("heading", { name: /interactive quotes/i }).parentElement;
   expect(within(interactions).getByRole("link", { name: "Geto" })).toHaveAttribute("href", "/champion/geto");
