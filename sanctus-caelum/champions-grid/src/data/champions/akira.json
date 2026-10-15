@@ -1,0 +1,185 @@
+{
+  "id": 28,
+  "nick": "Akira",
+  "fullName": "Akira Mado",
+  "alias": "Heir of the Mado",
+  "anime": "Tokyo Ghoul",
+  "affiliation": "United Front",
+  "roles": ["Bot"],
+  "attackTypes": ["Ranged"],
+  "damageTypes": ["Physical"],
+  "class": "Marksman",
+  "resource": {
+    "name": "RC Cells",
+    "type": "RC_Human",
+    "maxValue": 320,
+    "maxValueGrowth": 40,
+    "regen": "Kills, assists, monster clears",
+    "passiveRegen": "7.5 + 0.55 × lvl²",
+    "decay": "Faster drain than UR, slower than RC_Ghoul"
+  },
+  "difficulty": "Medium",
+  "price": { "coins": 3150, "premium": 790 },
+  "render": "/renders/akira_render.webp",
+  "ratings": { "damage": 3, "toughness": 1, "control": 2, "mobility": 1, "utility": 1 },
+  "style": 30,
+  "releaseDate": "2026-10-16",
+  "lastChanged": "V1.0",
+  "tags": ["DPS", "Scaling", "Transform"],
+
+  "stats": {
+    "health": "575 + 101 × lvl²",
+    "healthRegen": "6 + 0.9 × lvl²",
+    "armor": "28 + 4.4 × lvl²",
+    "attackDamage": "60 + 2.5 × lvl²",
+    "magicResistance": "30 + 1.3 × lvl²",
+    "criticalDamage": "200%",
+    "movementSpeed": "335",
+    "attackRange": "225",
+    "attackSpeed": {
+      "base": "0.668",
+      "windup": "18%",
+      "asRatio": "0.668",
+      "bonusAS": "2.5%"
+    }
+  },
+
+  "quotes": {
+    "selection": "Those with the least to lose are the strongest.",
+    "general": [
+      "It is painful... to lose the ones you have spent time together with.",
+      "Just to exist is an empty life. If you still feel the emptiness, then something is left.",
+      "Trash should be thrown out. Die.",
+      "Now I can control it as easily as moving a finger."
+    ],
+    "interactions": {
+      "amon": [["ally", "enemy"], "Amon Koutarou, I... hate you the most."],
+      "kaneki": [
+        ["ally", "Haise or Kaneki, whatever name you go by... you are still you."],
+        [["ally", "enemy"], "That kindness will be the end of you."]
+      ],
+      "touka": [["ally", "enemy"], "Who should I have been hating? And who should I hate now?"]
+    }
+  },
+
+  "abilities": {
+    "passive": {
+      "name": "Mado Legacy",
+      "description": "Akira gains a stack with every basic attack that hits an enemy champion, and a fraction of one for each minion or monster she kills. On reaching the threshold, she trades her Amatsu quinque for the two Fueguchi quinques: a longer, deadlier whip and four shield-like wings. Her basic attacks gain range and damage, she gains a small amount of armor penetration, and her abilities are empowered.",
+      "effects": {
+        "stacks": {
+          "championHit": "1 per basic attack that hits an enemy champion",
+          "farming": "0.1 per minion or monster killed",
+          "threshold": "60"
+        },
+        "fueguchi": {
+          "attackRange": "225 → 350",
+          "bonusAttackDamage": "+10%",
+          "armorPenetration": "8%",
+          "duration": "Permanent"
+        }
+      }
+    },
+    "h1": {
+      "name": "Quinque Lash",
+      "description": "Akira lashes her whip several times in a cone in front of her, dealing damage with each hit and healing herself slightly. Fueguchi: greater range, damage and healing.",
+      "type": "Active",
+      "targetType": "Direction",
+      "castTime": "None",
+      "range": "450",
+      "cooldown": "8 / 7.5 / 7 / 6.5 / 6",
+      "cost": "40 RC",
+      "effects": {
+        "damage": {
+          "type": "Physical",
+          "baseValues": "20 / 30 / 40 / 50 / 60 per lash (3 lashes)",
+          "scaling": "30% AD"
+        },
+        "heal": {
+          "value": "10% of the damage dealt to champions"
+        },
+        "fueguchi": {
+          "range": "550",
+          "damagePerLash": "30 / 42.5 / 55 / 67.5 / 80 (+ 40% AD)",
+          "heal": "18% of the damage dealt to champions"
+        }
+      }
+    },
+    "h2": {
+      "name": "Piercing Thrust",
+      "description": "Akira retracts her whip into its koukaku form, a long blade, which takes a brief moment, then lunges forward with a powerful thrust. Fueguchi: becomes a parry; she raises her four wings as a shield, barely able to move, then strikes in a direction with a short thrust that does not dash.",
+      "type": "Active",
+      "targetType": "Direction",
+      "castTime": "0.25",
+      "range": "300",
+      "cooldown": "12 / 11 / 10 / 9 / 8",
+      "cost": "50 RC",
+      "effects": {
+        "damage": {
+          "type": "Physical",
+          "baseValues": "70 / 95 / 120 / 145 / 170",
+          "scaling": "100% bonus AD"
+        },
+        "onHit": "Applies on-hit effects",
+        "fueguchi": {
+          "wingShield": "0.75s blocking all damage and debuffs",
+          "movementSpeed": "Reduced by 90% while shielding",
+          "thrust": "90 / 130 / 170 / 210 / 250 (+ 100% bonus AD), 300 range, no dash",
+          "slow": "40% for 1s",
+          "cooldown": "18 / 16 / 14 / 12 / 10",
+          "cost": "60 RC"
+        }
+      }
+    },
+    "h3": {
+      "name": "Suppression Grenade",
+      "description": "Akira throws a CCG gas grenade that silences enemies caught in the area for 1 second. Holds up to 2 charges.",
+      "type": "Active (2 charges)",
+      "targetType": "Location",
+      "castTime": "0.25",
+      "targetRange": "800",
+      "effectRadius": "200",
+      "cooldown": "1 (between casts)",
+      "recharge": "20 / 18.5 / 17 / 15.5 / 14",
+      "cost": "40 RC per grenade",
+      "effects": {
+        "silence": {
+          "duration": "1s",
+          "trigger": "On impact"
+        }
+      }
+    },
+    "h4": {
+      "name": "Verdict of the Whip",
+      "description": "Akira spins her whip around her, repeatedly damaging nearby enemies and healing herself slightly, then pulls them in with a final lash. Fueguchi: greater range and damage.",
+      "type": "Active",
+      "targetType": "Self",
+      "castTime": "None",
+      "effectRadius": "400",
+      "duration": "1s",
+      "cooldown": "110 / 100 / 90",
+      "cost": "100 RC",
+      "effects": {
+        "spin": {
+          "type": "Physical",
+          "baseValues": "60 / 110 / 160 (total over 1s)",
+          "scaling": "100% bonus AD"
+        },
+        "finalLash": {
+          "type": "Physical",
+          "baseValues": "120 / 210 / 300",
+          "scaling": "100% bonus AD",
+          "pull": "Enemies are pulled 300 units toward Akira"
+        },
+        "heal": {
+          "value": "15% of the damage dealt to champions"
+        },
+        "fueguchi": {
+          "radius": "500",
+          "bonusDamage": "+20%"
+        }
+      }
+    }
+  },
+  "lore": "Akira Mado is a Ghoul Investigator of the CCG and the daughter of the legendary Kureo Mado. She graduated at the top of her class at the Academy, driven by the conviction that ghouls were nothing but monsters, a belief hardened into cold hatred when her father was killed by one. Partnered with Koutarou Amon and later assigned to mentor Haise Sasaki and the Quinx Squad, she grew to care for them far more than she would ever admit. As the truth behind the CCG and the ghouls she hunted came to light, her certainty crumbled, and she chose to stand with the United Front, fighting for a future her father never imagined.\n\nAkira is a methodical, analytical fighter who studies her enemies before striking. She wields Amatsu, a whip-like quinque that can retract into a blade, and later inherits the Fueguchi quinques her father forged from the ghouls he hunted: a long, spine-like lash and a set of wing-like shields. Stern, perfectionist and dryly sarcastic, she hides her loyalty behind discipline and rarely lets anyone see how deeply she cares."
+}
