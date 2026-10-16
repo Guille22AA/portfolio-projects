@@ -53,20 +53,15 @@ const getInteractions = (champion) =>
     };
   });
 
-// a tall, thin chevron drawn as two strokes, with a small diamond at its tip
+// a compact double chevron ("<<" / ">>") drawn with two thick strokes
 const PagerChevron = ({ direction }) => {
   const prev = direction === "prev";
+  const strokes = prev ? ["M21 6 L9 24 L21 42", "M33 6 L21 24 L33 42"] : ["M15 6 L27 24 L15 42", "M27 6 L39 24 L27 42"];
   return (
-    <svg viewBox="0 0 26 90" aria-hidden="true">
-      <path
-        d={prev ? "M22 2 L5 45 L22 88" : "M4 2 L21 45 L4 88"}
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="3"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path d={prev ? "M5 39.5 L-0.5 45 L5 50.5 L10.5 45 Z" : "M21 39.5 L26.5 45 L21 50.5 L15.5 45 Z"} fill="currentColor" />
+    <svg viewBox="0 0 48 48" aria-hidden="true">
+      {strokes.map((d) => (
+        <path key={d} d={d} fill="none" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+      ))}
     </svg>
   );
 };
@@ -236,6 +231,10 @@ const ChampionView = ({ champion }) => {
   return (
     <main className="champion-detail">
       {/* big arrows on both sides of the page, at the height where the page opens */}
+      <Link className="cd-close" to="/" aria-label="Close and go back to the champions grid" title="Back to champions">
+        <Icon name="close" size={22} />
+      </Link>
+
       <nav aria-label="Browse champions">
         <Link
           className="cd-pager-arrow prev"
@@ -361,6 +360,8 @@ const ChampionView = ({ champion }) => {
             <StatsTable stats={stats} resource={champion.resource} level={level} onLevelChange={setLevel} />
           )}
 
+          {/* silent champions (Noro) have no lines of their own, so the box is left out */}
+          {(champion.quotes?.selection || asList(champion.quotes?.general).length > 0) && (
           <section className="cd-box">
             <h2 className="cd-box-title">Quotes</h2>
             <div className="cd-box-body">
@@ -372,6 +373,7 @@ const ChampionView = ({ champion }) => {
               ))}
             </div>
           </section>
+          )}
 
           {interactions.length > 0 && (
             <section className="cd-box">

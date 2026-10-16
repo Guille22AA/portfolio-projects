@@ -132,8 +132,10 @@ files.forEach((file) => {
   }
 
   const quotes = champion.quotes || {};
-  if (!isText(quotes.selection)) error(`"quotes.selection" is missing`);
-  if (!Array.isArray(quotes.general) || !quotes.general.length) error(`"quotes.general" needs at least one quote`);
+  // a champion may be silent (no selection or general quotes), but if one is given it must be valid
+  if (quotes.selection !== undefined && !isText(quotes.selection)) error(`"quotes.selection" must be a quote`);
+  if (quotes.general !== undefined && !Array.isArray(quotes.general)) error(`"quotes.general" must be a list of quotes`);
+  if (!isText(quotes.selection) && !(quotes.general || []).length && !Object.keys(quotes.interactions || {}).length) warn(`no quotes at all`);
   Object.entries(quotes.interactions || {}).forEach(([key, value]) => {
     if (!/^[a-z0-9-]+$/.test(key)) error(`interaction key "${key}" must be the target's file name (e.g. "gojo", "kaneki")`);
     if (!readableInteraction(value)) error(`interaction "${key}" must be "quote", ["ally"|"enemy", "quote"] or [["ally", "enemy"], "quote"]`);

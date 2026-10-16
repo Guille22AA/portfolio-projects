@@ -39,8 +39,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 110px;
+  width: 56px;
+  height: 64px;
   color: rgba(200, 170, 110, 0.55);
   text-decoration: none;
   transform: translate(-50%, -50%);
@@ -58,8 +58,8 @@
 }
 
 .cd-pager-arrow svg {
-  width: 26px;
-  height: 90px;
+  width: 44px;
+  height: 44px;
   overflow: visible;
   filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.9));
   transition: transform 0.25s ease, filter 0.25s ease;
@@ -83,6 +83,37 @@
 
 .cd-pager-arrow:focus-visible {
   outline: 1px solid #c8aa6e;
+  outline-offset: 2px;
+}
+
+/* CLOSE: back to the grid, in the right gutter level with the top of the page content */
+
+.cd-close {
+  position: absolute;
+  top: 128px;
+  right: max(22px, calc((100vw - 1336px) / 4));
+  z-index: 50;
+  transform: translate(50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  color: #c8aa6e;
+  background: #0e0e0e;
+  border: 1px solid rgba(200, 170, 110, 0.4);
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.cd-close:hover {
+  color: #0e0e0e;
+  background: #c8aa6e;
+  border-color: #c8aa6e;
+}
+
+.cd-close:focus-visible {
+  outline: 2px solid #eed399;
   outline-offset: 2px;
 }
 
