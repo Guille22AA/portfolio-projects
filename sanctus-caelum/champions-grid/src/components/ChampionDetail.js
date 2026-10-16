@@ -231,28 +231,31 @@ const ChampionView = ({ champion }) => {
   return (
     <main className="champion-detail">
       {/* big arrows on both sides of the page, at the height where the page opens */}
-      <Link className="cd-close" to="/" aria-label="Close and go back to the champions grid" title="Back to champions">
-        <Icon name="close" size={22} />
-      </Link>
+      {/* in the side gutters on wide screens; a bar above the page when there is no room for them */}
+      <div className="cd-nav">
+        <nav aria-label="Browse champions">
+          <Link
+            className="cd-pager-arrow prev"
+            to={`/champion/${previous.slug}`}
+            aria-label={`Previous champion: ${previous.fullName}`}
+            title={previous.fullName}
+          >
+            <PagerChevron direction="prev" />
+          </Link>
+          <Link
+            className="cd-pager-arrow next"
+            to={`/champion/${next.slug}`}
+            aria-label={`Next champion: ${next.fullName}`}
+            title={next.fullName}
+          >
+            <PagerChevron direction="next" />
+          </Link>
+        </nav>
 
-      <nav aria-label="Browse champions">
-        <Link
-          className="cd-pager-arrow prev"
-          to={`/champion/${previous.slug}`}
-          aria-label={`Previous champion: ${previous.fullName}`}
-          title={previous.fullName}
-        >
-          <PagerChevron direction="prev" />
+        <Link className="cd-close" to="/" aria-label="Close and go back to the champions grid" title="Back to champions">
+          <Icon name="close" size={22} />
         </Link>
-        <Link
-          className="cd-pager-arrow next"
-          to={`/champion/${next.slug}`}
-          aria-label={`Next champion: ${next.fullName}`}
-          title={next.fullName}
-        >
-          <PagerChevron direction="next" />
-        </Link>
-      </nav>
+      </div>
 
       <div className="cd-top">
         <section className="cd-hero">

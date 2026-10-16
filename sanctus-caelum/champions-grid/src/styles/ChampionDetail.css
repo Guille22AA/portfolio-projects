@@ -896,6 +896,45 @@
 
 /* RESPONSIVE */
 
+/* not enough room in the gutters: arrows and close button become a bar above the page */
+@media (max-width: 1480px) {
+  .cd-nav {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .cd-nav nav {
+    display: flex;
+    gap: 6px;
+  }
+
+  .cd-pager-arrow,
+  .cd-pager-arrow.next,
+  .cd-close {
+    position: static;
+    transform: none;
+  }
+
+  .cd-pager-arrow {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(200, 170, 110, 0.3);
+    background: #0e0e0e;
+  }
+
+  .cd-pager-arrow svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .cd-close {
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+  }
+}
+
 @media (max-width: 1200px) {
   .cd-top {
     grid-template-columns: 1fr;
