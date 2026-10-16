@@ -20,6 +20,7 @@
   },
   "difficulty": "Easy",
   "price": { "coins": 1350, "premium": 585 },
+  "render": "/renders/noro_render.webp",
   "ratings": { "damage": 1, "toughness": 3, "control": 3, "mobility": 2, "utility": 1 },
   "style": 75,
   "releaseDate": "2026-10-16",
