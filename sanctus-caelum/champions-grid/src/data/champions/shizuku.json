@@ -1,0 +1,186 @@
+{
+  "id": 30,
+  "nick": "Shizuku",
+  "fullName": "Shizuku Murasaki",
+  "alias": "The Cleaner",
+  "anime": "Hunter x Hunter",
+  "affiliation": "Phantom Troupe",
+  "roles": [
+    "Support"
+  ],
+  "attackTypes": [
+    "Melee"
+  ],
+  "damageTypes": [
+    "Physical"
+  ],
+  "class": "Oracle",
+  "resource": {
+    "name": "Nen",
+    "type": "Nen",
+    "maxValue": 320,
+    "maxValueGrowth": 45,
+    "regen": "8 + 0.8 × lvl²"
+  },
+  "difficulty": "Medium",
+  "price": {
+    "coins": 3150,
+    "premium": 790
+  },
+  "render": "/renders/shizuku_render.webp",
+  "ratings": {
+    "damage": 1,
+    "toughness": 1,
+    "control": 3,
+    "mobility": 0,
+    "utility": 3
+  },
+  "style": 85,
+  "releaseDate": "2026-10-17",
+  "lastChanged": "V1.0",
+  "tags": [
+    "CrowdControl",
+    "Utility",
+    "Peel"
+  ],
+  "stats": {
+    "health": "605 + 88 × lvl²",
+    "healthRegen": "2.5 + 0.5 × lvl²",
+    "armor": "32 + 5.2 × lvl²",
+    "attackDamage": "50 + 3 × lvl²",
+    "magicResistance": "30 + 1.3 × lvl²",
+    "criticalDamage": "200%",
+    "movementSpeed": "325",
+    "attackRange": "175",
+    "attackSpeed": {
+      "base": "0.625",
+      "windup": "20%",
+      "bonusAS": "2.14%"
+    }
+  },
+  "quotes": {
+    "selection": "Blinky! Suck up every last drop of his blood!!",
+    "general": [
+      "There. All clean!!",
+      "You won't catch me. Because I'll stay far away. Blinky and I win.",
+      "I don't hafta clean this up, do I?",
+      "No way. Even I wouldn't lose to a kid."
+    ],
+    "interactions": {
+      "chrollo": [
+        "ally",
+        "I was thinking... your book is kinda like the Death Note."
+      ]
+    }
+  },
+  "abilities": {
+    "passive": {
+      "name": "Blinky",
+      "description": "Shizuku's vacuum, Blinky, can swallow anything that is not alive. Periodically, her next basic attack destroys an enemy ward, trap or mine in a single hit. Her basic attacks also deal bonus damage to lifeless summons.",
+      "effects": {
+        "swallow": {
+          "targets": "Enemy wards, traps and mines",
+          "effect": "Destroyed by a single basic attack",
+          "cooldown": "60s at level 1, down to 30s at level 20"
+        },
+        "lifelessSummons": "Take 200% damage from her basic attacks"
+      },
+      "cooldown": "60 – 30 (based on level)"
+    },
+    "h1": {
+      "name": "Vacuum Smash",
+      "description": "Shizuku's next basic attack swings Blinky in a heavy blow that knocks the target up.",
+      "type": "Active",
+      "targetType": "Self (empowers next attack)",
+      "castTime": "None",
+      "cooldown": "9 / 8.5 / 8 / 7.5 / 7",
+      "cost": "40 Nen",
+      "duration": "5s",
+      "effects": {
+        "damage": {
+          "type": "Physical",
+          "baseValues": "30 / 55 / 80 / 105 / 130",
+          "scaling": "60% bonus AD + 4% bonus health"
+        },
+        "knockup": {
+          "duration": "0.75s"
+        }
+      }
+    },
+    "h2": {
+      "name": "Blood Drain",
+      "description": "Blinky latches onto a nearby wounded enemy and sucks the blood from their wounds for 2 seconds, dealing damage over time and healing Shizuku. Blinky cannot swallow the living, only the blood they have already lost, so it only works on enemies who are hurt. The drain breaks if the target gets too far away.",
+      "type": "Active (Channel)",
+      "targetType": "Unit (wounded enemy)",
+      "castTime": "None",
+      "targetRange": "300",
+      "leashRange": "450",
+      "duration": "2s",
+      "cooldown": "14 / 13 / 12 / 11 / 10",
+      "cost": "60 Nen",
+      "effects": {
+        "condition": {
+          "wounded": "Below 70% health, or hit by Shizuku in the last 3s"
+        },
+        "damage": {
+          "type": "Physical",
+          "baseValues": "40 / 65 / 90 / 115 / 140 (over 2s)",
+          "scaling": "40% bonus AD + 3% bonus health"
+        },
+        "heal": {
+          "value": "50% of the damage dealt"
+        }
+      }
+    },
+    "h3": {
+      "name": "Clean Up",
+      "description": "Shizuku runs Blinky over an ally or herself, sucking away harmful effects such as poisons, burns and slows, and grants a small shield.",
+      "type": "Active",
+      "targetType": "Ally or self",
+      "castTime": "0.25",
+      "targetRange": "600",
+      "cooldown": "16 / 15 / 14 / 13 / 12",
+      "cost": "70 Nen",
+      "effects": {
+        "cleanse": {
+          "removes": "Slows, roots and damage over time (poison, burn, bleed)",
+          "doesNotRemove": "Stuns and knockups"
+        },
+        "shield": {
+          "baseValues": "60 / 85 / 110 / 135 / 160",
+          "scaling": "8% bonus health",
+          "duration": "2.5s"
+        }
+      }
+    },
+    "h4": {
+      "name": "Total Suction",
+      "description": "Shizuku plants her feet and channels Blinky in a wide cone in front of her. Everything non-living in the cone is swallowed: enemy projectiles, zones, traps and wards, so allies behind her are shielded from incoming shots. Living enemies cannot be swallowed, so they are dragged towards her instead.",
+      "type": "Active (Channel)",
+      "targetType": "Direction",
+      "castTime": "None",
+      "range": "900",
+      "angle": "55°",
+      "duration": "2.5s (can be cancelled)",
+      "cooldown": "130 / 115 / 100",
+      "cost": "100 Nen",
+      "effects": {
+        "swallow": {
+          "targets": "Enemy projectiles, zones, traps and wards inside the cone",
+          "projectiles": "Every enemy projectile that enters the cone is absorbed, protecting Shizuku and the allies behind her",
+          "duration": "While channelling"
+        },
+        "pull": {
+          "speed": "150 units per second toward Shizuku (about 375 in total)",
+          "slow": "30%"
+        },
+        "damage": {
+          "type": "Physical",
+          "baseValues": "150 / 250 / 350 (total)",
+          "scaling": "8% bonus health"
+        }
+      }
+    }
+  },
+  "lore": "Shizuku Murasaki was born in Meteor City, a vast junkyard of outcasts whose people exist in no official record, and that makes her almost impossible to trace. She joined the Phantom Troupe as its eighth member, replacing the one who held the number before her, and soon became one of its most dependable killers. During the Yorknew City auction raid she cut down mafia bodyguards with single swings and erased every trace of the massacre, and in the Chimera Ant crisis she defeated an Officer on her own. Calm to the point of seeming soulless, she is fiercely loyal to the Spiders and believes in Chrollo's rules above everything else.\n\nShizuku's Nen ability, Blinky, is a conjured vacuum cleaner with a single rule: it can swallow anything except living things, which makes it the perfect tool for wiping out evidence, and in a fight it can even drain an enemy's blood straight from his wounds. She swings it as a weapon with frightening speed and strength. Blunt, air-headed and so forgetful that she sometimes forgets people she has already met, she is easy to underestimate, which is exactly what makes her dangerous."
+}
