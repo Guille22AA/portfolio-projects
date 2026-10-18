@@ -1,0 +1,199 @@
+{
+  "id": 32,
+  "nick": "Illumi",
+  "fullName": "Illumi Zoldyck",
+  "alias": "The Eldest Zoldyck",
+  "anime": "Hunter x Hunter",
+  "affiliation": "Zoldyck Family",
+  "roles": [
+    "Mid",
+    "Support"
+  ],
+  "attackTypes": [
+    "Ranged"
+  ],
+  "damageTypes": [
+    "Magic"
+  ],
+  "class": "Sorcerer",
+  "resource": {
+    "name": "Nen",
+    "type": "Nen",
+    "maxValue": 340,
+    "maxValueGrowth": 45,
+    "regen": "8 + 0.8 × lvl²"
+  },
+  "difficulty": "Hard",
+  "price": {
+    "coins": 4800,
+    "premium": 880
+  },
+  "render": "/renders/illumi_render.webp",
+  "ratings": {
+    "damage": 2,
+    "toughness": 0,
+    "control": 3,
+    "mobility": 0,
+    "utility": 3
+  },
+  "style": 90,
+  "releaseDate": "2026-10-18",
+  "lastChanged": "V1.0",
+  "tags": [
+    "CrowdControl",
+    "Utility",
+    "Stealth"
+  ],
+  "stats": {
+    "health": "610 + 104 × lvl²",
+    "healthRegen": "7.5 + 0.75 × lvl²",
+    "armor": "21 + 5 × lvl²",
+    "attackDamage": "48 + 2.5 × lvl²",
+    "magicResistance": "30 + 1.3 × lvl²",
+    "criticalDamage": "200%",
+    "movementSpeed": "340",
+    "attackRange": "550",
+    "attackSpeed": {
+      "base": "0.625",
+      "windup": "20%",
+      "bonusAS": "3.5%"
+    },
+    "missileSpeed": "1600"
+  },
+  "quotes": {
+    "selection": "I'm happy to die to save the rest of the family.",
+    "general": [
+      "I'll kill you. Right here. And now.",
+      "It's nothing personal. It's just the job.",
+      "One needle, and you'll do exactly as I say."
+    ],
+    "interactions": {
+      "killua": [
+        [
+          [
+            "ally",
+            "enemy"
+          ],
+          "Killua. Know your place."
+        ],
+        [
+          [
+            "ally",
+            "enemy"
+          ],
+          "I could turn Killua into a complete puppet and the pros would still outweigh the cons!!"
+        ]
+      ],
+      "hisoka": [
+        [
+          "ally",
+          "Okay. I've known you a little longer than Chrollo. But it'll cost you."
+        ],
+        [
+          "enemy",
+          "We had a give-and-take relationship... but we knew one of us would kill the other in the end."
+        ]
+      ]
+    }
+  },
+  "abilities": {
+    "passive": {
+      "name": "Gittarackur",
+      "description": "Illumi drives needles into his own face to reshape it, disguising himself as an allied champion. The disguise breaks when he deals or takes damage.",
+      "effects": {
+        "disguise": {
+          "form": "Any allied champion of his choice",
+          "breaks": "When Illumi deals or takes damage",
+          "cooldown": "2s after it breaks"
+        }
+      }
+    },
+    "h1": {
+      "name": "Instinct to Flee",
+      "description": "Illumi throws a needle in a line. The first enemy champion hit has the urge to run planted in their mind and flees from Illumi in terror.",
+      "type": "Active",
+      "targetType": "Direction",
+      "castTime": "0.25",
+      "range": "900",
+      "width": "70",
+      "cooldown": "14 / 13 / 12 / 11 / 10",
+      "cost": "60 Nen",
+      "effects": {
+        "damage": {
+          "type": "Magic",
+          "baseValues": "60 / 95 / 130 / 165 / 200",
+          "scaling": "50% AP"
+        },
+        "fear": {
+          "duration": "1 / 1.15 / 1.3 / 1.45 / 1.6s"
+        }
+      }
+    },
+    "h2": {
+      "name": "Command Pin",
+      "description": "Illumi throws a needle in a line. The first enemy champion hit loses their will and walks helplessly towards him.",
+      "type": "Active",
+      "targetType": "Direction",
+      "castTime": "0.25",
+      "range": "975",
+      "width": "60",
+      "cooldown": "14 / 13 / 12 / 11 / 10",
+      "cost": "70 Nen",
+      "effects": {
+        "damage": {
+          "type": "Magic",
+          "baseValues": "60 / 95 / 130 / 165 / 200",
+          "scaling": "50% AP"
+        },
+        "charm": {
+          "duration": "1.2 / 1.35 / 1.5 / 1.65 / 1.8s"
+        }
+      }
+    },
+    "h3": {
+      "name": "Needle People",
+      "description": "Illumi rains needles over an area. Minions and monsters struck become his puppets and fight for him for a few seconds; enemy champions caught take damage.",
+      "type": "Active",
+      "targetType": "Location",
+      "castTime": "0.25",
+      "targetRange": "800",
+      "effectRadius": "275",
+      "cooldown": "12 / 11.5 / 11 / 10.5 / 10",
+      "cost": "80 Nen",
+      "effects": {
+        "damage": {
+          "type": "Magic",
+          "baseValues": "70 / 110 / 150 / 190 / 230",
+          "scaling": "60% AP",
+          "targets": "Enemy champions"
+        },
+        "puppets": {
+          "targets": "Minions and small monsters",
+          "duration": "4 / 4.5 / 5 / 5.5 / 6s",
+          "bonus": "+30% attack speed",
+          "exclusions": "Epic monsters"
+        }
+      }
+    },
+    "h4": {
+      "name": "Puppet Rain",
+      "description": "Illumi sends a wide wall of needles sweeping forward. Enemy champions struck become his puppets for a short time, attacking the nearest of their own allies.",
+      "type": "Active",
+      "targetType": "Direction",
+      "castTime": "0.75",
+      "width": "1200",
+      "range": "1000",
+      "cooldown": "150 / 130 / 110",
+      "cost": "100 Nen",
+      "effects": {
+        "puppet": {
+          "targets": "Enemy champions struck",
+          "duration": "1.25 / 1.5 / 1.75s",
+          "effect": "They attack the nearest of their own allies with bonus attack speed"
+        },
+        "damage": "None of its own: the damage is dealt by the victims' allies"
+      }
+    }
+  },
+  "lore": "Illumi Zoldyck is the eldest son of Silva and Kikyo Zoldyck, raised from birth in the family trade of assassination and one of its most accomplished killers. Alongside his father he trained his younger brother Killua to become an elite assassin, and under Silva's orders he planted a Nen needle in Killua's brain that forced him to flee from any fight he was not certain to win. Sent to watch over Killua when he ran away from home, Illumi entered the Hunter Exam disguised as Gittarackur and later became a reluctant partner of Hisoka, even joining the Phantom Troupe on his commission. Cold and self-serving, he holds a twisted, possessive love for his family, above all for Killua.\n\nIllumi is a Manipulator who fights with long Nen-charged needles. Driven into a victim's body, they turn people into obedient puppets, and driven into his own face, they let him reshape his features into another person entirely. He hurls them with lethal precision and controls the battlefield more than he fights in it. Expressionless and speaking in an oddly cheerful, absent tone, he treats murder as a job and people as tools."
+}
