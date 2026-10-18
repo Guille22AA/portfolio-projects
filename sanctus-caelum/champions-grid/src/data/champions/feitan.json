@@ -1,0 +1,196 @@
+{
+  "id": 31,
+  "nick": "Feitan",
+  "fullName": "Feitan Portor",
+  "alias": "Black Sun",
+  "anime": "Hunter x Hunter",
+  "affiliation": "Phantom Troupe",
+  "roles": [
+    "Jungle"
+  ],
+  "attackTypes": [
+    "Melee"
+  ],
+  "damageTypes": [
+    "Physical"
+  ],
+  "class": "Duelist",
+  "resource": {
+    "name": "Nen",
+    "type": "Nen",
+    "maxValue": 300,
+    "maxValueGrowth": 45,
+    "regen": "8 + 0.8 × lvl²"
+  },
+  "difficulty": "Hard",
+  "price": {
+    "coins": 4800,
+    "premium": 880
+  },
+  "render": "/renders/feitan_render.webp",
+  "ratings": {
+    "damage": 3,
+    "toughness": 1,
+    "control": 1,
+    "mobility": 2,
+    "utility": 2
+  },
+  "style": 50,
+  "releaseDate": "2026-10-17",
+  "lastChanged": "V1.0",
+  "tags": [
+    "Skirmisher",
+    "Execute",
+    "Utility"
+  ],
+  "stats": {
+    "health": "590 + 110 × lvl²",
+    "healthRegen": "6.5 + 0.9 × lvl²",
+    "armor": "30 + 4.6 × lvl²",
+    "attackDamage": "60 + 3 × lvl²",
+    "magicResistance": "32 + 2.05 × lvl²",
+    "criticalDamage": "200%",
+    "movementSpeed": "345",
+    "attackRange": "175",
+    "attackSpeed": {
+      "base": "0.697",
+      "windup": "22%",
+      "bonusAS": "3.5%"
+    }
+  },
+  "quotes": {
+    "selection": "We bandits. We here to steal.",
+    "general": [
+      "I'll pay back the pain. By transferring it into scorching heat!! Pain Packer!!",
+      "Kill first. Who and how are secondary.",
+      "Family? What's that?",
+      "Your death much quicker if you hurt me more."
+    ],
+    "interactions": {
+      "gon": [
+        [
+          "enemy",
+          "You too cocky."
+        ],
+        [
+          "enemy",
+          "First, his fingers. I rip nail off."
+        ]
+      ],
+      "shizuku": [
+        "ally",
+        "We take what we want."
+      ]
+    }
+  },
+  "abilities": {
+    "passive": {
+      "name": "Torturer's Eye",
+      "description": "As the Troupe's torturer, Feitan knows exactly where it hurts. Nearby enemy champions reveal a weak point on one of their sides; striking it deals bonus true damage and grants Feitan a burst of movement speed. A new weak point appears shortly after.",
+      "effects": {
+        "weakPoint": {
+          "damage": "3% (+4% per 100 bonus AD) of the target's maximum health as true damage",
+          "reward": "+20% movement speed for 1.5s and a heal of 30 + 5 per level",
+          "respawn": "A new weak point appears 2.25s later; it lasts 13s, or 2s while out of range"
+        }
+      }
+    },
+    "h1": {
+      "name": "Umbrella Thrust",
+      "description": "Feitan lunges a short distance in a direction and strikes with the blade hidden in his umbrella, hitting the nearest enemy and prioritising weak points. Hitting an enemy refunds part of the cooldown.",
+      "type": "Active",
+      "targetType": "Direction",
+      "castTime": "None",
+      "range": "400",
+      "cooldown": "13 / 11.25 / 9.5 / 7.75 / 6",
+      "cost": "20 / 25 / 30 / 35 / 40 Nen",
+      "effects": {
+        "damage": {
+          "type": "Physical",
+          "baseValues": "70 / 80 / 90 / 100 / 110",
+          "scaling": "90 / 95 / 100 / 105 / 110% bonus AD"
+        },
+        "refund": "50% of the cooldown if it hits an enemy"
+      }
+    },
+    "h2": {
+      "name": "Parasol Guard",
+      "description": "Feitan opens his umbrella and blocks all incoming damage and harmful effects for a moment, then thrusts in a direction, damaging and slowing the first enemy hit.",
+      "type": "Active",
+      "targetType": "Direction",
+      "castTime": "None",
+      "range": "750",
+      "duration": "0.75s (block)",
+      "cooldown": "24 / 22 / 20 / 18 / 16",
+      "cost": "50 Nen",
+      "effects": {
+        "block": {
+          "value": "All damage and harmful effects",
+          "duration": "0.75s"
+        },
+        "damage": {
+          "type": "Physical",
+          "baseValues": "110 / 150 / 190 / 230 / 270",
+          "scaling": "100% bonus AD"
+        },
+        "slow": {
+          "value": "50%",
+          "duration": "1.5s"
+        }
+      }
+    },
+    "h3": {
+      "name": "Confession",
+      "description": "Feitan seizes an enemy champion and tortures them for a short time, dealing damage that grows the longer it lasts. If the victim survives the whole interrogation, Feitan learns where their allies are and reveals every enemy champion on the map. If the victim dies before it ends, nothing is revealed.",
+      "type": "Active (Channel)",
+      "targetType": "Unit (enemy champion)",
+      "castTime": "None",
+      "targetRange": "175",
+      "duration": "1.25s",
+      "cooldown": "20 / 19 / 18 / 17 / 16",
+      "cost": "70 Nen",
+      "effects": {
+        "damage": {
+          "type": "Physical",
+          "baseValues": "15 / 20 / 25 / 30 / 35 per strike (5 strikes, each 25% stronger than the last)",
+          "scaling": "20% bonus AD per strike"
+        },
+        "reveal": {
+          "condition": "Victim survives the whole interrogation",
+          "effect": "All enemy champions revealed",
+          "duration": "4s"
+        }
+      }
+    },
+    "h4": {
+      "name": "Pain Packer: Rising Sun",
+      "description": "Learning this ability unlocks a gauge that fills with the damage Feitan takes and slowly empties out of combat. On cast, Feitan wraps himself in his armour, taking reduced damage while he channels, and calls down a burning sun around him that deals damage and burns enemies. The fuller the gauge, the larger the sun and the more damage it deals.",
+      "type": "Active (Channel)",
+      "targetType": "Self",
+      "castTime": "1s (channel)",
+      "effectRadius": "300 – 600 (based on the gauge)",
+      "cooldown": "110 / 95 / 80",
+      "cost": "100 Nen",
+      "effects": {
+        "gauge": {
+          "maximum": "1000 (+ 60 per level) damage taken",
+          "decay": "5% per second out of combat"
+        },
+        "armour": {
+          "damageReduction": "40% while channelling"
+        },
+        "damage": {
+          "type": "Physical",
+          "baseValues": "150 / 250 / 350",
+          "scaling": "100% bonus AD",
+          "fullGauge": "Up to double damage with a full gauge"
+        },
+        "burn": {
+          "duration": "3s",
+          "value": "20% of the damage dealt"
+        }
+      }
+    }
+  },
+  "lore": "Feitan Portor was born in Meteor City, the junkyard of outcasts whose people exist in no official record. As a youth he ran its streets with Phinks until a boy named Chrollo outwitted them both, and he became one of the friends who swore lifelong loyalty to him. Three years later he stood among the founding members of the Phantom Troupe as its second member, and he took part in the massacre of the Kurta Clan. The Troupe's interrogator and torturer, he is loyal to Chrollo but even more to the Spider itself, ready to put the survival of the group above anyone, its leader included.\n\nFeitan is one of the fastest and deadliest fighters in the Troupe, a swordsman who favours striking from his enemies' blind spots with the blade hidden in his umbrella. His Nen ability, Pain Packer, stores every wound he receives and releases it as Rising Sun, a miniature sun of scorching heat that he weathers inside a protective suit of armour; the more he is hurt, the hotter it burns. Terse, cold and quick to anger, he speaks in short broken sentences and switches to a strange tongue when furious."
+}
