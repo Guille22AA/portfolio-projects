@@ -212,9 +212,17 @@ const ChampionView = ({ champion }) => {
   const position = championsData.findIndex((other) => other.slug === champion.slug);
   const previous = championsData[(position - 1 + championsData.length) % championsData.length];
   const next = championsData[(position + 1) % championsData.length];
-  const sameAnime = championsData.filter(
-    (other) => other.anime === champion.anime && other.slug !== champion.slug
-  );
+  // "Explore champions": at most two, those who share interactions with this champion first
+  // (in either direction), then the rest of the same anime, keeping the grid order on ties
+  const linkScore = (other) =>
+    (other.slug in (champion.quotes?.interactions || {}) ? 1 : 0) +
+    (champion.slug in (other.quotes?.interactions || {}) ? 1 : 0);
+  const sameAnime = championsData
+    .filter((other) => other.slug !== champion.slug && (other.anime === champion.anime || linkScore(other) > 0))
+    .map((other, index) => ({ other, index, score: linkScore(other) }))
+    .sort((a, b) => b.score - a.score || a.index - b.index)
+    .slice(0, 2)
+    .map(({ other }) => other);
   const difficulty = DIFFICULTY_LEVEL[champion.difficulty] || 0;
 
   const info = [
