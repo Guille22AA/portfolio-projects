@@ -10,7 +10,7 @@
     "damageTypes": ["Magic"],
     "class": "Sorcerer",
     "resource": {
-      "name": "Curse Energy",
+      "name": "Cursed Energy",
       "type": "UR",
       "maxValue": 280,
       "maxValueGrowth": 45,
@@ -99,7 +99,7 @@
         "castTime": "0.25 (initial) / none (recast)",
         "targetRange": "400",
         "cooldown": "11 / 10 / 9 / 8 / 7",
-        "cost": "50 / 55 / 60 / 65 / 70 Curse Energy",
+        "cost": "50 / 55 / 60 / 65 / 70 Cursed Energy",
         "effects": {
           "summon": {
             "unit": "Kuchisake-Onna cursed spirit",
@@ -132,7 +132,7 @@
         "targetRange": "500",
         "effectRadius": "200",
         "cooldown": "18 / 17 / 16 / 15 / 14",
-        "cost": "60 / 65 / 70 / 75 / 80 Curse Energy",
+        "cost": "60 / 65 / 70 / 75 / 80 Cursed Energy",
         "effects": {
           "summon": {
             "unit": "Rainbow Dragon cursed spirit",
@@ -169,7 +169,7 @@
         "targetRange": "650",
         "effectRadius": "300",
         "cooldown": "16 / 15 / 14 / 13 / 12",
-        "cost": "60 / 70 / 80 / 90 / 100 Curse Energy",
+        "cost": "60 / 70 / 80 / 90 / 100 Cursed Energy",
         "effects": {
           "summon": {
             "unit": "Plague Deity cursed spirit",
@@ -204,7 +204,7 @@
         "baseRange": "2000 / 3500",
         "baseWidth": "300 / 700",
         "cooldown": "110 / 95 / 80",
-        "cost": "100 Curse Energy",
+        "cost": "100 Cursed Energy",
         "stackScaling": "Damage, size, and range increase based on Curse Manipulation stacks",
         "effects": {
           "baseDamage": {

@@ -10,7 +10,7 @@
     "damageTypes": ["Magic"],
     "class": "Sorcerer",
     "resource": {
-      "name": "Curse Energy",
+      "name": "Cursed Energy",
       "type": "UR",
       "maxValue": 333,
       "maxValueGrowth": 40,
@@ -101,7 +101,7 @@
         "width": "220",
         "speed": "950",
         "cooldown": "12 / 11 / 10 / 9 / 8",
-        "cost": "80 / 85 / 90 / 95 / 100 Curse Energy",
+        "cost": "80 / 85 / 90 / 95 / 100 Cursed Energy",
         "effects": {
           "initialOrb": {
             "visionGrant": true,
@@ -149,7 +149,7 @@
         "width": "200",
         "speed": "1000",
         "cooldown": "12 / 11 / 10 / 9 / 8",
-        "cost": "80 / 85 / 90 / 95 / 100 Curse Energy",
+        "cost": "80 / 85 / 90 / 95 / 100 Cursed Energy",
         "effects": {
           "initialOrb": {
             "visionGrant": true,
@@ -186,7 +186,7 @@
         "range": "2400",
         "width": "200",
         "cooldown": "22.5 / 20 / 18.5 / 16 / 14.5",
-        "cost": "70 / 80 / 90 / 100 / 110 Curse Energy",
+        "cost": "70 / 80 / 90 / 100 / 110 Cursed Energy",
         "effects": {
           "damage": {
             "type": "Magic",
@@ -213,7 +213,7 @@
         "effectRadius": "1200",
         "domainDuration": "8s",
         "cooldown": "140 / 120 / 100",
-        "cost": "100 Curse Energy",
+        "cost": "100 Cursed Energy",
         "effects": {
           "domainEntrapment": {
             "effect": "Pull both into Domain",
