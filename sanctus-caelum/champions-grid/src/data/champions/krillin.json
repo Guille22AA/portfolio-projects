@@ -1,0 +1,182 @@
+{
+  "id": 33,
+  "nick": "Krillin",
+  "fullName": "Krillin",
+  "alias": "Moon Boy",
+  "anime": "Dragon Ball",
+  "affiliation": "Z Fighter",
+  "roles": [
+    "Support"
+  ],
+  "attackTypes": [
+    "Ranged"
+  ],
+  "damageTypes": [
+    "Magic"
+  ],
+  "class": "Oracle",
+  "resource": {
+    "name": "Ki",
+    "type": "UR",
+    "maxValue": 330,
+    "maxValueGrowth": 45,
+    "regen": "8 + 0.8 × lvl²"
+  },
+  "difficulty": "Easy",
+  "price": {
+    "coins": 1350,
+    "premium": 585
+  },
+  "render": "/renders/krillin_render.webp",
+  "ratings": {
+    "damage": 1,
+    "toughness": 1,
+    "control": 2,
+    "mobility": 0,
+    "utility": 3
+  },
+  "style": 80,
+  "releaseDate": "2026-10-22",
+  "lastChanged": "V1.0",
+  "tags": [
+    "Utility",
+    "CrowdControl",
+    "Scaling"
+  ],
+  "stats": {
+    "health": "604 + 109 × lvl²",
+    "healthRegen": "5.5 + 0.5 × lvl²",
+    "armor": "28 + 4.7 × lvl²",
+    "attackDamage": "51 + 3.3 × lvl²",
+    "magicResistance": "30 + 1.3 × lvl²",
+    "criticalDamage": "200%",
+    "movementSpeed": "335",
+    "attackRange": "525",
+    "attackSpeed": {
+      "base": "0.625",
+      "windup": "20%",
+      "bonusAS": "2.3%"
+    },
+    "missileSpeed": "1500"
+  },
+  "quotes": {
+    "selection": "I'm just an Earthling that knows how to fight!",
+    "general": [
+      "I heard Master Roshi's training was difficult, but I haven't even broken a sweat yet.",
+      "Don't know why I'm getting up again. It'd be much easier to keel over.",
+      "Guess I only have Goku and Gohan to blame. Those two guys really changed me for keeps.",
+      "Here, I'll give you a target!"
+    ],
+    "interactions": {
+      "goku": [
+        "ally",
+        "Goku! Why aren't you here?! We need you!"
+      ],
+      "android18": [
+        "ally",
+        "Dr. Gero's the one who made her into an android. She hasn't done anything wrong."
+      ]
+    }
+  },
+  "abilities": {
+    "passive": {
+      "name": "Unlock Potential",
+      "description": "Krillin grows stronger after every battle. Each champion takedown he takes part in grants a permanent stack of potential, increasing his ability power and the power of his abilities.",
+      "effects": {
+        "stacks": {
+          "gain": "1 per champion kill or assist",
+          "bonus": "+3 ability power per stack, permanent"
+        },
+        "milestones": {
+          "10 stacks": "Destructo Disc is 20% wider",
+          "20 stacks": "Solar Flare radius +15%",
+          "30 stacks": "Senzu Beans heal 15% more"
+        }
+      }
+    },
+    "h1": {
+      "name": "Destructo Disc",
+      "description": "Krillin throws a razor-sharp disc of ki that slices through every enemy in a line, dealing damage and slowing them.",
+      "type": "Active",
+      "targetType": "Direction",
+      "castTime": "0.25",
+      "range": "1000",
+      "width": "90",
+      "cooldown": "10 / 9.5 / 9 / 8.5 / 8",
+      "cost": "60 Ki",
+      "effects": {
+        "damage": {
+          "type": "Magic",
+          "baseValues": "50 / 85 / 120 / 155 / 190",
+          "scaling": "45% AP"
+        },
+        "slow": {
+          "value": "30 / 35 / 40 / 45 / 50%",
+          "duration": "1.5s"
+        },
+        "pierce": "Hits every enemy in its path"
+      }
+    },
+    "h2": {
+      "name": "Solar Flare",
+      "description": "Krillin unleashes a blinding flash around him. Enemies facing him are blinded: their basic attacks miss and their vision is reduced for a short time.",
+      "type": "Active",
+      "targetType": "Self",
+      "castTime": "0.25",
+      "effectRadius": "450",
+      "cooldown": "20 / 19 / 18 / 17 / 16",
+      "cost": "80 Ki",
+      "effects": {
+        "blind": {
+          "targets": "Enemies within the radius who are facing Krillin",
+          "duration": "1.5 / 1.75 / 2 / 2.25 / 2.5s",
+          "effect": "Basic attacks miss and vision shrinks to 300"
+        }
+      }
+    },
+    "h3": {
+      "name": "Senzu Beans",
+      "description": "Krillin tosses a senzu bean to a location. Any ally who picks it up is healed and restores some of their resource. He can keep several beans on the field at once.",
+      "type": "Active (charges)",
+      "targetType": "Location",
+      "castTime": "0.25",
+      "targetRange": "700",
+      "recharge": "12 / 11 / 10 / 9 / 8",
+      "cost": "50 Ki per bean",
+      "effects": {
+        "beans": {
+          "maximum": "3 on the field",
+          "duration": "60s each"
+        },
+        "heal": {
+          "baseValues": "60 / 85 / 110 / 135 / 160",
+          "scaling": "30% AP"
+        },
+        "resource": "Restores 5% of the ally's maximum resource"
+      }
+    },
+    "h4": {
+      "name": "Spirit Bomb",
+      "description": "Krillin raises a Spirit Bomb above his head and gathers energy before throwing it. The more allied champions stand near him while he gathers, the larger it grows and the more damage it deals.",
+      "type": "Active (Channel)",
+      "targetType": "Direction",
+      "castTime": "Up to 2s (can be released early)",
+      "range": "1100",
+      "cooldown": "140 / 120 / 100",
+      "cost": "100 Ki",
+      "effects": {
+        "size": {
+          "radius": "250, +60 per nearby ally (up to 490 with 4 allies)"
+        },
+        "damage": {
+          "type": "Magic",
+          "baseValues": "150 / 250 / 350",
+          "scaling": "70% AP",
+          "allyBonus": "+15% per nearby ally"
+        },
+        "allies": "Allied champions within 700 while gathering"
+      }
+    }
+  },
+  "lore": "Krillin left a village in the east as a boy to train under Master Roshi, arriving jealous and selfish and at first resenting the other pupil, Goku. Their rivalry soon turned into the deepest friendship of his life, and Krillin has stood beside Goku ever since, against the Saiyans, against Frieza on Namek, and against the Androids and Cell. Along the way he died and was revived more than once, had his hidden potential unlocked by the Grand Elder Guru, and found an unlikely family when he married Android 18. Though he is the strongest pure-blooded human among the Z Fighters, he has never been the strongest of them, and he fights anyway.\n\nWhat Krillin lacks in raw power he makes up for with ingenuity and an exceptional talent for controlling ki. His signature Destructo Disc can slice through almost anything, his Solar Flare blinds even the mightiest foe, and his homing ki blasts hunt enemies down. Funny, warm and often the voice of common sense, he panics easily but never abandons a friend, and when the fight turns desperate he is the one who steps forward to buy everyone else time."
+}
