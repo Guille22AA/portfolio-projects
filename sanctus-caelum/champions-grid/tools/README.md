@@ -21,7 +21,12 @@ Scripts used to add champions and to build the map. Run every command from the `
    ```
    python tools/prepare_assets.py gallery <slug>
    ```
-5. **Check**:
+5. **Grid render on the shared stage** (after the cutout):
+   ```
+   python tools/prepare_assets.py stage <slug> [height] [shift]
+   ```
+   `height` scales the figure (1.0 is the standard size, use ~1.02-1.04 for short champions so the card is not empty) and `shift` moves it sideways in pixels when a weapon or long hair throws the centre off. Then set `"render": "/renders/<slug>_render.webp"` in the JSON.
+6. **Check**:
    ```
    npm run validate
    ```

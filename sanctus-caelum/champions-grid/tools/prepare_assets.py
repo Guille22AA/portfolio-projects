@@ -3,9 +3,12 @@
     python tools/prepare_assets.py render  <slug> <image>   -> public/renders/<slug>_render.webp
     python tools/prepare_assets.py cutout  <slug> <image>   -> public/cutouts/<slug>.webp
     python tools/prepare_assets.py gallery [<slug> ...]     -> converts src/assets/gallery/<slug>/ to WebP
+    python tools/prepare_assets.py stage   <slug> [height] [shift]
+        -> puts public/cutouts/<slug>.webp on the shared stage and writes public/renders/<slug>_render.webp
+           height: figure height relative to the standard (1.0); shift: pixels to move it sideways
 
 <slug> is the champion's JSON file name without ".json" (gojo, android18...).
-"cutout" needs rembg (see tools/requirements.txt); the other two only need Pillow.
+"cutout" needs rembg (see tools/requirements.txt); the others only need Pillow and numpy.
 """
 import sys
 from pathlib import Path
@@ -16,6 +19,9 @@ ROOT = Path(__file__).resolve().parent.parent
 RENDERS = ROOT / "public" / "renders"
 CUTOUTS = ROOT / "public" / "cutouts"
 GALLERY = ROOT / "src" / "assets" / "gallery"
+STAGE = Path(__file__).resolve().parent / "stage" / "background.png"
+# where the figure stands on the stage background (measured on the render it was taken from)
+STAGE_FIGURE_TOP, STAGE_FEET, STAGE_CENTER_X = 48, 733, 683
 
 RENDER_WIDTH = 960       # grid cards and "explore" cards never show it wider than ~490 px
 CUTOUT_HEIGHT = 1200     # the detail page shows the figure ~590 px tall (x2 for sharp screens)
@@ -75,6 +81,45 @@ def gallery(slugs):
             print(f"{target.relative_to(ROOT)}  {before // 1024} KB -> {after // 1024} KB")
 
 
+def stage(slug, height="1.0", shift="0"):
+    """Every grid render shares one stage: same background, feet line, figure size and cast shadow."""
+    import numpy as np
+    from PIL import ImageFilter
+
+    plate = Image.open(STAGE).convert("RGB")
+    figure = Image.open(CUTOUTS / f"{slug}.webp").convert("RGBA")
+    target_height = int((STAGE_FEET - STAGE_FIGURE_TOP) * float(height))
+    figure = figure.resize((round(figure.width * target_height / figure.height), target_height), Image.LANCZOS)
+    x = STAGE_CENTER_X - figure.width // 2 + int(shift)
+    y = STAGE_FEET - figure.height + 4
+
+    # cast shadow: the silhouette projected back and to the right, fading with distance
+    silhouette = Image.new("L", plate.size, 0)
+    silhouette.paste(figure.getchannel("A"), (x, y))
+    feet = float(y + figure.height - 4)
+    drift, squash = 0.55, 0.22
+    shadow = silhouette.transform(plate.size, Image.AFFINE,
+                                  (1, drift / squash, -(drift / squash) * feet, 0, 1 / squash, feet - feet / squash),
+                                  resample=Image.BILINEAR)
+    rows = np.arange(plate.size[1], dtype=np.float32)
+    fade = np.clip(1 - (feet - rows) / max(figure.height * squash, 1), 0, 1)
+    fade = np.where(rows > feet + 2, 0, fade)
+    shadow = Image.fromarray((np.asarray(shadow, np.float32) * fade[:, None] * 0.42).astype(np.uint8))
+    plate = Image.composite(Image.new("RGB", plate.size, (10, 18, 32)), plate, shadow.filter(ImageFilter.GaussianBlur(5)))
+
+    # faint reflection on the glossy floor
+    reflection = figure.transpose(Image.FLIP_TOP_BOTTOM)
+    ramp = np.clip(1 - np.arange(reflection.height, dtype=np.float32) / 70, 0, 1)[:, None] * 0.14
+    reflection.putalpha(Image.fromarray((np.asarray(reflection.getchannel("A"), np.float32) * ramp).astype(np.uint8)))
+    plate.paste(reflection.filter(ImageFilter.GaussianBlur(1.5)), (x, int(feet) - 2), reflection)
+
+    plate.paste(figure, (x, y), figure)
+    out = RENDERS / f"{slug}_render.webp"
+    plate.save(STAGE.parent / "_last_stage.png")
+    render(slug, STAGE.parent / "_last_stage.png")
+    (STAGE.parent / "_last_stage.png").unlink()
+
+
 if __name__ == "__main__":
     command, *args = sys.argv[1:] or ["help"]
     if command == "render" and len(args) == 2:
@@ -83,6 +128,8 @@ if __name__ == "__main__":
         cutout(*args)
     elif command == "gallery":
         gallery(args)
+    elif command == "stage" and 1 <= len(args) <= 3:
+        stage(*args)
     else:
         print(__doc__)
         sys.exit(1)
