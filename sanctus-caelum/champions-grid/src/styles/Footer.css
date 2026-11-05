@@ -1,15 +1,15 @@
 /* FOOTER STYLES */
 
 .main-footer {
-  background: #0a0a0a;
-  color: #f0f0f0;
+  background: var(--bg);
+  color: var(--text);
   padding-top: 0;
 }
 
 /* SIMULATION BAR */
 
 .footer-simulation-bar {
-  background: #1a1a1a;
+  background: var(--surface-2);
   border-top: none;
   border-bottom: none;
   display: flex;
@@ -37,10 +37,10 @@
 
 .footer-logo-name {
   font-size: 24px;
-  color: #c8aa6e;
+  color: var(--gold);
   margin: 0;
   letter-spacing: 0.08em;
-  font-family: 'Cinzel', serif;
+  font-family: var(--font-display);
 }
 
 .footer-logo-G2A2 {
@@ -54,7 +54,7 @@
   color: #9e9e9ebd;
   margin: 0 0 32px 0;
   line-height: 0.8;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -79,15 +79,15 @@
 .footer-links a {
   font-size: 12px;
   letter-spacing: 0.08em;
-  color: #f0f0f0;
+  color: var(--text);
   text-decoration: none;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   transition: color 0.2s ease;
   text-transform: uppercase;
 }
 
 .footer-links a:hover {
-  color: #c8aa6e;
+  color: var(--gold);
 }
 
 /* RATING SECTION */
@@ -130,9 +130,9 @@
 }
 
 .rating-title {
-  font-family: 'Cinzel', serif;
+  font-family: var(--font-display);
   font-size: 12px;
-  color: #c8aa6e;
+  color: var(--gold);
   margin: 0 0 8px 0;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -146,9 +146,9 @@
 
 .rating-descriptors li {
   font-size: 11px;
-  color: #9e9e9e;
+  color: var(--text-muted);
   padding: 2px 0;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   line-height: 1.4;
 }
 
@@ -249,7 +249,7 @@
   }
 
   .footer-links a {
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .rating-box {
@@ -266,7 +266,7 @@
   }
 
   .rating-descriptors li {
-    font-size: 10px;
+    font-size: 11px;
   }
 }
 
@@ -282,5 +282,5 @@
 }
 
 .footer-simulation-bar button:hover {
-  color: #c8aa6e;
+  color: var(--gold);
 }

@@ -6,15 +6,15 @@
   
   .suggest-form-box {
     background: rgba(26, 26, 26, 0.8);
-    border: 2px solid #c8aa6e;
+    border: 2px solid var(--gold);
     border-radius: 8px;
     padding: 32px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   }
   
   .suggest-form-box h2 {
-    color: #c8aa6e;
-    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    font-family: var(--font-display);
     text-align: center;
     margin-bottom: 24px;
     font-size: 24px;
@@ -29,22 +29,22 @@
   .suggest-form-box input,
   .suggest-form-box textarea {
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid #c8aa6e;
-    color: #c8aa6e;
+    border: 1px solid var(--gold);
+    color: var(--gold);
     padding: 12px;
     border-radius: 4px;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-size: 14px;
   }
   
   .suggest-form-box input::placeholder,
   .suggest-form-box textarea::placeholder {
-    color: #c8aa6e;
+    color: var(--gold);
     opacity: 0.6;
   }
   
   .suggest-form-box button {
-    background: linear-gradient(135deg, #c8aa6e 0%, #8b7d3e 100%);
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dim) 100%);
     color: #000;
     border: none;
     padding: 12px;
@@ -52,7 +52,7 @@
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-family: 'Cinzel', serif;
+    font-family: var(--font-display);
   }
   
   .suggest-form-box button:hover:not(:disabled) {
@@ -71,22 +71,24 @@
     padding: 12px;
     border-radius: 4px;
     background: rgba(200, 170, 110, 0.1);
-    color: #c8aa6e;
-    font-family: 'Inter', sans-serif;
+    color: var(--gold);
+    font-family: var(--font-body);
   }
 
-  .back-btn {
-    background: rgba(200, 170, 110, 0.2);
-    border: 1px solid #c8aa6e;
-    color: #c8aa6e;
+  .suggest-form-box .back-btn,
+  .contact-form-box .back-btn {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
     padding: 10px;
     border-radius: 4px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-family: 'Cinzel', serif;
+    font-family: var(--font-display);
   }
   
-  .back-btn:hover {
-    background: rgba(200, 170, 110, 0.3);
+  .suggest-form-box .back-btn:hover,
+  .contact-form-box .back-btn:hover {
+    background: rgba(200, 170, 110, 0.12);
   }
