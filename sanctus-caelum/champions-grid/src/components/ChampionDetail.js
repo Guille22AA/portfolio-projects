@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { championsData } from "../data/championsData";
+import { championsData, loadChampion } from "../data/championsData";
 import { galleryBySlug } from "../data/galleryData";
 import vocabulary from "../data/vocabulary.json";
 import {
@@ -216,7 +216,7 @@ const ChampionView = ({ champion }) => {
   // (in either direction), then the rest of the same anime, keeping the grid order on ties
   const linkScore = (other) =>
     (other.slug in (champion.quotes?.interactions || {}) ? 1 : 0) +
-    (champion.slug in (other.quotes?.interactions || {}) ? 1 : 0);
+    ((other.links || []).includes(champion.slug) ? 1 : 0);
   const sameAnime = championsData
     .filter((other) => other.slug !== champion.slug && (other.anime === champion.anime || linkScore(other) > 0))
     .map((other, index) => ({ other, index, score: linkScore(other) }))
@@ -468,7 +468,21 @@ const ChampionView = ({ champion }) => {
 
 const ChampionDetail = () => {
   const { slug } = useParams();
-  const champion = championsData.find((item) => item.slug === slug);
+  const known = championsData.some((item) => item.slug === slug);
+  // the full champion file (abilities, lore, quotes) is downloaded when the page opens
+  const [loaded, setLoaded] = useState(null);
+  const champion = loaded && loaded.slug === slug ? loaded : null;
+
+  useEffect(() => {
+    if (!known) return undefined;
+    let active = true;
+    loadChampion(slug).then((data) => {
+      if (active) setLoaded(data);
+    });
+    return () => {
+      active = false;
+    };
+  }, [slug, known]);
 
   // each champion page starts at the top, also when jumping from one champion to another
   useEffect(() => {
@@ -485,7 +499,7 @@ const ChampionDetail = () => {
     };
   }, [champion]);
 
-  if (!champion) {
+  if (!known) {
     return (
       <main className="champion-detail cd-missing">
         <p>Champion not found.</p>
@@ -493,6 +507,8 @@ const ChampionDetail = () => {
       </main>
     );
   }
+
+  if (!champion) return <main className="champion-detail page-loading" aria-busy="true" />;
 
   // the key resets level and form selection when moving to another champion
   return <ChampionView key={champion.slug} champion={champion} />;

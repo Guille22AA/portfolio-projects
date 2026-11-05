@@ -1,0 +1,651 @@
+[
+  {
+    "slug": "akira",
+    "id": 28,
+    "nick": "Akira",
+    "fullName": "Akira Mado",
+    "anime": "Tokyo Ghoul",
+    "affiliation": "United Front",
+    "roles": [
+      "Bot"
+    ],
+    "class": "Marksman",
+    "difficulty": "Medium",
+    "render": "/renders/akira_render.webp",
+    "links": [
+      "amon",
+      "kaneki",
+      "touka"
+    ]
+  },
+  {
+    "slug": "obi",
+    "id": 1,
+    "nick": "Obi",
+    "fullName": "Akitaru Obi",
+    "anime": "Fire Force",
+    "affiliation": "Company 8",
+    "roles": [
+      "Support"
+    ],
+    "class": "Warden",
+    "difficulty": "Easy",
+    "render": "/renders/obi_render.webp",
+    "links": [
+      "shinra"
+    ]
+  },
+  {
+    "slug": "android18",
+    "id": 2,
+    "nick": "Android 18",
+    "fullName": "Android 18",
+    "anime": "Dragon Ball",
+    "affiliation": "Z Fighter",
+    "roles": [
+      "Top",
+      "Jungle"
+    ],
+    "class": "Fighter",
+    "difficulty": "Easy",
+    "render": "/renders/android18_render.webp",
+    "links": [
+      "vegeta",
+      "krillin",
+      "android17"
+    ]
+  },
+  {
+    "slug": "asta",
+    "id": 3,
+    "nick": "Asta",
+    "fullName": "Asta",
+    "anime": "Black Clover",
+    "affiliation": "Magic Knight",
+    "roles": [
+      "Top",
+      "Support"
+    ],
+    "class": [
+      "Fighter",
+      "Duelist"
+    ],
+    "difficulty": "Medium",
+    "render": "/renders/asta_render.webp",
+    "links": [
+      "yuno",
+      "noelle",
+      "magna"
+    ]
+  },
+  {
+    "slug": "ayato",
+    "id": 27,
+    "nick": "Ayato",
+    "fullName": "Ayato Kirishima",
+    "anime": "Tokyo Ghoul",
+    "affiliation": "United Front",
+    "roles": [
+      "Mid"
+    ],
+    "class": "Slayer",
+    "difficulty": "Medium",
+    "render": "/renders/ayato_render.webp",
+    "links": [
+      "touka",
+      "kaneki",
+      "tatara"
+    ]
+  },
+  {
+    "slug": "benimaru",
+    "id": 4,
+    "nick": "Benimaru",
+    "fullName": "Benimaru Shinmon",
+    "anime": "Fire Force",
+    "affiliation": "Company 7",
+    "roles": [
+      "Jungle"
+    ],
+    "class": [
+      "Fighter",
+      "Duelist"
+    ],
+    "difficulty": "Easy",
+    "render": "/renders/benimaru_render.webp",
+    "links": [
+      "konro",
+      "shinra",
+      "joker"
+    ]
+  },
+  {
+    "slug": "bucciarati",
+    "id": 5,
+    "nick": "Bucciarati",
+    "fullName": "Bruno Bucciarati",
+    "anime": "JoJo's Bizarre Adventure",
+    "affiliation": "Passione",
+    "roles": [
+      "Jungle",
+      "Top"
+    ],
+    "class": "Fighter",
+    "difficulty": "Hard",
+    "render": "/renders/bucciarati_render.webp",
+    "links": [
+      "giorno"
+    ]
+  },
+  {
+    "slug": "chrollo",
+    "id": 6,
+    "nick": "Chrollo",
+    "fullName": "Chrollo Lucilfer",
+    "anime": "Hunter x Hunter",
+    "affiliation": "Phantom Troupe",
+    "roles": [
+      "Mid",
+      "Jungle"
+    ],
+    "class": [
+      "Slayer",
+      "Sorcerer"
+    ],
+    "difficulty": "Medium",
+    "render": "/renders/chrollo_render.webp",
+    "links": [
+      "hisoka",
+      "kurapika",
+      "phantom-troupe"
+    ]
+  },
+  {
+    "slug": "eto",
+    "id": 7,
+    "nick": "Eto",
+    "fullName": "Eto Yoshimura",
+    "anime": "Tokyo Ghoul",
+    "affiliation": "Aogiri Tree",
+    "roles": [
+      "Jungle"
+    ],
+    "class": [
+      "Slayer",
+      "Warden"
+    ],
+    "difficulty": "Medium",
+    "render": "/renders/eto_render.webp",
+    "links": [
+      "kaneki",
+      "tatara"
+    ]
+  },
+  {
+    "slug": "feitan",
+    "id": 31,
+    "nick": "Feitan",
+    "fullName": "Feitan Portor",
+    "anime": "Hunter x Hunter",
+    "affiliation": "Phantom Troupe",
+    "roles": [
+      "Jungle"
+    ],
+    "class": "Duelist",
+    "difficulty": "Hard",
+    "render": "/renders/feitan_render.webp",
+    "links": [
+      "gon",
+      "shizuku"
+    ]
+  },
+  {
+    "slug": "giorno",
+    "id": 8,
+    "nick": "Giorno",
+    "fullName": "Giorno Giovanna",
+    "anime": "JoJo's Bizarre Adventure",
+    "affiliation": "Passione",
+    "roles": [
+      "Support"
+    ],
+    "class": [
+      "Oracle",
+      "Sorcerer"
+    ],
+    "difficulty": "Medium",
+    "render": "/renders/giorno_render.webp",
+    "links": [
+      "bucciarati",
+      "diavolo"
+    ]
+  },
+  {
+    "slug": "gojo",
+    "id": 20,
+    "nick": "Gojo",
+    "fullName": "Gojo Satoru",
+    "anime": "Jujutsu Kaisen",
+    "affiliation": "Jujutsu Shaman",
+    "roles": [
+      "Mid"
+    ],
+    "class": "Sorcerer",
+    "difficulty": "Easy",
+    "render": "/renders/gojo_render.webp",
+    "links": [
+      "yuji",
+      "geto",
+      "megumi"
+    ]
+  },
+  {
+    "slug": "hinami",
+    "id": 9,
+    "nick": "Hinami",
+    "fullName": "Hinami Fueguchi",
+    "anime": "Tokyo Ghoul",
+    "affiliation": "United Front",
+    "roles": [
+      "Support"
+    ],
+    "class": "Warden",
+    "difficulty": "Medium",
+    "render": "/renders/hinami_render.webp",
+    "links": [
+      "kaneki",
+      "touka"
+    ]
+  },
+  {
+    "slug": "hisoka",
+    "id": 10,
+    "nick": "Hisoka",
+    "fullName": "Hisoka Morow",
+    "anime": "Hunter x Hunter",
+    "affiliation": "Hunter",
+    "roles": [
+      "Mid",
+      "Top"
+    ],
+    "class": [
+      "Duelist",
+      "Sorcerer"
+    ],
+    "difficulty": "Medium",
+    "render": "/renders/hisoka_render.webp",
+    "links": [
+      "gon",
+      "killua",
+      "chrollo"
+    ]
+  },
+  {
+    "slug": "ichibe",
+    "id": 11,
+    "nick": "Ichibē",
+    "fullName": "Ichibē Hyōsube",
+    "anime": "Bleach",
+    "affiliation": "Royal Guard",
+    "roles": [
+      "Support"
+    ],
+    "class": [
+      "Oracle",
+      "Sorcerer"
+    ],
+    "difficulty": "Easy",
+    "render": "/renders/ichibe_render.webp",
+    "links": [
+      "yhwach",
+      "ichigo"
+    ]
+  },
+  {
+    "slug": "illumi",
+    "id": 32,
+    "nick": "Illumi",
+    "fullName": "Illumi Zoldyck",
+    "anime": "Hunter x Hunter",
+    "affiliation": "Zoldyck Family",
+    "roles": [
+      "Mid",
+      "Support"
+    ],
+    "class": "Sorcerer",
+    "difficulty": "Hard",
+    "render": "/renders/illumi_render.webp",
+    "links": [
+      "killua",
+      "hisoka"
+    ]
+  },
+  {
+    "slug": "itachi",
+    "id": 12,
+    "nick": "Itachi",
+    "fullName": "Itachi Uchiha",
+    "anime": "Naruto",
+    "affiliation": "Akatsuki",
+    "roles": [
+      "Jungle",
+      "Mid"
+    ],
+    "class": [
+      "Sorcerer",
+      "Slayer"
+    ],
+    "difficulty": "Hard",
+    "render": "/renders/itachi_render.webp",
+    "links": [
+      "sasuke",
+      "naruto"
+    ]
+  },
+  {
+    "slug": "jogo",
+    "id": 13,
+    "nick": "Jogo",
+    "fullName": "Jogo",
+    "anime": "Jujutsu Kaisen",
+    "affiliation": "Curse",
+    "roles": [
+      "Bot",
+      "Top"
+    ],
+    "class": [
+      "Sorcerer",
+      "Oracle"
+    ],
+    "difficulty": "Easy",
+    "render": "/renders/jogo_render.webp",
+    "links": [
+      "gojo",
+      "mahito",
+      "geto"
+    ]
+  },
+  {
+    "slug": "suzuya",
+    "id": 14,
+    "nick": "Suzuya",
+    "fullName": "Juuzou Suzuya",
+    "anime": "Tokyo Ghoul",
+    "affiliation": "CCG",
+    "roles": [
+      "Top",
+      "Mid"
+    ],
+    "class": [
+      "Slayer",
+      "Fighter"
+    ],
+    "difficulty": "Hard",
+    "render": "/renders/suzuya_render.webp",
+    "links": [
+      "kaneki"
+    ]
+  },
+  {
+    "slug": "kisame",
+    "id": 15,
+    "nick": "Kisame",
+    "fullName": "Kisame Hoshigaki",
+    "anime": "Naruto",
+    "affiliation": "Akatsuki",
+    "roles": [
+      "Top",
+      "Mid"
+    ],
+    "class": "Fighter",
+    "difficulty": "Hard",
+    "render": "/renders/kisame_render.webp",
+    "links": [
+      "itachi"
+    ]
+  },
+  {
+    "slug": "krillin",
+    "id": 33,
+    "nick": "Krillin",
+    "fullName": "Krillin",
+    "anime": "Dragon Ball",
+    "affiliation": "Z Fighter",
+    "roles": [
+      "Support"
+    ],
+    "class": "Oracle",
+    "difficulty": "Easy",
+    "render": "/renders/krillin_render.webp",
+    "links": [
+      "goku",
+      "android18"
+    ]
+  },
+  {
+    "slug": "kurapika",
+    "id": 16,
+    "nick": "Kurapika",
+    "fullName": "Kurapika",
+    "anime": "Hunter x Hunter",
+    "affiliation": "Zodiacs",
+    "roles": [
+      "Support",
+      "Mid"
+    ],
+    "class": [
+      "Oracle",
+      "Sorcerer"
+    ],
+    "difficulty": "Medium",
+    "render": "/renders/kurapika_render.webp",
+    "links": [
+      "chrollo"
+    ]
+  },
+  {
+    "slug": "lille",
+    "id": 17,
+    "nick": "Lille",
+    "fullName": "Lille Barro",
+    "anime": "Bleach",
+    "affiliation": "Wandenreich",
+    "roles": [
+      "Bot"
+    ],
+    "class": "Marksman",
+    "difficulty": "Easy",
+    "render": "/renders/lille_render.webp",
+    "links": [
+      "yhwach",
+      "kyoraku"
+    ]
+  },
+  {
+    "slug": "ghirga",
+    "id": 18,
+    "nick": "Ghirga",
+    "fullName": "Narancia Ghirga",
+    "anime": "JoJo's Bizarre Adventure",
+    "affiliation": "Passione",
+    "roles": [
+      "Bot"
+    ],
+    "class": "Marksman",
+    "difficulty": "Medium",
+    "render": "/renders/ghirga_render.webp",
+    "links": [
+      "giorno",
+      "bucciarati"
+    ]
+  },
+  {
+    "slug": "noro",
+    "id": 29,
+    "nick": "Noro",
+    "fullName": "Noro",
+    "anime": "Tokyo Ghoul",
+    "affiliation": "Aogiri Tree",
+    "roles": [
+      "Jungle"
+    ],
+    "class": "Warden",
+    "difficulty": "Easy",
+    "render": "/renders/noro_render.webp",
+    "links": [
+      "eto"
+    ]
+  },
+  {
+    "slug": "sasori",
+    "id": 19,
+    "nick": "Sasori",
+    "fullName": "Sasori",
+    "anime": "Naruto",
+    "affiliation": "Akatsuki",
+    "roles": [
+      "Mid",
+      "Top"
+    ],
+    "class": [
+      "Sorcerer",
+      "Fighter"
+    ],
+    "difficulty": "Easy",
+    "render": "/renders/sasori_render.webp",
+    "links": [
+      "deidara"
+    ]
+  },
+  {
+    "slug": "shizuku",
+    "id": 30,
+    "nick": "Shizuku",
+    "fullName": "Shizuku Murasaki",
+    "anime": "Hunter x Hunter",
+    "affiliation": "Phantom Troupe",
+    "roles": [
+      "Support"
+    ],
+    "class": "Oracle",
+    "difficulty": "Medium",
+    "render": "/renders/shizuku_render.webp",
+    "links": [
+      "chrollo"
+    ]
+  },
+  {
+    "slug": "geto",
+    "id": 21,
+    "nick": "Geto",
+    "fullName": "Suguru Geto",
+    "anime": "Jujutsu Kaisen",
+    "affiliation": "Cursed User",
+    "roles": [
+      "Mid"
+    ],
+    "class": "Sorcerer",
+    "difficulty": "Easy",
+    "render": "/renders/geto_render.webp",
+    "links": [
+      "gojo"
+    ]
+  },
+  {
+    "slug": "hinawa",
+    "id": 22,
+    "nick": "Hinawa",
+    "fullName": "Takehisa Hinawa",
+    "anime": "Fire Force",
+    "affiliation": "Company 8",
+    "roles": [
+      "Bot"
+    ],
+    "class": "Marksman",
+    "difficulty": "Hard",
+    "render": "/renders/hinawa_render.webp",
+    "links": [
+      "obi",
+      "shinra",
+      "maki"
+    ]
+  },
+  {
+    "slug": "trunks",
+    "id": 23,
+    "nick": "Trunks",
+    "fullName": "Trunks Brief",
+    "anime": "Dragon Ball",
+    "affiliation": "Z Fighter",
+    "roles": [
+      "Top"
+    ],
+    "class": "Duelist",
+    "difficulty": "Medium",
+    "render": "/renders/trunks_render.webp",
+    "links": [
+      "goku",
+      "vegeta",
+      "cell"
+    ]
+  },
+  {
+    "slug": "yami",
+    "id": 24,
+    "nick": "Yami",
+    "fullName": "Yami Sukehiro",
+    "anime": "Black Clover",
+    "affiliation": "Magic Knight",
+    "roles": [
+      "Top"
+    ],
+    "class": [
+      "Duelist",
+      "Fighter"
+    ],
+    "difficulty": "Medium",
+    "render": "/renders/yami_render.webp",
+    "links": [
+      "asta",
+      "finral"
+    ]
+  },
+  {
+    "slug": "yoruichi",
+    "id": 25,
+    "nick": "Yoruichi",
+    "fullName": "Yoruichi Shihōin",
+    "anime": "Bleach",
+    "affiliation": "Seireitei",
+    "roles": [
+      "Jungle"
+    ],
+    "class": "Slayer",
+    "difficulty": "Medium",
+    "render": "/renders/yoruichi_render.webp",
+    "links": [
+      "kisuke"
+    ]
+  },
+  {
+    "slug": "yuno",
+    "id": 26,
+    "nick": "Yuno",
+    "fullName": "Yuno Grinberryall",
+    "anime": "Black Clover",
+    "affiliation": "Magic Knight",
+    "roles": [
+      "Bot",
+      "Mid"
+    ],
+    "class": [
+      "Marksman",
+      "Sorcerer"
+    ],
+    "difficulty": "Medium",
+    "render": "/renders/yuno_render.webp",
+    "links": [
+      "asta"
+    ]
+  }
+]

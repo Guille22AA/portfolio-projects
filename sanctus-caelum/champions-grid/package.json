@@ -14,6 +14,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "prestart": "node tools/build-champion-index.js",
+    "prebuild": "node tools/build-champion-index.js",
+    "pretest": "node tools/build-champion-index.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

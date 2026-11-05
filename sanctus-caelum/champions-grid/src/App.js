@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { Suspense, lazy, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 import ChampionGrid from "./components/ChampionGrid";
 import Footer from "./components/Footer";
-import SuggestChampion from './components/SuggestChampion';
-import ContactForm from './components/ContactForm';
-import ChampionDetail from './components/ChampionDetail';
 import { championsData } from "./data/championsData";
 import "./App.css";
+
+// the grid loads first; every other page is downloaded only when it is opened
+const SuggestChampion = lazy(() => import('./components/SuggestChampion'));
+const ContactForm = lazy(() => import('./components/ContactForm'));
+const ChampionDetail = lazy(() => import('./components/ChampionDetail'));
 
 function ChampionsPage() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -32,12 +34,14 @@ function App() {
     <BrowserRouter>
       <div className="app-container">
         <Header />
-        <Routes>
-          <Route path="/" element={<ChampionsPage />} />
-          <Route path="/suggest" element={<SuggestChampion />} />
-          <Route path="/contact" element={<ContactForm />} />
-          <Route path="/champion/:slug" element={<ChampionDetail />} />
-        </Routes>
+        <Suspense fallback={<div className="page-loading" aria-busy="true" />}>
+          <Routes>
+            <Route path="/" element={<ChampionsPage />} />
+            <Route path="/suggest" element={<SuggestChampion />} />
+            <Route path="/contact" element={<ContactForm />} />
+            <Route path="/champion/:slug" element={<ChampionDetail />} />
+          </Routes>
+        </Suspense>
         <Footer />
       </div>
     </BrowserRouter>

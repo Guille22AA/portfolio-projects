@@ -8,11 +8,13 @@ jest.mock("./data/championsData", () => {
   const champions = [
     { ...require("./data/champions/gojo.json"), slug: "gojo" },
     { ...require("./data/champions/geto.json"), slug: "geto" }
-  ];
+  ].map((champion) => ({ ...champion, links: Object.keys(champion.quotes?.interactions || {}) }))
+    .sort((a, b) => a.fullName.localeCompare(b.fullName));
   return {
     __esModule: true,
     default: champions,
     championsData: champions,
+    loadChampion: (slug) => Promise.resolve(champions.find((champion) => champion.slug === slug)),
     filterOptions: { anime: ["Jujutsu Kaisen"], role: ["Mid"], class: ["Sorcerer"], difficulty: ["Easy", "Medium"] }
   };
 });
@@ -40,7 +42,8 @@ test("a champion page shows its profile, sections and linked interactions", asyn
   render(<App />);
   await userEvent.click(screen.getByRole("link", { name: /gojo satoru/i }));
 
-  expect(screen.getByRole("heading", { level: 1, name: /gojo satoru/i })).toBeInTheDocument();
+  // the champion page is lazily loaded, so wait for it to appear
+  expect(await screen.findByRole("heading", { level: 1, name: /gojo satoru/i })).toBeInTheDocument();
   expect(screen.getByRole("heading", { name: /^passives$/i })).toBeInTheDocument();
   expect(screen.getByRole("heading", { name: /^abilities$/i })).toBeInTheDocument();
   expect(document.title).toBe("Gojo Satoru | Sanctus Caelum");
@@ -55,8 +58,8 @@ test("a champion page shows its profile, sections and linked interactions", asyn
   expect(within(interactions).getByText("Yuji")).toBeInTheDocument();
 });
 
-test("an unknown champion shows a not found message", () => {
+test("an unknown champion shows a not found message", async () => {
   window.history.pushState({}, "", "/champion/nobody");
   render(<App />);
-  expect(screen.getByText(/champion not found/i)).toBeInTheDocument();
+  expect(await screen.findByText(/champion not found/i)).toBeInTheDocument();
 });
