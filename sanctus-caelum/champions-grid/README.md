@@ -1,15 +1,16 @@
 # Champions Showcase - Sanctus Caelum
 
-The Champions Showcase Grid is the first phase of the Sanctus Caelum official website. It's a full-stack web application that displays 26 anime characters reimagined as playable champions, complete with filtering, search, an individual page per champion, and community interaction features.
+The Champions Showcase Grid is the first phase of the Sanctus Caelum official website. It's a full-stack web application that displays 33 anime characters from 9 series reimagined as playable champions, complete with filtering, search, an individual page per champion, and community interaction features.
 
 ## 📋 What is This?
 
 This application serves as the primary interface for exploring Sanctus Caelum champions. Users can:
 
-- Browse all 26+ champions in a responsive grid
+- Browse all 33 champions in a responsive grid, sorted alphabetically
 - Filter by anime origin, class, role, and difficulty
 - Search champions by name or anime
 - Open a detail page for each champion with stats per level, abilities, lore, quotes and an art gallery
+- Move between champion pages with the previous / next arrows, or close the page to go back to the grid
 - Suggest new champions for game development
 - Submit feedback, bug reports, or newsletter subscriptions
 - Interact with a fully functional backend API
@@ -32,8 +33,10 @@ This application serves as the primary interface for exploring Sanctus Caelum ch
   - Footer.js - Secondary links and legal info
 
 - **data/** - Champion data
-  - champions/ - 26 JSON files (one per champion)
-  - championsData.js - Data aggregator (also derives each champion's URL slug from its file name)
+  - champions/ - 33 JSON files (one per champion)
+  - championIndex.json - Light list of every champion for the grid, generated from the JSON files
+  - championsData.js - Exports the index and loads a champion's full file when its page opens
+  - vocabulary.json - Allowed roles, classes, difficulties and tags
   - galleryData.js - Loads the gallery images of each champion
 
 - **utils/** - Helpers
@@ -41,8 +44,7 @@ This application serves as the primary interface for exploring Sanctus Caelum ch
 
 - **assets/gallery/** - One folder of artwork per champion, picked up automatically
 
-- **styles/** - CSS modules per component
-  - Header.css, SearchBar.css, ChampionGrid.css, etc.
+- **styles/** - One stylesheet per component (Header.css, SearchBar.css, ChampionGrid.css, etc.). Colours and fonts come from the design tokens defined in `index.css`.
 
 - **public/** - Static assets
   - renders/ - Champion renders (grid cards), WebP
@@ -50,7 +52,7 @@ This application serves as the primary interface for exploring Sanctus Caelum ch
   - maps/ - Main mode minimap (SVG)
   - iconos/ - UI icons (logo, search, etc)
 
-- **tools/** - Scripts to add champions (image preparation, data validation) and to generate the minimap. See `tools/README.md`.
+- **tools/** - Scripts to add champions (image preparation, shared render stage, data validation, champion index) and to generate the minimap. See `tools/README.md`.
 
 - **App.js** - Main routing logic
 - **index.js** - React entry point
@@ -117,7 +119,7 @@ This application serves as the primary interface for exploring Sanctus Caelum ch
 **Champion Display**
 
 - ✅ 5-column responsive grid
-- ✅ 26 champions with stats, abilities, roles
+- ✅ 33 champions with stats, abilities, roles
 - ✅ Card design with champion renders
 - ✅ Dark theme with gold accents
 
@@ -128,7 +130,8 @@ This application serves as the primary interface for exploring Sanctus Caelum ch
 - ✅ Tags, roles, store price, play style, difficulty and rating wheel
 - ✅ Passives and abilities with their effects
 - ✅ Quotes and interactions with other champions (linked when the target is in the roster)
-- ✅ Lore, art gallery with lightbox, and champions from the same anime
+- ✅ Lore, art gallery with lightbox, and two related champions to explore (those it shares interactions with first)
+- ✅ Previous / next arrows and a close button to move between champions
 - ✅ Form switcher for champions with more than one form (Sasori)
 
 **Search & Filter**
@@ -155,9 +158,14 @@ This application serves as the primary interface for exploring Sanctus Caelum ch
 **UI/UX**
 
 - ✅ Responsive design (desktop, tablet, mobile)
-- ✅ Custom CSS with variables
-- ✅ Cinzel typography (headers)
-- ✅ Professional color scheme
+- ✅ Design tokens (CSS variables) for the whole palette and fonts
+- ✅ Cinzel for titles and Inter for text
+- ✅ Dark theme with gold accents and a visible keyboard focus ring
+
+**Performance**
+
+- ✅ Only the grid and a light champion index load first; each champion's full data and the other pages are downloaded when opened
+- ✅ All images in WebP, grid images lazy-loaded
 
 ## 📊 Data Management
 
@@ -172,7 +180,7 @@ Each champion has:
 - Resource system (Mana, Ki, Reiatsu, etc.) with its growth and regeneration
 - Lore, quotes and interactions with other champions
 
-Adding a champion only requires a new JSON file in `src/data/champions/` plus its images; `tools/README.md` has the step-by-step guide and `npm run validate` checks the result. Its file name is used as URL slug and as the name of its cutout (`public/cutouts/<name>.png`) and gallery folder (`src/assets/gallery/<name>/`).
+Adding a champion only requires a new JSON file in `src/data/champions/` plus its images; `tools/README.md` has the step-by-step guide and `npm run validate` checks the result. Its file name is used as URL slug and as the name of its cutout (`public/cutouts/<name>.webp`) and gallery folder (`src/assets/gallery/<name>/`).
 
 ### Database Tables
 
@@ -202,6 +210,7 @@ This project was developed primarily using AI assistance, with manual refinement
 - **Sequelize ORM**: Chose for schema clarity and migration support
 - **Component-based React**: Modular structure for maintainability
 - **React Router**: Client-side routes for the grid, the forms and the champion pages
+- **Data split for scale**: The grid only needs a generated index, so adding champions barely increases the first load
 - **Data-driven detail pages**: Abilities and effects are rendered generically from each JSON, so no champion needs its own layout
 - **SVG icons**: All icons are drawn in code, with no emojis or icon images
 
@@ -228,11 +237,11 @@ This project was developed primarily using AI assistance, with manual refinement
 
 Key files:
 
-- `src/data/championsData.js` - Dynamic champion data import/aggregation
+- `src/data/championsData.js` - Champion index and on-demand loading of full champion data
+- `tools/README.md` - Step-by-step guide to add a champion
 - `src/components/ChampionGrid.js` - Main filtering logic
 - `backend/routes/champions.js` - Champion suggestion endpoints
 - `backend/routes/newsletter.js` - Contact/newsletter endpoints
-- `.env.example` - Environment variables template
 
 ## 🚧 Future Improvements
 
@@ -244,7 +253,7 @@ Key files:
 - ✋ World Building page using the main mode minimap (`public/maps/minimap.svg`, already drawn)
 - ✋ Unique artwork per ability (icons are currently assigned by ability type)
 - ✋ Mobile optimization refinements
-- ✋ Code splitting of the champion pages
+- ✋ Migration from Create React App to Vite
 
 **Known Limitations**
 
@@ -288,5 +297,5 @@ Fan-made project for educational and portfolio purposes. All anime characters be
 ---
 
 **Development Status**: Phase 1 Active
-**Last Updated**: October 2026
+**Last Updated**: November 2026
 **Developer**: Guille22AA

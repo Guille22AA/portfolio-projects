@@ -65,9 +65,9 @@ Each project phase may have its own README with specific implementation details:
 
 Try the Champions Showcase right now (no installation required):
 
-**[→ Champions Showcase (Live)](https://portfolio-projects-67v2kiz8y-g2-a2.vercel.app/)**
+**[→ Champions Showcase (Live)](https://portfolio-projects-g2-a2.vercel.app/)**
 
-Browse 26 champions, open their individual pages, use filters, suggest new characters, and send feedback directly!
+Browse 33 champions from 9 anime, open their individual pages, use filters, suggest new characters, and send feedback directly!
 
 **API Endpoints** (for testing):
 - [Suggestions Count](https://portfolio-projects-rcqt.onrender.com/api/champions/suggestions/count)
@@ -85,4 +85,4 @@ Fan-made project for educational and portfolio purposes.
 
 ---
 
-**Development Status**: Phase 1 Active | Last Updated: October 2026
+**Development Status**: Phase 1 Active | Last Updated: November 2026
