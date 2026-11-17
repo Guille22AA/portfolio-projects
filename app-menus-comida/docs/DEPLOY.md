@@ -55,7 +55,7 @@ Tiempo: unos 30-45 minutos la primera vez.
 2. Pega este comando, cambiando el nombre y el token por los tuyos, y pulsa Enter:
 
    ```bash
-   curl -fsSL https://raw.githubusercontent.com/Guille22AA/experiments-lab/main/app-menus-comida/deploy/setup-server.sh | sudo bash -s -- guille-menus.duckdns.org TU_TOKEN_DE_DUCKDNS
+   curl -fsSL https://raw.githubusercontent.com/Guille22AA/portfolio-projects/main/app-menus-comida/deploy/setup-server.sh | sudo bash -s -- guille-menus.duckdns.org TU_TOKEN_DE_DUCKDNS
    ```
 
 3. Cuando te lo pida, **pega tu clave de Gemini** y pulsa Enter.

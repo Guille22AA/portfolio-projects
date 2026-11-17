@@ -6,6 +6,7 @@ This repository contains my personal software projects built for learning, pract
 
 - Sanctus Caelum - Ofificial Game Website
 - Anime Battle Gme - Playable Game with Java
+- App de menús - Shopping list and weekly menus with an AI assistant (Node + React)
 
 ## 🎯 Goal
 

@@ -2,7 +2,7 @@
 # One-time setup of a fresh Debian 12 server (Google Cloud e2-micro) for the app.
 #
 # Run it on the server (from the browser "SSH" window), as explained in docs/DEPLOY.md:
-#   curl -fsSL https://raw.githubusercontent.com/Guille22AA/experiments-lab/main/app-menus-comida/deploy/setup-server.sh \
+#   curl -fsSL https://raw.githubusercontent.com/Guille22AA/portfolio-projects/main/app-menus-comida/deploy/setup-server.sh \
 #     | sudo bash -s -- <name>.duckdns.org <duckdns-token>
 #
 # What it does:
@@ -21,7 +21,7 @@ DOMAIN="${1:?Uso: setup-server.sh <nombre>.duckdns.org <token-de-duckdns>}"
 DUCKDNS_TOKEN="${2:?Falta el token de DuckDNS}"
 DUCKDNS_NAME="${DOMAIN%%.duckdns.org}"
 
-REPO_URL="https://github.com/Guille22AA/experiments-lab.git"
+REPO_URL="https://github.com/Guille22AA/portfolio-projects.git"
 BASE_DIR="/opt/menus"
 APP_DIR="$BASE_DIR/app-menus-comida"
 APP_USER="menus"
@@ -68,7 +68,7 @@ echo "*/5 * * * * root /usr/local/bin/duckdns-update" > /etc/cron.d/duckdns
 step "4/8 Descargando la app"
 id -u "$APP_USER" >/dev/null 2>&1 || useradd --system --create-home --home-dir "/home/$APP_USER" --shell /usr/sbin/nologin "$APP_USER"
 if [ ! -d "$BASE_DIR/.git" ]; then
-  # Only the app folder of the experiments-lab repository.
+  # Only the app folder of the portfolio-projects repository.
   git clone --quiet --filter=blob:none --sparse "$REPO_URL" "$BASE_DIR"
   git -C "$BASE_DIR" sparse-checkout set app-menus-comida
 fi
