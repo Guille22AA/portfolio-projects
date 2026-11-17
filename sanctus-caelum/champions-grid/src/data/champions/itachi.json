@@ -62,7 +62,7 @@
     "abilities": {
       "passive": {
         "name": "Shadow Clone",
-        "description": "Periodically, when Itachi is damaged to 30% maximum health, he creates a clone of himself. Both instantly become invisible for 1 second. The clone can cast basic attacks with no effect and lasts 8 seconds. Upon spawning, it moves up to 1900 units toward a random direction in front of Itachi's movement.",
+        "description": "Periodically, when Itachi is damaged to 30% maximum health, he creates a clone of himself. Both instantly become invisible for 1 second. The clone can cast basic attacks with no effect and lasts 8 seconds. It appears on Itachi's position and walks up to 1900 units in a slightly random direction different from Itachi's (like LeBlanc's passive clone).",
         "cooldown": "60",
         "effects": [
           {
@@ -79,7 +79,7 @@
           {
             "type": "Clone Behavior",
             "basicAttacks": "Can cast but no effect",
-            "movement": "1900 units toward random direction in front of Itachi"
+            "movement": "Appears on Itachi's position, walks up to 1900 units in a slightly random direction different from Itachi's"
           }
         ]
       },
@@ -111,7 +111,7 @@
   
       "h2": {
         "name": "Crow Clone",
-        "description": "Itachi channels for 0.5 seconds and  creating a controllable clone. The clone lasts up to 10 seconds and can be recast to move it. Upon dying or expiring, the clone explodes deploying five crows that fear nearby enemies, reduced movement speed, and deal magic damage. Can be used while affected by cast-inhibiting CC.",
+        "description": "Itachi channels for 0.5 seconds and creates a controllable clone on his own position, which walks off at a 45° angle (left or right) from the target direction while Itachi stays in place. The clone lasts up to 10 seconds and can be recast to move it. Upon dying or expiring, the clone explodes deploying five crows that fear nearby enemies, reduced movement speed, and deal magic damage. Can be used while affected by cast-inhibiting CC.",
         "type": "Active",
         "targetType": "Direction",
         "castTime": "0.5",
@@ -119,13 +119,11 @@
         "cooldown": "18 / 17 / 16 / 15 / 14",
         "cost": "60 Chakra",
         "effects": {
-          "blink": {
-            "effect": "Itachi blinks in target direction"
-          },
           "clone": {
-            "creation": "Opposite direction from Itachi",
+            "creation": "Appears on Itachi's position and walks 45° to the left or right of the target direction",
             "control": "Fully controllable",
-            "recast": "Can move to new location while active"
+            "recast": "Can move to new location while active",
+            "attacks": "Basic attacks the nearest enemy for 60% of Itachi's damage (30% against structures)"
           },
           "explosion": {
             "trigger": "Clone dies or expires",

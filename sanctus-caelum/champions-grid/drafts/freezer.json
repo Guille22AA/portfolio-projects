@@ -1,0 +1,39 @@
+{
+  "id": 33,
+  "nick": "Freezer",
+  "fullName": "Freezer",
+  "anime": "Dragon Ball",
+  "affiliation": "Freezer Force",
+  "roles": ["Bot"],
+  "attackTypes": ["Ranged"],
+  "damageTypes": ["Magic"],
+  "class": "Marksman",
+  "resource": {
+    "name": "Ki",
+    "type": "UR"
+  },
+  "tags": ["DPS", "Scaling", "Transform"],
+
+  "abilities": {
+    "passive": {
+      "name": "Transformations",
+      "description": "Freezer suppresses his true power and unleashes it as he levels up, evolving from his first form to his final form and, at the highest level, to Golden Freezer. Each form grants more attack range and damage. His basic attacks are precise finger beams."
+    },
+    "h1": {
+      "name": "Death Beam",
+      "description": "Freezer fires a rapid barrage of finger beams in a line, piercing through every enemy hit."
+    },
+    "h2": {
+      "name": "Kienzan",
+      "description": "Freezer hurls a spinning disc of energy that flies out and returns to him, slicing and slowing every enemy along its path."
+    },
+    "h3": {
+      "name": "Telekinesis",
+      "description": "Freezer seizes a minion or monster with his mind and hurls it at a target location, damaging and slowing enemies where it lands."
+    },
+    "h4": {
+      "name": "Death Ball",
+      "description": "Freezer raises an enormous ball of energy above his head and launches it. It travels slowly and explodes in a huge area on impact."
+    }
+  }
+}
